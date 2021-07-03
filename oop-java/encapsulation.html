@@ -1,0 +1,109 @@
+<h1 id="encapsulation">Encapsulation</h1>
+<p>Encapsulation atau enkapsulasi adalah pembatasan akses terhadap suatu atribut, method atau konstruktor dalam suatu class. Enkapsulasi memastikan bahwa hanya program hanya dapat diakses oleh yang diberi izin saja.</p>
+<p>Dalam Java dikenal 4 macam modifier sebagai berikut. Apabila sebuah modifier tidak ditentukan maka secara otomatis compiler memberikan default modifier pada attribute atau method tersebut.</p>
+<ol>
+<li><p>Public
+Sebuah attribute atau method yang diberikan access modifier public artinya dapat diakses dari class yang berbeda. Penggunaan public modifier biasanya untuk method-method yang bekerja sebagai transportasi data seperti Setter Method dan Getter.</p>
+</li>
+<li><p>Protected
+Sebuah attribute atau method yang diberikan access modifier protected artinya dapat diakses dari class lain yang merupakan subclassnya. Access modifier ini biasa digunakan untuk attribute dalam sebuah Class yang menjadi superclass.</p>
+</li>
+<li><p>Private
+Attribute atau method dengan access modifier private hanya dapat diakses dari dalam Classnya sendiri. Umumnya sebuah method dalam sebuah class diberikan Private modifier apabila method tersebut hanya berkerja di dalam classnya sendiri atau pada method dan attribute yang harus disembunyikan dari class lain termasuk.</p>
+</li>
+<li><p>Default Modifier (blank)
+Default modifier yaitu modifier yang diberikan kepada method atau attribute yang tidak ditentukan modifiernya. Sebuah attribute atau method dengan access modifier default dapat diakses dari luar Class walaupun class tersebut bukan subclassnya selama berada dalam package yang sama.</p>
+</li>
+</ol>
+<p>Tabel jangkauan untuk tiap modifier:</p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Class</th>
+<th>Package</th>
+<th>Subclass</th>
+<th>World</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>default modifier</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>Keterangan:</p>
+<ul>
+<li>Y artinya bisa diakses,</li>
+<li>N artinya tidak bisa diakses,</li>
+<li>Subclass artinya class anak,</li>
+<li>World artinya seluruh package di aplikasi.</li>
+</ul>
+<h2 id="setter-and-getter">Setter and Getter</h2>
+<p>Setter dan Getter adalah istilah untuk method dengan access modifier public yang digunakan untuk mengubah (Set) atau mengambil (Get) nilai suatu attribute private atau protected dalam sebuah Class.</p>
+<blockquote>
+<p>Setter adalah sarana untuk mengambil nilai di dalam sebuah <em>atribut private</em></p>
+<p>Getter adalah sarana untuk mengubah nilai di dalam sebuah <em>atribut private</em></p>
+</blockquote>
+<p>Setter dan getter ini memiliki akses <em>public</em>, sehingga dapat diakses kelas lainnya, sedangkan method utamanya tidak perlu diketahui oleh orang lain.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> {
+
+    <span class="hljs-keyword">private</span> String nama, jenisKelamin;
+    <span class="hljs-keyword">int</span> umur;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Manusia</span>(<span class="hljs-params">String nama, String jenisKelamin, <span class="hljs-keyword">int</span> umur</span>) </span>{
+        <span class="hljs-keyword">this</span>.nama = nama;
+        <span class="hljs-keyword">this</span>.jenisKelamin = jenisKelamin;
+        <span class="hljs-keyword">this</span>.umur = umur;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getNama</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> nama;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setNama</span>(<span class="hljs-params">String nama</span>) </span>{
+        <span class="hljs-keyword">this</span>.nama = nama;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getJenisKelamin</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> jenisKelamin;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setJenisKelamin</span>(<span class="hljs-params">String jenisKelamin</span>) </span>{
+        <span class="hljs-keyword">this</span>.jenisKelamin = jenisKelamin;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getUmur</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> umur;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUmur</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> umur</span>) </span>{
+        <span class="hljs-keyword">this</span>.umur = umur;
+    }
+}
+</code></pre>

@@ -1,0 +1,100 @@
+<h2 id="abstract-method-vs-overriding">Abstract method vs Overriding</h2>
+<p>Abstract method adalah method yang ditulis untuk diimplementasikan nantinya (harus diimplementasikan).
+Abstract method ini sebagai perjanjian bahwa method-method yang diberi tanda <code>abstract</code> merupakan method yang penting sehingga harus diimplementasikan.
+Manfaatnya, digunakan sebagai jembatan antar class.</p>
+<p>Perbedaan abstract method dengan overriding - Abstract harus di implementasikan sedangkan overriding itu opsional</p>
+<p>Untuk menggunakan abstract class didalam sebuah class, digunakan keyword <code>abstract</code>, dan untuk mengimplementasikannya pada class menggunakan keyword <code>implement</code>.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">One</span>{
+    One(){
+        ...
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">abstract</span> dataType <span class="hljs-title">theMethod</span>(<span class="hljs-params"></span>)</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> <span class="hljs-title">implement</span> <span class="hljs-title">One</span> {
+    ...
+}
+</code></pre>
+<h2 id="interface">Interface</h2>
+<p>Interface adalah kumpulan abstract method yang digabung menjadi satu class.</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Orang</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">makan</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">suara</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">jalan</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> </span>{
+
+    <span class="hljs-keyword">private</span> String nama, jenisKelamin;
+    <span class="hljs-keyword">int</span> umur;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Manusia</span><span class="hljs-params">(String nama, String jenisKelamin, <span class="hljs-keyword">int</span> umur)</span> </span>{
+        <span class="hljs-keyword">this</span>.nama = nama;
+        <span class="hljs-keyword">this</span>.jenisKelamin = jenisKelamin;
+        <span class="hljs-keyword">this</span>.umur = umur;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getNama</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> nama;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setNama</span><span class="hljs-params">(String nama)</span> </span>{
+        <span class="hljs-keyword">this</span>.nama = nama;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getJenisKelamin</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> jenisKelamin;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setJenisKelamin</span><span class="hljs-params">(String jenisKelamin)</span> </span>{
+        <span class="hljs-keyword">this</span>.jenisKelamin = jenisKelamin;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getUmur</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> umur;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUmur</span><span class="hljs-params">(<span class="hljs-keyword">int</span> umur)</span> </span>{
+        <span class="hljs-keyword">this</span>.umur = umur;
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ayah</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Manusia</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Orang</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Ayah</span><span class="hljs-params">(String nama, String jenisKelamin, <span class="hljs-keyword">int</span> umur)</span> </span>{
+        <span class="hljs-keyword">super</span>(nama, jenisKelamin, umur);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">makan</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">"Ayah makan"</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">suara</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">"Ayah bersuara"</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">jalan</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">"Ayah berjalan"</span>);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ibu</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Manusia</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Orang</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Ibu</span><span class="hljs-params">(String nama, String jenisKelamin, <span class="hljs-keyword">int</span> umur)</span> </span>{
+        <span class="hljs-keyword">super</span>(nama, jenisKelamin, umur);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">makan</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">"Ibu makan"</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">suara</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">"Ibu bersuara"</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">jalan</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">"Ibu berjalan"</span>);
+    }
+}
+</code></pre>
