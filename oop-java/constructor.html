@@ -1,0 +1,94 @@
+<h1 id="constructor">Constructor</h1>
+<p>Konstruktor adalah fungsi yang dijalankan ketika pertama kali sebuah objek dipanggil.
+Sebuah <code>class</code> tanpa konstruksi akan otomatis dibuatkan konstruksi oleh java.</p>
+<p>Constructor sangat mirip dengan method tetapi tidak memiliki return type dan nama constructor harus sama dengan nama classnya.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> {
+    <span class="hljs-keyword">int</span> umur;
+    String nama, jenisKelamin;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bernafas</span>(<span class="hljs-params"></span>) </span>{}
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">makan</span>(<span class="hljs-params"></span>) </span>{}
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">berbicara</span>(<span class="hljs-params"></span>) </span>{}
+
+    <span class="hljs-comment">// Ini constructor</span>
+    Manusia () {
+        nama = <span class="hljs-string">"Nama saya .."</span>;
+        umur = <span class="hljs-number">21</span>;
+        jenisKelamin = <span class="hljs-string">"L"</span>;
+    }
+}
+</code></pre>
+<p>Ketika dibuat sebuah objek dari class di atas dengan statement <code>Employee emp = new Employee();</code> maka nilai attribute <code>name = Shelena</code> dan nilai attribute <code>salary = 0</code>.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> {
+    <span class="hljs-keyword">int</span> umur;
+    String nama, jenisKelamin;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bernafas</span>(<span class="hljs-params"></span>) </span>{}
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">makan</span>(<span class="hljs-params"></span>) </span>{}
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">berbicara</span>(<span class="hljs-params"></span>) </span>{}
+
+    <span class="hljs-comment">// Ini constructor</span>
+    Manusia () {
+        nama = <span class="hljs-string">"Nama saya .."</span>;
+        umur = <span class="hljs-number">21</span>;
+        jenisKelamin = <span class="hljs-string">"L"</span>;
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> (<span class="hljs-params">String[] args</span>) </span>{
+        Manusia manusia = <span class="hljs-keyword">new</span> Manusia();
+        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"Nama = "</span>+ manusia.nama);
+        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"Umur = "</span>+ manusia.umur);
+        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"Jenis Kelamin = "</span>+ manusia.jenisKelamin);
+    }
+}
+</code></pre>
+<p>Sebuah class dapat memiliki lebih dari satu constructor tetapi nama constructor harus sama dengan nama class. Java memperbolehkan sebuah class memiliki banyak constructor dengan ketentuan:</p>
+<ul>
+<li>Setiap Constructor memiliki jumlah parameter yang berbeda,</li>
+<li>Jumlah parameter boleh sama tetapi type data masing-masing parameternya harus berbeda,</li>
+<li>Apabila terdapat lebih dari satu constructor dalam class maka Constructor yang digunakan adalah constructor yang sesuai dengan ketika objek di-instansikan.</li>
+</ul>
+<p>Contoh:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">class</span> Manusia {
+    <span class="hljs-keyword">int</span> umur;
+    <span class="hljs-keyword">String</span> nama, jenisKelamin;
+
+    <span class="hljs-keyword">void</span> bernafas() {}
+    <span class="hljs-keyword">void</span> makan() {}
+    <span class="hljs-keyword">void</span> berbicara() {}
+
+    Manusia(<span class="hljs-keyword">String</span> nama) {
+        <span class="hljs-keyword">this</span>.nama = nama;
+    }
+
+    Manusia(<span class="hljs-keyword">String</span> nama, <span class="hljs-keyword">int</span> umur) {
+        <span class="hljs-keyword">this</span>.nama = nama;
+        <span class="hljs-keyword">this</span>.umur = umur;
+    }
+
+    Manusia (<span class="hljs-keyword">String</span> nama, <span class="hljs-keyword">int</span> umur, <span class="hljs-keyword">String</span> jenisKelamin) {
+        <span class="hljs-keyword">this</span>.nama = nama;
+        <span class="hljs-keyword">this</span>.umur = umur;
+        <span class="hljs-keyword">this</span>.jenisKelamin = jenisKelamin;
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> Main {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main (<span class="hljs-keyword">String</span>[] args) {
+        Manusia manusia1 = <span class="hljs-keyword">new</span> Manusia(<span class="hljs-string">"A"</span>, <span class="hljs-number">22</span>, <span class="hljs-string">"L"</span>);
+        Manusia manusia2 = <span class="hljs-keyword">new</span> Manusia(<span class="hljs-string">"B"</span>, <span class="hljs-number">20</span>);
+        Manusia manusia3 = <span class="hljs-keyword">new</span> Manusia(<span class="hljs-string">"C"</span>);       
+        System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">"Nama 1 = "</span>+ manusia1.nama);
+        System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">"Nama 2 = "</span>+ manusia2.nama);
+        System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">"Nama 3 = "</span>+ manusia3.nama);
+    }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-comment">/*  Nama 1 = A 
+*   Nama 2 = B
+*   Nama 3 = C
+*/</span>
+</code></pre>
