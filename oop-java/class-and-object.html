@@ -1,26 +1,33 @@
+<head>
+    <title>Deo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+
 <h1 id="class-and-object">Class and Object</h1>
 <p>Pemrograman berorientasi objek,</p>
 <ul>
-<li>berorientasi = disepertikan</li>
-<li>objek = manusia, hewan, laptop, monitor, buku, keyboard</li>
+    <li>berorientasi = disepertikan</li>
+    <li>objek = manusia, hewan, laptop, monitor, buku, keyboard</li>
 </ul>
-<p>Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan sebuah objek real kedalam bahasa bahasa pemrograman.</p>
+<p>Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan sebuah objek real kedalam bahasa bahasa
+    pemrograman.</p>
 <p>Objek adalah hal, perkara, benda atau orang yang menjadi pokok pembicaraan (KBBI, 2018).
-Misalnya seorang manusi, seekor kucing, seekor anjing atau benda lain, misalnya sebuah kursi. Itu adalah sebuah objek.</p>
+    Misalnya seorang manusi, seekor kucing, seekor anjing atau benda lain, misalnya sebuah kursi. Itu adalah sebuah
+    objek.</p>
 <p>Memiliki:</p>
 <ol>
-<li>Perilaku, mis: manusia memiliki sifat duduk, bicara, makan, ... dsb.</li>
-<li>Atribut, mis: manusia memiliki nama, umur, jenis kelamin, ... dsb.</li>
+    <li>Perilaku, mis: manusia memiliki sifat duduk, bicara, makan, ... dsb.</li>
+    <li>Atribut, mis: manusia memiliki nama, umur, jenis kelamin, ... dsb.</li>
 </ol>
 <p>Setiap objek memiliki blueprint atau cetakan, digunakan untuk membuat objek.
-Suatu cetakan akan ditentukan apa-apa saja yang akan dimasukkan kedalam sebuah objek.</p>
+    Suatu cetakan akan ditentukan apa-apa saja yang akan dimasukkan kedalam sebuah objek.</p>
 <blockquote>
-<p>Class adalah blueprint dari objek.</p>
+    <p>Class adalah blueprint dari objek.</p>
 </blockquote>
 <p>Misalnya manusia, blueprintnya mis:</p>
 <ol>
-<li>Perilaku: bernafas, makan, bergerak, melihat, ... dst.</li>
-<li>Atribut: nama, umur, jenis kelamin, ... dsb.</li>
+    <li>Perilaku: bernafas, makan, bergerak, melihat, ... dst.</li>
+    <li>Atribut: nama, umur, jenis kelamin, ... dsb.</li>
 </ol>
 <pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> {
     <span class="hljs-keyword">int</span> umur;
@@ -34,8 +41,10 @@ Suatu cetakan akan ditentukan apa-apa saja yang akan dimasukkan kedalam sebuah o
 <p>Untuk menggunakan cetakan ini untuk membuat manusia, maka dapat menggunakan perintah:</p>
 <pre><code class="lang-java"><span class="hljs-attribute">Manusia deo</span> = new Manusia();
 </code></pre>
-<p>maka akan muncul sebuah objek baru, dengan nama objek <code>deo</code>, dan memiliki nama, umur, jenis kelamin, bernafas, dll.</p>
-<p>Tapi, itu belum diisi, sehingga defaultnya nilainya <code>0</code>/<code>null</code>/<code>false</code>, kita dapat mengisinya dengan menggunakan perintah:</p>
+<p>maka akan muncul sebuah objek baru, dengan nama objek <code>deo</code>, dan memiliki nama, umur, jenis kelamin,
+    bernafas, dll.</p>
+<p>Tapi, itu belum diisi, sehingga defaultnya nilainya <code>0</code>/<code>null</code>/<code>false</code>, kita dapat
+    mengisinya dengan menggunakan perintah:</p>
 <pre><code class="lang-java">deo.nama = <span class="hljs-string">"Deo"</span><span class="hljs-comment">;</span>
 deo.umur = <span class="hljs-number">22</span><span class="hljs-comment">;</span>
 deo.<span class="hljs-keyword">jenisKelamin </span>= <span class="hljs-string">"Laki-laki"</span><span class="hljs-comment">;</span>
