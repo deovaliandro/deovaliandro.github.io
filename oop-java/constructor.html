@@ -1,7 +1,12 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+</head>
+
 <h1 id="constructor">Constructor</h1>
 <p>Konstruktor adalah fungsi yang dijalankan ketika pertama kali sebuah objek dipanggil.
-Sebuah <code>class</code> tanpa konstruksi akan otomatis dibuatkan konstruksi oleh java.</p>
-<p>Constructor sangat mirip dengan method tetapi tidak memiliki return type dan nama constructor harus sama dengan nama classnya.</p>
+    Sebuah <code>class</code> tanpa konstruksi akan otomatis dibuatkan konstruksi oleh java.</p>
+<p>Constructor sangat mirip dengan method tetapi tidak memiliki return type dan nama constructor harus sama dengan nama
+    classnya.</p>
 <pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> {
     <span class="hljs-keyword">int</span> umur;
     String nama, jenisKelamin;
@@ -18,7 +23,8 @@ Sebuah <code>class</code> tanpa konstruksi akan otomatis dibuatkan konstruksi ol
     }
 }
 </code></pre>
-<p>Ketika dibuat sebuah objek dari class di atas dengan statement <code>Employee emp = new Employee();</code> maka nilai attribute <code>name = Shelena</code> dan nilai attribute <code>salary = 0</code>.</p>
+<p>Ketika dibuat sebuah objek dari class di atas dengan statement <code>Employee emp = new Employee();</code> maka nilai
+    attribute <code>name = Shelena</code> dan nilai attribute <code>salary = 0</code>.</p>
 <pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> {
     <span class="hljs-keyword">int</span> umur;
     String nama, jenisKelamin;
@@ -44,11 +50,13 @@ Sebuah <code>class</code> tanpa konstruksi akan otomatis dibuatkan konstruksi ol
     }
 }
 </code></pre>
-<p>Sebuah class dapat memiliki lebih dari satu constructor tetapi nama constructor harus sama dengan nama class. Java memperbolehkan sebuah class memiliki banyak constructor dengan ketentuan:</p>
+<p>Sebuah class dapat memiliki lebih dari satu constructor tetapi nama constructor harus sama dengan nama class. Java
+    memperbolehkan sebuah class memiliki banyak constructor dengan ketentuan:</p>
 <ul>
-<li>Setiap Constructor memiliki jumlah parameter yang berbeda,</li>
-<li>Jumlah parameter boleh sama tetapi type data masing-masing parameternya harus berbeda,</li>
-<li>Apabila terdapat lebih dari satu constructor dalam class maka Constructor yang digunakan adalah constructor yang sesuai dengan ketika objek di-instansikan.</li>
+    <li>Setiap Constructor memiliki jumlah parameter yang berbeda,</li>
+    <li>Jumlah parameter boleh sama tetapi type data masing-masing parameternya harus berbeda,</li>
+    <li>Apabila terdapat lebih dari satu constructor dalam class maka Constructor yang digunakan adalah constructor yang
+        sesuai dengan ketika objek di-instansikan.</li>
 </ul>
 <p>Contoh:</p>
 <pre><code class="lang-java"><span class="hljs-keyword">class</span> Manusia {
