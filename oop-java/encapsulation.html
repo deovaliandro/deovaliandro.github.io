@@ -1,130 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+
+    <link rel="stylesheet" href="../css.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+    </script>
 </head>
 
-<h1 id="encapsulation">Encapsulation</h1>
-<p>Encapsulation atau enkapsulasi adalah pembatasan akses terhadap suatu atribut, method atau konstruktor dalam suatu
-    class. Enkapsulasi memastikan bahwa hanya program hanya dapat diakses oleh yang diberi izin saja.</p>
-<p>Dalam Java dikenal 4 macam modifier sebagai berikut. Apabila sebuah modifier tidak ditentukan maka secara otomatis
-    compiler memberikan default modifier pada attribute atau method tersebut.</p>
-<ol>
-    <li>
-        <p>Public
-            Sebuah attribute atau method yang diberikan access modifier public artinya dapat diakses dari class yang
-            berbeda. Penggunaan public modifier biasanya untuk method-method yang bekerja sebagai transportasi data
-            seperti Setter Method dan Getter.</p>
-    </li>
-    <li>
-        <p>Protected
-            Sebuah attribute atau method yang diberikan access modifier protected artinya dapat diakses dari class lain
-            yang merupakan subclassnya. Access modifier ini biasa digunakan untuk attribute dalam sebuah Class yang
-            menjadi superclass.</p>
-    </li>
-    <li>
-        <p>Private
-            Attribute atau method dengan access modifier private hanya dapat diakses dari dalam Classnya sendiri.
-            Umumnya sebuah method dalam sebuah class diberikan Private modifier apabila method tersebut hanya berkerja
-            di dalam classnya sendiri atau pada method dan attribute yang harus disembunyikan dari class lain termasuk.
-        </p>
-    </li>
-    <li>
-        <p>Default Modifier (blank)
-            Default modifier yaitu modifier yang diberikan kepada method atau attribute yang tidak ditentukan
-            modifiernya. Sebuah attribute atau method dengan access modifier default dapat diakses dari luar Class
-            walaupun class tersebut bukan subclassnya selama berada dalam package yang sama.</p>
-    </li>
-</ol>
-<p>Tabel jangkauan untuk tiap modifier:</p>
-<table>
-    <thead>
-        <tr>
-            <th>Modifier</th>
-            <th>Class</th>
-            <th>Package</th>
-            <th>Subclass</th>
-            <th>World</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>public</td>
-            <td>Y</td>
-            <td>Y</td>
-            <td>Y</td>
-            <td>Y</td>
-        </tr>
-        <tr>
-            <td>protected</td>
-            <td>Y</td>
-            <td>Y</td>
-            <td>Y</td>
-            <td>N</td>
-        </tr>
-        <tr>
-            <td>default modifier</td>
-            <td>Y</td>
-            <td>Y</td>
-            <td>N</td>
-            <td>N</td>
-        </tr>
-        <tr>
-            <td>private</td>
-            <td>Y</td>
-            <td>N</td>
-            <td>N</td>
-            <td>N</td>
-        </tr>
-    </tbody>
-</table>
-<p>Keterangan:</p>
-<ul>
-    <li>Y artinya bisa diakses,</li>
-    <li>N artinya tidak bisa diakses,</li>
-    <li>Subclass artinya class anak,</li>
-    <li>World artinya seluruh package di aplikasi.</li>
-</ul>
-<h2 id="setter-and-getter">Setter and Getter</h2>
-<p>Setter dan Getter adalah istilah untuk method dengan access modifier public yang digunakan untuk mengubah (Set) atau
-    mengambil (Get) nilai suatu attribute private atau protected dalam sebuah Class.</p>
-<blockquote>
-    <p>Setter adalah sarana untuk mengambil nilai di dalam sebuah <em>atribut private</em></p>
-    <p>Getter adalah sarana untuk mengubah nilai di dalam sebuah <em>atribut private</em></p>
-</blockquote>
-<p>Setter dan getter ini memiliki akses <em>public</em>, sehingga dapat diakses kelas lainnya, sedangkan method utamanya
-    tidak perlu diketahui oleh orang lain.</p>
-<pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> {
+<body>
+    <div class="container mx-auto p-3 py-md-5">
+        <div class="card shadow-sm bg-white">
+            <div class="card-header">
+                <h1 class="h1"><strong>Encapsulation</strong></h1>
+            </div>
+            <div class="card-body">
+                <!-- ISI -->
+                <p>Encapsulation atau enkapsulasi adalah pembatasan akses terhadap suatu atribut, method atau
+                    konstruktor dalam suatu class. Enkapsulasi memastikan bahwa hanya program hanya dapat diakses oleh
+                    yang diberi izin saja.</p>
+                <p>Dalam Java dikenal 4 macam modifier sebagai berikut. Apabila sebuah modifier tidak ditentukan maka
+                    secara otomatis compiler memberikan default modifier pada attribute atau method tersebut.</p>
 
-    <span class="hljs-keyword">private</span> String nama, jenisKelamin;
-    <span class="hljs-keyword">int</span> umur;
+                <ol>
+                    <li>
+                        <p>Public
+                            Sebuah attribute atau method yang diberikan access modifier public artinya dapat diakses
+                            dari class yang
+                            berbeda. Penggunaan public modifier biasanya untuk method-method yang bekerja sebagai
+                            transportasi data
+                            seperti Setter Method dan Getter.</p>
+                    </li>
+                    <li>
+                        <p>Protected
+                            Sebuah attribute atau method yang diberikan access modifier protected artinya dapat diakses
+                            dari class lain
+                            yang merupakan subclassnya. Access modifier ini biasa digunakan untuk attribute dalam sebuah
+                            Class yang
+                            menjadi superclass.</p>
+                    </li>
+                    <li>
+                        <p>Private
+                            Attribute atau method dengan access modifier private hanya dapat diakses dari dalam Classnya
+                            sendiri.
+                            Umumnya sebuah method dalam sebuah class diberikan Private modifier apabila method tersebut
+                            hanya berkerja
+                            di dalam classnya sendiri atau pada method dan attribute yang harus disembunyikan dari class
+                            lain termasuk.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Default Modifier (blank)
+                            Default modifier yaitu modifier yang diberikan kepada method atau attribute yang tidak
+                            ditentukan
+                            modifiernya. Sebuah attribute atau method dengan access modifier default dapat diakses dari
+                            luar Class
+                            walaupun class tersebut bukan subclassnya selama berada dalam package yang sama.</p>
+                    </li>
+                </ol>
+                <p>Tabel jangkauan untuk tiap modifier:</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Modifier</th>
+                            <th>Class</th>
+                            <th>Package</th>
+                            <th>Subclass</th>
+                            <th>World</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>public</th>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                        </tr>
+                        <tr>
+                            <th>protected</th>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>N</td>
+                        </tr>
+                        <tr>
+                            <th>default modifier</th>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>N</td>
+                            <td>N</td>
+                        </tr>
+                        <tr>
+                            <th>private</th>
+                            <td>Y</td>
+                            <td>N</td>
+                            <td>N</td>
+                            <td>N</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Keterangan:</p>
+                <ul>
+                    <li>Y artinya bisa diakses,</li>
+                    <li>N artinya tidak bisa diakses,</li>
+                    <li>Subclass artinya class anak,</li>
+                    <li>World artinya seluruh package di aplikasi.</li>
+                </ul>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Manusia</span>(<span class="hljs-params">String nama, String jenisKelamin, <span class="hljs-keyword">int</span> umur</span>) </span>{
-        <span class="hljs-keyword">this</span>.nama = nama;
-        <span class="hljs-keyword">this</span>.jenisKelamin = jenisKelamin;
-        <span class="hljs-keyword">this</span>.umur = umur;
-    }
+                <h2>Setter and Getter</h2>
+                <p>Setter dan Getter adalah istilah untuk method dengan access modifier public yang digunakan untuk mengubah (Set) atau mengambil (Get) nilai suatu attribute private atau protected dalam sebuah Class.
+                </p>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getNama</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> nama;
-    }
+                <div class="row justify-content-center">
+                <div class="col-8 ">
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p>Setter untuk mengambil nilai di atribut private, getter untuk mengubah nilai di atribut private</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Someone famous
+                      </figcaption>
+                </figure>
+            </div></div>
+                <p>Setter dan getter ini memiliki akses <em>public</em>, sehingga dapat diakses kelas lainnya, sedangkan method utamanya tidak perlu diketahui oleh orang lain.</p>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setNama</span>(<span class="hljs-params">String nama</span>) </span>{
-        <span class="hljs-keyword">this</span>.nama = nama;
-    }
+                <script src="https://gist.github.com/deovaliandro/e4e27f77c636f32120abe55e7306c17f.js"></script>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="../index.html"><button class="btn btn-warning text-white">Home</button></a>
+                <a href="mailto:mdv16h@student.unhas.ac.id"><button
+                        class="btn btn-danger text-white">Report</button></a>
+                | 08 Juli 2021 - Deo Valiandro. M
+            </div>
+        </div>
+    </div>
+</body>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getJenisKelamin</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> jenisKelamin;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setJenisKelamin</span>(<span class="hljs-params">String jenisKelamin</span>) </span>{
-        <span class="hljs-keyword">this</span>.jenisKelamin = jenisKelamin;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getUmur</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> umur;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUmur</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> umur</span>) </span>{
-        <span class="hljs-keyword">this</span>.umur = umur;
-    }
-}
-</code></pre>
+</html>
