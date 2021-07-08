@@ -30,9 +30,9 @@
     --max-post-width: 745px;
 }
 
-/* h1, h2, p, a{
+h1, h2, p, a{
     font-family:var(--font-stack);
-} */
+}
 
 .noa{
     text-decoration: none !important;
