@@ -1,37 +1,6 @@
 :root{
     --invert-font-color:#fff;
     --primary-color:#1a95e0;
-    --font-stack:Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
-    --mono-font-stack:Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
-
-    --color-bg: rgba(255, 247, 240, 1);
-    --color-card-bg: rgba(250, 250, 250, 0.8);
-    --color-header-bg: white;
-    --color-text: black;
-    --color-text-2: #222222;
-    --color-text-light: white;
-    --color-text-light-2: rgba(255, 255, 255, 0.9);
-    --color-link: #0f4c81;
-    --color-hover: rgba(120, 120, 120, 0.9);
-    --color-border: rgba(120, 120, 120, 1);
-    --color-border-dark: black;
-    --color-border-light: white;
-    --color-header-border: black;
-    --color-boxshadow: rgba(100, 100, 100, 1);
-    --color-boxshadow-dark: rgba(70, 70, 70, 1);
-    --color-extra: #ffecbc;
-    --color-extra-2: #fcb279;
-    --color-footer-bg: rgba(250, 250, 250, 0.8);
-    --color-code-bg: rgba(100, 100, 100, 1);
-    --color-table-bg: rgba(200, 200, 200);
-    --color-blockquote: #999999;
-    --color-twitter: rgb(29, 161, 242);
-    --color-link-bg: rgb(200, 200, 200, 0.25);
-    --max-post-width: 745px;
-}
-
-h1, h2, p, a{
-    font-family:var(--font-stack);
 }
 
 .noa{
@@ -41,10 +10,6 @@ h1, h2, p, a{
 
 .h1{
     padding: 1% 1% 0% 1%;
-}
-
-code{
-    font-family: var(--mono-font-stack);
 }
 
 .a{
