@@ -1,50 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class and Object</title>
+
+    <link rel="stylesheet" href="../css.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+    </script>
 </head>
 
-<h1 id="class-and-object">Class and Object</h1>
-<p>Pemrograman berorientasi objek,</p>
-<ul>
-    <li>berorientasi = disepertikan</li>
-    <li>objek = manusia, hewan, laptop, monitor, buku, keyboard</li>
-</ul>
-<p>Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan sebuah objek real kedalam bahasa bahasa
-    pemrograman.</p>
-<p>Objek adalah hal, perkara, benda atau orang yang menjadi pokok pembicaraan (KBBI, 2018).
-    Misalnya seorang manusi, seekor kucing, seekor anjing atau benda lain, misalnya sebuah kursi. Itu adalah sebuah
-    objek.</p>
-<p>Memiliki:</p>
-<ol>
-    <li>Perilaku, mis: manusia memiliki sifat duduk, bicara, makan, ... dsb.</li>
-    <li>Atribut, mis: manusia memiliki nama, umur, jenis kelamin, ... dsb.</li>
-</ol>
-<p>Setiap objek memiliki blueprint atau cetakan, digunakan untuk membuat objek.
-    Suatu cetakan akan ditentukan apa-apa saja yang akan dimasukkan kedalam sebuah objek.</p>
-<blockquote>
-    <p>Class adalah blueprint dari objek.</p>
-</blockquote>
-<p>Misalnya manusia, blueprintnya mis:</p>
-<ol>
-    <li>Perilaku: bernafas, makan, bergerak, melihat, ... dst.</li>
-    <li>Atribut: nama, umur, jenis kelamin, ... dsb.</li>
-</ol>
-<pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> {
-    <span class="hljs-keyword">int</span> umur;
-    String nama, jenisKelamin;
+<body>
+    <div class="container mx-auto p-3 py-md-5">
+        <div class="card shadow-sm bg-white">
+            <div class="card-header">
+                <h1 class="h1"><strong>Class and Object</strong></h1>
+            </div>
+            <div class="card-body">
+                <p>Pemrograman berorientasi objek,</p>
+                <ul>
+                    <li>berorientasi = disepertikan</li>
+                    <li>objek = manusia, hewan, laptop, monitor, buku, keyboard</li>
+                </ul>
+                <p>Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan sebuah objek real kedalam bahasa bahasa pemrograman.</p>
 
-    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bernafas</span>(<span class="hljs-params"></span>) </span>{}
-    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">makan</span>(<span class="hljs-params"></span>) </span>{}
-    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">berbicara</span>(<span class="hljs-params"></span>) </span>{}
-}
-</code></pre>
-<p>Untuk menggunakan cetakan ini untuk membuat manusia, maka dapat menggunakan perintah:</p>
-<pre><code class="lang-java"><span class="hljs-attribute">Manusia deo</span> = new Manusia();
-</code></pre>
-<p>maka akan muncul sebuah objek baru, dengan nama objek <code>deo</code>, dan memiliki nama, umur, jenis kelamin,
-    bernafas, dll.</p>
-<p>Tapi, itu belum diisi, sehingga defaultnya nilainya <code>0</code>/<code>null</code>/<code>false</code>, kita dapat
-    mengisinya dengan menggunakan perintah:</p>
-<pre><code class="lang-java">deo.nama = <span class="hljs-string">"Deo"</span><span class="hljs-comment">;</span>
-deo.umur = <span class="hljs-number">22</span><span class="hljs-comment">;</span>
-deo.<span class="hljs-keyword">jenisKelamin </span>= <span class="hljs-string">"Laki-laki"</span><span class="hljs-comment">;</span>
-</code></pre>
+                <p>Objek adalah hal, perkara, benda atau orang yang menjadi pokok pembicaraan (KBBI, 2018). Misalnya seorang manusi, seekor kucing, seekor anjing atau benda lain, misalnya sebuah kursi. Itu adalah sebuah objek.</p>
+                
+                <p>Memiliki:</p>
+                <ol>
+                    <li>Perilaku, mis: manusia memiliki sifat duduk, bicara, makan, ... dsb.</li>
+                    <li>Atribut, mis: manusia memiliki nama, umur, jenis kelamin, ... dsb.</li>
+                </ol>
+                <p>Setiap objek memiliki blueprint atau cetakan, digunakan untuk membuat objek. Suatu cetakan akan ditentukan apa-apa saja yang akan dimasukkan kedalam sebuah objek.</p>
+                
+                <blockquote>
+                    <p>Class adalah blueprint dari objek.</p>
+                </blockquote>
+                <p>Misalnya manusia, blueprintnya mis:</p>
+                <ol>
+                    <li>Perilaku: bernafas, makan, bergerak, melihat, ... dst.</li>
+                    <li>Atribut: nama, umur, jenis kelamin, ... dsb.</li>
+                </ol>
+
+                <script src="https://gist.github.com/deovaliandro/ca3e41b9a5b3140337c2157ecd3dc46c.js"></script>
+
+                <p>Untuk menggunakan cetakan ini untuk membuat manusia, maka dapat menggunakan perintah:</p>
+                <code>Manusia deo = new Manusia();</code>
+                <p></p>
+                <p>maka akan muncul sebuah objek baru, dengan nama objek <code>deo</code>, dan memiliki nama, umur, jenis kelamin, bernafas, dll.</p>
+
+                <p>Tapi, itu belum diisi, sehingga defaultnya nilainya null/false/0, kita dapat mengisinya dengan menggunakan perintah:</p>
+
+                <script src="https://gist.github.com/deovaliandro/12d3b7fef3ab21ce134d54b94a5f8f92.js"></script>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="../index.html"><button class="btn btn-warning text-white">Home</button></a>
+                <a href="mailto:mdv16h@student.unhas.ac.id"><button
+                        class="btn btn-danger text-white">Report</button></a>
+                | 08 Juli 2021 - Deo Valiandro. M
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
