@@ -1,71 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+
+    <link rel="stylesheet" href="../css.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    </script>
 </head>
 
-<h1 id="inheritance">Inheritance</h1>
-<p>Inheritance adalah pewarian sifat. Class yang berisafat umum akan mewariskan sifatnya ke class yang bersifat khusus.
-    Misalnya class <code>Manusia</code> akan memiliki class turunan seperti <code>Ayah</code>, <code>Ibu</code> dan
-    <code>Anak</code>.</p>
-<p>Class <code>Manusia</code> akan memiliki atribut dan method tersendiri, misalnya <code>nama</code>,
-    <code>jenisKelamin</code> dan <code>umur</code>. Class <code>Ayah</code> misalnya akan memiliki method dan atribut
-    dari class <code>Manusia</code> namun akan memiliki sifat-sifat dan atribut yang khusus, seperti <code>suara</code>,
-    <code>gayaBerjalan</code>, <code>warnaKulit</code>, dsb.</p>
-<p>Untuk mewariskan sifat, digunakan keyword <code>extend</code>, dan untuk memanggil atribut dan method dari class
-    induk, menggunakan keyword <code>super</code>. </p>
-<p>Misalnya:</p>
-<pre><code class="lang-java"><span class="hljs-keyword">class</span> <span class="hljs-title">Manusia</span> {
+<body>
 
-    <span class="hljs-keyword">private</span> String nama, jenisKelamin;
-    <span class="hljs-keyword">int</span> umur;
+    <!-- Image and text -->
+    
+    <div class="container mx-auto p-3 py-md-5">
+        <div class="pagination">
+            <a href="/" class="pagination__link">Root</a> 
+        </div>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Manusia</span>(<span class="hljs-params">String nama, String jenisKelamin, <span class="hljs-keyword">int</span> umur</span>) </span>{
-        <span class="hljs-keyword">this</span>.nama = nama;
-        <span class="hljs-keyword">this</span>.jenisKelamin = jenisKelamin;
-        <span class="hljs-keyword">this</span>.umur = umur;
-    }
+        <div class="card shadow-sm bg-white">
+            <div class="card-header">
+                <h1 class="h1"><strong>Inheritance</strong></h1>
+            </div>
+            <div class="card-body">
+                <p>Inheritance adalah pewarian sifat. Class yang berisafat umum akan mewariskan sifatnya ke class yang
+                    bersifat khusus. Misalnya class manusia akan memiliki class turunan seperti Ayah, Ibu dan Anak.</p>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getNama</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> nama;
-    }
+                <p>Class Manusia akan memiliki atribut dan method tersendiri, misalnya nama, jenisKelamin dan umur.
+                    Class
+                    Ayah misalnya akan memiliki method dan atribut dari class Manusia namun akan memiliki sifat-sifat
+                    dan
+                    atribut yang khusus, seperti suara, gayaBerjalan, warnaKulit, dsb.</p>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setNama</span>(<span class="hljs-params">String nama</span>) </span>{
-        <span class="hljs-keyword">this</span>.nama = nama;
-    }
+                <p>Untuk mewariskan sifat, digunakan keyword <code>extend</code>, dan untuk memanggil atribut dan method
+                    dari class
+                    induk, menggunakan keyword <code>super</code>. </p>
+                <p>Misalnya:</p>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getJenisKelamin</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> jenisKelamin;
-    }
+                <script src="https://gist.github.com/deovaliandro/8084828693b5b1a64437a9730d357701.js"></script>
+            </div>
+            <div class="card-footer text-muted">
+                08 Juli 2021 - Deo Valiandro. M
+            </div>
+        </div>
+    </div>
+</body>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setJenisKelamin</span>(<span class="hljs-params">String jenisKelamin</span>) </span>{
-        <span class="hljs-keyword">this</span>.jenisKelamin = jenisKelamin;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getUmur</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> umur;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUmur</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> umur</span>) </span>{
-        <span class="hljs-keyword">this</span>.umur = umur;
-    }
-}
-</code></pre>
-<p>Class <code>Ayah</code> akan mewarisi sifat-sifat dari class <code>Manusia</code>.</p>
-<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ayah</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Manusia</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Orang</span> </span>{
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Ayah</span><span class="hljs-params">(String nama, String jenisKelamin, <span class="hljs-keyword">int</span> umur)</span> </span>{
-        <span class="hljs-keyword">super</span>(nama, jenisKelamin, umur);
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">makan</span><span class="hljs-params">()</span> </span>{
-        System.out.println(<span class="hljs-string">"Ayah makan"</span>);
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">suara</span><span class="hljs-params">()</span> </span>{
-        System.out.println(<span class="hljs-string">"Ayah bersuara"</span>);
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">jalan</span><span class="hljs-params">()</span> </span>{
-        System.out.println(<span class="hljs-string">"Ayah berjalan"</span>);
-    }
-}
-</code></pre>
+</html>
