@@ -16,11 +16,6 @@
     color: var(--color-text) !important;
 }
 
-.h1{
-    padding: 1% 1% 0% 1%;
-    font-family: 'Festive', cursive;
-}
-
 body {
     /* font-family: "JetBrains Mono", 'Courier New', Courier, monospace; */
     /* font-family: 'Roboto Mono' ,'Open Sans', sans-serif; */
@@ -34,8 +29,8 @@ body {
 
 a{
     cursor:pointer;
-    color:var(--primary-color);
-    text-decoration:none;
+    color:var(--primary-color) !important;
+    text-decoration:none !important;
     font-family: "JetBrains Mono", monospace;
     font-style: italic !important;
 
@@ -50,8 +45,8 @@ h1{
 }
 
 a:hover{
-    background-color:var(--primary-color);
-    color:var(--invert-font-color)
+    background-color:var(--primary-color) !important;
+    color:var(--invert-font-color) !important;
 }
 
 ::-moz-selection{
