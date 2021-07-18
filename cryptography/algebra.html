@@ -39,18 +39,18 @@
                     <li>\(\exists e \ni \forall a \in G \to e \ast a = a \ast e = a\),</li>
                     <li>\(\forall a \in G, \exists a' \in G \ni a \ast a' = a' \ast a = e\),</li>
                 </ol>
-                <p>Misalnya \((Z, +)\), \((R, +)\), \((Z_2, \oplus)\), \((Z_3, \oplus)\), \((Z_n, \oplus)\), \((Z_p, \oplus)\), \((Z_p^\ast, \otimes)\).</p>
+                <p>Misalnya \((\mathbb{Z}, +)\), \((\mathbb{R}, +)\), \((\mathbb{Z}_2, \oplus)\), \((\mathbb{Z}_3, \oplus)\), \((\mathbb{Z}_n, \oplus)\), \((\mathbb{Z}_p, \oplus)\), \((\mathbb{Z}_p^\ast, \otimes)\).</p>
 
                 <p>
                     Grup dikatakan <strong>grup abelian</strong> jika memenuhi sifat komutatif, \(\exists a, b \in G, a \ast b = b \ast a\).
                 </p>
                 <p>
-                    Misalnya \((G, +)\), \((Z_2, \oplus)\), \((Z_3, \oplus)\).
+                    Misalnya \((\mathbb{G}, +)\), \((\mathbb{Z}_2, \oplus)\), \((\mathbb{Z}_3, \oplus)\).
                 </p>
 
                 <h2>Ring</h2>
                 <p>
-                    Ring \(R, +, \times)\) merupakan himpunan \(R\), dengan operasi biner \(+\) dan \(\times\) yang memenuhi:
+                    Ring \((R, +, \times)\) merupakan himpunan \(R\), dengan operasi biner \(+\) dan \(\times\) yang memenuhi:
                 </p>
                 <ol>
                     <li>\(\exists e = 0\) untuk \((R, +)\) yang merupakan grup abelian</li>
@@ -63,10 +63,21 @@
                     </ul>
                 </ol>
                 <p>
-                    Contohnya \((Z, +, \times)\).
+                    Contohnya \((\mathbb{Z}, +, \times)\).
                 </p>
                 <p>
                     Ring dikatakan <strong>commutative ring</strong> jika \(\exists a, b \in R, a \times b = b \times a\).
+                </p>
+
+                <h2>Field</h2>
+                <p>
+                    Field F adalah sebuah commutative ring dimana \(\forall a \ne 0 \in F, \exists a^{-1} \in F \ni a \times a^{-1} = 1\).
+                </p>
+                <p>
+                    Misalnya \((\mathbb{Q}, \times, +)\), \((\mathbb{R}, \times, +)\).
+                </p>
+                <p>
+                    Field dikatakan <i>finite field</i> jika himpunannya terhingga (orde n, dinotasikan \(F_n\)). Sebaliknya, elemen tidak terbatas adalah <i>infinity field</i>.
                 </p>
             </div>
             <div class="card-footer text-muted">
