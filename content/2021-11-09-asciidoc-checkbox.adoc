@@ -1,0 +1,34 @@
+---
+title     : Asciidoc Checkbox
+signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+date      : 2021-11-09
+---
+
+
+Untuk menggunakan checkbox asciidoc pada jekyll, dapat menggunakan
+
+[source, asciidoc]
+* [*] checked
+* [x] also checked
+* [ ] not checked
+
+kemudian mengaktifkan font awesome untuk membuat icon checkbox aktif,
+
+[source, html]
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/
+            font-awesome.min.css">
+
+Contoh hasil:
+
+- [*] checked
+- [x] also checked
+- [ ] not checked
+
+Sumber:
+
+* link:https://docs.asciidoctor.org/asciidoc/latest/lists/checklist/[asciidoctor.org]
+
+++++
+<script src="https://kit.fontawesome.com/c42de40267.js" crossorigin="anonymous" defer></script>
+++++

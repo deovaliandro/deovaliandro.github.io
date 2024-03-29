@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico" />
+
+  <title>ELGamal | Deo Valiandro. M</title><style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+  body {
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 980px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+    overflow: scroll;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    border: 0.08rem solid #24292e;
+    box-shadow: 2px 2px #bbb;
+    padding: 0.2em;
+    font-size: 1em;
+  }
+
+  :where(h1, h2, h3):hover {
+    background: #24292e;
+    color: white;
+  }
+
+  .list-post {
+    border-bottom: 1px dashed gray;
+  }
+
+  .list-post>a {
+    color: #222;
+  }
+
+  .list-post:hover,
+  .list-post:hover a {
+    background: #24292e;
+    color: white;
+  }
+
+  .list-post:hover {
+    background: #24292e;
+    color: white;
+  }
+
+
+  .time-post {
+    display: inline;
+    float: right;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-right: .5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .title {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px dotted black;
+    padding-bottom: 5px;
+    color: #222;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  .notfound {
+    text-align: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+</style><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$']]
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <p class="title">Deo Valiandro. M</p>
+    </a>
+  </header>
+  <main>
+    
+    <content>
+      <div class="paragraph">
+<p>ElGamal dibuat oleh Taher Elgamal pada tahun 1985. Keamanan ElGamal terletak
+pada persoalan logaritma diskrit, yaitu $p \in \mathbb{P}, \{g, y\} \in
+\mathbb{Z}, \exists x | g^{x} \equiv y (\bmod p)$. Menemukan nilai $x$ akan
+sangat susah.</p>
+</div>
+<div class="sect1">
+<h2 id="_variabel">Variabel</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>$p \in \mathbb{P}$ (tidak rahasia),</p>
+</li>
+<li>
+<p>$g \in \mathbb{Z}$, $g$ adalah akar primitif dari $p$ (tidak rahasia),</p>
+</li>
+<li>
+<p>$x$, bilangan acak (rahasia),</p>
+</li>
+<li>
+<p>$y = g^x \bmod p$ (tidak rahasia, kunci publik),</p>
+</li>
+<li>
+<p>$m$, plaintext (rahasia),</p>
+</li>
+<li>
+<p>$a, b$, ciphertext (tidak rahasia).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fungsi_enkripsi_dan_dekripsi">Fungsi Enkripsi dan Dekripsi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fungsi enkripsi dinyatakan dengan:</p>
+</div>
+<div class="paragraph">
+<p>$$a = g^x \bmod p$</p>
+</div>
+<div class="paragraph">
+<p>$$b = y^k m \bmod p$</p>
+</div>
+<div class="paragraph">
+<p>Pasangan $a, b$ adalah ciphertext yang berukuran $2 \times m$.</p>
+</div>
+<div class="paragraph">
+<p>Fungsi dekripsi dinyatakan dengan:</p>
+</div>
+<div class="paragraph">
+<p>$$\begin{aligned}
+m &amp; = (b/a^{x}) \bmod p\\
+  &amp; = b(a^{x} )^{-1} \bmod p
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Dengan: $(a^{x} )^{-1} = a^{p-1-x} \bmod p$ (invers modulo).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_skenario">Skenario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bagian ini menjelaskan skenario bagaimana kriptografi kunci publik bekerja.
+Kita akan menggunakan partisipan klasik Alice dan Bob sebagai dua pihak  yang
+melakukan pertukaran informasi.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Alice dan Bob setuju untuk menggunakan public-key cryptosystem.</p>
+</li>
+<li>
+<p>Bob mengirimkan public key-nya kepada Alice.</p>
+</li>
+<li>
+<p>Alice meng-encrypt pesan yang dibuatkan dengan menggunakan public key milik
+Bob dan mengirimkan pesan yang sudah di-encrypt kepada Bob.</p>
+</li>
+<li>
+<p>Bob men-decrypt pesan dari Alice menggunakan private key miliknya.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pembangkitan_kunci">Pembangkitan Kunci</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Alice dan Bob menyepakati $p \in \mathbb{P}, a \in \mathbb{Z}$, kemudian:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Alice memilih $x, x &lt; x &lt; p-1$ (acak),</p>
+</li>
+<li>
+<p>Alice menghitung $y = g^x \bmod p$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Mengasilkan kunci publik: $(y, g, p)$ dan kunci private $(x)$.</p>
+</div>
+<div class="paragraph">
+<p>Misalhnya:</p>
+</div>
+<div class="paragraph">
+<p>$p = 2273$, $g = 3, x = 243$, Alice kemudian menghitung:</p>
+</div>
+<div class="paragraph">
+<p>$y = g^x \bmod p = 3^{243} \bmod 2273 = 461$</p>
+</div>
+<div class="paragraph">
+<p>Menghasilkan kunci publik $(461, 3, 2273)$ dan kunci privat $(243)$.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contoh">Contoh</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pesan $m, 0 &gt; m &lt; p-1$, dapat dibagi kedalam blok $m_1, m_2, \cdots$, sehingga
+$m &lt; p-1$.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya $m = 07001114$, $m_1 = 0700, m_2 = 1114, \forall m_i &lt; 2273 - 1$.</p>
+</div>
+<div class="sect2">
+<h3 id="_enkripsi_pesan">Enkripsi Pesan</h3>
+<div class="paragraph">
+<p>Untuk enkripsi blok $m_1$, dipilih $k = 1463 \in [0, 2273-1]$.</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+m_1 &amp; = 0700 \\
+a   &amp; = g^k \bmod p \\
+    &amp; = 3^{1463} \bmod 2273 \\
+    &amp; = 1439 \\
+b   &amp; = y^k m_1 \bmod p \\
+    &amp; = 461^{1463} \cdot 700 \bmod 2273 \\
+    &amp; = 74
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Cihpertext untuk $c_1 = (1439, 74)$.</p>
+</div>
+<div class="paragraph">
+<p>Untuk enkripsi blok $m_2$, dipilih $k = 2001 \in [0, 2273-1]$.</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+m_1 &amp; = 1114 \\
+a   &amp; = g^k \bmod p \\
+    &amp; = 3^{20001} \bmod 2273 \\
+    &amp; = 1220 \\
+b   &amp; = y^k m_1 \bmod p \\
+    &amp; = 461^{20001} \cdot 1114 \bmod 2273 \\
+    &amp; = 1682
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Cihpertext untuk $c_1 = (1220, 1682)$.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dekripsi_pesan">Dekripsi Pesan</h3>
+<div class="paragraph">
+<p>Untuk mendekripsi blok $c_1$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+c_1 &amp; = (1439, 74) \\
+(a^{x} )^{-1} &amp; = a^{p-1-x} \bmod p \\
+    &amp; = 1439^{2029} \bmod 2273 \\
+    &amp; = 1791 \\
+m_1 &amp; = b/a^{x} \bmod p \\
+    &amp; = b(a^{x} )^{-1} \bmod p \\
+    &amp; = 74 \cdot 1791 \bmod 2273 \\
+    &amp; = 700 \\
+    &amp; = 0700
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Untuk mendekripsi blok $c_2$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+c_2 &amp; = (1220, 1682) \\
+(a^{x} )^{-1} &amp; = a^{p-1-x} \bmod p \\
+    &amp; = 1220^{2029} \bmod 2273 \\
+    &amp; = 1125 \\
+m_2 &amp; = b/a^{x} \bmod p \\
+    &amp; = b(a^{x} )^{-1} \bmod p \\
+    &amp; = 1682 \cdot 1125 \bmod 2273 \\
+    &amp; = 1114
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Pesan berhasil di dekripsi kemabali, yaitu $07001114$.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_penutup">Penutup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ElGamal pada awalnya diciptakan untuk <em>digital signature</em> yang kemudian
+dimodifikasi untuk digunakan untuk enkripsi dan dekripsi. Kekuatan ElGamal
+terletak pada sukarnya menghitung logaritma diskrit.</p>
+</div>
+<div class="paragraph">
+<p>ElGamal seperti algoritma asimetrik lainnya, digunakan untuk enkripsi dan
+dekripsi kunci algoritma simetrik.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reference">Reference</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ElGamal. T. &#34;A Public-Key Cryptosystem and a Signature Scheme Based on
+Discrete Logarithms&#34;. IEEE Transactions on Information Theory. 1985</p>
+</li>
+<li>
+<p>Munir. R. &#34;Kriptografi Edisi Kedua&#34;. Informatika: Bandung. 2019.</p>
+</li>
+<li>
+<p>Schneier, B. Applied Cryptography, 2nd Ed. John Wiley &amp; Sons, Inc:
+Canada, 1996.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lampiran">Lampiran</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Penggunaan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">python elgamal.py</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def is_relative_prime(prime, data):
+    while data != 0:
+        prime, data = data, prime % data
+    return prime
+
+def is_primitive_root(prime, root):
+    primitive_root = []
+    for i in range(prime - 1):
+        primitive_root.append(pow(root, i + 1) % prime)
+
+    # Untuk memastikan tidak terjadi pembandingan primitive_root pada indeks j
+    # dan i yang sama
+    kampret = 1
+
+    # Membandingkan apakah tidak ada data yang sama
+    for i in range(len(primitive_root)):
+        for j in range(kampret, len(primitive_root) - 1):
+            if primitive_root[i] == primitive_root[j + 1]:
+                print(&#34;Not primitive root&#34;)
+                return 0
+
+        if is_relative_prime(prime, primitive_root[i]) != 1:
+            print(&#34;Not relative prime&#34;)
+            return 0
+        kampret += 1
+    return 1
+
+
+def key_builder():
+    print(&#34;Input prime number, root and secret key (x)&#34;)
+    prime, root, secret_key = [int(x) for x in input().split(&#34; &#34;)]
+
+    # root number must be primitive root from prime
+    if is_primitive_root(prime, root) == 1:
+        y = pow(root, secret_key) % prime
+        print(f&#34;Public Key (%d, %d, %d)&#34; % (y, root, prime))
+        print(f&#34;Private key %d&#34; % secret_key)
+
+
+def encryption():
+    # message is one character, string will be add later
+    print(&#34;Input message&#34;)
+    message = input()
+
+    print(&#34;Input y, g and p (public key)&#34;)
+    y, g, p = [int(x) for x in input().split(&#34; &#34;)]
+
+    # k is random number from 1 &lt;= k &lt;= p-1
+    print(&#34;Input k&#34;)
+    k = int(input())
+
+    # the ciphertext will be a pair of a and b
+    a = pow(g, k) % p
+    b = (pow(y, k) * ord(message)) % p
+
+    print(f&#34;Ciphertext (%d, %d)&#34; % (a, b))
+
+
+def decryption():
+    a, b, x, p = [int(x) for x in input().split(&#34; &#34;)]
+    m = pow(a, (p-1-x)) * b % p
+    print(f&#34;Message %c&#34; % m)
+
+key_builder()
+encryption()
+decryption()</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+    </content>
+    <p>
+      
+    </p>
+  </main>
+  <footer>
+<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+CC BY-NC-SA 4.0</a>, sejak 2016 &copy;
+<a target="_blank" href="https://github.com/deovaliandro">Deo Valiandro. M</a>,
+<span id="love">🌱</span> dengan <span id="love">💗</span>.
+</footer>
+</body>
+
+</html>

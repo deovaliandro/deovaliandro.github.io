@@ -1,0 +1,25 @@
+---
+title     : Is Even?
+signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+date      : 2022-03-23T19:20:13
+---
+
+Cara cepat menentukan negatif atau positif:
+
+[source, python]
+----
+isEven = lambda n: not(n & 1)
+
+print(isEven(12))
+print(isEven(13))
+
+# 12    = 0110
+# 1     = 0001
+#------------- &
+#       = 0000 = False
+
+# 13    = 0111
+# 1     = 0001
+#------------- &
+#       = 0001 = True
+----

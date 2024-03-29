@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico" />
+
+  <title>Buble Sort | Deo Valiandro. M</title><style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+  body {
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 980px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+    overflow: scroll;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    border: 0.08rem solid #24292e;
+    box-shadow: 2px 2px #bbb;
+    padding: 0.2em;
+    font-size: 1em;
+  }
+
+  :where(h1, h2, h3):hover {
+    background: #24292e;
+    color: white;
+  }
+
+  .list-post {
+    border-bottom: 1px dashed gray;
+  }
+
+  .list-post>a {
+    color: #222;
+  }
+
+  .list-post:hover,
+  .list-post:hover a {
+    background: #24292e;
+    color: white;
+  }
+
+  .list-post:hover {
+    background: #24292e;
+    color: white;
+  }
+
+
+  .time-post {
+    display: inline;
+    float: right;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-right: .5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .title {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px dotted black;
+    padding-bottom: 5px;
+    color: #222;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  .notfound {
+    text-align: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+</style><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$']]
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <p class="title">Deo Valiandro. M</p>
+    </a>
+  </header>
+  <main>
+    
+    <content>
+      <div class="sect1">
+<h2 id="_pendahuluan">Pendahuluan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bubble Sort adalah algoritma pengurutan paling sederhana yang bekerja dengan
+menukar elemen yang berdekatan secara bergantian. Bubble sort akan memuat
+iterasi atau perulangan sebanyak n-1, dimana n adalah jumlah elemen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cara_kerja">Cara Kerja</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Misalkan kita mempunyai 4 elemen, yaitu {50, 20, 10}</p>
+</div>
+<div class="paragraph">
+<p>Iterasi pertama :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>{<strong>50</strong>, <strong>20</strong>, 10} ⇒ {<strong>20</strong>, <strong>50</strong>, 10}</p>
+</li>
+<li>
+<p>{20, <strong>50</strong>, <strong>10</strong>} ⇒ {20, <strong>10</strong>, <strong>50</strong>}</p>
+</li>
+<li>
+<p>{<strong>20</strong>, <strong>10</strong>, 50} ⇒ {<strong>10</strong>, <strong>20</strong>, 50}</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Hasilnya = {10, 20, 50}, terdapat 3 perulangan.</p>
+</div>
+<div class="paragraph">
+<p>Dalam program, kita dapat menggunakan logika untuk menukar/swap index,</p>
+</div>
+<div class="paragraph">
+<p>Misalkan kita mempunyai a = 10 dan b = 20.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c" data-lang="c">temp    = a (temp = 10)
+a       = b (a = 20)
+b       = temp (b = 10)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>atau</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">a, b = b, a</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Referensi</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://www.geeksforgeeks.org/bubble-sort/" class="bare">https://www.geeksforgeeks.org/bubble-sort/</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/playlist?list=PLLOxZwkBK52CY_b7jorivUjYzjhoMA_6Z" class="bare">https://www.youtube.com/playlist?list=PLLOxZwkBK52CY_b7jorivUjYzjhoMA_6Z</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+    </content>
+    <p>
+      
+    </p>
+  </main>
+  <footer>
+<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+CC BY-NC-SA 4.0</a>, sejak 2016 &copy;
+<a target="_blank" href="https://github.com/deovaliandro">Deo Valiandro. M</a>,
+<span id="love">🌱</span> dengan <span id="love">💗</span>.
+</footer>
+</body>
+
+</html>

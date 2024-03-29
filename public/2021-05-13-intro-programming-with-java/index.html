@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico" />
+
+  <title>Pengantar Pemrograman dengan Java | Deo Valiandro. M</title><style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+  body {
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 980px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+    overflow: scroll;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    border: 0.08rem solid #24292e;
+    box-shadow: 2px 2px #bbb;
+    padding: 0.2em;
+    font-size: 1em;
+  }
+
+  :where(h1, h2, h3):hover {
+    background: #24292e;
+    color: white;
+  }
+
+  .list-post {
+    border-bottom: 1px dashed gray;
+  }
+
+  .list-post>a {
+    color: #222;
+  }
+
+  .list-post:hover,
+  .list-post:hover a {
+    background: #24292e;
+    color: white;
+  }
+
+  .list-post:hover {
+    background: #24292e;
+    color: white;
+  }
+
+
+  .time-post {
+    display: inline;
+    float: right;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-right: .5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .title {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px dotted black;
+    padding-bottom: 5px;
+    color: #222;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  .notfound {
+    text-align: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+</style><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$']]
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <p class="title">Deo Valiandro. M</p>
+    </a>
+  </header>
+  <main>
+    
+    <content>
+      <div class="paragraph">
+<p><span class="wikipedia"><a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a></span>
+adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector
+dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
+object-oriented language karena masih mendukung primitive data types seperti
+int, char, dll.</p>
+</div>
+<div class="sect1">
+<h2 id="_struktur_dasar">Struktur Dasar</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sintaks Java mirip dengan <code>C/C++</code>, tetapi Java tidak support dengan low-level
+programming seperti pointer (sebenarnya Java punya pointer, semua turunan object
+adalah pointer. Akan tetapi, anda bisa jadi programmer Java profesional tanpa
+perlu tahu fakta ini <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>).
+Kode Java selalu ditulis didalam sebuah class dan objek.</p>
+</div>
+<div class="sect2">
+<h3 id="_struktur_program">Struktur program</h3>
+<div class="paragraph">
+<p>Struktur dasar sebuah bahasa pemrograman Java adalah sebagai berikut:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class Main {
+    public static void main(String[] args) {
+        System.out.println(&#34;Hello world!&#34;);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>class Main</code> Adalah class utama, nama <code>Main</code> harus sesuai dengan nama file.
+Aturan penulisannya adalah dengan menggunakan huruf kapital di huruf pertama.
+Misalnya: <code>Main</code>, <code>Utama</code>, dsb-nya.</p>
+</div>
+<div class="paragraph">
+<p><code>public static void main(String args[])</code> adalah kode utama yang akan dijalankan
+ketika kita menjalankan sebuah program Java.</p>
+</div>
+<div class="paragraph">
+<p>Dengan keluarnya jdk22 <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> maka ada
+perubahan besar, yaitu:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class HelloWorld {
+    void main() {
+        System.out.println(&#34;Meoworld&#34;);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aturan_penamaan">Aturan Penamaan</h3>
+<div class="paragraph">
+<p>Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
+dalam Java yang harus dipatuhi seperti:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>tidak boleh diawali dengan angka,</p>
+</li>
+<li>
+<p>tidak boleh disertai symbol khusus seperti kbd:[@], kbd:[!], kbd:[*],
+kbd:[#],</p>
+</li>
+<li>
+<p>tidak boleh menggunakan reserved word sebagai nama variable,</p>
+</li>
+<li>
+<p>boleh diawali dengan underscore atau symbol kbd:[$], dan</p>
+</li>
+<li>
+<p>nama variable tidak boleh mengandung spasi.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Menurut Convention over configuration Java
+<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>,
+penulisan nama variable menggunakan lowerCamel case misalnya <code>namaVariabel</code>,
+dan penulisan nama class menggunakan uppercamel case misalnya <code>main</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menjalankan_program">Menjalankan program</h3>
+<div class="paragraph">
+<p>Java adalah bahasa yang dicompile terlebih dahulu sebelum dirun.</p>
+</div>
+<div class="paragraph">
+<p>Untuk mengcompile java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">javac NamaFile.java</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dan kemudian akan menghasilkan sebuah file dengan nama <code>NamaFile.class</code>.
+File inilah yang kemudian dijalankan dengan menggunakan perintah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">java NamaFile</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>perhatikan, untuk menjalankan, tidak perlu menggunakan <code>NamaFile.class</code>, cukup
+dengan menggunakan <code>NamaFile</code> saja.</p>
+</div>
+<div class="paragraph">
+<p>Dengan update dari Java 11, maka sebuah program Java dapat dijalankan tanpa
+perlu mengcompilenya terlebih dahulu
+<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class Main {
+    public static void main(String[] args) {
+        System.out.println(&#34;Hello world!&#34;);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dapat langsung dijalankan dengan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">java NamaFile.java</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_input_dan_output">Input dan Output</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan
+bagaimana mengeluarkan hasil dari program tersebut.</p>
+</div>
+<div class="paragraph">
+<p>Meskipun pengertian I/O secara lebih luas lebih dari hal tersebut, namun disini
+kita akan menggunakan terbatas pada input dan output di terminal.</p>
+</div>
+<div class="sect2">
+<h3 id="_input">Input</h3>
+<div class="paragraph">
+<p>Input di Java dapat menggunakan 2 cara (yang umum digunakan).</p>
+</div>
+<div class="sect3">
+<h4 id="_dengan_menggunakan_scanner">Dengan menggunakan Scanner</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">import java.util.Scanner;
+
+class Main{
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dengan_menggunakan_bufferreader">Dengan menggunakan BufferReader</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">import java.io.BufferedReader;
+import java.io.StreamReader;
+
+class Main{
+    public static void main(String args[]){
+        BufferedReader r = new BufferedReader(new StreamReader(System.in));
+        int a = Integer.parseInt(b.readLine());
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_output">Output</h3>
+<div class="paragraph">
+<p>Output di Java dapat menggunakan 2 cara (yang umum digunakan).</p>
+</div>
+<div class="sect3">
+<h4 id="_system_out_print">System.out.print()</h4>
+<div class="paragraph">
+<p>Fungsi <code>print()</code> meskipun kita menuliskan kodenya dua baris namun hasil atau
+outputnya tidak menjadi dua baris, solusinya kita bisa menggunakan fungsi yang
+kedua yaitu <code>println()</code> dimana dengan fungsi tersebut dapat menambahkan baris
+baru pada outputnya.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class Main{
+    public static void main(String args[]){
+        System.out.println(&#34;Hello world&#34;);
+        System.out.print(&#34;Hello world&#34;);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_system_out_printf">System.out.printf</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class Main{
+    public static void main(String args[]){
+        String data = &#34;Hello world&#34;;
+        System.out.printf(&#34;%s&#34;, data);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operasi_dasar">Operasi Dasar</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_operator_aritmatika">Operator Aritmatika</h3>
+<div class="paragraph">
+<p>Operator aritmatika yang dapat dilakukan adalah:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Hasil</th>
+<th class="tableblock halign-left valign-top">Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subtraction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplication</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Division</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modulus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Increment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">++</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decrement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"> — </p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional assignment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+=</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subtraction assignment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-=</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplication assignment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*=</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Division assignment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/=</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modulus asignement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%=</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Operator ini hanya bisa digunakan pada tipe data angka, tidak bisa digunakan
+pada data <code>boolean</code>, tetapi dapat digunakan pada tipe data <code>char</code>, karena <code>char</code>
+pada dasarnya adalah <code>int</code> di dalama Java.</p>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class OperatorAritmatika {
+    public static void main(String[] args) {
+        System.out.println(&#34;Hasil 5 + 1 = &#34; + (5 + 1));
+        System.out.println(&#34;Hasil 8 % 2 = &#34; + (8 % 2));
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operator_pembanding">Operator pembanding</h3>
+<div class="paragraph">
+<p>Operator pembanding yan dapat dilakukan:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch center">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Hasil</th>
+<th class="tableblock halign-left valign-top">Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Equal to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">==</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not equal to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">!=</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greater than</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Less than</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greater than or equal to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Less than or equal to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⇐</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Hasil operator ini adalah nilai boolean, bisa berupa true atau false.</p>
+</div>
+<div class="paragraph">
+<p>Integer, floating-point numbers, characters, dan Booleans bisa digunakan pada
+operator equal to dan not equal to, tetapi boolean tidak bisa digunakan pada
+operator lain (operator order) hanya integer, floating-point numbers dan
+characters.</p>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int i = 12, b = 3;
+
+if (i &lt; b) {
+    System.out.println(&#34;True&#34;);
+} else if (i == b) {
+    System.out.println(&#34;Equal&#34;);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operator_logika">Operator Logika</h3>
+<div class="paragraph">
+<p>Operator logika yang bisa digunakan:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch center">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Hasil</th>
+<th class="tableblock halign-left valign-top">Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AND</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&amp;&amp;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">||</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">^</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">!</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Digunakan logika digunakan pada tipe data boolean untuk menyelesaikan
+permasalahan yang membutuhkan nilai-nilai logika.</p>
+</div>
+<div class="paragraph">
+<p>Contoh penggunaan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">boolean a = true;
+int b = 12;
+
+if (a == true &amp;&amp; b &lt; 20) {
+    System.out.println(&#34;True&#34;);
+} else {
+    System.out.println(&#34;False&#34;);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tipe_data">Tipe Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Java merupakan bahasa pemrograman yang strongly typed (setiap data harus
+diberikan tipe data), maka kita tidak bisa mengabaikan tipe data. Kita harus
+tahu data seperti apa yang disimpan ke dalam variabel. Selain itu, Java juga
+bersifat statically typed, yang artinya setiap variabel harus dideklarasikan
+terlebih dahulu sebelum digunakan.</p>
+</div>
+<div class="sect2">
+<h3 id="_tipe_data_primitif">Tipe Data Primitif</h3>
+<div class="paragraph">
+<p>Tipe data primitif adalah tipe data standar yang tidak diturunkan dari objek
+manapun. Tipe data primitif telah ditentukan dengan kata kuncinya masing-masing.
+Terdapat 8 (delapan) tipe data primitif yang Java dukung, antara lain:</p>
+</div>
+<div class="sect3">
+<h4 id="_integer">Integer</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>byte, tipe data yang menampung angka 8 bit dengan range -127 - 128 ($2^4$).
+Tipe data byte memiliki nilai default <code>0</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">byte n = 12;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>short, tipe data yang menampung angka 16 bit dengan range -32.768 - 32.767
+($2^{16}$). Tipe data byte memiliki nilai default <code>0</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">short n = 1200;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>int, tipe data yang menampung angka 32 bit dengan range -2,147,483,648 -
+2,147,483,647 ($2^{32}$). Tipe data byte memiliki nilai default <code>0</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int n = 289000;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>long, tipe data yang lebih panjang dari int, yaitu -9,223,372,036,854,775,808
+sampai 9,223,372,036,854,775,807 ($2^{64}$). Tipe data long memiliki nilai
+default <code>0L</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">long n = 122334445;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_floating_point_numbers">Floating-point numbers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>float tipe data untuk bilangan desimal seperti 3.14, 2.1 atau bilangan desimal
+lainnya. Tipe data ini bisa nemapung nilai $2^{32}$. Nilai default-nya
+<code>0.0f</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">float n = 3.14f;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>penulisannya ditambahkan huruf <code>f</code> di belakang angkanya, ini untuk menandai
+bahwa bilangan tersebut adalah <code>float</code> bukan <code>double</code>.</p>
+</div>
+</li>
+<li>
+<p>double, tipe data yang mirip dengan float kecuali data yang bisa ditampungnya
+lebih besar yaitu $2^{64}$. Nilai default-nya <code>0.0d</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">double n = 144.2;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_characters">Characters</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>char, tipe data yang hanya bisa menampung satu karakter]. Nilai yang bisa
+ditampung adalah 0 to 65.535. Char digunakan untuk menampung karakter Unicode
+<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">char c = &#39;a&#39;;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nilai yang diberikan disimpan dalam satu tanda kutip. Nilai defaulnya adalah
+<code>\u0000</code>.</p>
+</div>
+<div class="paragraph">
+<p>Char dalam spesifikasi resminya tergolong kedalam <em>integer type</em> yang termasuk
+dalam kategori int, short, dll. Namun karena prinsipnya yang digunakan untuk
+menampung karakter Unicode, maka dibuat dalam kategori tersendiri
+<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>. Sehingga char
+dapat ditulis seperti ini:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">char c = 88;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>yang mana akan menghasilkan nilai <code>X</code>
+<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_boolean">Boolean</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Boolean, tipe data yang bisa menampung dua nilai, yaitu <code>true</code> atau <code>false</code>.
+Tipe data ini akan banyak digunakan kemudian. Nilai default-nya <code>false</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">boolean b = true;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tipe_data_reference">Tipe Data Reference</h3>
+<div class="paragraph">
+<p>Tipe data reference merupakan sebuah tipe data yang merujuk ke sebuah objek atau
+instance dari sebuah class. Salah satu tipe data yang termasuk ke dalam tipe
+data reference adalah <code>string</code>. Tipe data string menunjuk ke instance dari class
+<code>java.lang.String</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="_string">String</h4>
+<div class="paragraph">
+<p>String adalah tipe data yang menampung karakter. String bisa menampung lebih
+dari satu karakter, misalnya kata, kalimat atau paragraf.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">String name = &#34;Deo&#34;;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>perhatikan, penulisan <code>String</code> menggunakan kapital di awal kata, kemudian isinya
+disimpan di dalam tanda kutip dua (kbd:[&#34; + &#34;]).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deklarasi_variabel">Deklarasi variabel</h3>
+<div class="paragraph">
+<p>Sebuah data dapat disimpan ke dalam variabel. Format penulisannya sebagai
+berikut:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">type namaVariabel;</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deklarasi">Deklarasi</h4>
+<div class="paragraph">
+<p>Deklarasi adalah pembuatan sebuah variabel, namun belum di isi dengan suatu
+nilai. Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int n;
+boolean b;
+char c;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_inisiasi">Inisiasi</h4>
+<div class="paragraph">
+<p>Inisiasi adalah pengisian sebuah variabel dengan data. Cara ini disarankan untuk
+dilakukan dibandingkan dengan hanya mendeklarasikan saja tipe variabel kosong.
+Misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">n = 12;
+b = false;
+c = &#39;A&#39;;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deklarasi sekaligus inisiasi juga dapat dilakukan, misalnya dengan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">float f = 21.0f;
+boolean b = false;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_inisiasi_dinamis">Inisiasi dinamis</h4>
+<div class="paragraph">
+<p>Dua atau lebih data dapat di isi secara bersamaan dalam satu baris dengan syarat
+tipe datanya sama. Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int a = 12, b = 13, c = 14;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>atau bisa juga jika semua data memiliki nilai yang sama, misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int x = y = z = 100;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mengubah_tipe_ke_tipe_data_lain">Mengubah tipe ke tipe data lain</h3>
+<div class="paragraph">
+<p>Suatu tipe data dapat di ubah ke tipe data lain, misalnya dari byte ke int.
+Syaratnya adalah:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>kedua tipe data kompatible, misalnya antara byte dengan int, int dengan
+float, tetapi char dan boolean tidak memiliki kompatible.</p>
+</li>
+<li>
+<p>tipe data yang dituju memiliki ruang penyimpanan yang lebih besar, misalnya
+byte memiliki ruang penyimpanan $2^8$, akan diubah ke int yang memiliki
+penyimpanan $2^{32}$. Tetapi jika dari tipe data int ke byte, maka jika
+nilai yang akan diubah lebih besar dari $2^8$, maka akan menyebabkan
+nilai akhir adalah hasil modulo dari ukuran byte.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cara mengubah tipe data dapat dicontohkan sebagai berikut:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int n = 12;
+byte b = (int) n;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bagaimana jika int ke float, silahkan coba sendiri.</p>
+</div>
+<div class="sect3">
+<h4 id="_konversi_otomatis">Konversi otomatis</h4>
+<div class="paragraph">
+<p>Misalnya terdapat a, b, c yang merupakan byte, kemudian dilakukan operasi
+sebagai berikut:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">byte a = 40;
+byte b = 50;
+byte c = 100;
+int d = a * b / c;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>maka nilai a, b dan c akan otomatis diubah menjadi int.</p>
+</div>
+<div class="paragraph">
+<p>Aturan promosi ini adalah:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>byte, short, char akan di ubah ke int,</p>
+</li>
+<li>
+<p>jika operasinya adalah long, maka akan diubah ke long,</p>
+</li>
+<li>
+<p>float akan di ubah ke double,</p>
+</li>
+<li>
+<p>jika operasi melibatkan double, maka otomatis akan diubah semua ke double.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_penyeleksian_kondisi">Penyeleksian Kondisi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Peyeleksian adalah pilihan atau opsi dengan suatu syarat tertentu.</p>
+</div>
+<div class="paragraph">
+<p>Jika syarat yang diberikan memenuhi, maka semua statement dalam blok kondisi
+tersebut akan dijalankan, namun jika tidak maka semua stetement dalam blok itu
+dilewati dan tidak dijalankan.</p>
+</div>
+<div class="paragraph">
+<p>Contohnya, jika nilai sama dengan atau lebih dari 90 maka mahasiswa tersebut
+mendapatkan nilai A, jika nilainya adalah dalam rentang 80-90 maka mahasiswa
+tersebut mendapatkan nilai B, dan seterusnya.</p>
+</div>
+<div class="paragraph">
+<p>Disini dilakukan perulangan dengan mengecek nilai mahasiswa tersebut, jika
+memenuhi atau terdapat dalam rentang tertentu, maka mahasiswa tersebut akan
+mendapat nilai ini.</p>
+</div>
+<div class="paragraph">
+<p>Dalam Java terdapat dua macam penyeksian kondisi yaitu &#34;If-else&#34; dan &#34;Switch&#34;.</p>
+</div>
+<div class="sect2">
+<h3 id="_if_else">If-Else</h3>
+<div class="paragraph">
+<p>Bentuk if-else adalah bentuk jika-maka, jika memenuhi syarat ini, lakukan ini,
+jika tidak maka cek ke syarat berikutnya.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umumnya adalah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">if ( syarat1 ) {
+    //dijalankan ketika syarat1 = true
+} if else ( syarat2 ) {
+    //dijalankan ketika syarat2 = true
+} else {
+    //dijalankan ketika semua syarat false
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Aturannya:</p>
+</div>
+<div class="paragraph">
+<p>Berikut ini hal yang harus diketahui ketika menggunakan &#34;If-else&#34;:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If statement bisa tidak memiliki &#34;else&#34; statement, &#34;else&#34; statement harus
+terletak setelah semua &#34;else If&#34; statement (jika ada).</p>
+</li>
+<li>
+<p>If statement bisa memiliki banyak &#34;else if&#34; statement dan semuanya harus
+terletak sebelum &#34;else&#34; statement.</p>
+</li>
+<li>
+<p>Ketika salah satu &#34;else if&#34; statement dijalankan, tidak ada &#34;else if&#34; lainnya
+yang akan dijalankan.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int nilai = 50;
+
+if (nilai &lt;= 50) {
+    System.out.println(&#34;C&#34;);
+} if else (nilai &lt;= 85) {
+    System.out.println(&#34;B&#34;);
+} if else (nilai &gt; 85) {
+    System.out.println(&#34;A&#34;);
+} else {
+    System.out.println(&#34;Eror&#34;);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_switch">Switch</h3>
+<div class="paragraph">
+<p>Pada switch terdapat syarat yang digunakan untuk pengujian terhadap daftar nilai
+yang ada.</p>
+</div>
+<div class="paragraph">
+<p>Setiap nilai (daftar nilai) ini disebut case, dan syarat akan diperiksa untuk
+setiap case. Jika daftar case tidak ada yang memenuhi, maka akan otomatis
+ke <code>default</code>.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umumnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">switch ( test_variable) {
+    case value :
+        //statement
+        break;
+    case value :
+        //statement
+        break;
+    default :
+        //statement
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Switch memerlukan <code>break</code> untuk menghentikan pengujian ketika pengujian itu
+sudah memenuhi persyaratan yang diberikan.</p>
+</div>
+<div class="paragraph">
+<p><code>break</code> digunakan untuk menghentikan pencarian jika kondisi yang dicari sudah
+memenuhi (Baca bagian [Jump Statement](/2021/05/18/jump-statement.html)).</p>
+</div>
+<div class="paragraph">
+<p>Contoh penggunaan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int a = 5;
+switch (a) {
+    case 1:
+        System.out.println(&#34;You chose One&#34;);
+        break;
+    case 2:
+        System.out.println(&#34;You chose Two&#34;);
+        break;
+    case 3:
+        System.out.println(&#34;You chose Three&#34;);
+        break;
+    case 4:
+        System.out.println(&#34;You chose Four&#34;);
+        break;
+    case 5:
+        System.out.println(&#34;You chose Five&#34;);
+        break;
+    default:
+        System.out.println(&#34;Invalid Choice&#34;);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_perulangan">Perulangan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Perulangan (Looping) adalah suatu blok kode yang akan terus berjalan selama
+syarat yang diberikan masih memenuhi.</p>
+</div>
+<div class="paragraph">
+<p>Setiap perulangan memiliki empat bagian, yaitu <code>inisialisasi</code>, <code>body</code>,
+<code>iterasi</code>, dan <code>terminasi/kondisi</code>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Inisialisasi adalah statement yang menyatakan keadaan awal sebuah perulangan.</p>
+</li>
+<li>
+<p>Body atau badan program adalah blok statement yang akan dijalankan terus
+menerus selama perulangan berlangsung.</p>
+</li>
+<li>
+<p>Iterasi adalah statement atau bagian program yang nilainya terus berubah
+(ascending, descending atau cara lainnya) untuk mencapai batas atau keadaan
+untuk berhenti.</p>
+</li>
+<li>
+<p>Terminasi atau kondisi adalah statement bernilai Boolean yang menyatakan
+batas atau keadaan untuk menghentikan perulangan.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Pada Java dikenal tiga macam bentuk perulangan, yaitu: <code>while</code>, <code>do-while</code>, dan
+<code>for</code>.</p>
+</div>
+<div class="paragraph">
+<p>Pada dasarnya semua perulangan dalam Java memiliki cara kerja yang sama
+yaitu selama kondisi masih bernilai true maka perulangan akan terus dilakukan
+hinggi kondisi bernilai false.</p>
+</div>
+<div class="sect2">
+<h3 id="_for">For</h3>
+<div class="paragraph">
+<p>For adalah perulangan yang banyaknya perulangan diketahui atau banyaknya
+perulangan sudah jelas(tentu).</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">for (inisialisasi; kondisi; iterasi) {
+    //body
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int n = 99;
+
+for (int i=0; i&lt;n; i++) {
+    System.out.println(i);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_while">While</h3>
+<div class="paragraph">
+<p>While adalah perulangan yang banyaknya perulangan tidak menentu dan lebih
+sederhana dari pada perulangan for.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Inisialisasi;
+
+while (kondisi) {
+    //body
+    Iterasi; //opsional
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int n = 19;
+int i = 0;
+
+while (i&lt;n) {
+    System.out.println(i);
+    i++;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_do_while">Do-while</h3>
+<div class="paragraph">
+<p>Pada perulangan ini bagian body (semua dalam kurung kurawal setelah &#34;do&#34;)
+dijalankan terlebih dahulu sebelum pengecekan kondisi.</p>
+</div>
+<div class="paragraph">
+<p>Sehingga walaupun kondisi dari awal bernilai false, bagian body tetap dijalankan
+sekali. Berbeda dengan perulangan while apabila kondisi diawal bernilai false
+maka bagian body tidak akan dijalankan.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Inisialisasi;
+
+do {
+    //body
+    Iterasi; //opsional
+} while (kondisi);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int n = 19;
+int i = 0;
+
+do {
+    i++;
+} while (i&lt;n)
+
+System.out.println(i);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_for_each">For-each</h3>
+<div class="paragraph">
+<p>For-each bukanlah keyword dari Java, melainkan cara yang lebih sederhana untuk
+membuat perulangan for.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">for (type var: array) {
+    statements using var;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sama nilainya dengan</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">for (int i=0; i&lt;arr.length; i++) {
+    type var = arr[i];
+    statements using var;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ini biasa digunakan pada array atau koleksi (seperti ArrayList).</p>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int[] arr = { 125, 132, 95, 116, 110 };
+
+for (int i: arr) {
+    System.out.println(i);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Namun for-each memiliki batasan:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tidak bisa digunakan jika ingin memodifikasi nilai array,</p>
+</li>
+<li>
+<p>Tidak bisa melacak nomor index,</p>
+</li>
+<li>
+<p>Hanya bisa melakukan perulangan kedepan sekali.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jump_statement">Jump Statement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jump statement adalah perintah untuk memindahkan alur program ke program yang
+lain. Java mengenal tiga buah perintah tersebut yaitu <code>break</code>, <code>continue</code> dan
+<code>return</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_break">Break</h3>
+<div class="paragraph">
+<p>Break merupakan perintah yang dapat digunakan untuk menghentikan proses
+perulangan dengan paksa.</p>
+</div>
+<div class="paragraph">
+<p>Berikut ini contoh penggunaan break dalam while, program akan berhenti ketika
+nilai i = 2.</p>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int n = 10;
+int i = 0;
+
+while (i&lt;n) {
+    System.out.println(i);
+    i++;
+
+    if (i == 2) {
+        break;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_continue">Continue</h3>
+<div class="paragraph">
+<p>Continue adalah perintah yang dapat digunakan untuk meloncati proses perulangan.</p>
+</div>
+<div class="paragraph">
+<p>Continue hanya akan meloncati proses perulangan satu kali proses perulangan
+masih tetap berjalan selama hasil lompatannya itu masih berlaku dalam perulangan
+tersebut.</p>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">for (int i=0; i&lt;10; i++) {
+    if (i == 5) {
+        continue;
+    }
+
+    System.out.println(i);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Program di atas akan menampilkan bilangan mulai dari 0 sampai 10, tetapi angka 5
+tidak akan ditampilkan karena ketika nilai i = 5 maka perintah <code>continue</code> akan
+dijalankan.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_return">Return</h3>
+<div class="paragraph">
+<p>Return adalah perintah dalam java yang digunakan di dalam method. Return akan
+mengembalikan suatu nilai dari sebuah method yang dipanggil.</p>
+</div>
+<div class="paragraph">
+<p>Return akan dibahas di pembahasan tentang
+<a href="/2021/05/19/pp-method.html">Method</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_array">Array</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Array adalah kelompok data dengan tipe yang sama.</p>
+</div>
+<div class="paragraph">
+<p>Dalam Java, pada saat mendeklarasikan sebuah array panjang array harus
+ditentukan, dan tidak dapat diubah setelahnya (nilai fix). Setiap item dalam
+sebuah array disebut element, dan setiap element dapat diakses dengan indexnya.
+Index array selalu mulai dari 0 sampai n-1, dengan n adalah panjang array.</p>
+</div>
+<div class="sect2">
+<h3 id="_deklarasi_2">Deklarasi</h3>
+<div class="paragraph">
+<p>Sebelum digunakan, Array harus dideklarasikan terlebih dahulu dengan
+menentukan tipe data dan panjangnya.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">tipeData[] namaArray = new tipeData[n];
+//atau
+tipeData namaArray[] = new tipeData[n];</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int[] arr = new int[20];</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mengisi">Mengisi</h3>
+<div class="paragraph">
+<p>Ada beberapa cara untuk menginisialisasi array, diantaranya adalah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">tipeData[] namaArray = { element1, element2, element3, element4 };
+//atau
+tipeData[] namaArray = new int[4];
+namaArray[0] = element1;
+namaArray[1] = element2;
+namaArray[2] = element3;
+namaArray[3] = element4;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int[] arr = { 132, 11, 134, 33};
+//atau
+int[] arr = new int[4];
+arr[0] = 132;
+arr[1] = 11;
+arr[2] = 134;
+arr[3] = 33;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mengakses">Mengakses</h3>
+<div class="paragraph">
+<p>Untuk mengakses element tertentu pada array cukup dengan menyebutkan nama array
+disertai dengan kurung siku dan index element yang ingin diakses.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">namaArray[index];</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Indeks array dimulai dari 0</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Jadi jika mempunyai data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int[] arr = { 132, 11, 134, 33};
+System.out.println(arr[0]);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>akan menampilkan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">132</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dan kemudian diikuti oleh indeks berikutnya.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_array_multi_dimensi">Array multi-dimensi</h3>
+<div class="paragraph">
+<p>Array multidimensi dapat diilustrasikan sebagai array dalam array. Artinya
+setiap element pada array tersebut adalah sebuah array juga (Array dua dimensi).
+Hal ini juga berlaku untuk Array NxN dimensi.</p>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int[][] arr = new int[4][5];</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Kemudian untuk mengisinya dengan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int[][] arr = {
+    {1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1}
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Untuk mengaksesnya, digunakan cara yang sama dengan array 1-dimensi, misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">System.out.println(arr[0][1]);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_panjang_array">Panjang Array</h3>
+<div class="paragraph">
+<p>Untuk menentukan panjang suatu array, digunakan fungsi <code>.length</code>.
+Contohnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int[] arr = { 132, 11, 134, 33};
+System.out.println(arr.length);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>nilainya bukan dihitung dari angka indeks terakhir melainkan jumlah indeknya,
+sehingga walaupun indeksnya dimulai dari angka <code>0</code> namun panjangnya tetap akan
+mengikuti jumlah indeksnya.</p>
+</div>
+<div class="paragraph">
+<p>Contoh lain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int[][] arr = {
+    {1, 1, 1, 1},
+    {1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1, 1, 1}
+};
+
+System.out.println(arr.length);
+System.out.println(arr[0].length);
+System.out.println(arr[1].length);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">4
+4
+5</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_method">Method</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Method adalah suatu fungsi.</p>
+</div>
+<div class="paragraph">
+<p>Method melaksanakan suatu tugas tertentu (menurut prinsip SOLID).</p>
+</div>
+<div class="paragraph">
+<p>Method pada Java memiliki bentuk umum seperti berikut ini:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">return-type methodName(parameter-list) {
+    //body of method
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dimana:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>return-type</code> adalah jenis nilai yang akan dikembalikan oleh method
+tersebut.</p>
+</li>
+<li>
+<p>methodName adalah nama method</p>
+</li>
+<li>
+<p>parameter-list adalah daftar nilai yang dikirim ke method tersebut.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Contohnya:</p>
+</div>
+<div class="paragraph">
+<p>sebuah method yang berfungsi untuk menghitung hasil perkalian dua buah bilangan.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public int multipication(int a, int b) {
+    return a*b;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>int</code> adalah tipe data yang akan dikembalikan oleh method tersebut, yaitu hasil
+perkalian a dengan b. <code>multipication</code> adalah nama method tersebut, <code>int a</code> dan
+<code>int b</code> adalah 2 jenis parameter yang diterima oleh method tersebut, parameter
+ini akan berguna sebagai nilai yang akan diolah oleh method tersebut.</p>
+</div>
+<div class="paragraph">
+<p><code>public</code> adalah
+<a href="/2019/05/19/encapsulation.html#access-modifier">access modifier</a>.</p>
+</div>
+<div class="paragraph">
+<p>Sedangkan untuk memanggil method tersebut, kita dapat memanggil dengan
+menggunakan namanya, misalnya kita akan memanggil method yang telah kita buat
+diatas:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int hasil = multipication(12, 14);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>12 dan 14 disini adalah argumen yang dikirim.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>untuk mengembalikan multiple values, dapat menggunakan return array</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Sebuah method juga dapat mengembalikan object. Misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class Demo{
+    int a;
+    double b;
+    int c;
+
+    Demo(int m, double d, int a) {
+        a = m;
+        b = d;
+        c = a;
+    }
+}
+
+class MethodDemo4{
+    static Demo get(int x, int y) {
+        return new Demo(x * y, (double)x / y, (x + y));
+    }
+
+    public static void main(String[] args) {
+        Demo ans = get(25, 5);
+        System.out.println(&#34;Multiplication = &#34; + ans.a);
+        System.out.println(&#34;Division = &#34; + ans.b);
+        System.out.println(&#34;Addition = &#34; + ans.c);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Java menggunakan call-by-value bukan call-by-reference</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Note:
+1. Tambahkan call-by-value vs call-by-reference</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_file_io">File IO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Input dan output pada file digunakan untuk mengolah file tersebut.</p>
+</div>
+<div class="paragraph">
+<p>Untuk membaca suatu file, kita menggunakan class <code>FileReader</code> dan untuk menulis
+pada suatu file, kita menggunakan class <code>FileWriter</code>.</p>
+</div>
+<div class="paragraph">
+<p>Contoh kasusnya, menyalin suatu isi file ke file lain. Disini kita akan
+menggunakan <code>FileReader</code> untuk membaca isi file tersebut, lalu kita akan menulis
+dengan menggunakan <code>FileWriter</code> kepada file lainnya.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            FileReader fileReader = new FileReader(&#34;source.txt&#34;);
+            FileWriter fileWriter = new FileWriter(&#34;destination.txt&#34;);
+
+            int i;
+
+            while( ( i = fileReader.read()) != -1 ){
+                fileWriter.write(i);
+            }
+
+            fileReader.close();
+            fileWriter.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(&#34;File tidak ada! &#34; + e);
+        } catch (IOException e) {
+            System.out.println(&#34;Terdapat masalah ada I/O&#34; + e);
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_string_2">String</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Di dalam bahasa pemrograman Java, string merupakan sebuah tipe data reference.
+Tipe data ini diperlakukan sebagai sebuah obyek. String adalah kumpulan beberapa
+karakter (char).</p>
+</div>
+<div class="paragraph">
+<p>String sendiri sebenarnya merupakan sebuah class yang terdapat dalam library
+Java dan digunakan untuk memanipulasi karakter. Contoh sintaks untuk
+mendeklarasikan sebuah string:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">String str = &#34;Hay&#34;;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>String adalah tipe data immutable; ketika objek <code>String</code> dibuat, maka kontennya
+tidak bisa diubah lagi.</p>
+</div>
+<div class="paragraph">
+<p>Untuk menggabungkan beberapa string, Java menggunakan kbd:[+], misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">String nama = &#34;John &#34; + &#34;Doe&#34;;
+System.out.println(nama);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>menghasilkan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">John Doe</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menthod_dalam_class_string">Menthod dalam class String</h3>
+<div class="paragraph">
+<p>Ada beberapa method yang ada di dalam class <code>String</code>:</p>
+</div>
+<div class="sect3">
+<h4 id="_equals">equals()</h4>
+<div class="paragraph">
+<p>Digunakan untuk menentukan apakah dua buah <code>String</code> adalah sama, misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">String str0 = &#34;Kamu&#34;;
+String str1 = &#34;Kami&#34;;
+
+if(str0.equal(str1)) {
+    System.out.println(&#34;Sama&#34;);
+} else {
+    System.out.println(&#34;Tidak sama&#34;);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>str1</code> menunjukkan bahwa <code>str1</code> adalah nilai yang dijadikan pembanding.</p>
+</div>
+<div class="paragraph">
+<p><code>equals()</code> menghasilkan nilai <code>boolean</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_length">length()</h4>
+<div class="paragraph">
+<p>Digunakan untuk menentukan panjangnya suatu string, misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">String str = &#34;Nona manis&#34;;
+int l = str.length();
+
+System.out.println(l);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>length()</code> menghasilkan nilai <code>int</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_charat">charAt()</h4>
+<div class="paragraph">
+<p>Digunakan untuk menentukan <code>char</code> pada posisi tertentu pada sebuah <code>String</code>,
+misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">String nama = &#34;Deo Valiandro&#34;
+char p2 = nama.charAt(2);
+
+System.out.println(p2);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>angka 2 menunjukkan index char yang diinginkan dalam sebuah <code>String</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>charAt()</code> mengahasilkan nilai <code>char</code>.</p>
+</div>
+<div class="paragraph">
+<p>Dan masih banyak lagi method-method lainnya.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/" class="bare">https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://openjdk.org/jeps/445" class="bare">https://openjdk.org/jeps/445</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://www.oracle.com/technetwork/java/codeconventions-150003.pdf" class="bare">https://www.oracle.com/technetwork/java/codeconventions-150003.pdf</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <a href="https://openjdk.java.net/jeps/330" class="bare">https://openjdk.java.net/jeps/330</a>
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. <a href="http://www.unicode.org" class="bare">http://www.unicode.org</a>
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. Java: The Complete Reference, 10th Edition page 98
+</div>
+<div class="footnote" id="_footnotedef_7">
+<a href="#_footnoteref_7">7</a>. 98 adalah nilai desimal dari X dalam sistem ASCII dan Unicode
+</div>
+</div>
+
+    </content>
+    <p>
+      
+    </p>
+  </main>
+  <footer>
+<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+CC BY-NC-SA 4.0</a>, sejak 2016 &copy;
+<a target="_blank" href="https://github.com/deovaliandro">Deo Valiandro. M</a>,
+<span id="love">🌱</span> dengan <span id="love">💗</span>.
+</footer>
+</body>
+
+</html>

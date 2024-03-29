@@ -1,0 +1,11 @@
+---
+title     : Rencana Pindah ke GitLab
+signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+date      : 2022-05-04
+---
+
+Pelan-pelan akan dipindahkan semua.
+
+## Edit
+
+Batal pindah ke GitLab, tetapi malah ke https://codeberg.org/[codeberg].

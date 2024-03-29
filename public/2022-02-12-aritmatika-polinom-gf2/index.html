@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico" />
+
+  <title>Aritmatika Polinom di dalam Medan Galois $GF(2^n)$ | Deo Valiandro. M</title><style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+  body {
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 980px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+    overflow: scroll;
+    font-size: large;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  a, b {
+    color: #222;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    border: 0.08rem solid #24292e;
+    box-shadow: 2px 2px #bbb;
+    padding: 0.2em;
+    font-size: 1em;
+  }
+
+  :where(h1, h2, h3):hover {
+    background: #24292e;
+    color: white;
+  }
+
+  .list-post {
+    border-bottom: 1px dashed gray;
+  }
+
+  .list-post>a {
+    color: #222;
+  }
+
+  .list-post:hover,
+  .list-post:hover a {
+    background: #24292e;
+    color: white;
+  }
+
+  .list-post:hover {
+    background: #24292e;
+    color: white;
+  }
+
+
+  .time-post {
+    display: inline;
+    float: right;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-right: .5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  footer > a {
+    border-bottom: 1px dashed gray;
+  }
+
+  .title {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px dotted black;
+    padding-bottom: 5px;
+    color: #222;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  .notfound {
+    text-align: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+</style><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$']]
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <p class="title">Deo Valiandro. M</p>
+    </a>
+  </header>
+  <main>
+    
+    <content>
+      <div class="paragraph">
+<p>Galois Field (GF) yang banyak digunakan dalam kriptografi adalah $GF(2^n)$
+karena setiap baris text direpresentasikan sebagai barisan bit 0 dan 1 sepanjang
+$n$ bit.</p>
+</div>
+<div class="paragraph">
+<p>Semua elemen dalam $GF(2^n)$ dinyatakan dalam bentuk polinom.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum polinom berderajat n adalah:</p>
+</div>
+<div class="paragraph">
+<p>$$f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \cdots + a_{2}x^{2} + a_{1}x + a_{0}$</p>
+</div>
+<div class="paragraph">
+<p>$a_{n}, a_{n-1}, a_{0}$ adalah koefisien-koefisien polinom, $n$ adalah derajat
+polinom.</p>
+</div>
+<div class="paragraph">
+<p>$GF(2^{n})$ memiliki $2^n$ elemen, setiap elemen direpresentasikan sebagai
+polinom berderajat $n-1$ atau kurang, dengan koefisien-koefisiennya adalah
+elemen $\{0, 1\}$:</p>
+</div>
+<div class="paragraph">
+<p>$$GF(p^{n}) = \{a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_{1}x + a_{0} |
+a_{i} \in \{0, 1\}\}$</p>
+</div>
+<div class="paragraph">
+<p>Contohnya:
+$GF(2^{3}) = \{a_{2}x^{2} + a_{1}x^{1} + a_{0} | a_{i} \in \{0, 1\}\}$, memiliki
+derajat polinom $\geq 2$.</p>
+</div>
+<div class="paragraph">
+<p>Di dalam $GF(2^3)$, terdapat $2^{3} = 8$ polinom, yaitu:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>$0 \to 000$</p>
+</li>
+<li>
+<p>$1 \to 001$</p>
+</li>
+<li>
+<p>$x \to 010$</p>
+</li>
+<li>
+<p>$x+1 \to 011$</p>
+</li>
+<li>
+<p>$x^{2} \to 100$</p>
+</li>
+<li>
+<p>$x^{2}+1 \to 101$</p>
+</li>
+<li>
+<p>$x^{2}+x \to 110$</p>
+</li>
+<li>
+<p>$x^{2}+x+1 \to 111$</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Operasi penjumlahan dan perkalian dilakukan dengan menerapkan penjumlahan
+koefisien-koefisiennya dalam $\bmod \space  2$.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya $a=(a_{n-1} \cdots a_{1}a_{0})$ dan $b=(b_{n-1} \cdots b_{1}b_{0})$,
+$a, b \in GF(2^n)$, maka:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>penjumlahan $a + b = c = (c_{n-1} \cdots c_{1}c_{0}), c_{i} = (a_{i} + b_{i})
+\bmod 2, c \in GF(2^n)$,</p>
+</li>
+<li>
+<p>perkalian $a \times b = c (c_{n-1} \cdots c_{1}c_{0})$ dimana $c$ adalah sisa
+bagi dari polinom $a(x) \cdot b(x)$ dengan <em>irreducible polynomial</em> $f(x)$
+derajat $n$, $c \in GF(2^n)$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Contoh: $a = x^3 + x^2 + 1$, $b = x^2 + x$, $a, b \in GF(2^4)$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+a+b &amp; = x^3 + x^2 + 1 + x^2 + x \bmod 2 \\
+    &amp; = x^3 + 2x^2 + x + 1 \bmod 2 \\
+    &amp; = x^3 + x + 1
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Operasi penjumlahan polinom $GF(p^2) \equiv$ operasi xor $(\oplus)$, misalnya:</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+a \oplus b &amp; = x^3 + x^2 + 1 + x^2 + x \bmod 2 \\
+           &amp; = 1101 \oplus 0110 \\
+           &amp; = 1011 \equiv x^3 + x + 1
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Operasi perkalian sama persis dengan perkalian baisa, kecuali menghasilkan
+polinom dengan derajat $\geq n - 1$,</p>
+</div>
+<div class="paragraph">
+<p>misalnya, $a = x^2 + x, b = x + 1, a, b \in GF(2^4)$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+a \cdot b &amp; = (x^2 + x)(x + 1) \bmod 2 \\
+        &amp; = (x^2 \cdot x) + (x^2 \cdot 1) + (x \cdot x) + (x \cdot 1) \bmod 2 \\
+        &amp; = x^3 + x^2 + + x^2 + x \bmod 2 \\
+        &amp; = x^3 + 2(x^2) + x \bmod 2 \\
+        &amp; = x^3 + x
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Jika menghasilkan polinom $\geq n - 1$, maka direduksi dengan membagi secara
+modulo terhadap polinom <em>irreducible polynomial</em> $f(x)$ berderajat $n$.
+<em>Irreducible polynomial</em> adalah polinom yang tidak dihasilkan dari perkalian
+dua buah polinom lain (kecuali $1$ dan dirinya sendiri). Misalnya $x^2 + 1 \in
+GF(2^n)$, contoh lainnya $x^4 + x + 1$, tetapi $x^5 + x^2 + x + 1$ adalah
+polinom tereduksi karena $x^5 + x^2 + x + 1 = (x^5 + x^2 + 1)(x^2 + 1)$.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya $a = 1011, b = 1001, a, b \in GF(2^4)$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+a \times b &amp; = (x^3 + x + 1) \times (x^3 + 1) \bmod 2 \\
+           &amp; = x^6 + x^4 + x + 1\\
+           &amp; = x^3 + x^2
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>$x^3 + x^2$ dihasilkan dari membagi $x^6 + x^4 + x + 1$ dengan
+<em>irreducible polynomial</em> $f(x) = x^4 + x + 1$.</p>
+</div>
+<div class="paragraph">
+<p>$f(x)/g(x)$ memberikan hasil $g(x)$ (quotient) dam sisa $r(x)$ (remainder), yang
+memenuhi:</p>
+</div>
+<div class="paragraph">
+<p>$$f(x) = q(x)g(x) + r(x)$</p>
+</div>
+
+    </content>
+    <p>
+      
+    </p>
+  </main>
+  <footer>
+<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+CC BY-NC-SA 4.0</a>, sejak 2016 &copy;
+<a target="_blank" href="https://github.com/deovaliandro">Deo Valiandro. M</a>,
+<span id="love">🌱</span> dengan <span id="love">💗</span>.
+</footer>
+</body>
+
+</html>
