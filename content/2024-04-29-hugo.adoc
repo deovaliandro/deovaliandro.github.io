@@ -1,9 +1,8 @@
 ---
-title   : Pindah ke Hugo
-date    : 2024-03-29
+title     : Pindah ke Hugo
+signed    : Deo Valiandro. M <valiandrod@gmail.com>
+date      : 2024-03-29
 ---
-
-== Hugo
 
 Saya telah lebih dulu mengenal Hugo sebelum mengenal Jekyll, tetapi selama ini lebih aktif menggunakan Jekyll.
 
