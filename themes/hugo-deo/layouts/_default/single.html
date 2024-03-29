@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {{ with .Site.Params.favicon }}
+  <link rel="shortcut icon" href="{{ . | absURL }}" />{{ end }}
+
+  <title>{{- block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{- end }}</title>
+
+  {{- partial "style.html" . -}}
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$']]
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <p class="title">{{ .Site.Title }}</p>
+    </a>
+  </header>
+  <main>
+    {{ if eq .Type "blog" }}{{ if not .Params.menu }}
+    <h2>{{ .Title }}</h2>
+    <p>
+      <i>
+        <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+        </time>
+      </i>
+    </p>
+    {{ end }}{{ end }}
+    <content>
+      {{ .Content }}
+    </content>
+    <p>
+      {{ range (.GetTerms "tags") }}
+      <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+      {{ end }}
+    </p>
+  </main>
+  <footer>
+    {{- partial "footer.html" . -}}
+  </footer>
+</body>
+
+</html>

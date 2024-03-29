@@ -1,5 +1,5 @@
 baseURL = "https://deo.ilkom.my.id"
-theme = 'hugo-bearblog'
+theme = 'hugo-deo'
 title = "Deo Valiandro. M"
 author = "Deo Valiandro. M"
 copyright = "Copyright © 2024, Deo"
