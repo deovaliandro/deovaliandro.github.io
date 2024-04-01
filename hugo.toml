@@ -7,6 +7,9 @@ languageCode = "en-US"
 
 disableKinds = ["taxonomy", "robotsTXT", "RSS", "term"]
 ignoreErrors = ["error-disable-taxonomy"]
+canonifyURLs = true
+cleanDestinationDir = true
+uglyURLs = true
 
 [params]
   description = "Deo's Blog"
