@@ -4,25 +4,11 @@ signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
 date        : 2016-09-01
 ---
 
-
 == Font
 
-Saya pribadi pikir kita tidak perlu memuat terlalu banyak font, memberatkan
-website saja. Yang pasti tulisan bisa dibaca dengan jelas.
+Saya pribadi pikir kita tidak perlu memuat terlalu banyak font, memberatkan website saja. Yang pasti tulisan bisa dibaca dengan jelas.
 
-Saya akhirnya menggunakan font IBM
-
-=== Update
-
-Saya kemudian mengganti dengan menggunakan beberapa font baru,
-
-1. [.google]#https://fonts.google.com/specimen/Source+Serif+4[Source Serif]#
-2. Deutsche Zierschrift
-
-== Width
-
-Saya selalu mengikuti [.wikipedia]#https://en.wikipedia.org/wiki/Characters_per_line[CPL]#
-yaitu 80 karakter per baris.
+Saya akhirnya menggunakan font IBM.
 
 == Highlight
 
