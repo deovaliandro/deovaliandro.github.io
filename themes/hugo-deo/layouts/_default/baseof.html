@@ -8,7 +8,7 @@
   {{ with .Site.Params.favicon }}
   <link rel="shortcut icon" href="{{ . | absURL }}" />{{ end }}
 
-  <title>{{- block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{- end }}</title>
+  <title>{{ end }}{{ .Site.Title }}{{- end }}</title>
 
   {{- partial "style.html" . -}}
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
