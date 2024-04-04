@@ -1,12 +1,10 @@
 baseURL = "https://deo.my.id"
 theme = 'hugo-deo'
 title = "Deo Valiandro. M"
-author = "Deo Valiandro. M"
 copyright = "Copyright © 2024, Deo"
 languageCode = "en-US"
 
 disableKinds = ["taxonomy", "robotsTXT", "RSS", "term"]
-ignoreErrors = ["error-disable-taxonomy"]
 canonifyURLs = true
 cleanDestinationDir = true
 uglyURLs = true
@@ -14,25 +12,11 @@ uglyURLs = true
 [params]
   description = "Deo's Blog"
   favicon = "images/favicon.ico"
-  images = ["images/share.png"]
-  title = "Deo"
-  custom_css = ["css/base16.solarized.css","css/custom.css"]
-
-[security]
-enableInlineShortcodes = false
-
-  [security.exec]
-  allow = ["^dart-sass-embedded$", "^go$", "^npx$", "^postcss$", "^asciidoctor$"]
-  osEnv = ["(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|RUBYLIB)$"]
-
-  [security.funcs]
-  getenv = ["^HUGO_"]
-
-  [security.http]
-  methods = ["(?i)GET|POST"]
-  urls = [".*"]
 
 [markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark.renderer]
+    unsafe= true
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
@@ -45,5 +29,5 @@ enableInlineShortcodes = false
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'monokai'
+    style = 'github'
     tabWidth = 4
