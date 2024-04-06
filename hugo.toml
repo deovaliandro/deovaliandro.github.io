@@ -14,9 +14,6 @@ uglyURLs = false
   favicon = "images/favicon.ico"
 
 [markup]
-  defaultMarkdownHandler = "goldmark"
-  [markup.goldmark.renderer]
-    unsafe= true
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
@@ -25,9 +22,8 @@ uglyURLs = false
     hl_inline = false
     lineAnchors = ''
     lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
+    linenos = false
+    noClasses = false
     noHl = false
     style = 'github'
     tabWidth = 4
