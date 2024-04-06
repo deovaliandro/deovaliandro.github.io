@@ -7,7 +7,7 @@ languageCode = "en-US"
 disableKinds = ["taxonomy", "robotsTXT", "RSS", "term"]
 canonifyURLs = true
 cleanDestinationDir = true
-uglyURLs = true
+uglyURLs = false
 
 [params]
   description = "Deo's Blog"

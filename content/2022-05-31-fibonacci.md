@@ -5,6 +5,7 @@ date      = "2022-05-31"
 
 
 > Humanity is OK, but 99% of people are boring idiots
+>
 > -- https://www.theguardian.com/culture/2012/jun/10/slavoj-zizek-humanity-ok-people-boring
 
 Bilangan fibonacci adalah barisan yang didefinisikan secara rekursif sebagai berikut:
@@ -12,8 +13,8 @@ Bilangan fibonacci adalah barisan yang didefinisikan secara rekursif sebagai ber
 $$
 F(n) =
   \begin{cases}
-    0, & \text{jika } n = 0, \\
-    1, & \text{jika } n = 1, \\
+    0, & \text{jika } n = 0, \\\\
+    1, & \text{jika } n = 1, \\\\
     F(n - 1)+F(n - 2), & \text{jika } tidak.
   \end{cases}
 $
