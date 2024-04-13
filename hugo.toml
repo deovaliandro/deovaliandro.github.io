@@ -7,13 +7,14 @@ languageCode = "en-US"
 disableKinds = ["taxonomy", "robotsTXT", "RSS", "term"]
 canonifyURLs = true
 cleanDestinationDir = true
-uglyURLs = false
 
 [params]
   description = "Deo's Blog"
   favicon = "images/favicon.ico"
 
 [markup]
+  [markup.goldmark.renderer]
+    unsafe = true
   [markup.highlight]
     anchorLineNos = false
     codeFences = true

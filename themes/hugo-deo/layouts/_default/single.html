@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  {{ with .Site.Params.favicon }}
-  <link rel="shortcut icon" href="{{ . | absURL }}" />{{ end }}
-
-  <title>{{- block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{- end }}</title>
-
-  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
-  {{- partial "style.html" . -}}
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$']],
-        displayMath: [['$$', '$']]
-      }
-    };
-  </script>
-  
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css">
-</head>
+{{- partial "header.html" . -}}
 
 <body>
   <header>
@@ -33,10 +7,8 @@
     </a>
   </header>
   <main>
-    <content>
-      <h1>{{ .Params.title }}</h1>
-      {{ .Content }}
-    </content>
+    <h1>{{ .Params.title }}</h1>
+    {{ .Content }}
     <p>
       {{ range (.GetTerms "tags") }}
       <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
