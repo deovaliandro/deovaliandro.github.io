@@ -1,5 +1,5 @@
 [build.environment]
-HUGO_VERSION = "0.122.2"
+HUGO_VERSION = "0.124.1"
 DART_SASS_VERSION = "1.72.0"
 TZ = "America/Los_Angeles"
 
