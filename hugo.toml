@@ -1,12 +1,8 @@
-baseURL = "https://deo.my.id"
-theme = 'hugo-deo'
+baseURL = "https://deo.my.id/"
+theme = "hugo-deo"
 title = "Deo Valiandro. M"
-copyright = "Copyright © 2024, Deo"
 languageCode = "en-US"
-
 disableKinds = ["taxonomy", "robotsTXT", "RSS", "term"]
-canonifyURLs = true
-cleanDestinationDir = true
 
 [params]
   description = "Deo's Blog"
