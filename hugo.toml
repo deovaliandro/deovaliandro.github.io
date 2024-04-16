@@ -22,5 +22,4 @@ disableKinds = ["taxonomy", "robotsTXT", "RSS", "term"]
     linenos = false
     noClasses = false
     noHl = false
-    style = 'github'
     tabWidth = 4
