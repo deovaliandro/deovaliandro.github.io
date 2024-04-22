@@ -2,19 +2,45 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-$boder: 1px dashed gray;
-$mono: "JetBrains Mono", monospace;
-
-:root {
-  text-rendering: geometricPrecision;
+@font-face {
+  font-family: 'mononoki';
+  src: url("https://assets.bitbashing.io/type/mononoki-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'mononoki';
+  src: url("https://assets.bitbashing.io/type/mononoki-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'mononoki';
+  src: url("https://assets.bitbashing.io/type/mononoki-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'mononoki';
+  src: url("https://assets.bitbashing.io/type/mononoki-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+
+$boder: 1px dashed gray;
+$mono: 'mononoki', monospace;
 
 body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures;
+  font-kerning: normal;
   font-style: normal;
   font-variation-settings: "slnt" 0;
-  font-size: 13;
   line-height: 1.6;
   margin-inline: auto;
   max-width: 80vw;
@@ -24,7 +50,12 @@ body {
   overflow-y: scroll;
 }
 
-h1, h2, h3:not(.sub), h4, h5, h6 {
+h1,
+h2,
+h3:not(.sub),
+h4,
+h5,
+h6 {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -35,15 +66,19 @@ a {
   text-decoration: none;
 
   &:not(.list-post > a,
-  .footnote-ref) {
+    .footnote-ref) {
     border-bottom: $boder;
   }
+}
+
+ol {
+  line-height: 1.8;
 }
 
 .list-post {
   border-bottom: $boder;
 
-  > a {
+  >a {
     color: #222;
   }
 
@@ -80,7 +115,8 @@ img {
   margin-inline: auto;
 }
 
-pre, code {
+pre,
+code {
   font-family: $mono;
 }
 
@@ -92,7 +128,7 @@ code {
 pre code {
   color: #222;
   display: block;
-  padding: 20px;
+  padding: 1ch;
   white-space: pre-wrap;
   overflow-x: auto;
 }
@@ -124,7 +160,8 @@ code:not(pre > code) {
   background-color: #f6f7f8;
   padding: 1px 2px;
   border-radius: 1ch;
-  border: .1rem solid #0000001a;;
+  border: .1rem solid #0000001a;
+  ;
 }
 
 /* Format tables */
@@ -133,7 +170,7 @@ table {
   margin: 1.5rem 0;
 }
 
-figure > table {
+figure>table {
   width: max-content;
 }
 
@@ -173,7 +210,7 @@ kbd {
   background-color: rgba(200, 200, 200, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 0.2em;
-  box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.12), inset 0 -2px 0 0 rgba(0,0,0,0.15);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), inset 0 -2px 0 0 rgba(0, 0, 0, 0.15);
   display: inline-block;
   line-height: 1.5;
   margin: 0 0.15em;
