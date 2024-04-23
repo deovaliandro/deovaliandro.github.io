@@ -1,35 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-@font-face {
-  font-family: 'mononoki';
-  src: url("https://assets.bitbashing.io/type/mononoki-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'mononoki';
-  src: url("https://assets.bitbashing.io/type/mononoki-Italic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'mononoki';
-  src: url("https://assets.bitbashing.io/type/mononoki-Bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'mononoki';
-  src: url("https://assets.bitbashing.io/type/mononoki-BoldItalic.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
-}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 $boder: 1px dashed gray;
-$mono: 'mononoki', monospace;
+$mono: "JetBrains Mono", monospace;
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -47,10 +20,13 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   overflow-y: scroll;
+}
+
+p {
   text-align: justify;
 }
 
-h1 {
+h1, h2 {
   font-size: 1.5em;
 }
 
@@ -111,6 +87,7 @@ img {
 pre,
 code {
   font-family: $mono;
+  font-size: 95%;
 }
 
 code {
