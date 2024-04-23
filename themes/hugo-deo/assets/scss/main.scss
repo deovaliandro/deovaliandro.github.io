@@ -24,6 +24,11 @@ p {
   text-align: justify;
 }
 
+li p {
+  margin-top: .5ch;
+  margin-bottom: .5ch;
+}
+
 h1, h2, h3 {
   font-size: 1.5em;
 }
@@ -35,10 +40,6 @@ a {
   &:not(.list-post > a, .footnote-ref) {
     border-bottom: $boder;
   }
-}
-
-ol {
-  line-height: 1.8;
 }
 
 .list-post {
