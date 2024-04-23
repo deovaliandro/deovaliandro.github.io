@@ -17,8 +17,6 @@ body {
   margin-inline: auto;
   max-width: 80vw;
   width: 800px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
   overflow-y: scroll;
 }
 
@@ -26,7 +24,7 @@ p {
   text-align: justify;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-size: 1.5em;
 }
 
@@ -34,8 +32,7 @@ a {
   color: #222;
   text-decoration: none;
 
-  &:not(.list-post > a,
-    .footnote-ref) {
+  &:not(.list-post > a, .footnote-ref) {
     border-bottom: $boder;
   }
 }
