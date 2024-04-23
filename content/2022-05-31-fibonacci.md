@@ -3,11 +3,6 @@ title     = "Fibonacci"
 date      = "2022-05-31"
 +++
 
-
-> Humanity is OK, but 99% of people are boring idiots
->
-> -- https://www.theguardian.com/culture/2012/jun/10/slavoj-zizek-humanity-ok-people-boring
-
 Bilangan fibonacci adalah barisan yang didefinisikan secara rekursif sebagai berikut:
 
 $$
