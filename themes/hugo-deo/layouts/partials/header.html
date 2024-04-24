@@ -7,6 +7,7 @@
 
   {{ with .Site.Params.favicon }}
   <link rel="shortcut icon" href="{{ . | absURL }}" />{{ end }}
+  <meta property="og:image" content="https://deo.my.id/images/favicon.ico" />
 
   <title>{{ .Site.Title }}</title>
 
