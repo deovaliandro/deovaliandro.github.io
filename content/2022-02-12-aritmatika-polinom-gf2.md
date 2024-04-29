@@ -1,6 +1,6 @@
 +++
-title     = "Aritmatika Polinom di dalam Medan Galois $GF(2^n)$"
-date      = "2022-02-12"
+title   = "Aritmatika Polinom di dalam Medan Galois $GF(2^n)$"
+date    = "2022-02-12"
 +++
 
 

@@ -1,6 +1,6 @@
 +++
-title     = "Fibonacci"
-date      = "2022-05-31"
+title = "Fibonacci"
+date  = "2022-05-31"
 +++
 
 Bilangan fibonacci adalah barisan yang didefinisikan secara rekursif sebagai berikut:

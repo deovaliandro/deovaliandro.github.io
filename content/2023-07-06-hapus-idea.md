@@ -1,6 +1,6 @@
 +++
-title     = "Hapus .idea dari git"
-date      = "2023-06-07"
+title = "Hapus .idea dari git"
+date  = "2023-06-07"
 +++
 
 Folder <mark>.idea</mark> sangat mengganggu jika masuk kedalam github. Untuk menghapusnya, dapat melakukan:
