@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
 $boder: 1px dashed gray;
-$sans: "IBM Plex Sans", sans-serif;
-$mono: "IBM Plex Mono", monospace;
-$serif: "IBM Plex Serif", serif;
+$sans: "Inter", sans-serif;
+$mono: "JetBrains Mono", monospace;
+$serif: "DM Serif Display", serif;
 
 body {
   font-family: $sans;
