@@ -9,7 +9,13 @@
   <link rel="shortcut icon" href="{{ . | absURL }}" />{{ end }}
   <meta property="og:image" content="https://deo.my.id/images/favicon.ico" />
 
-  <title>{{ .Site.Title }}</title>
+  <title>
+    {{ if .Page.Title }}
+      {{ .Page.Title }}
+    {{ else }}
+      {{ .Site.Title }}
+    {{ end }}
+  </title>
 
   {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
   {{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint }}

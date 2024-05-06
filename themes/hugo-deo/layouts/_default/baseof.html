@@ -2,18 +2,16 @@
 
 <body>
   <header>
-    <h3 class="sub">Hi, saya Deo. Blog ini untuk catatanku.</h3>
+    <h3 class="sub">home</h3>
   </header>
   <main>
-    <ul class="blog-posts">
+    <ul>
       {{ range .Pages }}
-      <li class="list-post">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <span class="time-post">
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>, 
           <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+            {{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}
           </time>
-        </span>
       </li>
       {{ else }}
       <li>

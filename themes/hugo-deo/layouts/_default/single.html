@@ -3,11 +3,11 @@
 <body>
   <header>
     <a href="/">
-      <p class="title">{{ .Site.Title }}</p>
+      <p class="home">{{ .Site.Title }}</p>
     </a>
   </header>
   <main>
-    <h1>{{ .Params.title }}</h1>
+    <h1 class="title">{{ .Params.title }}</h1>
     {{ .Content }}
     <p>
       {{ range (.GetTerms "tags") }}
