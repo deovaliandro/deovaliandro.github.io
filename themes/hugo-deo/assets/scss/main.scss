@@ -35,7 +35,7 @@
 }
 
 $boder: 1px dashed gray;
-$sans: garibaldi, alegreya, palatino, serif;
+$sans: "Gentium Book Plus", garibaldi, alegreya, palatino, serif;
 $mono: "Source Code Pro", monospace;
 $serif: "Ubuntu", sans-serif;
 
@@ -52,17 +52,12 @@ body {
   overflow-y: scroll;
 }
 
-p {
-  text-align: justify;
-}
-
 li p {
   margin-top: .5ch;
   margin-bottom: .5ch;
 }
 
 h1, h2, h3 {
-  font-size: 1.5em;
   font-family: $serif;
 }
 
@@ -132,7 +127,7 @@ img {
 pre,
 code {
   font-family: $mono;
-  font-size: 95%;
+  font-size: 90%;
 }
 
 code {
@@ -146,7 +141,6 @@ pre code {
   display: block;
   padding: 1ch;
   white-space: pre-wrap;
-  overflow-x: scroll;
 }
 
 blockquote {

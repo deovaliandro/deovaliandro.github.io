@@ -12,7 +12,7 @@
 
   {{- $cssSource := "scss/main.scss" }}
   {{- $cssTarget := "css/style.css" }}
-  {{- $cssOptions := cond (.Site.IsServer) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
+  {{- $cssOptions := cond (hugo.IsServer) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
   {{- $style := resources.Get $cssSource | toCSS $cssOptions }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>

@@ -10,29 +10,29 @@
 /* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
 /* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
 /* Line */ .chroma .line { display:flex; }
-/* Keyword */ .chroma .k { color:#007020;}
-/* KeywordConstant */ .chroma .kc { color:#007020;}
-/* KeywordDeclaration */ .chroma .kd { color:#007020;}
-/* KeywordNamespace */ .chroma .kn { color:#007020;}
+/* Keyword */ .chroma .k { color:#007020;font-weight:bold }
+/* KeywordConstant */ .chroma .kc { color:#007020;font-weight:bold }
+/* KeywordDeclaration */ .chroma .kd { color:#007020;font-weight:bold }
+/* KeywordNamespace */ .chroma .kn { color:#007020;font-weight:bold }
 /* KeywordPseudo */ .chroma .kp { color:#007020 }
-/* KeywordReserved */ .chroma .kr { color:#007020;}
+/* KeywordReserved */ .chroma .kr { color:#007020;font-weight:bold }
 /* KeywordType */ .chroma .kt { color:#902000 }
 /* Name */ .chroma .n {  }
 /* NameAttribute */ .chroma .na { color:#4070a0 }
 /* NameBuiltin */ .chroma .nb { color:#007020 }
 /* NameBuiltinPseudo */ .chroma .bp {  }
-/* NameClass */ .chroma .nc { color:#0e84b5;}
+/* NameClass */ .chroma .nc { color:#0e84b5;font-weight:bold }
 /* NameConstant */ .chroma .no { color:#60add5 }
-/* NameDecorator */ .chroma .nd { color:#555;}
-/* NameEntity */ .chroma .ni { color:#d55537;}
+/* NameDecorator */ .chroma .nd { color:#555;font-weight:bold }
+/* NameEntity */ .chroma .ni { color:#d55537;font-weight:bold }
 /* NameException */ .chroma .ne { color:#007020 }
 /* NameFunction */ .chroma .nf { color:#06287e }
 /* NameFunctionMagic */ .chroma .fm {  }
-/* NameLabel */ .chroma .nl { color:#002070;}
-/* NameNamespace */ .chroma .nn { color:#0e84b5;}
+/* NameLabel */ .chroma .nl { color:#002070;font-weight:bold }
+/* NameNamespace */ .chroma .nn { color:#0e84b5;font-weight:bold }
 /* NameOther */ .chroma .nx {  }
 /* NameProperty */ .chroma .py {  }
-/* NameTag */ .chroma .nt { color:#062873;}
+/* NameTag */ .chroma .nt { color:#062873;font-weight:bold }
 /* NameVariable */ .chroma .nv { color:#bb60d5 }
 /* NameVariableClass */ .chroma .vc {  }
 /* NameVariableGlobal */ .chroma .vg {  }
@@ -47,7 +47,7 @@
 /* LiteralStringDelimiter */ .chroma .dl { color:#4070a0 }
 /* LiteralStringDoc */ .chroma .sd { color:#4070a0;font-style:italic }
 /* LiteralStringDouble */ .chroma .s2 { color:#4070a0 }
-/* LiteralStringEscape */ .chroma .se { color:#4070a0;}
+/* LiteralStringEscape */ .chroma .se { color:#4070a0;font-weight:bold }
 /* LiteralStringHeredoc */ .chroma .sh { color:#4070a0 }
 /* LiteralStringInterpol */ .chroma .si { color:#70a0d0 }
 /* LiteralStringOther */ .chroma .sx { color:#c65d09 }
@@ -62,7 +62,7 @@
 /* LiteralNumberIntegerLong */ .chroma .il { color:#40a070 }
 /* LiteralNumberOct */ .chroma .mo { color:#40a070 }
 /* Operator */ .chroma .o { color:#666 }
-/* OperatorWord */ .chroma .ow { color:#007020;}
+/* OperatorWord */ .chroma .ow { color:#007020;font-weight:bold }
 /* Punctuation */ .chroma .p {  }
 /* Comment */ .chroma .c { color:#60a0b0;font-style:italic }
 /* CommentHashbang */ .chroma .ch { color:#60a0b0;font-style:italic }
@@ -75,12 +75,12 @@
 /* GenericDeleted */ .chroma .gd { color:#a00000 }
 /* GenericEmph */ .chroma .ge { font-style:italic }
 /* GenericError */ .chroma .gr { color:#f00 }
-/* GenericHeading */ .chroma .gh { color:#000080;}
+/* GenericHeading */ .chroma .gh { color:#000080;font-weight:bold }
 /* GenericInserted */ .chroma .gi { color:#00a000 }
 /* GenericOutput */ .chroma .go { color:#888 }
-/* GenericPrompt */ .chroma .gp { color:#c65d09;}
-/* GenericStrong */ .chroma .gs { }
-/* GenericSubheading */ .chroma .gu { color:#800080;}
+/* GenericPrompt */ .chroma .gp { color:#c65d09;font-weight:bold }
+/* GenericStrong */ .chroma .gs { font-weight:bold }
+/* GenericSubheading */ .chroma .gu { color:#800080;font-weight:bold }
 /* GenericTraceback */ .chroma .gt { color:#04d }
 /* GenericUnderline */ .chroma .gl { text-decoration:underline }
 /* TextWhitespace */ .chroma .w { color:#bbb }
