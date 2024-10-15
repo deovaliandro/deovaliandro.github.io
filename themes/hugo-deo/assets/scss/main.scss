@@ -1,43 +1,6 @@
-@font-face {
-  font-family: garibaldi;
-  font-style: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  src: url('/font/garibaldi-regular.woff2') format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: garibaldi;
-  font-style: italic;
-  font-weight: normal;
-  font-stretch: normal;
-  src: url('/font/garibaldi-italic.woff2') format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: garibaldi;
-  font-style: normal;
-  font-weight: bold;
-  font-stretch: normal;
-  src: url('/font/garibaldi-medium.woff2') format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: garibaldi;
-  font-style: italic;
-  font-weight: bold;
-  font-stretch: normal;
-  src: url('/font/garibaldi-medium-italic.woff2') format("woff2");
-  font-display: swap;
-}
-
 $boder: 1px dashed gray;
-$sans: "Gentium Book Plus", garibaldi, alegreya, palatino, serif;
+$sans: "Source Serif 4", serif;
 $mono: "Source Code Pro", monospace;
-$serif: "Ubuntu", sans-serif;
 
 body {
   font-family: $sans;
@@ -58,7 +21,11 @@ li p {
 }
 
 h1, h2, h3 {
-  font-family: $serif;
+  font-variant-caps: small-caps;
+}
+
+h2, h3 {
+  border-bottom: $boder;
 }
 
 a {
@@ -146,6 +113,10 @@ pre code {
 blockquote {
   border-left: 4px solid grey;
   padding: 5px 0 5px 20px;
+
+  p {
+    font-style: italic;
+  }
 }
 
 footer {
