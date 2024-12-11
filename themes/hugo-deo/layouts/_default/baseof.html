@@ -3,11 +3,14 @@
 <body>
   <header>
     <a href="/">
-      <p class="home">{{ .Site.Title }}</p>
+      <div class="home">
+        <span>DEO</span>
+        <span class="red">VALIANDRO</span>
+      </div>
     </a>
   </header>
   <main>
-    <ul>
+    <ol>
       {{ range .Pages }}
       <li>
         <a href="{{ .Permalink }}">{{ .Title }}</a>,
@@ -20,6 +23,6 @@
         No posts yet
       </li>
       {{ end }}
-    </ul>
+    </ol>
   </main>
   {{- partial "footer.html" . -}}

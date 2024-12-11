@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 $boder: 1px dashed gray;
-$sans: "Source Serif 4", serif;
+$sans: "Source Sans 3", serif;
 $mono: "Source Code Pro", monospace;
 
 body {
@@ -7,12 +9,22 @@ body {
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
-  font-size: 20px;
+  font-size:calc(12px + 1.5vw);
   line-height: 1.6;
   margin-inline: auto;
   max-width: 80vw;
-  width: 800px;
   overflow-y: scroll;
+}
+
+.red {
+  color: red;
+}
+
+.home {
+  font-family: $sans;
+  font-weight: 900;
+  font-size: larger;
+  border-bottom: $boder;
 }
 
 li p {
@@ -21,7 +33,8 @@ li p {
 }
 
 h1, h2, h3 {
-  font-variant-caps: small-caps;
+  font-family: $sans;
+  font-weight: 900;
 }
 
 h2, h3 {
@@ -31,6 +44,10 @@ h2, h3 {
 a {
   color: #222;
   text-decoration: none;
+
+  &:hover{
+    background-color: #f0d547;
+  }
 
   &:not(.list-post > a, .footnote-ref) {
     border-bottom: $boder;
@@ -60,10 +77,6 @@ a {
 
 .footnote-backref {
   border-bottom: none;
-}
-
-.home {
-  border-bottom: $boder;
 }
 
 .title {
