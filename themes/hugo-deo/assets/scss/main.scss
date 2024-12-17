@@ -9,10 +9,9 @@ body {
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
-  font-size:calc(12px + 1.5vw);
+  font-size:calc(8px + 1vw);
   line-height: 1.6;
   margin-inline: auto;
-  max-width: 80vw;
   overflow-y: scroll;
 }
 
@@ -24,7 +23,28 @@ body {
   font-family: $sans;
   font-weight: 900;
   font-size: larger;
-  border-bottom: $boder;
+  border-bottom: 2px dashed gray;
+}
+
+header {
+  padding: 2vh 20vw;
+}
+
+main {
+  padding: 1vh 20vw;
+}
+
+.base {
+  background-color: #24292e;
+  color: white;
+
+  a {
+    color: wheat;
+
+    &:hover{
+      background-color: black;
+    }
+  }
 }
 
 li p {
@@ -161,7 +181,8 @@ code:not(pre > code) {
 /* Format tables */
 table {
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 figure>table {
