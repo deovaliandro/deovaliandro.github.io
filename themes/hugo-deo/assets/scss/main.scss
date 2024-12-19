@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 $boder: 1px dashed gray;
 $sans: "Source Sans 3", serif;
+$serif: "Source Serif 4", serif;
 $mono: "Source Code Pro", monospace;
 
 body {
-  font-family: $sans;
+  font-family: "EB Garamond";
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
@@ -13,6 +16,10 @@ body {
   line-height: 1.6;
   margin-inline: auto;
   overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans;
 }
 
 .red {
@@ -71,7 +78,7 @@ a {
   }
 
   &:not(.list-post > a, .footnote-ref) {
-    border-bottom: $boder;
+    // border-bottom: 1px solid #f0d547;
   }
 }
 
