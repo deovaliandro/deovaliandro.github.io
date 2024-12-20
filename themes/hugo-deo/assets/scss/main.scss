@@ -8,7 +8,7 @@ $serif: "Source Serif 4", serif;
 $mono: "Source Code Pro", monospace;
 
 body {
-  font-family: "EB Garamond";
+  font-family: $sans;
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
