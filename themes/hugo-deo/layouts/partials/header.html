@@ -21,6 +21,5 @@
   {{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint }}
     <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
   {{ end }}
-
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css">
+  
 </head>
