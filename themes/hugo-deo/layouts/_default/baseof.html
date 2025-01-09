@@ -9,12 +9,12 @@
       </div>
     </a>
   </header>
-  <main class="base">
+  <main>
     <ol>
       {{ range .Pages }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>,
-        <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate class="date-post">
           {{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}
         </time>
       </li>
