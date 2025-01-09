@@ -2,13 +2,7 @@
 
 $boder: 1px dashed gray;
 $sans: "Atkinson Hyperlegible", serif;
-$serif: "et-book", serif;
 $mono: "Source Code Pro", monospace;
-
-*, *:after, *:before, input {
-  font-family: inherit;
-  box-sizing: inherit
-}
 
 body {
   font-family: $sans;
@@ -23,10 +17,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  // text-transform: uppercase;
+  text-transform: uppercase;
   text-align: center;
-  font-family: $serif;
-  font-style: italic;
+  font-family: $sans;
 }
 
 .red {
@@ -35,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .date-post {
   float: right;
+  font-family: $mono;
 }
 
 .home {
@@ -60,31 +54,10 @@ a {
   &:hover{
     background-color: #fbcb0a;
   }
-
-  &:not(.list-post > a, .footnote-ref) {
-    // border-bottom: 1px solid #f0d547;
-  }
 }
 
 .list-post {
-  border-bottom: $boder;
-
-  >a {
-    color: #222;
-  }
-
-  &:hover {
-    background: #24292e;
-    color: white;
-
-    a {
-      background: #24292e;
-      color: white;
-    }
-
-    background: #24292e;
-    color: white;
-  }
+  font-family: $sans;
 }
 
 .footnote-backref {
@@ -136,7 +109,7 @@ pre code {
 }
 
 blockquote {
-  font-family: $serif;
+  font-style: italic;
   border-left: 4px solid grey;
   padding: 5px 0 5px 20px;
 }
