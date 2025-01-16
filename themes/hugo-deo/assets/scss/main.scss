@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-size: calc(6px + 1vw);
+  font-size: calc(8px + 1vw);
   line-height: 1.6;
   margin-inline: auto;
   overflow-y: scroll;
@@ -41,6 +41,10 @@ body {
 li p {
   margin-top: .5ch;
   margin-bottom: .5ch;
+}
+
+ul {
+  list-style-type: square;
 }
 
 p > a{
