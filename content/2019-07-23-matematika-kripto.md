@@ -3,7 +3,6 @@ title     = "Landasan Matematika Kriptografi"
 date      = "2020-07-23"
 +++
 
-
 ## Set dan Fungsi
 
 1. Set bilangan real = $\mathbb{R}$,
@@ -49,10 +48,8 @@ $$ \sim \subseteq \mathbb{Z}^2 $ dengan aturan $ (a, b) \in \sim \Leftrightarrow
 
 Karena $5 \sim 17$ dan $17 \sim -3$, maka $5 \sim -3$ (transitif), $17 \sim 5 $ dan $ -3 \sim 17$ (sifat simetri).
 
-**Teorema**
-
-Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$ adalah sebuah relasi ekuivalen pada $A$, maka terdapat
-bilangan asli $n$ dan sub-subhimpunan $A_1, A_2, A_3, \cdots,A_n$ yang memenuhi sifat:
+**Teorema** Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$ 
+adalah sebuah relasi ekuivalen pada $A$, maka terdapat bilangan asli $n$ dan sub-subhimpunan $A_1, A_2, A_3, \cdots,A_n$ yang memenuhi sifat:
 
 1. Sifat saling lepas, $\forall i, j \in \{ 1, 2, \cdots, n \}: A_i \cap A_j = \emptyset$,
 2. Sifat partisi lengkap, $A_1 \cup A_2 \cup \cdots \cup A_n = A$

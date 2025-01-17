@@ -7,7 +7,6 @@ date        = "2017-05-13"
 (mempunyai Garbage Collector dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
 object-oriented language karena masih mendukung primitive data types seperti `int`, `char`, dll.
 
-
 ## Struktur Dasar
 
 Sintaks Java mirip dengan `C/C++`, tetapi Java tidak support dengan low-level programming seperti pointer
@@ -92,7 +91,6 @@ dapat langsung dijalankan dengan:
 java NamaFile.java
 ```
 
-
 ## Input dan Output
 
 IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan bagaimana mengeluarkan hasil dari
@@ -160,7 +158,6 @@ class Main{
 }
 ```
 
-
 ## Operasi Dasar
 
 #### Operator Aritmatika
@@ -209,7 +206,6 @@ Operator pembanding yan dapat dilakukan:
 | Greater than or equal to |    >= |
 |  Less than or equal to   |    <= |
 
-
 Hasil operator ini adalah nilai boolean, bisa berupa true atau false.
 
 Integer, floating-point numbers, characters, dan Booleans bisa digunakan pada operator equal to dan not equal to, tetapi
@@ -252,7 +248,6 @@ if (a == true && b < 20) {
     System.out.println("False");
 }
 ```
-
 
 ## Tipe Data
 
@@ -447,7 +442,6 @@ Aturan promosi ini adalah:
 3. float akan di ubah ke double,
 4. jika operasi melibatkan double, maka otomatis akan diubah semua ke double.
 
-
 ## Penyeleksian Kondisi
 
 Peyeleksian adalah pilihan atau opsi dengan suatu syarat tertentu. Jika syarat yang diberikan memenuhi, maka semua
@@ -550,7 +544,6 @@ switch (a) {
         System.out.println("Invalid Choice");
 }
 ```
-
 
 ## Perulangan
 
@@ -741,7 +734,6 @@ nilai i = 5 maka perintah `continue` akan dijalankan.
 Return adalah perintah dalam java yang digunakan di dalam method. Return akan mengembalikan suatu nilai dari sebuah
 method yang dipanggil.
 
-
 ## Array
 
 Array adalah kelompok data dengan tipe yang sama. Dalam Java, pada saat mendeklarasikan sebuah array panjang array harus
@@ -823,7 +815,7 @@ dan kemudian diikuti oleh indeks berikutnya.
 ### Array multi-dimensi
 
 Array multidimensi dapat diilustrasikan sebagai array dalam array. Artinya setiap element pada array tersebut adalah
-sebuah array juga (Array dua dimensi). Hal ini juga berlaku untuk Array NxN dimensi. 
+sebuah array juga (Array dua dimensi). Hal ini juga berlaku untuk Array NxN dimensi.
 
 Contoh:
 
@@ -888,7 +880,6 @@ output:
 4
 5
 ```
-
 
 ## Method
 
@@ -967,7 +958,6 @@ class MethodDemo4{
 Note:
 1. Tambahkan call-by-value vs call-by-reference
 
-
 ## File IO
 
 Input dan output pada file digunakan untuk mengolah file tersebut. Untuk membaca suatu file, kita menggunakan class
@@ -1004,7 +994,6 @@ public class Main {
     }
 }
 ```
-
 
 ## String
 
@@ -1081,7 +1070,6 @@ System.out.println(p2);
 angka 2 menunjukkan index char yang diinginkan dalam sebuah `String`. `charAt()` mengahasilkan nilai `char`.
 
 Dan masih banyak lagi method-method lainnya.
-
 
 ## Daftar Pustaka
 

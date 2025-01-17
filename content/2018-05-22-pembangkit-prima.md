@@ -10,7 +10,6 @@ Jika $n$ habis dibagi dengan salah satu bilangan prima, maka $n$ adalah bilangan
 salah satu bilangan prima maka $n$ adalah bilangan prima. Kompleksitasnya $O(\sqrt{n})$, sehingga tidak efektif.
 Terdapat algoritma lain yang lebih efektif,
 
-
 ## Algoritma Lehmann
 
 1. Bangkitkan bilangan acak $p$ sepanjang $n$ angka,
@@ -25,7 +24,6 @@ Terdapat algoritma lain yang lebih efektif,
   kesalahan tidak lebih dari $1/2^{t}$.
 
 Jumlah pengujian yang disarankan adalah lima kali[^1].
-
 
 ## Algoritma Rabin-Miller
 

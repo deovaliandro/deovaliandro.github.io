@@ -3,7 +3,6 @@ title     = "Fungsi dalam Kriptografi"
 date      = "2019-10-02"
 +++
 
-
 Fungsi adalah sebuah relasi khusus pada dua himpunan.
 
 $$f: A \to B$
