@@ -3,6 +3,74 @@ title       = "Pengantar Pemrograman dengan Java"
 date        = "2017-05-13"
 +++
 
+<details>
+    <summary>ToC</summary>
+
+- [Struktur Dasar](#struktur-dasar)
+  - [Struktur program](#struktur-program)
+  - [Aturan Penamaan](#aturan-penamaan)
+  - [Menjalankan program](#menjalankan-program)
+- [Input dan Output](#input-dan-output)
+  - [Input](#input)
+    - [Dengan menggunakan Scanner](#dengan-menggunakan-scanner)
+    - [Dengan menggunakan BufferReader](#dengan-menggunakan-bufferreader)
+  - [Output](#output)
+    - [System.out.print()](#systemoutprint)
+    - [System.out.printf](#systemoutprintf)
+- [Operasi Dasar](#operasi-dasar)
+  - [Operator Aritmatika](#operator-aritmatika)
+  - [Operator pembanding](#operator-pembanding)
+  - [Operator Logika](#operator-logika)
+- [Tipe Data](#tipe-data)
+  - [Tipe Data Primitif](#tipe-data-primitif)
+    - [Integer](#integer)
+      - [byte](#byte)
+      - [short](#short)
+      - [int](#int)
+      - [long](#long)
+    - [Floating-point numbers](#floating-point-numbers)
+      - [float](#float)
+      - [double](#double)
+    - [Characters](#characters)
+      - [char](#char)
+    - [Boolean](#boolean)
+  - [Tipe Data Reference](#tipe-data-reference)
+    - [String](#string)
+  - [Deklarasi variabel](#deklarasi-variabel)
+    - [Deklarasi](#deklarasi)
+    - [Inisiasi](#inisiasi)
+    - [Inisiasi dinamis](#inisiasi-dinamis)
+  - [Mengubah tipe ke tipe data lain](#mengubah-tipe-ke-tipe-data-lain)
+    - [Konversi otomatis](#konversi-otomatis)
+- [Penyeleksian Kondisi](#penyeleksian-kondisi)
+  - [If-Else](#if-else)
+  - [Switch](#switch)
+- [Perulangan](#perulangan)
+  - [For](#for)
+  - [While](#while)
+  - [Do-while](#do-while)
+  - [For-each](#for-each)
+- [Jump Statement](#jump-statement)
+  - [Break](#break)
+  - [Continue](#continue)
+  - [Return](#return)
+- [Array](#array)
+  - [Deklarasi Array](#deklarasi-array)
+  - [Mengisi](#mengisi)
+  - [Mengakses](#mengakses)
+  - [Array multi-dimensi](#array-multi-dimensi)
+  - [Panjang Array](#panjang-array)
+- [Method](#method)
+- [File IO](#file-io)
+- [string](#string-1)
+  - [Menthod dalam class String](#menthod-dalam-class-string)
+    - [equals()](#equals)
+    - [length()](#length)
+    - [charAt()](#charat)
+- [Daftar Pustaka](#daftar-pustaka)
+
+</details>
+
 [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) adalah bahasa pemrograman level tinggi, robust
 (mempunyai Garbage Collector dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
 object-oriented language karena masih mendukung primitive data types seperti `int`, `char`, dll.
@@ -46,9 +114,9 @@ class HelloWorld {
 Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus dalam Java yang harus dipatuhi seperti:
 
 1. tidak boleh diawali dengan angka,
-2. tidak boleh disertai symbol khusus seperti <kbd>@</kbd>, <kbd>!</kbd>, <kbd>*</kbd>, <kbd>#</kbd>,
+2. tidak boleh disertai symbol khusus seperti `@`, `!`, `*`, `#`,
 3. tidak boleh menggunakan reserved word sebagai nama variable,
-4. boleh diawali dengan underscore atau symbol <kbd>$</kbd>, dan
+4. boleh diawali dengan underscore atau symbol `$`, dan
 5. nama variable tidak boleh mengandung spasi.
 
 Menurut Convention over configuration Java[^3], penulisan nama variable menggunakan lowerCamel case misalnya
@@ -160,7 +228,7 @@ class Main{
 
 ## Operasi Dasar
 
-#### Operator Aritmatika
+### Operator Aritmatika
 
 Operator aritmatika yang dapat dilakukan adalah:
 
@@ -262,69 +330,88 @@ ditentukan dengan kata kuncinya masing-masing. Terdapat 8 (delapan) tipe data pr
 
 #### Integer
 
-1. byte, tipe data yang menampung angka 8 bit dengan range -127 - 128 ($2^4$). Tipe data byte memiliki nilai default
-   `0`.
+##### byte
 
-  ```java
-  byte n = 12;
-  ```
+tipe data yang menampung angka 8 bit dengan range -127 - 128 ($2^4$). Tipe data
+byte memiliki nilai default `0`.
 
-2. short, tipe data yang menampung angka 16 bit dengan range -32.768 - 32.767 ($2^{16}$). Tipe data byte memiliki nilai
-   default `0`.
+```java
+byte n = 12;
+```
 
-  ```java
-  short n = 1200;
-  ```
+##### short
 
-3. int, tipe data yang menampung angka 32 bit dengan range -2,147,483,648 - 2,147,483,647 ($2^{32}$). Tipe data byte
-   memiliki nilai default `0`.
+tipe data yang menampung angka 16 bit dengan range -32.768 - 32.767 ($2^{16}$).
+Tipe data byte memiliki nilai default `0`.
 
-  ```java
-  int n = 289000;
-  ```
+```java
+short n = 1200;
+```
 
-4. long, tipe data yang lebih panjang dari int, yaitu -9,223,372,036,854,775,808 sampai 9,223,372,036,854,775,807
-   ($2^{64}$). Tipe data long memiliki nilai default `0L`.
+##### int
+
+tipe data yang menampung angka 32 bit dengan range -2,147,483,648 - 2,147,483,
+647 ($2^{32}$). Tipe data byte memiliki nilai default `0`.
+
+```java
+int n = 289000;
+```
+
+##### long
+
+tipe data yang lebih panjang dari int, yaitu -9,223,372,036,854,775,808 sampai
+9,223,372,036,854,775,807 ($2^{64}$). Tipe data long memiliki nilai default
+`0L`.
   
-  ```java
-  long n = 122334445;
-  ```
+```java
+long n = 122334445;
+```
 
 #### Floating-point numbers
 
-1. float tipe data untuk bilangan desimal seperti 3.14, 2.1 atau bilangan desimal lainnya. Tipe data ini bisa nemapung
-   nilai $2^{32}$. Nilai default-nya `0.0f`.
-  
-  ```java
-  float n = 3.14f;
-  ```
-  penulisannya ditambahkan huruf `f` di belakang angkanya, ini untuk menandai bahwa bilangan tersebut adalah `float`
-  bukan `double`.
+##### float
 
-2. double, tipe data yang mirip dengan float kecuali data yang bisa ditampungnya lebih besar yaitu $2^{64}$. Nilai
-   default-nya `0.0d`.
+tipe data untuk bilangan desimal seperti 3.14, 2.1 atau bilangan desimal
+lainnya. Tipe data ini bisa nemapung nilai $2^{32}$. Nilai default-nya `0.0f`.
   
-  ```java
-  double n = 144.2;
-  ```
+```java
+float n = 3.14f;
+```
+
+penulisannya ditambahkan huruf `f` di belakang angkanya, ini untuk menandai
+bahwa bilangan tersebut adalah `float` bukan `double`.
+
+##### double
+
+tipe data yang mirip dengan float kecuali data yang bisa ditampungnya lebih
+besar yaitu $2^{64}$. Nilai default-nya `0.0d`.
+  
+```java
+double n = 144.2;
+```
 
 #### Characters
 
-1. char, tipe data yang hanya bisa menampung satu karakter]. Nilai yang bisa ditampung adalah 0 to 65.535. Char
-   digunakan untuk menampung karakter Unicode[^5].
-  ```java
-  char c = 'a';
-  ```
+##### char
 
-  Nilai yang diberikan disimpan dalam satu tanda kutip. Nilai defaulnya adalah `\u0000`. Char dalam spesifikasi resminya
-  tergolong kedalam _integer type_ yang termasuk dalam kategori int, short, dll. Namun karena prinsipnya yang digunakan
-  untuk menampung karakter Unicode, maka dibuat dalam kategori tersendiri. Sehingga char dapat ditulis seperti ini:
+tipe data yang hanya bisa menampung satu karakter]. Nilai yang bisa ditampung
+adalah 0 to 65.535. Char digunakan untuk menampung karakter Unicode[^5].
 
-  ```java
-  char c = 88;
-  ```
+```java
+char c = 'a';
+```
 
-  yang mana akan menghasilkan nilai `X`, 98 adalah nilai desimal dari X dalam sistem ASCII dan Unicode.
+Nilai yang diberikan disimpan dalam satu tanda kutip. Nilai defaulnya adalah
+`\u0000`. Char dalam spesifikasi resminya tergolong kedalam _integer type_ yang
+termasuk dalam kategori int, short, dll. Namun karena prinsipnya yang digunakan
+untuk menampung karakter Unicode, maka dibuat dalam kategori tersendiri.
+Sehingga char dapat ditulis seperti ini:
+
+```java
+char c = 88;
+```
+
+yang mana akan menghasilkan nilai `X`, 98 adalah nilai desimal dari X dalam sistem ASCII dan Unicode.
 
 #### Boolean
 
@@ -350,8 +437,8 @@ atau paragraf.
 String name = "Deo";
 ```
 
-perhatikan, penulisan `String` menggunakan kapital di awal kata, kemudian isinya disimpan di dalam tanda kutip dua
-(<kbd>" + "</kbd>).
+perhatikan, penulisan `String` menggunakan kapital di awal kata, kemudian isinya
+disimpan di dalam tanda kutip dua (`" "`).
 
 ### Deklarasi variabel
 
@@ -452,7 +539,7 @@ jika nilainya adalah dalam rentang 80-90 maka mahasiswa tersebut mendapatkan nil
 Disini dilakukan perulangan dengan mengecek nilai mahasiswa tersebut, jika memenuhi atau terdapat dalam rentang
 tertentu, maka mahasiswa tersebut akan mendapat nilai ini.
 
-Dalam Java terdapat dua macam penyeksian kondisi yaitu <mark>If-else</mark> dan <mark>Switch</mark>.
+Dalam Java terdapat dua macam penyeksian kondisi yaitu `If-else` dan `Switch`.
 
 ### If-Else
 
@@ -681,7 +768,6 @@ Namun for-each memiliki batasan:
 2. Tidak bisa melacak nomor index,
 3. Hanya bisa melakukan perulangan kedepan sekali.
 
-
 ## Jump Statement
 
 Jump statement adalah perintah untuk memindahkan alur program ke program yang lain. Java mengenal tiga buah perintah
@@ -689,8 +775,9 @@ tersebut yaitu `break`, `continue` dan `return`.
 
 ### Break
 
-Break merupakan perintah yang dapat digunakan untuk menghentikan proses perulangan dengan paksa. Berikut ini contoh
-penggunaan break dalam while, program akan berhenti ketika nilai i = 2.
+Break merupakan perintah yang dapat digunakan untuk menghentikan proses
+perulangan dengan paksa. Berikut ini contoh penggunaan break dalam while,
+program akan berhenti ketika nilai i = 2.
 
 Contoh:
 
@@ -740,7 +827,7 @@ Array adalah kelompok data dengan tipe yang sama. Dalam Java, pada saat mendekla
 ditentukan, dan tidak dapat diubah setelahnya (nilai fix). Setiap item dalam sebuah array disebut element, dan setiap
 element dapat diakses dengan indexnya. Index array selalu mulai dari 0 sampai n-1, dengan n adalah panjang array.
 
-### Deklarasi
+### Deklarasi Array
 
 Sebelum digunakan, Array harus dideklarasikan terlebih dahulu dengan menentukan tipe data dan panjangnya.
 
@@ -955,8 +1042,7 @@ class MethodDemo4{
 
 > Java menggunakan call-by-value bukan call-by-reference
 
-Note:
-1. Tambahkan call-by-value vs call-by-reference
+Note: tambahkan call-by-value vs call-by-reference
 
 ## File IO
 
@@ -995,13 +1081,15 @@ public class Main {
 }
 ```
 
-## String
+## string
 
-Di dalam bahasa pemrograman Java, string merupakan sebuah tipe data reference. Tipe data ini diperlakukan sebagai sebuah
-obyek. String adalah kumpulan beberapa karakter (char).
+Di dalam bahasa pemrograman Java, string merupakan sebuah tipe data reference.
+Tipe data ini diperlakukan sebagai sebuah obyek. String adalah kumpulan beberapa
+karakter (char).
 
-String sendiri sebenarnya merupakan sebuah class yang terdapat dalam library Java dan digunakan untuk memanipulasi
-karakter. Contoh sintaks untuk mendeklarasikan sebuah string:
+String sendiri sebenarnya merupakan sebuah class yang terdapat dalam library
+Java dan digunakan untuk memanipulasi karakter. Contoh sintaks untuk
+mendeklarasikan sebuah string:
 
 ```java
 String str = "Hay";
@@ -1009,7 +1097,7 @@ String str = "Hay";
 
 String adalah tipe data immutable; ketika objek `String` dibuat, maka kontennya tidak bisa diubah lagi.
 
-Untuk menggabungkan beberapa string, Java menggunakan <mark>+</mark>, misalnya:
+Untuk menggabungkan beberapa string, Java menggunakan `+`, misalnya:
 
 ```java
 String nama = "John " + "Doe";
