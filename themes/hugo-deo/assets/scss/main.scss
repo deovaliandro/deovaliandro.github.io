@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.cdnfonts.com/css/linux-biolinum');
 
 $boder: 1px dashed gray;
 $sans: "Atkinson Hyperlegible", serif;
-$serif: "Linux Biolinum", serif;
 $mono: "Source Code Pro", monospace;
 
 body {
-  font-family: $serif;
+  font-family: $mono;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -18,12 +16,20 @@ body {
   max-width: 60%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans;
+}
+
 .base {
   font-family: $sans;
 }
 
 .red {
   color: red;
+}
+
+.date {
+  text-align: center;
 }
 
 .date-post {
@@ -100,12 +106,12 @@ img {
 pre,
 code {
   font-family: $mono;
-  font-size: 85%;
 }
 
 code {
   padding: 2px 5px;
-  background-color: #e1dede;
+  // background-color: #e1dede;
+  border-left: 5px solid #e1e1e1;
   overflow: hidden;
 }
 
@@ -272,26 +278,21 @@ mark {
   }
   .k {
     color: #007020;
-    font-weight: bold;
   }
   .kc {
     color: #007020;
-    font-weight: bold;
   }
   .kd {
     color: #007020;
-    font-weight: bold;
   }
   .kn {
     color: #007020;
-    font-weight: bold;
   }
   .kp {
     color: #007020;
   }
   .kr {
     color: #007020;
-    font-weight: bold;
   }
   .kt {
     color: #902000;
@@ -304,18 +305,15 @@ mark {
   }
   .nc {
     color: #0e84b5;
-    font-weight: bold;
   }
   .no {
     color: #60add5;
   }
   .nd {
     color: #555;
-    font-weight: bold;
   }
   .ni {
     color: #d55537;
-    font-weight: bold;
   }
   .ne {
     color: #007020;
@@ -325,15 +323,12 @@ mark {
   }
   .nl {
     color: #002070;
-    font-weight: bold;
   }
   .nn {
     color: #0e84b5;
-    font-weight: bold;
   }
   .nt {
     color: #062873;
-    font-weight: bold;
   }
   .nv {
     color: #bb60d5;
@@ -362,7 +357,6 @@ mark {
   }
   .se {
     color: #4070a0;
-    font-weight: bold;
   }
   .sh {
     color: #4070a0;
@@ -408,7 +402,6 @@ mark {
   }
   .ow {
     color: #007020;
-    font-weight: bold;
   }
   .c {
     color: #60a0b0;
@@ -447,7 +440,6 @@ mark {
   }
   .gh {
     color: #000080;
-    font-weight: bold;
   }
   .gi {
     color: #00a000;
@@ -457,14 +449,9 @@ mark {
   }
   .gp {
     color: #c65d09;
-    font-weight: bold;
-  }
-  .gs {
-    font-weight: bold;
   }
   .gu {
     color: #800080;
-    font-weight: bold;
   }
   .gt {
     color: #04d;

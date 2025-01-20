@@ -11,6 +11,7 @@
   </header>
   <main>
     <h1 class="title">{{ .Params.title }}</h1>
+    <p class="date">{{ .Date | time.Format ":date_medium" }}</p>
     {{ .Content }}
     <p>
       {{ range (.GetTerms "tags") }}
