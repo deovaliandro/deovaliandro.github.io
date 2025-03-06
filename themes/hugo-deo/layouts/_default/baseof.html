@@ -1,29 +1,19 @@
 {{- partial "header.html" . -}}
-
-<body>
-  <header>
-    <a href="/">
-      <div class="home">
-        <span>DEO</span>
-        <span class="red">VALIANDRO</span>
-      </div>
-    </a>
-  </header>
-  <main class="base">
-    <ol>
-      {{ range .Pages }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate
-          class="date-post">
-          {{ .Date.Format (default "02-01-2006" .Site.Params.dateFormat) }}
-        </time>
-      </li>
-      {{ else }}
-      <li>
-        No posts yet
-      </li>
-      {{ end }}
-    </ol>
-  </main>
-  {{- partial "footer.html" . -}}
+<main class="base">
+  <ol>
+    {{ range .Pages }}
+    <li>
+      <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate
+        class="date-post">
+        {{ .Date.Format (default "02-01-2006" .Site.Params.dateFormat) }}
+      </time> - 
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ else }}
+    <li>
+      No posts yet
+    </li>
+    {{ end }}
+  </ol>
+</main>
+{{- partial "footer.html" . -}}

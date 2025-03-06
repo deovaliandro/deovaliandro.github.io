@@ -21,5 +21,27 @@
   {{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint }}
     <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
   {{ end }}
+
+  <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$']],
+        processEscapes: true
+      },
+      chtml: {
+        scale: 1
+      },
+    };
+  </script>
   
 </head>
+
+<body>
+  <header>
+    <a href="/">
+      Deo's Labs
+    </a>
+  </header>

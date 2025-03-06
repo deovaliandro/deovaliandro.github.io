@@ -1,23 +1,12 @@
 {{- partial "header.html" . -}}
-
-<body>
-  <header>
-    <a href="/">
-      <div class="home">
-        <span>DEO</span>
-        <span class="red">VALIANDRO</span>
-      </div>
-    </a>
-  </header>
-  <main>
-    <h1 class="title">{{ .Params.title }}</h1>
-    <p class="date">{{ .Date | time.Format ":date_medium" }}</p>
-    {{ .Content }}
-    <p>
-      {{ range (.GetTerms "tags") }}
-      <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-      {{ end }}
-    </p>
-  </main>
-
+<main>
+  <h1 class="title">{{ .Params.title }}</h1>
+  <p class="date">{{ .Date | time.Format ":date_medium" }}</p>
+  {{ .Content }}
+  <p>
+    {{ range (.GetTerms "tags") }}
+    <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+    {{ end }}
+  </p>
+</main>
 {{- partial "footer.html" . -}}

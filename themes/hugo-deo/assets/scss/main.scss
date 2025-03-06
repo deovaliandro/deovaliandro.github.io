@@ -1,11 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');
+@font-face {
+  font-family: 'Linux Libertine O';
+  src: url('/fonts/linlib-r-subset.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Linux Libertine O';
+  src: url('/fonts/linlib-ri-subset.woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Linux Libertine O';
+  src: url('/fonts/linlib-rb-subset.woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Linux Libertine Capitals O';
+  src: url('/fonts/linlib-as-subset.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Linux Biolinum O';
+  src: url('/fonts/linbio-r-subset.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Linux Biolinum O';
+  src: url('/fonts/linbio-ri-subset.woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Linux Biolinum O';
+  src: url('/fonts/linbio-rb-subset.woff');
+  font-weight: bold;
+  font-style: normal;
+}
 
 $boder: 1px dashed gray;
-$sans: "Atkinson Hyperlegible", serif;
 $mono: "Source Code Pro", monospace;
 
+@media (min-width: 992px) {
+  body {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    max-width: 90%;
+  }
+}
+
 body {
-  font-family: $mono;
+  font-family: "Linux Libertine O", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -13,15 +72,14 @@ body {
   line-height: 1.6;
   margin-inline: auto;
   overflow-y: scroll;
-  max-width: 60%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $sans;
+h1, h2, h3, h4, h5, h6, .base {
+  font-family: "Linux Biolinum O", sans-serif;
 }
 
-.base {
-  font-family: $sans;
+header {
+  border-bottom: 2px dashed grey;
 }
 
 .red {
@@ -30,18 +88,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .date {
   text-align: center;
-}
-
-.date-post {
-  float: right;
-  font-family: $mono;
-}
-
-.home {
-  font-family: $sans;
-  font-weight: 600;
-  font-size: 30px;
-  border-bottom: 2px dashed gray;
 }
 
 li p {
@@ -57,10 +103,6 @@ p > a{
   text-decoration: underline;
 }
 
-h2, h3 {
-  border-bottom: $boder;
-}
-
 a {
   color: #222;
   text-decoration: none;
@@ -68,10 +110,6 @@ a {
   &:hover{
     background-color: #fbcb0a;
   }
-}
-
-.list-post {
-  font-family: $sans;
 }
 
 .footnote-backref {
@@ -83,7 +121,6 @@ a {
 }
 
 .sub {
-  font-family: $sans;
   font-weight: 400;
 }
 
@@ -110,7 +147,6 @@ code {
 
 code {
   padding: 2px 5px;
-  // background-color: #e1dede;
   border-left: 5px solid #e1e1e1;
   overflow: hidden;
 }
