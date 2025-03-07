@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('/fonts/iosevka.css');
 
-$boder: 1px dashed gray;
-$mono: monospace;
-$serif: "Atkinson Hyperlegible", serif;
+$boder: 2px dashed gray;
+$mono: "Iosevka Curly Iaso", monospace;
+$serif: "Iosevka Etoile Iaso", serif;
+$sans-serif: "Iosevka Aile Iaso", sans-serif;
 
 @media (min-width: 992px) {
   body {
@@ -17,7 +18,7 @@ $serif: "Atkinson Hyperlegible", serif;
 }
 
 body {
-  font-family: $serif;
+  font-family: $sans-serif;
   color: #35302e;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,7 +35,8 @@ h1, h2, h3, h4, h5, h6, .base {
 }
 
 header {
-  border-bottom: 2px dashed grey;
+  border-bottom: $boder;
+  text-align: center;
 }
 
 .red {
