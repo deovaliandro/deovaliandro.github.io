@@ -1,56 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');
-
-@font-face {
-  font-family: 'Linux Libertine O';
-  src: url('/fonts/linlib-r-subset.woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Linux Libertine O';
-  src: url('/fonts/linlib-ri-subset.woff');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Linux Libertine O';
-  src: url('/fonts/linlib-rb-subset.woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Linux Libertine Capitals O';
-  src: url('/fonts/linlib-as-subset.woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Linux Biolinum O';
-  src: url('/fonts/linbio-r-subset.woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Linux Biolinum O';
-  src: url('/fonts/linbio-ri-subset.woff');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Linux Biolinum O';
-  src: url('/fonts/linbio-rb-subset.woff');
-  font-weight: bold;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 $boder: 1px dashed gray;
-$mono: "Source Code Pro", monospace;
+$mono: monospace;
+$serif: "Atkinson Hyperlegible", serif;
 
 @media (min-width: 992px) {
   body {
@@ -65,7 +17,8 @@ $mono: "Source Code Pro", monospace;
 }
 
 body {
-  font-family: "Linux Biolinum O", serif;
+  font-family: $serif;
+  color: #35302e;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -73,10 +26,11 @@ body {
   line-height: 1.6;
   margin-inline: auto;
   overflow-y: scroll;
+  text-align: justify;
 }
 
 h1, h2, h3, h4, h5, h6, .base {
-  font-family: "Linux Biolinum O", sans-serif;
+  font-family: $serif;
 }
 
 header {
@@ -121,14 +75,6 @@ a {
   text-align: center;
 }
 
-.sub {
-  font-weight: 400;
-}
-
-.MathJax {
-  word-break: break-all;
-}
-
 .time-post {
   float: right;
   font-size: 95%;
@@ -144,6 +90,7 @@ img {
 pre,
 code {
   font-family: $mono;
+  font-size: 20px;
 }
 
 code {
