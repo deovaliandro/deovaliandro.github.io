@@ -23,7 +23,7 @@ $$A \times B = \{(a, b) \|a \in A, b \in B\}$
 
 dengan
 
-$$\|A \times B\| = \|A\|\times \|B\|$.
+$$\|A \times B\| = \|A\|\times \|B\|$
 
 ### Relasi Ekuvalensi
 
@@ -40,7 +40,7 @@ Contohnya:
 
 $$ \sim \subseteq \mathbb{Z}^2 $ dengan aturan $ (a, b) \in \sim \Leftrightarrow \exists k \in \mathbb{Z} : a - b = 4k$
 
-> fyi: $\mathbb{Z}^2$ is standard notation for the Cartesian square of the Integers; the set of all pairs of integers. 
+> fyi: $\mathbb{Z}^2$ is standard notation for the Cartesian square of the Integers; the set of all pairs of integers.
 >
 > $\mathbb{Z}^2 = { (x,y): x \in \mathbb{Z}, y \in \mathbb{Z} }$
 >

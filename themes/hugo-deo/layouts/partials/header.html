@@ -18,7 +18,7 @@
   </title>
 
   {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
-  {{ with resources.Get "scss/main.scss" | toCSS $opts | fingerprint }}
+  {{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint }}
     <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
   {{ end }}
 
@@ -30,7 +30,10 @@
         inlineMath: [['$', '$']],
         displayMath: [['$$', '$']],
         processEscapes: true
-      }
+      },
+      chtml: {
+        scale: 0.8
+      },
     };
   </script>
   
