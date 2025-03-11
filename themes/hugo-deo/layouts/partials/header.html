@@ -11,19 +11,18 @@
 
   <title>
     {{ if .Page.Title }}
-      {{ .Page.Title }}
+    {{ .Page.Title }}
     {{ else }}
-      {{ .Site.Title }}
+    {{ .Site.Title }}
     {{ end }}
   </title>
 
   {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
   {{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
   {{ end }}
 
-  <script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <script>
     window.MathJax = {
       tex: {
@@ -36,7 +35,7 @@
       },
     };
   </script>
-  
+
 </head>
 
 <body>
@@ -44,4 +43,5 @@
     <a href="/">
       {{ .Site.Title }}
     </a>
+  | <span class="dark-mode-toggle">dark mode 🌃</span>
   </header>
