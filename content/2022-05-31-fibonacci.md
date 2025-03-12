@@ -12,11 +12,11 @@ F(n) =
     1, & \text{jika } n = 1, \\\\
     F(n - 1)+F(n - 2), & \text{jika } tidak.
   \end{cases}
-$
+$$
 
 bilanga fibonacci dapat dinyatakan sebagai berikut:
 
-$$F_n = \frac{x_1^n - x_2^n}{\sqrt{5}}$
+$$F_n = \frac{x_1^n - x_2^n}{\sqrt{5}}$$
 
 Perbandingan antara $F_{n+1}$ dan $F_{n}$ hampir selalu sama untuk sebarang nilai n dan mulai nilai n tertentu,
 perbandingan ini nilainya tetap. Perbandingan itu disebut rasio emas yang nilainya mendekati $1,618$.

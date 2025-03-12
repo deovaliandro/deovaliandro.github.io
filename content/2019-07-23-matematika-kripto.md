@@ -19,11 +19,11 @@ Himpunan matrix $m \times n$ dengan entry bilangan real, diberi notasi $M^{m,n}(
 
 Hasil kali dua himpunan tak kosong $ A $ dan $ B $ didefinisikan:
 
-$$A \times B = \{(a, b) \|a \in A, b \in B\}$
+$$A \times B = \{(a, b) \|a \in A, b \in B\}$$
 
 dengan
 
-$$\|A \times B\| = \|A\|\times \|B\|$
+$$\|A \times B\| = \|A\|\times \|B\|$$
 
 ### Relasi Ekuvalensi
 
@@ -38,7 +38,7 @@ Relasi ekivalensi sering diberi lambang $\sim$, sehingga $(a, b) \in R$ sering d
 
 Contohnya:
 
-$$ \sim \subseteq \mathbb{Z}^2 $ dengan aturan $ (a, b) \in \sim \Leftrightarrow \exists k \in \mathbb{Z} : a - b = 4k$
+$$ \sim \subseteq \mathbb{Z}^2 $ dengan aturan $ (a, b) \in \sim \Leftrightarrow \exists k \in \mathbb{Z} : a - b = 4k$$
 
 > fyi: $\mathbb{Z}^2$ is standard notation for the Cartesian square of the Integers; the set of all pairs of integers.
 >
@@ -114,7 +114,7 @@ kriptografi.
 
 GF adalah finite field dengan $p^{n}$ elemen, $p \in P, n \geq 1$.
 
-Dinotasikan dengan: $$GF(p^{2})$
+Dinotasikan dengan: $$GF(p^{2})$$
 
 1. $GF(p)$
 

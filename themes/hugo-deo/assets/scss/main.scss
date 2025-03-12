@@ -1,9 +1,9 @@
-@import url('/fonts/iosevka.css');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 $boder: 2px dashed gray;
-$mono: "Iosevka Curly Iaso", monospace;
-$serif: "Iosevka Etoile Iaso", serif;
-$sans-serif: "Iosevka Aile Iaso", sans-serif;
+$mono: "Source Code Pro", monospace;
+$serif: "Ubuntu", serif;
+$sans-serif: "Ubuntu", sans-serif;
 
 @media (min-width: 992px) {
   body {
@@ -41,7 +41,7 @@ body.dark, body.dark a {
   color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6, .base {
+h1, h2, h3, h4, h5, h6 {
   font-family: $serif;
 }
 
@@ -67,17 +67,9 @@ ul {
   list-style-type: square;
 }
 
-p > a{
-  text-decoration: underline;
-}
-
 a {
   color: #222;
   text-decoration: none;
-
-  &:hover{
-    background-color: #fbcb0a;
-  }
 }
 
 .footnote-backref {
@@ -86,12 +78,6 @@ a {
 
 .title {
   text-align: center;
-}
-
-.time-post {
-  float: right;
-  font-size: 95%;
-  font-family: $mono;
 }
 
 img {
@@ -128,10 +114,6 @@ blockquote {
 footer {
   padding: 25px;
   text-align: center;
-
-  a {
-    border-bottom: $boder;
-  }
 }
 
 ul.blog-posts {
