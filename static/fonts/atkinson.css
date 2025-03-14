@@ -23,6 +23,14 @@
 }
 
 @font-face {
+  font-family: "Atkinson Hyperlegible Regular Italic";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Atkinson Hyperlegible Regular Italic")
+    , url("AtkinsonHyperlegibleNext-RegularItalic.woff2") format("woff2");
+}
+
+@font-face {
   font-family: "Atkinson Hyperlegible Bold";
   font-style: normal;
   font-weight: 700;

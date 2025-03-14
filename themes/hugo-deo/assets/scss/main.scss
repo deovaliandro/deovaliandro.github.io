@@ -7,21 +7,22 @@ $sans-serif: "Atkinson Hyperlegible Regular", sans-serif;
 
 @media (min-width: 992px) {
   body {
-    max-width: 70%;
-    margin: 0 auto 0 auto;
+    max-width: 60%;
+    margin: 0 auto;
+    font-size: clamp(24px, 26px, 32px);
   }
 }
 
 @media (max-width: 992px) {
   body {
     max-width: 90%;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
+    font-size: clamp(20px, 24px, 32px);
   }
 }
 
 body {
   font-family: $sans-serif;
-  font-size: clamp(20px, 32px, 48px);
   overflow-y: scroll;
   background: transparent;
   line-height: 1.4;
@@ -67,12 +68,12 @@ h1, h2, h3, h4, h5, h6 {
 header {
   border-bottom: $boder;
   text-align: center;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 #me-img {
   display: inline-block;
-  width: 4vh;
+  width: 5vh;
   vertical-align:middle;
 }
 
@@ -119,12 +120,12 @@ img {
 pre,
 code {
   font-family: $mono;
-  font-size: clamp(20px, 30px, 48px);
+  font-size: 90%;
 }
 
 code {
   padding: 2px 5px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 pre code {
@@ -155,8 +156,8 @@ ul.blog-posts {
 
 code:not(pre > code) {
   background-color: #f6f7f8;
-  padding: 1px 2px;
-  border-radius: 1ch;
+  padding: 2px 4px;
+  border-radius: .5ch;
   border: .1rem solid #0000001a;
 }
 
@@ -243,7 +244,8 @@ mark {
   background-color: #f0f0f0;
 }
 .chroma {
-  background-color: #f0f0f0;
+  background-color: #f6f7f8;
+  border: 1px solid #0000001a;
   .lnlinks {
     outline: none;
     text-decoration: none;
