@@ -5,8 +5,8 @@
     <li>
       <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate
         class="date-post">
-        {{ .Date.Format (default "02-01-2006" .Site.Params.dateFormat) }}
-      </time> - 
+        {{ .Date.Format (default "02-01-2006" .Site.Params.dateFormat) }} -
+      </time>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
     </li>
     {{ else }}
