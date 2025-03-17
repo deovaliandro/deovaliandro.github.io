@@ -1,15 +1,23 @@
 @import url('/fonts/atkinson.css');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
-$boder: 1px dashed #e5e7eb;
+$boder: 1px dashed #f0f8ff;
 $mono: "Atkinson Hyperlegible Mono", monospace;
+$p : "Spectral", serif;
 $serif: "Atkinson Hyperlegible Bold", serif;
 $sans-serif: "Atkinson Hyperlegible Regular", sans-serif;
+
+:root {
+  --font-small: 0.7rem;
+  --pad: 0.5rem;
+  --color-sub: rgb(130 130 130);
+}
 
 @media (min-width: 992px) {
   body {
     max-width: 60%;
     margin: 0 auto;
-    font-size: clamp(24px, 26px, 32px);
+    font-size: clamp(24px, 26px, 28px);
   }
 }
 
@@ -17,7 +25,7 @@ $sans-serif: "Atkinson Hyperlegible Regular", sans-serif;
   body {
     max-width: 90%;
     margin: 0 auto;
-    font-size: clamp(20px, 24px, 32px);
+    font-size: clamp(16px, 18px, 20px);
   }
 }
 
@@ -26,11 +34,17 @@ body {
   overflow-y: scroll;
   background: transparent;
   line-height: 1.4;
+  // background-color: #fff5d1;
 }
 
 p {
   margin: 0;
   padding-bottom: 1em;
+}
+
+main, footer {
+  font-family: $p;
+  font-weight: 300;
 }
 
 ul, ol {
@@ -42,27 +56,21 @@ ul, ol {
   }
 }
 
-.dark-mode-toggle {
-  cursor: pointer;
-  visibility: hidden;
-}
-
-body.light {
-  color: #35302e;
-  
-  a {
-    color: #0078a0;
-  }
-}
-
-body.dark, body.dark a {
-  background-color: #222;
-  color: #fff;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: $serif;
-  border-bottom: 1px solid #e5e7eb;
+}
+
+h1 {
+  line-height: 1.0;
+  text-indent: -.15rem;
+}
+
+.metadata {
+  color: var(--color-sub);
+  margin: var(--pad) 0;
+  font-size: var(--font-small);
+  font-family: $mono;
+  text-align: center;
 }
 
 header {
@@ -115,6 +123,7 @@ img {
   max-width: 100%;
   display: block;
   margin-inline: auto;
+  mix-blend-mode: multiply;
 }
 
 pre,
@@ -155,10 +164,10 @@ ul.blog-posts {
 }
 
 code:not(pre > code) {
-  background-color: #f6f7f8;
+  background-color: #fff8d3;
   padding: 2px 4px;
   border-radius: .5ch;
-  border: .1rem solid #0000001a;
+  border: 1px solid #f0d547;
 }
 
 /* Format tables */
@@ -244,7 +253,7 @@ mark {
   background-color: #f0f0f0;
 }
 .chroma {
-  background-color: #f6f7f8;
+  // background-color: #f6f7f8;
   border: 1px solid #0000001a;
   .lnlinks {
     outline: none;
