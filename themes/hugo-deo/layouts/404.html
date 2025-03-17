@@ -1,34 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  {{ with .Site.Params.favicon }}
-  <link rel="shortcut icon" href="{{ . | absURL }}" />{{ end }}
-
-  <title>404</title>
-
-  {{- $cssSource := "scss/main.scss" }}
-  {{- $cssTarget := "css/style.css" }}
-  {{- $cssOptions := cond (hugo.IsServer) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
-  {{- $style := resources.Get $cssSource | toCSS $cssOptions }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-</head>
-
-<body>
-  <header>
-    <a href="/">
-      <p class="title">{{ .Site.Title }}</p>
-    </a>
-  </header>
-  <main>
-    <h1 class="notfound">error 404</h1>
-  </main>
-  <footer>
-    {{- partial "footer.html" . -}}
-  </footer>
-</body>
-
-</html>
+{{- partial "header.html" . -}}
+<main>
+  <h1 class="notfound">404</h1>
+</main>
+{{- partial "footer.html" . -}}
