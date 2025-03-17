@@ -34,8 +34,10 @@ body {
   overflow-y: scroll;
   background: transparent;
   line-height: 1.4;
-  // background-color: #fff5d1;
+  font-weight: 300;
 }
+
+.katex { font-size: 0.9em !important; }
 
 p {
   margin: 0;
@@ -44,7 +46,6 @@ p {
 
 main, footer {
   font-family: $p;
-  font-weight: 300;
 }
 
 ul, ol {
