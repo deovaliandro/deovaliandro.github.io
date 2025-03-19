@@ -9,6 +9,7 @@ $sans-serif: "Spectral", sans-serif;
   --font-small: 0.7rem;
   --pad: 0.5rem;
   --color-sub: rgb(130 130 130);
+  --color-foot: #6b7886;
 }
 
 @media (min-width: 992px) {
@@ -113,6 +114,8 @@ blockquote {
 footer {
   padding: 25px;
   text-align: center;
+  font: 16px $mono;
+  color: var(--color-foot);
 }
 
 ul.blog-posts {
