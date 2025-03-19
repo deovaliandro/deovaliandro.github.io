@@ -1,11 +1,9 @@
-@import url('/fonts/atkinson.css');
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 $boder: 1px dashed #f0f8ff;
-$mono: "Atkinson Hyperlegible Mono", monospace;
-$p : "Spectral", serif;
-$serif: "Atkinson Hyperlegible Bold", serif;
-$sans-serif: "Atkinson Hyperlegible Regular", sans-serif;
+$mono: "DM Mono", monospace;
+$serif: "Inter", serif;
+$sans-serif: "Spectral", sans-serif;
 
 :root {
   --font-small: 0.7rem;
@@ -40,31 +38,9 @@ body {
 
 .katex { font-size: 0.9em !important; }
 
-p {
-  margin: 0;
-  padding-bottom: 1em;
-}
-
-main, footer {
-  font-family: $p;
-}
-
-ul, ol {
-  margin-top: 0;
-  margin-bottom: 0;
-
-  li:last-child, ol:last-child {
-    margin-bottom: 1em;
-  }
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: $serif;
-}
-
-h1 {
-  line-height: 1.0;
-  text-indent: -.15rem;
+  margin-bottom: 0;
 }
 
 .metadata {
@@ -76,32 +52,15 @@ h1 {
 }
 
 header {
-  border-bottom: $boder;
   text-align: center;
   padding: 10px;
+  font-family: $serif;
 }
 
 #me-img {
   display: inline-block;
-  width: 5vh;
+  width: 8vh;
   vertical-align:middle;
-}
-
-.red {
-  color: red;
-}
-
-.date {
-  text-align: center;
-}
-
-.date-post {
-  font-family: $mono;
-}
-
-li p {
-  margin-top: .5ch;
-  margin-bottom: .5ch;
 }
 
 ul {
@@ -251,9 +210,6 @@ mark {
 }
 
 // chroma
-.bg {
-  background-color: #f0f0f0;
-}
 .chroma {
   // background-color: #f6f7f8;
   border: 1px solid #0000001a;
