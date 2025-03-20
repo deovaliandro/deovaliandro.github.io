@@ -4,13 +4,10 @@ $boder: 1px dashed #f0f8ff;
 $mono: "DM Mono", monospace;
 $serif: "Inter", serif;
 $sans-serif: "Spectral", sans-serif;
-
-:root {
-  --font-small: 0.7rem;
-  --pad: 0.5rem;
-  --color-sub: rgb(130 130 130);
-  --color-foot: #6b7886;
-}
+$font-small: 0.7rem;
+$pad: 0.5rem;
+$color-sub: rgb(130 130 130);
+$color-foot: #6b7886;
 
 @media (min-width: 992px) {
   body {
@@ -45,10 +42,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .metadata {
-  color: var(--color-sub);
-  margin: var(--pad) 0;
-  font-size: var(--font-small);
-  font-family: $mono;
+  color: $color-sub;
+  margin: $pad 0;
+  font: $font-small $mono;
   text-align: center;
 }
 
@@ -115,7 +111,7 @@ footer {
   padding: 25px;
   text-align: center;
   font: 16px $mono;
-  color: var(--color-foot);
+  color: $color-foot;
 }
 
 ul.blog-posts {
