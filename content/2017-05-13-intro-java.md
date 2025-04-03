@@ -3,83 +3,17 @@ title       = "Pengantar Pemrograman dengan Java"
 date        = "2017-05-13"
 +++
 
-<details>
-    <summary>ToC</summary>
-
-- [Struktur Dasar](#struktur-dasar)
-  - [Struktur program](#struktur-program)
-  - [Aturan Penamaan](#aturan-penamaan)
-  - [Menjalankan program](#menjalankan-program)
-- [Input dan Output](#input-dan-output)
-  - [Input](#input)
-    - [Dengan menggunakan Scanner](#dengan-menggunakan-scanner)
-    - [Dengan menggunakan BufferReader](#dengan-menggunakan-bufferreader)
-  - [Output](#output)
-    - [System.out.print()](#systemoutprint)
-    - [System.out.printf](#systemoutprintf)
-- [Operasi Dasar](#operasi-dasar)
-  - [Operator Aritmatika](#operator-aritmatika)
-  - [Operator pembanding](#operator-pembanding)
-  - [Operator Logika](#operator-logika)
-- [Tipe Data](#tipe-data)
-  - [Tipe Data Primitif](#tipe-data-primitif)
-    - [Integer](#integer)
-      - [byte](#byte)
-      - [short](#short)
-      - [int](#int)
-      - [long](#long)
-    - [Floating-point numbers](#floating-point-numbers)
-      - [float](#float)
-      - [double](#double)
-    - [Characters](#characters)
-      - [char](#char)
-    - [Boolean](#boolean)
-  - [Tipe Data Reference](#tipe-data-reference)
-    - [String](#string)
-  - [Deklarasi variabel](#deklarasi-variabel)
-    - [Deklarasi](#deklarasi)
-    - [Inisiasi](#inisiasi)
-    - [Inisiasi dinamis](#inisiasi-dinamis)
-  - [Mengubah tipe ke tipe data lain](#mengubah-tipe-ke-tipe-data-lain)
-    - [Konversi otomatis](#konversi-otomatis)
-- [Penyeleksian Kondisi](#penyeleksian-kondisi)
-  - [If-Else](#if-else)
-  - [Switch](#switch)
-- [Perulangan](#perulangan)
-  - [For](#for)
-  - [While](#while)
-  - [Do-while](#do-while)
-  - [For-each](#for-each)
-- [Jump Statement](#jump-statement)
-  - [Break](#break)
-  - [Continue](#continue)
-  - [Return](#return)
-- [Array](#array)
-  - [Deklarasi Array](#deklarasi-array)
-  - [Mengisi](#mengisi)
-  - [Mengakses](#mengakses)
-  - [Array multi-dimensi](#array-multi-dimensi)
-  - [Panjang Array](#panjang-array)
-- [Method](#method)
-- [File IO](#file-io)
-- [string](#string-1)
-  - [Menthod dalam class String](#menthod-dalam-class-string)
-    - [equals()](#equals)
-    - [length()](#length)
-    - [charAt()](#charat)
-- [Daftar Pustaka](#daftar-pustaka)
-
-</details>
-
-[Java](https://en.wikipedia.org/wiki/Java_(programming_language)) adalah bahasa pemrograman level tinggi, robust
-(mempunyai Garbage Collector dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
-object-oriented language karena masih mendukung primitive data types seperti `int`, `char`, dll.
+[Java](https://en.wikipedia.org/wiki/Java_(programming_language)) adalah bahasa
+pemrograman level tinggi, robust (mempunyai Garbage Collector dan Exception
+Handling), object-oriented dan secure/stable tetapi tidak pure object-oriented language karena masih mendukung primitive data types seperti `int`, `char`, dll.
 
 ## Struktur Dasar
 
-Sintaks Java mirip dengan `C/C++`, tetapi Java tidak support dengan low-level programming seperti pointer
-(sebenarnya Java punya pointer, semua turunan object adalah pointer. Akan tetapi, anda bisa jadi programmer Java
-profesional tanpa perlu tahu fakta ini[^1]. Kode Java selalu ditulis didalam sebuah class dan objek.
+Sintaks Java mirip dengan `C/C++`, tetapi Java tidak support dengan low-level
+programming seperti pointer (sebenarnya Java punya pointer, semua turunan object
+adalah pointer. Akan tetapi, anda bisa jadi programmer Java profesional tanpa
+perlu tahu fakta ini)[^1]. Kode Java selalu ditulis didalam sebuah class dan
+objek.
 
 ### Struktur program
 
@@ -93,11 +27,12 @@ public class Main {
 }
 ```
 
-`class Main` Adalah class utama, nama `Main` harus sesuai dengan nama file. Aturan penulisannya adalah dengan
-menggunakan huruf kapital di huruf pertama. Misalnya: `Main`, `Utama`, dsb-nya.
+`class Main` Adalah class utama, nama `Main` harus sesuai dengan nama file.
+Aturan penulisannya adalah dengan menggunakan huruf kapital di huruf pertama.
+Misalnya: `Main`, `Utama`, dsb-nya.
 
-`public static void main(String args[])` adalah kode utama yang akan dijalankan ketika kita menjalankan sebuah program
-Java.
+`public static void main(String args[])` adalah kode utama yang akan dijalankan
+ketika kita menjalankan sebuah program Java.
 
 Dengan keluarnya jdk22[^2] maka ada perubahan besar, yaitu:
 
@@ -111,7 +46,8 @@ class HelloWorld {
 
 ### Aturan Penamaan
 
-Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus dalam Java yang harus dipatuhi seperti:
+Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
+dalam Java yang harus dipatuhi seperti:
 
 1. tidak boleh diawali dengan angka,
 2. tidak boleh disertai symbol khusus seperti `@`, `!`, `*`, `#`,
@@ -119,8 +55,9 @@ Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
 4. boleh diawali dengan underscore atau symbol `$`, dan
 5. nama variable tidak boleh mengandung spasi.
 
-Menurut Convention over configuration Java[^3], penulisan nama variable menggunakan lowerCamel case misalnya
-`namaVariabel`, dan penulisan nama class menggunakan uppercamel case misalnya `main`.
+Menurut Convention over configuration Java[^3], penulisan nama variable
+menggunakan lowerCamel case misalnya `namaVariabel`, dan penulisan nama class
+menggunakan uppercamel case misalnya `main`.
 
 ### Menjalankan program
 
@@ -132,16 +69,18 @@ Untuk mengcompile java:
 javac NamaFile.java
 ```
 
-dan kemudian akan menghasilkan sebuah file dengan nama `NamaFile.class`. File inilah yang kemudian dijalankan dengan
-menggunakan perintah:
+dan kemudian akan menghasilkan sebuah file dengan nama `NamaFile.class`. File
+inilah yang kemudian dijalankan dengan menggunakan perintah:
 
 ```bash
 java NamaFile
 ```
 
-perhatikan, untuk menjalankan, tidak perlu menggunakan `NamaFile.class`, cukup dengan menggunakan `NamaFile` saja.
+perhatikan, untuk menjalankan, tidak perlu menggunakan `NamaFile.class`, cukup
+dengan menggunakan `NamaFile` saja.
 
-Dengan update dari Java 11, maka sebuah program Java dapat dijalankan tanpa perlu mengcompilenya terlebih dahulu[^4].
+Dengan update dari Java 11, maka sebuah program Java dapat dijalankan tanpa
+perlu mengcompilenya terlebih dahulu[^4].
 
 Misalnya:
 
@@ -161,8 +100,9 @@ java NamaFile.java
 
 ## Input dan Output
 
-IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan bagaimana mengeluarkan hasil dari
-program tersebut. Meskipun pengertian I/O secara lebih luas lebih dari hal tersebut, namun disini kita akan menggunakan
+IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan
+bagaimana mengeluarkan hasil dari program tersebut. Meskipun pengertian I/O
+secara lebih luas lebih dari hal tersebut, namun disini kita akan menggunakan
 terbatas pada input dan output di terminal.
 
 ### Input

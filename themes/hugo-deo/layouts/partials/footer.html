@@ -2,11 +2,17 @@
   {{ if ne .Site.Params.hideMadeWithLine true }}
   <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
     CC BY-NC-SA 4.0</a>, sejak 2016 &copy; Deo,
-  <span id="love">🌱</span> dengan <span id="love">💗</span>. <br>
+  <span id="love">🌱</span> dengan <span id="love">💗</span><br>
   <a rel="me" href="https://infosec.exchange/@mdv">mastodon</a> | <a rel="me"
     href="mailto:deo@duck.com">email</a> |
-    <a target="_blank" href="https://github.com/deovaliandro">github</a>.
+    <a target="_blank" href="https://github.com/deovaliandro">github</a>
   {{ end }}
 </footer>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
 </body>
 </html>

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 $boder: 1px dashed #f0f8ff;
 $mono: "DM Mono", monospace;
@@ -6,8 +7,7 @@ $serif: "Inter", serif;
 $sans-serif: "Spectral", sans-serif;
 $font-small: 0.7rem;
 $pad: 0.5rem;
-$color-sub: rgb(130 130 130);
-$color-foot: #6b7886;
+$color-sub: rgb(130, 130, 130);
 
 @media (min-width: 992px) {
   body {
@@ -29,7 +29,7 @@ body {
   font-family: $sans-serif;
   overflow-y: scroll;
   background: transparent;
-  line-height: 1.4;
+  line-height: 1.6;
   font-weight: 300;
   color: #35302e;
 }
@@ -37,8 +37,14 @@ body {
 .katex { font-size: 0.9em !important; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $serif;
+  font-family: $mono;
+  font-weight: 500;
   margin-bottom: 0;
+  text-align: center;
+}
+
+p {
+  text-align: justify;
 }
 
 .metadata {
@@ -50,14 +56,8 @@ h1, h2, h3, h4, h5, h6 {
 
 header {
   text-align: center;
-  padding: 10px;
-  font-family: $serif;
-}
-
-#me-img {
-  display: inline-block;
-  width: 8vh;
-  vertical-align:middle;
+  padding-top: 1em;
+  font-family: $mono;
 }
 
 ul {
@@ -67,14 +67,6 @@ ul {
 a {
   color: #0078a0;
   text-decoration: none;
-}
-
-.footnote-backref {
-  border-bottom: none;
-}
-
-.title {
-  text-align: center;
 }
 
 img {
@@ -103,31 +95,19 @@ pre code {
 
 blockquote {
   font-style: italic;
-  border-left: 4px solid grey;
-  padding: 5px 0 5px 20px;
+  border-left: 2px solid grey;
+  padding: 0 20px;
 }
 
 footer {
-  padding: 25px;
+  padding: 1em;
   text-align: center;
   font: 16px $mono;
-  color: $color-foot;
 }
 
 ul.blog-posts {
   list-style-type: none;
   padding: unset;
-}
-
-.notfound {
-  text-align: center;
-}
-
-code:not(pre > code) {
-  background-color: #fff8d3;
-  padding: 2px 4px;
-  border-radius: .5ch;
-  border: 1px solid #f0d547;
 }
 
 /* Format tables */
@@ -202,10 +182,8 @@ mark {
 
 /* footnote */
 .footnote-ref {
-  padding: 2px 5px;
-  border-radius: 1ch;
-  border: 1px solid #f0d547;
-  background-color: #fff8d3;
+  border-bottom: 1px solid red;
+  border-width: .5em;
 }
 
 // chroma
