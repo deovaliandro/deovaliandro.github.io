@@ -38,13 +38,13 @@ Relasi ekivalensi sering diberi lambang $\sim$, sehingga $(a, b) \in R$ sering d
 
 Contohnya:
 
-$$ \sim \subseteq \mathbb{Z}^2 $ dengan aturan $ (a, b) \in \sim \Leftrightarrow \exists k \in \mathbb{Z} : a - b = 4k$$
+$$ \sim \subseteq \mathbb{Z}^2 $$ dengan aturan $$ (a, b) \in \sim \Leftrightarrow \exists k \in \mathbb{Z} : a - b = 4k $$
 
 > fyi: $\mathbb{Z}^2$ is standard notation for the Cartesian square of the Integers; the set of all pairs of integers.
 >
 > $\mathbb{Z}^2 = { (x,y): x \in \mathbb{Z}, y \in \mathbb{Z} }$
 >
-> -- source: https://math.stackexchange.com/questions/2187233/what-means-a-set-in-z2
+> -- source: [math.stackexchange](https://math.stackexchange.com/questions/2187233/what-means-a-set-in-z2)
 
 Karena $5 \sim 17$ dan $17 \sim -3$, maka $5 \sim -3$ (transitif), $17 \sim 5 $ dan $ -3 \sim 17$ (sifat simetri).
 

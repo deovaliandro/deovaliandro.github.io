@@ -23,7 +23,9 @@ Catatan ini adalah catatan saya sebagai seorang asisten lab PBO/OOP.
 
 1. [Pengantar Pemrograman dengan Java](2019-04-28-java-oop)
 
-## Logika
+## Math
+
+1. [Landasan Matematika Kriptografi](2019-07-23-matematika-kripto)
 
 ## Algoritma
 

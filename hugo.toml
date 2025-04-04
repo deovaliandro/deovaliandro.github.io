@@ -1,6 +1,6 @@
 baseURL = "https://deo.my.id/"
 theme = "hugo-deo"
-title = "Deo Valiandro. M"
+title = "deo"
 languageCode = "en-US"
 disableKinds = ["taxonomy", "RSS", "term"]
 enableRobotsTXT = true
