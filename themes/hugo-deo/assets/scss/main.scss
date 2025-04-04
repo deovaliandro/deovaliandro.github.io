@@ -1,12 +1,12 @@
-@charset "utf-8";
+/* Copyright (c) 2016 Deo Valiandro. M */
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-$boder: 1px dashed #f0f8ff;
-$mono: "DM Mono", monospace;
-$sans-serif: "DM Sans", sans-serif;
-$font-small: 0.7rem;
-$pad: 0.5rem;
-$color-sub: rgb(130, 130, 130);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-rendering: geometricPrecision;
+}
 
 @media (min-width: 992px) {
   body {
@@ -25,17 +25,19 @@ $color-sub: rgb(130, 130, 130);
 }
 
 body {
-  font-family: $sans-serif;
+  font-family: "DM Sans", sans-serif;
   line-height: 1.6;
   font-weight: 400;
   color: #35302e;
+  overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $mono;
+  font-family: "DM Mono", monospace;
   font-weight: 500;
   margin-bottom: 0;
   text-align: center;
+  line-height: 1.25;
 }
 
 p {
@@ -48,16 +50,16 @@ a {
 }
 
 .metadata {
-  color: $color-sub;
-  margin: $pad 0;
-  font: $font-small $mono;
+  color: rgb(130, 130, 130);
+  margin: 0.5rem 0;
+  font: 0.7rem "DM Mono", monospace;
   text-align: center;
 }
 
 header {
   text-align: center;
   padding-top: 1em;
-  font-family: $mono;
+  font-family: "DM Mono", monospace;
 }
 
 ul {
@@ -73,7 +75,7 @@ img {
 
 pre,
 code {
-  font-family: $mono;
+  font-family: "DM Mono", monospace;
   font-size: 90%;
 }
 
@@ -97,7 +99,7 @@ blockquote {
 footer {
   padding: 1em;
   text-align: center;
-  font: 16px $mono;
+  font: 16px "DM Mono", monospace;
 }
 
 ul.blog-posts {

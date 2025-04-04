@@ -3,8 +3,8 @@ title     = "Enkripsi Folder dengan GPG"
 date      = "2021-11-11T12:10:12"
 +++
 
-Demi menjaga keamanan data, saya berencana mengenkripsi beberapa file 🔑, salah satu caranya adalah dengan menggunakan
-https://gnupg.org/.
+Demi menjaga keamanan data, saya berencana mengenkripsi beberapa file 🔑, salah
+satu caranya adalah dengan menggunakan [GPG](https://gnupg.org/).
 
 ## Kompresi dan Enkripsi
 

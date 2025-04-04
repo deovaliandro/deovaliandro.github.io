@@ -1,9 +1,10 @@
 {{- partial "header.html" . -}}
 <main class="base">
-  {{/*  <ol>
+  <ol>
     {{ range .Pages }}
     <li>
-      <a href="{{ .Permalink }}">{{ .Title }}</a> <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate class="metadata">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate class="metadata">
         {{ .Date.Format (default "02-01-2006" .Site.Params.dateFormat) }}
       </time>
     </li>
@@ -12,7 +13,7 @@
       No posts yet
     </li>
     {{ end }}
-  </ol>  */}}
+  </ol>
 
   {{ .Content }}
 </main>

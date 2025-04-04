@@ -1,12 +1,9 @@
 {{- partial "header.html" . -}}
 <main>
   <h1 class="title">{{ .Params.title }}</h1>
-  <p class="metadata">{{ .Date | time.Format "02 Jan 2006" }}</p>
-  {{ .Content }}
-  <p>
-    {{ range (.GetTerms "tags") }}
-    <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-    {{ end }}
+  <p class="metadata">
+    {{ .Date | time.Format "02 Jan 2006" }}
   </p>
+  {{ .Content }}
 </main>
 {{- partial "footer.html" . -}}
