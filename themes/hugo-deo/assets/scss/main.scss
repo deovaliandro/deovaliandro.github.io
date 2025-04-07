@@ -1,6 +1,13 @@
 /* Copyright (c) 2016 Deo Valiandro. M */
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+$cosmic-latte: #fffbeb;
+$papaya-whip: #fff1d4;
+$antique-white: #f8edd9;
+$dark-pastel-red: #cc4b24;
+$maximum-yellow: #f1be49;
+$emeraled-green: #317039;
+
 * {
   box-sizing: border-box;
   text-rendering: geometricPrecision;
@@ -103,6 +110,12 @@ footer {
   font: 16px "DM Mono", monospace;
 }
 
+.yellow {
+  background-color: $maximum-yellow;
+  padding-left: 4ch;
+  border-left: 1ch black;
+}
+
 ul.blog-posts {
   list-style-type: none;
   padding: unset;
@@ -168,7 +181,7 @@ kbd {
 
 /* mark */
 mark {
-  padding: 2px 5px;
+  padding: 1px 5px;
   border-radius: 1ch;
   border: 1px solid #f0d547;
   background-color: #fff8d3;

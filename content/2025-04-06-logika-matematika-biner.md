@@ -38,5 +38,19 @@ $p(x)$. Hal ini membuat kuantor muncul:
 Untuk kuantor eksistensial, pembuktiannya cukup membuktikan sat bukti sedangkan
 untuk kuantor universal, kita harus membuktikan semuanya.
 
-Contoh: $\exists x \in \mathbb{R}, x^{2}+1 > 0$. Misalnya ambil $x = 1$, maka
-$1^{2}+1 > 0$ sudah membuktikan terpenuhi dan cukup hanya 1 pembuktian saja.
+Contoh:
+
+1. $\exists x \in \mathbb{R}, x^{2}+1 > 0$, misalnya ambil $x = 1$, maka
+   $1^{2}+1 > 0$ sudah membuktikan terpenuhi dan cukup hanya 1 pembuktian saja.
+2. $\forall x \in \mathbb{R}, x^{2}+1 > 0$, kita tahu bahwa $\forall x \pm x,
+   x \cdot x > 0$, maka dapat dibuktikan bahwa $x^{2} + 1 > 0$, untuk setiap $ x
+   \in \mathbb{R}$.
+
+Eksistensial sulit membuktikan salah, universal sulit membuktikan kebenarannya.
+
+## Nested Kuantor
+
+Kuantor yang bergabung menjadi menjadi suatu pernyataan. Misalnya:
+
+$$\lim_{x \to 0} f(x) = L \iff \forall \epsilon > 0, \exists \delta > 0,
+\ni: \forall x : 0 < x - a < \delta \Rightarrow | f(x) - L | < \epsilon$$
