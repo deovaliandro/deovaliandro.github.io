@@ -1,19 +1,68 @@
-{{- partial "header.html" . -}}
-<main class="base">
-  {{ .Content }}
-  <ol>
-    {{ range .Pages }}
-    <li>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate class="metadata">
-        {{ .Date.Format (default "02-01-2006" .Site.Params.dateFormat) }}
-      </time>
-    </li>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {{ with .Site.Params.favicon }}
+  <link rel="shortcut icon" href="{{ . | absURL }}">
+  <meta property="og:image" content="{{ . | absURL }}">{{ end }}
+
+  <title>{{ .Title | default .Site.Title }}</title>
+
+  {{ $css := resources.Get "scss/main.scss" | toCSS (dict "transpiler" "libsass" "targetPath" "css/style.css") }}
+  {{ $css = $css | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+
+  <script defer async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+</head>
+
+<body class="layout">
+  <header class="layout__header">
+    <a href="{{ .Site.BaseURL }}">
+      {{- .Site.Title -}}
+    </a>
+  </header>
+
+  <main class="layout__main base">
+    {{ .Content }}
+
+    {{ if .Pages }}
+    <ol class="page-list">
+      {{ range .Pages.ByDate.Reverse }}
+      <li class="page-item">
+        <a href="{{ .RelPermalink }}" class="page-link">{{ .Title }}</a>
+        <time datetime="{{ .Date.Format "2006-01-02" }}" class="metadata">
+          {{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}
+        </time>
+      </li>
+      {{ end }}
+    </ol>
     {{ else }}
-    <li>
-      No posts yet
-    </li>
+    <p class="no-content">No posts yet</p>
     {{ end }}
-  </ol>
-</main>
-{{- partial "footer.html" . -}}
+  </main>
+
+  <footer class="layout__footer">
+    {{ if ne .Site.Params.hideMadeWithLine true }}
+    <span class="footer__copyright">CC BY-NC-SA 4.0</a>, sejak 2016 &copy; Deo,</span>
+    <span class="footer__icons">
+      <span aria-hidden="true">🌱</span> dengan
+      <span aria-hidden="true">❤️</span>
+    </span>
+    <br>
+    <a rel="me" href="https://infosec.exchange/@mdv">mastodon</a> |
+    <a rel="me" href="mailto:deo@duck.com">email</a> |
+    <a target="_blank" href="https://github.com/deovaliandro">github</a>
+    {{ end }}
+  </footer>
+</body>
