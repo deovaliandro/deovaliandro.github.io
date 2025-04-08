@@ -1,16 +1,37 @@
 /* Copyright (c) 2016 Deo Valiandro. M */
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+// Variabel
 $cosmic-latte: #fffbeb;
 $papaya-whip: #fff1d4;
 $antique-white: #f8edd9;
 $dark-pastel-red: #cc4b24;
 $maximum-yellow: #f1be49;
 $emeraled-green: #317039;
+$border-color: #898EA4;
+$table-bg: #f5f7ff;
+$font-primary: "Gentium Plus", sans-serif;
+$font-secondary: "Plus Jakarta Sans", monospace;
+$font-mono: "DM Mono", monospace;
 
+// Global Styles
 * {
   box-sizing: border-box;
   text-rendering: geometricPrecision;
+}
+
+// Media Queries
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@include responsive(992px) {
+  body {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 992px) {
@@ -20,15 +41,8 @@ $emeraled-green: #317039;
   }
 }
 
-@media (max-width: 992px) {
-  body {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-}
-
 body {
-  font-family: "Gentium Plus", sans-serif;
+  font-family: $font-primary;
   font-size: clamp(1em, 1.6em, 2em);
   line-height: 1.6;
   font-weight: 400;
@@ -37,7 +51,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Plus Jakarta Sans", monospace;
+  font-family: $font-secondary;
   font-weight: 500;
   margin-bottom: 0;
   text-align: center;
@@ -46,6 +60,26 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   text-align: justify;
+}
+
+// Tabel
+%table-styles {
+  border: 1px solid $border-color;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+td, th {
+  @extend %table-styles;
+}
+
+th {
+  background-color: $table-bg;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: $table-bg;
 }
 
 mjx-math {
@@ -197,300 +231,4 @@ mark {
   border-width: .5em;
 }
 
-// chroma
-.chroma {
-  // background-color: #f6f7f8;
-  border: 1px solid #0000001a;
-
-  .lnlinks {
-    outline: none;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .lntd {
-    vertical-align: top;
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
-
-  .lntable {
-    border-spacing: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
-
-  .hl {
-    background-color: #d8d8d8;
-  }
-
-  .lnt {
-    white-space: pre;
-    -webkit-user-select: none;
-    user-select: none;
-    margin-right: 0.4em;
-    padding: 0 0.4em 0 0.4em;
-    color: #7f7f7f;
-  }
-
-  .ln {
-    white-space: pre;
-    -webkit-user-select: none;
-    user-select: none;
-    margin-right: 0.4em;
-    padding: 0 0.4em 0 0.4em;
-    color: #7f7f7f;
-  }
-
-  .line {
-    display: flex;
-  }
-
-  .k {
-    color: #007020;
-  }
-
-  .kc {
-    color: #007020;
-  }
-
-  .kd {
-    color: #007020;
-  }
-
-  .kn {
-    color: #007020;
-  }
-
-  .kp {
-    color: #007020;
-  }
-
-  .kr {
-    color: #007020;
-  }
-
-  .kt {
-    color: #902000;
-  }
-
-  .na {
-    color: #4070a0;
-  }
-
-  .nb {
-    color: #007020;
-  }
-
-  .nc {
-    color: #0e84b5;
-  }
-
-  .no {
-    color: #60add5;
-  }
-
-  .nd {
-    color: #555;
-  }
-
-  .ni {
-    color: #d55537;
-  }
-
-  .ne {
-    color: #007020;
-  }
-
-  .nf {
-    color: #06287e;
-  }
-
-  .nl {
-    color: #002070;
-  }
-
-  .nn {
-    color: #0e84b5;
-  }
-
-  .nt {
-    color: #062873;
-  }
-
-  .nv {
-    color: #bb60d5;
-  }
-
-  .s {
-    color: #4070a0;
-  }
-
-  .sa {
-    color: #4070a0;
-  }
-
-  .sb {
-    color: #4070a0;
-  }
-
-  .sc {
-    color: #4070a0;
-  }
-
-  .dl {
-    color: #4070a0;
-  }
-
-  .sd {
-    color: #4070a0;
-    font-style: italic;
-  }
-
-  .s2 {
-    color: #4070a0;
-  }
-
-  .se {
-    color: #4070a0;
-  }
-
-  .sh {
-    color: #4070a0;
-  }
-
-  .si {
-    color: #70a0d0;
-  }
-
-  .sx {
-    color: #c65d09;
-  }
-
-  .sr {
-    color: #235388;
-  }
-
-  .s1 {
-    color: #4070a0;
-  }
-
-  .ss {
-    color: #517918;
-  }
-
-  .m {
-    color: #40a070;
-  }
-
-  .mb {
-    color: #40a070;
-  }
-
-  .mf {
-    color: #40a070;
-  }
-
-  .mh {
-    color: #40a070;
-  }
-
-  .mi {
-    color: #40a070;
-  }
-
-  .il {
-    color: #40a070;
-  }
-
-  .mo {
-    color: #40a070;
-  }
-
-  .o {
-    color: #666;
-  }
-
-  .ow {
-    color: #007020;
-  }
-
-  .c {
-    color: #60a0b0;
-    font-style: italic;
-  }
-
-  .ch {
-    color: #60a0b0;
-    font-style: italic;
-  }
-
-  .cm {
-    color: #60a0b0;
-    font-style: italic;
-  }
-
-  .c1 {
-    color: #60a0b0;
-    font-style: italic;
-  }
-
-  .cs {
-    color: #60a0b0;
-    background-color: #fff0f0;
-  }
-
-  .cp {
-    color: #007020;
-  }
-
-  .cpf {
-    color: #007020;
-  }
-
-  .gd {
-    color: #a00000;
-  }
-
-  .ge {
-    font-style: italic;
-  }
-
-  .gr {
-    color: #f00;
-  }
-
-  .gh {
-    color: #000080;
-  }
-
-  .gi {
-    color: #00a000;
-  }
-
-  .go {
-    color: #888;
-  }
-
-  .gp {
-    color: #c65d09;
-  }
-
-  .gu {
-    color: #800080;
-  }
-
-  .gt {
-    color: #04d;
-  }
-
-  .gl {
-    text-decoration: underline;
-  }
-
-  .w {
-    color: #bbb;
-  }
-}
+@import 'code'
