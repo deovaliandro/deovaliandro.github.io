@@ -63,10 +63,6 @@ menggunakan uppercamel case misalnya `main`.
 
 Java adalah bahasa yang dicompile terlebih dahulu sebelum dirun.
 
-{{< sidenote note="Ini catatan penting di samping teks." >}}
-Ini adalah teks utama dengan referensi.
-{{< /sidenote >}}
-
 Untuk mengcompile java:
 
 ```bash

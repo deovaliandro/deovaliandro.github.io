@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  {{ with .Site.Params.favicon }}
-  <link rel="shortcut icon" href="{{ . | absURL }}">
-  <meta property="og:image" content="{{ . | absURL }}">{{ end }}
-
-  <title>{{ .Title | default .Site.Title }}</title>
-
-  {{ $css := resources.Get "scss/test.scss" | toCSS (dict "transpiler" "libsass" "targetPath" "css/style.css") }}
-  {{ $css = $css | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
-
-  <script defer async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$']],
-        displayMath: [['$$', '$$']]
-      }
-    };
-  </script>
-</head>
-
-<body class="layout">
-  <header class="layout__header">
-    <a href="{{ .Site.BaseURL }}">
-      {{- .Site.Title -}}
-    </a>
-  </header>
+{{- partial "header.html" . -}}
 
   <main class="layout__main base">
     {{ .Content }}
@@ -52,17 +19,4 @@
     {{ end }}
   </main>
 
-  <footer class="layout__footer">
-    {{ if ne .Site.Params.hideMadeWithLine true }}
-    <span class="footer__copyright">CC BY-NC-SA 4.0</a>, sejak 2016 &copy; Deo,</span>
-    <span class="footer__icons">
-      <span aria-hidden="true">🌱</span> dengan
-      <span aria-hidden="true">❤️</span>
-    </span>
-    <br>
-    <a rel="me" href="https://infosec.exchange/@mdv">mastodon</a> |
-    <a rel="me" href="mailto:deo@duck.com">email</a> |
-    <a target="_blank" href="https://github.com/deovaliandro">github</a>
-    {{ end }}
-  </footer>
-</body>
+  {{- partial "footer.html" . -}}

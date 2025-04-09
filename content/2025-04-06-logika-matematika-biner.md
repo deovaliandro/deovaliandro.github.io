@@ -55,4 +55,3 @@ Kuantor yang bergabung menjadi menjadi suatu pernyataan. Misalnya:
 $$\lim_{x \to 0} f(x) = L \iff \forall \epsilon > 0, \exists \delta > 0,
 \ni: \forall x : 0 < x - a < \delta \Rightarrow | f(x) - L | < \epsilon$$
 
-Ini adalah teks dengan catatan kaki{{< footnote id="1" text="Ini catatan kaki pertama yang muncul di kanan." >}} yang akan tampil ketika diarahkan kursor.

@@ -39,7 +39,7 @@ $font-mono: "DM Mono", monospace;
 
 body {
   font-family: $font-primary;
-  font-size: clamp(1em, 1.6em, 2em);
+  font-size: clamp(1em, 1.4em, 2em);
   line-height: 1.6;
   font-weight: 400;
   color: #35302e;
@@ -217,4 +217,5 @@ hr {
 
 // Code Highlighting
 @import 'code';
-@import 'test';
+@import "components/sidenotes";
+// Tambahkan komponen SCSS lain di sini juga kalau ada

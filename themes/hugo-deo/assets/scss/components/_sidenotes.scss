@@ -1,0 +1,39 @@
+body {
+  counter-reset: sidenote-counter;
+}
+
+.sidenote {
+  font-size: 0.75em;
+  line-height: 1.4;
+
+  @include responsive(992px) {
+    
+  }
+
+  @media (min-width: 992px) {
+    float: right;
+    clear: right;
+    width: 25%;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    color: #555;
+    position: relative;
+    margin-right: -30%;
+  }
+
+  &::before {
+    counter-increment: sidenote-counter;
+    content: counter(sidenote-counter) ". ";
+    font-weight: bold;
+  }
+}
+
+.nomor-catatan {
+  margin-right: 0.25em;
+  border-bottom: 0.5em solid red;
+}
+
+.layar-kecil {
+  display: block;
+  margin-left: 3ch;
+}
