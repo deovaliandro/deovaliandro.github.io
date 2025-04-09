@@ -1,7 +1,9 @@
 /* Copyright (c) 2016 Deo Valiandro. M */
+
+// Font Imports
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-// Variabel
+// Variables
 $cosmic-latte: #fffbeb;
 $papaya-whip: #fff1d4;
 $antique-white: #f8edd9;
@@ -10,35 +12,29 @@ $maximum-yellow: #f1be49;
 $emeraled-green: #317039;
 $border-color: #898EA4;
 $table-bg: #f5f7ff;
+
 $font-primary: "Gentium Plus", sans-serif;
 $font-secondary: "Plus Jakarta Sans", monospace;
 $font-mono: "DM Mono", monospace;
 
-// Global Styles
-* {
-  box-sizing: border-box;
-  text-rendering: geometricPrecision;
-}
-
-// Media Queries
+// Mixins
 @mixin responsive($breakpoint) {
   @media (max-width: $breakpoint) {
     @content;
   }
 }
 
-@include responsive(992px) {
-  body {
-    max-width: 90%;
-    margin: 0 auto;
-  }
+// Placeholders
+%table-styles {
+  border: 1px solid $border-color;
+  text-align: center;
+  padding: 0.5rem;
 }
 
-@media (min-width: 992px) {
-  body {
-    max-width: 60%;
-    margin: 0 auto;
-  }
+// Base Styles
+* {
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
 }
 
 body {
@@ -48,8 +44,18 @@ body {
   font-weight: 400;
   color: #35302e;
   overflow-y: scroll;
+  margin: 0 auto;
+
+  @include responsive(992px) {
+    max-width: 90%;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 60%;
+  }
 }
 
+// Typography
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-secondary;
   font-weight: 500;
@@ -62,74 +68,9 @@ p {
   text-align: justify;
 }
 
-// Tabel
-%table-styles {
-  border: 1px solid $border-color;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-td, th {
-  @extend %table-styles;
-}
-
-th {
-  background-color: $table-bg;
-  font-weight: bold;
-}
-
-tr:nth-child(even) {
-  background-color: $table-bg;
-}
-
-mjx-math {
-  font-size: 90% !important;
-}
-
 a {
   color: #0078a0;
   text-decoration: none;
-}
-
-.metadata {
-  color: rgb(130, 130, 130);
-  margin: 0.5rem 0;
-  font: 0.7rem "DM Mono", monospace;
-  text-align: center;
-}
-
-header {
-  text-align: center;
-  padding-top: 1em;
-  font-family: "DM Mono", monospace;
-}
-
-ul {
-  list-style-type: square;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-  margin-inline: auto;
-  mix-blend-mode: multiply;
-}
-
-pre,
-code {
-  font-family: "DM Mono", monospace;
-  font-size: 90%;
-}
-
-code {
-  padding: 2px 5px;
-  overflow-y: auto;
-}
-
-pre code {
-  color: #222;
-  display: block;
-  padding: 1ch;
 }
 
 blockquote {
@@ -138,71 +79,81 @@ blockquote {
   padding: 0 20px;
 }
 
-footer {
-  padding: 1em;
+.metadata {
+  color: rgb(130, 130, 130);
+  margin: 0.5rem 0;
+  font: 0.7rem $font-mono;
   text-align: center;
-  font: 16px "DM Mono", monospace;
 }
 
-.yellow {
-  background-color: $maximum-yellow;
-  padding-left: 4ch;
-  border-left: 1ch black;
-}
-
-ul.blog-posts {
-  list-style-type: none;
-  padding: unset;
-}
-
-/* Format tables */
+// Tables
 table {
   border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+
+  td, th {
+    @extend %table-styles;
+  }
+
+  th {
+    background-color: $table-bg;
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: $table-bg;
+  }
 }
 
-figure>table {
+figure > table {
   width: max-content;
 }
 
-td {
-  border: 1px solid #898EA4;
-  text-align: center;
-  padding: 0.5rem;
+// Lists
+ul {
+  list-style-type: square;
+
+  &.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
 }
 
-th {
-  border: 1px solid #898EA4;
-  text-align: center;
-  padding: 0.5rem;
-  background-color: #f5f7ff;
-  font-weight: bold;
+// Code & Preformatted Text
+pre, code {
+  font-family: $font-mono;
+  font-size: 90%;
+  
+  code {
+    padding: 2px 5px;
+    overflow-y: auto;
+    color: #222;
+    display: block;
+    padding: 1ch;
+  }
 }
 
-tr:nth-child(even) {
-  background-color: #f5f7ff;
+// Images
+img {
+  max-width: 100%;
+  display: block;
+  margin-inline: auto;
+  mix-blend-mode: multiply;
 }
 
-table caption {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+// Utility Classes
+.yellow {
+  background-color: $maximum-yellow;
+  padding-left: 4ch;
+  border-left: 1ch solid black;
 }
 
-/* Garis */
-hr {
-  border: none;
-  height: 1px;
-  background: #898EA4;
-  margin: 1rem auto;
-}
-
-/* keyboard */
 kbd {
   background-color: rgba(200, 200, 200, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 0.2em;
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), inset 0 -2px 0 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 
+              inset 0 -2px 0 0 rgba(0, 0, 0, 0.15);
   display: inline-block;
   line-height: 1.5;
   margin: 0 0.15em;
@@ -213,22 +164,57 @@ kbd {
   white-space: nowrap;
 }
 
-/* mark */
 mark {
   padding: 1px 5px;
   border-radius: 1ch;
   border: 1px solid #f0d547;
   background-color: #fff8d3;
-
+  
   a {
     color: #0d47a1;
   }
 }
 
-/* footnote */
-.footnote-ref {
-  border-bottom: 1px solid red;
-  border-width: .5em;
+// Layout Components
+header {
+  text-align: center;
+  padding-top: 1em;
+  font-family: $font-mono;
 }
 
-@import 'code'
+footer {
+  padding: 1em;
+  text-align: center;
+  font: 16px $font-mono;
+  
+  .footnote-ref {
+    border-bottom: 0.5em solid red;
+  }
+  
+  .footnotes > hr {
+    display: none;
+  }
+}
+
+.footnotes {
+  > hr {
+    display: none;
+  }
+}
+
+// MathJax
+mjx-math {
+  font-size: 90% !important;
+}
+
+// Horizontal Rule
+hr {
+  border: none;
+  height: 1px;
+  background: $border-color;
+  margin: 1rem auto;
+}
+
+// Code Highlighting
+@import 'code';
+@import 'test';

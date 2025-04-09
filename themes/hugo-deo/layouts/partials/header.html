@@ -6,24 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   {{ with .Site.Params.favicon }}
-  <link rel="shortcut icon" href="{{ . | absURL }}" />{{ end }}
-  <meta property="og:image" content="{{ . | absURL }}images/favicon.ico" />
+  <link rel="shortcut icon" href="{{ . | absURL }}">
+  <meta property="og:image" content="{{ . | absURL }}">{{ end }}
 
-  <title>
-    {{ if .Page.Title }}
-    {{ .Page.Title }}
-    {{ else }}
-    {{ .Site.Title }}
-    {{ end }}
-  </title>
+  <title>{{ .Title | default .Site.Title }}</title>
 
-  {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
-  {{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-  {{ end }}
+  {{ $css := resources.Get "scss/test.scss" | toCSS (dict "transpiler" "libsass" "targetPath" "css/style.css") }}
+  {{ $css = $css | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
 
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <script defer async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     MathJax = {
       tex: {
@@ -34,9 +26,9 @@
   </script>
 </head>
 
-<body>
-  <header>
-    <a href="/">
-      {{ .Site.Title }}
+<body class="layout">
+  <header class="layout__header">
+    <a href="{{ .Site.BaseURL }}">
+      {{- .Site.Title -}}
     </a>
   </header>

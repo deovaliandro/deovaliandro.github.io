@@ -11,7 +11,7 @@
 
   <title>{{ .Title | default .Site.Title }}</title>
 
-  {{ $css := resources.Get "scss/main.scss" | toCSS (dict "transpiler" "libsass" "targetPath" "css/style.css") }}
+  {{ $css := resources.Get "scss/test.scss" | toCSS (dict "transpiler" "libsass" "targetPath" "css/style.css") }}
   {{ $css = $css | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
 

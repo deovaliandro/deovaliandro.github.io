@@ -63,6 +63,10 @@ menggunakan uppercamel case misalnya `main`.
 
 Java adalah bahasa yang dicompile terlebih dahulu sebelum dirun.
 
+{{< sidenote note="Ini catatan penting di samping teks." >}}
+Ini adalah teks utama dengan referensi.
+{{< /sidenote >}}
+
 Untuk mengcompile java:
 
 ```bash
@@ -1086,7 +1090,8 @@ System.out.println(l);
 
 #### charAt()
 
-Digunakan untuk menentukan `char` pada posisi tertentu pada sebuah `String`, misalnya:
+Digunakan untuk menentukan `char` pada posisi tertentu pada sebuah `String`,
+misalnya:
 
 ```java
 String nama = "Deo Valiandro"
@@ -1095,7 +1100,8 @@ char p2 = nama.charAt(2);
 System.out.println(p2);
 ```
 
-angka 2 menunjukkan index char yang diinginkan dalam sebuah `String`. `charAt()` mengahasilkan nilai `char`.
+angka 2 menunjukkan index char yang diinginkan dalam sebuah `String`. Dan
+`charAt()` mengahasilkan nilai `char`.
 
 Dan masih banyak lagi method-method lainnya.
 
