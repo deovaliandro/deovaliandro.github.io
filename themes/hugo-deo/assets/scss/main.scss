@@ -3,6 +3,8 @@
 // Font Imports
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+@import "components/font";
+
 // Variables
 $cosmic-latte: #fffbeb;
 $papaya-whip: #fff1d4;
@@ -13,8 +15,8 @@ $emeraled-green: #317039;
 $border-color: #898EA4;
 $table-bg: #f5f7ff;
 
-$font-primary: "Crimson Pro", sans-serif;
-$font-secondary: "Plus Jakarta Sans", monospace;
+$font-primary: "NewCM", serif;
+$font-secondary: "NewCM Uncial", sans-serif;
 $font-mono: "DM Mono", monospace;
 
 // Mixins
@@ -58,7 +60,6 @@ body {
 // Typography
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-secondary;
-  font-weight: 500;
   margin-bottom: 0;
   text-align: center;
   line-height: 1.25;
