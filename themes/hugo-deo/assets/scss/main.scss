@@ -91,6 +91,15 @@ blockquote {
 table {
   border-collapse: collapse;
   margin: 0 auto;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  // Buat scroll horizontal untuk layar kecil
+  @media (max-width: 768px) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 
   td, th {
     @extend %table-styles;
@@ -104,10 +113,6 @@ table {
   tr:nth-child(even) {
     background-color: $table-bg;
   }
-}
-
-figure > table {
-  width: max-content;
 }
 
 // Lists
@@ -224,22 +229,6 @@ hr {
   background: $border-color;
   margin: 1rem auto;
 }
-
-
-// Table
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1rem;
-
-  // Buat scroll horizontal untuk layar kecil
-  @media (max-width: 768px) {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-
 
 // Code Highlighting
 @import 'code';
