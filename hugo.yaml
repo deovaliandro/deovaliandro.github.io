@@ -13,6 +13,7 @@ cleanDestinationDir: true
 params:
   description: Deo's Blog
   favicon: images/favicon.ico
+  math: true
 markup:
   goldmark:
     extensions:

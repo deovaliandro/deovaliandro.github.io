@@ -50,8 +50,8 @@ Eksistensial sulit membuktikan salah, universal sulit membuktikan kebenarannya.
 
 ## Nested Kuantor
 
-Kuantor yang bergabung menjadi menjadi suatu pernyataan. Misalnya:
+Kuantor yang bergabung menjadi menjadi suatu pernyataan. Misalnya
+{{< sidenote 1 >}}Persamaan Umum Limit{{< /sidenote >}}:
 
 $$\lim_{x \to 0} f(x) = L \iff \forall \epsilon > 0, \exists \delta > 0,
 \ni: \forall x : 0 < x - a < \delta \Rightarrow | f(x) - L | < \epsilon$$
-
