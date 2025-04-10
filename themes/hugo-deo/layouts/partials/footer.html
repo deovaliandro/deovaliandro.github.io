@@ -1,15 +1,9 @@
-<footer class="layout__footer">
-  {{ if ne .Site.Params.hideMadeWithLine true }}
-  <span class="footer__copyright">CC BY-NC-SA 4.0</a>, sejak 2016 &copy; Deo,</span>
-  <span class="footer__icons">
-    <span aria-hidden="true">🌱</span> dengan
-    <span aria-hidden="true">❤️</span>
-  </span>
+<footer>
+  <span>CC BY-NC-SA 4.0</a>, sejak 2016 &copy; Deo, 🌱 dengan ❤️</span>
   <br>
   <a rel="me" href="https://infosec.exchange/@mdv">mastodon</a> |
   <a rel="me" href="mailto:deo@duck.com">email</a> |
   <a target="_blank" href="https://github.com/deovaliandro">github</a>
-  {{ end }}
 </footer>
 {{ if .Site.Params.math }}
 <script>
@@ -18,12 +12,9 @@
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       processEscapes: true
-    },
-    svg: {
-      fontCache: 'global'
     }
   };
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {{ end }}
 </body>
