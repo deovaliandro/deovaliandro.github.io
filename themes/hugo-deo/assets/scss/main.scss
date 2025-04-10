@@ -208,6 +208,15 @@ mjx-math {
   font-size: 92% !important;
 }
 
+mjx-container[display="true"] {
+  @include responsive(992px) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
 // Horizontal Rule
 hr {
   border: none;
@@ -215,6 +224,22 @@ hr {
   background: $border-color;
   margin: 1rem auto;
 }
+
+
+// Table
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+
+  // Buat scroll horizontal untuk layar kecil
+  @media (max-width: 768px) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
 
 // Code Highlighting
 @import 'code';
