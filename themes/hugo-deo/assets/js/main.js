@@ -1,6 +1,6 @@
 function toggleSH() {
   const spans = document.querySelectorAll('.sidenote');
-  const isKecil = window.innerWidth < 992;
+  const isKecil = window.innerWidth < screen.width * 0.5;
 
   spans.forEach(span => {
     if (isKecil) {
