@@ -1,9 +1,21 @@
-+++
-title       = "Logika Matematika Biner"
-date        = "2025-04-06"
-+++
+---
+title: Logika Matematika Biner
+date: 2025-04-06
+---
 
-Sekumpulan aturan yang disepakati untuk konsistensi.
+Logika matematika memuat aturan yang disepakati untuk konsistensi.
+
+## Proposisi
+
+Proposisi adalah pernyataan yang memiliki nilai kebenaran, entah benar atau
+salah. Pernyataan terbuka berarti pernyataan yang belum memiliki nilai kebenaran
+yang pasti, misalnya saja $2 + x = 6$. Nilai kebenaran menggunakan simbol **T**
+untuk nilai benar (true) dan **F** untuk nilai salah (false).
+
+> ada jenis logika matematika yang tidak hanya menggunakan **T** dan **F** yaitu
+> logika fuzzy
+
+## Tabel Logika
 
 Misalkan $p$ dan $q$ adalah pernyataan, maka:
 
@@ -21,11 +33,56 @@ Kita bisa perluas menjadi:
 | F | T | T | F | F | T | T | T | F | F |
 | F | F | T | T | F | F | T | T | T | T |
 
-Dapat kita lihat bahwa $\neg (p \land q) \equiv \neg p \lor \neg q$.
+Dapat kita lihat bahwa $\neg (p \land q) \equiv \neg p \lor \neg q$. Kenapa
+equivalen, karena nilai kebenarannya sama. $\neg (p \land q)$ artinya jika $p$
+salah atau $q$ salah, maka dia bernilai benar. Kapan $p \land q$ bernilai salah?
+Nilainya benar jika keduanya benar, tetapi jika salah satunya salah maka akan
+bernilai salah. Sehingga menjadi $\neg p \lor \neg q$.
 
-Tautologi adalah kondisi tabel kebenaran semuanya bernilai benar.
+Tautologi adalah kondisi tabel kebenaran semuanya bernilai benar. Kontradiksi
+adalah kondisi tabel kebenaran semuanya bernilai salah.
 
-Kontradiksi adalah kondisi tabel kebenaran semuanya bernilai salah.
+## Exclusive Or
+
+Inclusive or adalah atau yang biasa kita kenal, tetapi exclusive or atau xor
+adalah kondisi khusus or yang tidak keduanya. Xor hanya bisa memilih salah
+satunya. Contoh xor adalah ketika kita ditawari minum kopi atau teh, kita hanya
+bisa memilih salah satunya.
+
+| $p$ | $q$ | $p \oplus q$ |
+|---|---|---|
+| B | B | S |
+| B | S | B |
+| S | B | B |
+| S | S | S |
+
+## Conditional Statement (Jika Maka)
+
+Menggunakan hipotesis $p$ maka terjadi konklusi $q$.
+
+| $p$ | $q$ | $p \to q$ |
+|---|---|---|
+| B | B | B |
+| B | S | S |
+| S | B | B |
+| S | S | B |
+
+Misalnya kamu dijanjikan hadiah oleh ayahmu jika kamu naik kelas. Jika kamu naik
+kelas dan ayahmu memberi hadiah maka tentu saja, semuanya akan baik-baik saja.
+Jika kamu tidak naik kelas dan ayahmu memberimu hadiah pun tidak masalah, atau
+jika kamu tidak naik kelas dan ayahmu tidak memberimu hadiah pun wajar, tetapi
+jika kamu naik kelas dan ayahmu ingkar janji maka tentu saja itu salah.
+
+Nilai $p \to q \equiv \neg p \lor q$, pembuktiannya:
+
+\\[
+\begin{aligned}
+p \to q        & \equiv \neg p \lor q  \\\\
+\neg (p \to q) & \equiv \neg (\neg p \lor q)  \\\\
+               & \equiv \neg (\neg p) \land \neg q  \\\\
+               & \equiv p \land \neg q
+\end{aligned}
+\\]
 
 ## Kuantor
 
