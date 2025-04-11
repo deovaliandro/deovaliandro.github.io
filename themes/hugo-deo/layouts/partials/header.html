@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ .Title | default .Site.Title }}">
 
   {{ with .Site.Params.favicon }}
   <link rel="shortcut icon" href="{{ . | absURL }}">
   <meta property="og:image" content="{{ . | absURL }}">{{ end }}
-
+  
   <title>{{ .Title | default .Site.Title }}</title>
-
+  
   {{ $scss := resources.Get "scss/main.scss" | toCSS (dict "targetPath" "css/main.css") | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $scss.Permalink }}" integrity="{{ $scss.Data.Integrity }}">
 
@@ -19,7 +20,7 @@
 </head>
 
 <body class="layout">
-  <header class="layout__header">
+  <header>
     <a href="{{ .Site.BaseURL }}">
       {{- .Site.Title -}}
     </a>
