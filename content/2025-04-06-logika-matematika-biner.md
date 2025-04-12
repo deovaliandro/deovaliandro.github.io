@@ -18,7 +18,7 @@ untuk nilai benar (true) dan **F** untuk nilai salah (false).
 > ada jenis logika matematika yang tidak hanya menggunakan **T** dan **F** yaitu
 > logika fuzzy
 
-## Tabel Logika
+### Tabel Logika
 
 Misalkan $p$ dan $q$ adalah pernyataan, maka:
 
@@ -45,7 +45,7 @@ bernilai salah. Sehingga menjadi $\neg p \lor \neg q$.
 Tautologi adalah kondisi tabel kebenaran semuanya bernilai benar. Kontradiksi
 adalah kondisi tabel kebenaran semuanya bernilai salah.
 
-## Exclusive Or
+### Exclusive Or
 
 Inclusive or adalah atau yang biasa kita kenal, tetapi exclusive or atau xor
 adalah kondisi khusus or yang tidak keduanya. Xor hanya bisa memilih salah
@@ -59,7 +59,7 @@ bisa memilih salah satunya.
 | S | B | B |
 | S | S | S |
 
-## Conditional Statement (Jika Maka)
+### Conditional Statement (Jika Maka)
 
 Menggunakan hipotesis $p$ maka terjadi konklusi $q$.
 
@@ -113,7 +113,7 @@ Contoh:
 
 Eksistensial sulit membuktikan salah, universal sulit membuktikan kebenarannya.
 
-## Nested Kuantor
+### Nested Kuantor
 
 Kuantor yang bergabung menjadi menjadi suatu pernyataan. Contoh
 {{< sidenote 1 >}}Persamaan Umum Limit{{< /sidenote >}}:
@@ -146,3 +146,21 @@ Pernyataan ini salah karena hanya kondisi ketiga yang memenuhi.
 Contoh lain: $\exists m \foall n: n < m{2}, (m, n \in \mathbb{Z})$. Kita cukup
 membuktikan satu nilai, $\forall m \in \mathbb{Z}: m^{2} \geq 0 > -1$, misalnya
 $n = -1$, akibatnya $n = -1 < 0 \leg m^{2}, \forall m \in \mathbb{Z}$.
+
+### Menegasikan Kuantor
+
+Kuantor dinegasikan dengan proposisinya, misalnya $\forall$ dinegasikan
+$\exists$, $p$ dinegasikan $\neg p$. Semua dinegasikan ada, bukan tidak ada.
+Contoh:
+1. $\neg (\forall x: p(x)) \equiv \exists x \to \neg p(x)$.
+2. $\neg (\exists x: p(x)) \equiv \forall x \to \neg p(x)$.
+
+Contoh lain: $\forall m, \exists n: n^{2} < m$, bernilai salah karena jika
+$m = -1$ maka tidak akan memenuhi. Jika pernyataan ini salah maka negasinya
+pastilah bernilai benar.
+
+Negasinya: $\exists m, \forall n: n^{2} \geq m$, kita cukup memilih $m = -1$,
+maka sudah memenuhi.
+
+Hal ini memberikan alternatif jika kesulitan untuk membuktikan pernyataan, maka
+cukup dinegasikan untuk mendapatkan pembuktian yang lebih mudah.
