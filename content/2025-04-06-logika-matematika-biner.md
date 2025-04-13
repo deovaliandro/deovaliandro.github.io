@@ -191,7 +191,7 @@ Penyelesaiannya:
    misal $n = -1$ tidak memenuhi.
 2. Kasus kedua, $m = 0$, tidak ada $\mathbb{Z}$ yang bisa memenuhi, sama dengan
    kasus pertama.
-3. Kasus ketiga, $m > 0 \implies m \geq 1. n^{2} < m \iff n < 1 \leq m$, misal
+3. Kasus ketiga, $m > 0 \implies m \geq 1$, $n^{2} < m \iff n < 1 \leq m$, misal
    $n = 0$, maka akan memenuhi.
 
 Pernyataan ini salah karena hanya kondisi ketiga yang memenuhi.
