@@ -187,8 +187,8 @@ di belakang akan bergantung pada nilai untuk setiapnya.
 Contoh lain: $\forall m \exists n: n^{2} < m, (m, n \in \mathbb{Z})$. Hal ini
 menunjukkan bahwa nilai n bergantung dari m, atau n(m).
 Penyelesaiannya:
-1. Kasus pertama, $m < 0 \implies m \leq -1. n^{2} < m \iff m \leq 0 < n$, misal
-   $n = -1$ tidak memenuhi.
+1. Kasus pertama, $m < 0 \implies m \leq -1$, $n^{2} < m \iff m \leq 0 < n$,
+   misal $n = -1$ tidak memenuhi.
 2. Kasus kedua, $m = 0$, tidak ada $\mathbb{Z}$ yang bisa memenuhi, sama dengan
    kasus pertama.
 3. Kasus ketiga, $m > 0 \implies m \geq 1. n^{2} < m \iff n < 1 \leq m$, misal
