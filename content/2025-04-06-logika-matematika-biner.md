@@ -18,7 +18,23 @@ untuk nilai benar (true) dan **F** untuk nilai salah (false).
 > ada jenis logika matematika yang tidak hanya menggunakan **T** dan **F** yaitu
 > logika fuzzy
 
-### Tabel Logika
+Proposisi sering menggunakan simbol $p$, $q$, $r$, $s$, dan seterusnya.
+
+## Operasi Logika
+
+1. Negasi ($\neg$): Menyatakan bahwa proposisi tidak benar. Jika p adalah benar,
+   maka $\neg p$ adalah salah.
+2. Konjungsi ($\land$): Menyatakan "dan" $p \land q$, benar jika dan hanya jika
+   $p$ dan $q$ keduanya benar.
+3. Disjungsi ($\lor$): Menyatakan "atau" $p \lor q$, benar jika paling tidak
+   salah satu dari $p$ atau $q$ benar.
+4. Implikasi ($\to$): Menyatakan "jika $\cdots$ maka $\cdots$", $p \to q$ benar 
+   kecuali $p$ benar dan $q$ salah.
+5. Biimplikasi ($\Leftrightarrow$): Menyatakan "jika dan hanya jika",
+   $p \Leftrightarrow q$ benar jika $p$ dan $q$ memiliki nilai kebenaran yang
+   sama.
+
+## Tabel Logika
 
 Misalkan $p$ dan $q$ adalah pernyataan, maka:
 
@@ -95,6 +111,34 @@ p \to q        & \equiv \neg p \lor q  \\\\
                & \equiv p \land \neg q
 \end{aligned}
 \\]
+
+## Hukum Aljabar Proposisi
+
+1. Hukum identitas:
+   1. $p \lor F \iff p$
+   2. $p \land T \iff p$
+2. Hukum null/dominasi:
+   1. $p \land F \iff F$
+   2. $p \lor T \iff T$
+3. Hukum negasi:
+   1. $p \lor \neg p \iff T$
+   2. $p \land \neg p \iff F$
+4. Hukum idempoten:
+   1. $p \lor p \iff p$
+   2. $p \land p \iff p$
+5. Hukum involusi (negasi ganda): $\neg (\neg p) \iff p$
+6. Hukum komutatif:
+   1. $p \lor q \iff q \lor p$
+   2. $p \land q \iff q \land p$
+7. Hukum asosiatif:
+   1. $p \lor (q \lor r) \iff (p \lor q) \lor r$
+   2. $p \land (q \land r) \iff (p \land q) \land r$
+8. Hukum distribusi:
+   1. $p \lor (q \land r) \iff (p \lor q) \land (p \lor r)$
+   2. $p \land (q \lor r) \iff (p \land q) \lor (p \land r)$
+9. Hukum De Morgan:
+   1. $\neg (p \land q) \iff \neg p \lor \neg q$
+   2. $\neg (p \lor q) \iff \neg p \land \neg q$
 
 ## Kuantor
 
