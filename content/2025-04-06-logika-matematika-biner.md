@@ -29,12 +29,21 @@ Misalkan $p$ dan $q$ adalah pernyataan, maka:
 
 Kita bisa perluas menjadi:
 
-| $p$ | $q$ | $\neg p$ | $\neg q$ | $p \land q$ | $p \lor q$ | $\neg (p \land q)$ | $\neg p \lor \neg q$ | $\neg (p \lor q)$ | $\neg p \land \neg q$ |
-|---|---|---|---|---|---|---|---|---|---|
-| T | T | F | F | T | T | F | F | F | F |
-| T | F | F | T | F | T | T | T | F | F |
-| F | T | T | F | F | T | T | T | F | F |
-| F | F | T | T | F | F | T | T | T | T |
+| $p$ | $q$ | $\neg p$ | $\neg q$ | $p \land q$ | $p \lor q$ |
+|---|---|---|---|---|---|
+| T | T | F | F | T | T |
+| T | F | F | T | F | T |
+| F | T | T | F | F | T |
+| F | F | T | T | F | F |
+
+Kemudian bisa diperluas:
+
+|$\neg (p \land q)$|$\neg p \lor \neg q$|$\neg (p \lor q)$|$\neg p \land \neg q$|
+|---|---|---|---|
+| F | F | F | F |
+| T | T | F | F |
+| T | T | F | F |
+| T | T | T | T |
 
 Dapat kita lihat bahwa $\neg (p \land q) \equiv \neg p \lor \neg q$. Kenapa
 equivalen, karena nilai kebenarannya sama. $\neg (p \land q)$ artinya jika $p$
@@ -134,18 +143,18 @@ di belakang akan bergantung pada nilai untuk setiapnya.
 Contoh lain: $\forall m \exists n: n^{2} < m, (m, n \in \mathbb{Z})$. Hal ini
 menunjukkan bahwa nilai n bergantung dari m, atau n(m).
 Penyelesaiannya:
-1. Kasus pertama, $m < 0 \implies m \leq -1. n^{2} < m \iff m \leg 0 < n$, misal
+1. Kasus pertama, $m < 0 \implies m \leq -1. n^{2} < m \iff m \leq 0 < n$, misal
    $n = -1$ tidak memenuhi.
 2. Kasus kedua, $m = 0$, tidak ada $\mathbb{Z}$ yang bisa memenuhi, sama dengan
    kasus pertama.
-3. Kasus ketiga, $m > 0 \implies m \geq 1. n^{2} < m \iff n < 1 \leg m$, misal
+3. Kasus ketiga, $m > 0 \implies m \geq 1. n^{2} < m \iff n < 1 \leq m$, misal
    $n = 0$, maka akan memenuhi.
 
 Pernyataan ini salah karena hanya kondisi ketiga yang memenuhi.
 
-Contoh lain: $\exists m \foall n: n < m{2}, (m, n \in \mathbb{Z})$. Kita cukup
+Contoh lain: $\exists m \forall n: n < m{2}, (m, n \in \mathbb{Z})$. Kita cukup
 membuktikan satu nilai, $\forall m \in \mathbb{Z}: m^{2} \geq 0 > -1$, misalnya
-$n = -1$, akibatnya $n = -1 < 0 \leg m^{2}, \forall m \in \mathbb{Z}$.
+$n = -1$, akibatnya $n = -1 < 0 \leq m^{2}, \forall m \in \mathbb{Z}$.
 
 ### Menegasikan Kuantor
 
@@ -164,3 +173,127 @@ maka sudah memenuhi.
 
 Hal ini memberikan alternatif jika kesulitan untuk membuktikan pernyataan, maka
 cukup dinegasikan untuk mendapatkan pembuktian yang lebih mudah.
+
+## Inferensi
+
+Inferensi atau kesimpulan-kesimpulan yang bisa ditarik dari beberapa proposisi.
+
+### Modus Ponen
+
+Didasarkan pada tautologi $p \land (p \to q) \to q$. Jika $p$ dan $p \to q$
+bernilai benar maka $q$ bernilai benar.
+
+$$
+\frac{p \to q \quad p}{q}
+$$
+
+Pembuktian, jika:
+
+$$p \to q \equiv \neg p \lor q$$
+
+maka:
+
+\\[
+\begin{aligned}
+p \land (\neg p \lor q) & = (p \land \neg p) \lor (p \land q) \\\\
+                        & = q
+\end{aligned}
+\\]
+
+### Modus Tollen
+
+Didasarkan pada tautologi $[\neg p \land (p \to q)] \to \neg p$.
+
+$$
+\frac{p \to q \quad \neg q}{\neg p}
+$$
+
+Pembuktian, jika:
+
+$$\neg p \land (p \to q)] \to \neg p$$
+
+maka:
+
+\\[
+\begin{aligned}
+\neg p \land (p \to q)  & = (\neg q \land \neg p) \lor (\neg q \land q) \\\\
+                        & = \neg p
+\end{aligned}
+\\]
+
+### Silogisme Hipotesis
+
+Didasarkan pada tautologi $[(p \to q) \land (q \to r)] \to (p \to e)$.
+
+$$
+\frac{p \to q \quad \neg q \to r}{\neg p \to r}
+$$
+
+Pembuktian:
+1. $p \to q$ (premis),
+2. $q \to r$ (premis),
+3. asimsikan p,
+4. dari (1) dan (3): $q$ (modus ponens),
+5. dari (2) dan (4): $r$ (modus ponens),
+6. karena dari asumsi $p$ diperoleh $r$, maka $p \to r$.
+
+Disini muncul anekdot $p$ jika saya lapar maka saya makan, $q$ jika saya makan
+maka saya kenyang, sehingga kesimpulannya jika saya lapar maka saya kenyang.
+
+### Silogisme Disjungtif
+
+Didasarkan pada tautologi $[(p \lor q) \land (\neg p)] \to q$.
+
+$$
+\frac{p \lor q \quad \neg p}{q}
+$$
+
+Pembuktian:
+1. $p \lor q$ (premis),
+2. $\neg p$ (premis),
+3. $q$.
+
+Jika diberikan disjungsi maka minimal sala satunya benar, tetapi jika $\neg p$,
+maka satu-satunya yang harus benar adalah $q$.
+
+### Simplifikasi
+
+Didasarkan pada tautologi $[(p \land q) \to p]$.
+
+$$
+\frac{p \land q}{p}
+$$
+
+Pembuktian:
+1. $p \land q$ (premis)
+2. $p$
+
+### Penjumlahan
+
+Didasarkan pada tautologi $p \to (p \lor q)$.
+
+$$
+\frac{p}{p \lor q}
+$$
+
+Pembuktian:
+1. $p$ (premis)
+2. $p \lor q$ (penjumlahan)
+
+Jika diketahui $p$ benar, maka apapun nilai $q$ pasti benar karena menggunakan
+atau.
+
+### Konjungsi
+
+Didasarkan pada tautologi $((p) \land (q)) \to (p \land q)$.
+
+$$
+\frac{p \quad q}{p \land q}
+$$
+
+Pembuktian:
+1. $p$ (premis)
+2. $q$ (premis)
+3. $p \land q$ (konjungsi)
+
+Jika diandaikan $p$ dan $q$ benar, maka pasti $p \land q$ benar.
