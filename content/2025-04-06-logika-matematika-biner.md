@@ -79,10 +79,10 @@ bisa memilih salah satunya.
 
 | $p$ | $q$ | $p \oplus q$ |
 |---|---|---|
-| B | B | S |
-| B | S | B |
-| S | B | B |
-| S | S | S |
+| T | T | F |
+| T | F | T |
+| F | T | T |
+| F | F | F |
 
 ### Conditional Statement (Jika Maka)
 
@@ -133,7 +133,7 @@ p \to q        & \equiv \neg p \lor q  \\\\
 7. Hukum asosiatif:
    1. $p \lor (q \lor r) \iff (p \lor q) \lor r$
    2. $p \land (q \land r) \iff (p \land q) \land r$
-8. Hukum distribusi:
+8. Hukum distributif:
    1. $p \lor (q \land r) \iff (p \lor q) \land (p \lor r)$
    2. $p \land (q \lor r) \iff (p \land q) \lor (p \land r)$
 9. Hukum De Morgan:
@@ -158,11 +158,13 @@ Contoh:
 2. $\forall x \in \mathbb{R}, x^{2}+1 > 0$, kita tahu bahwa
    $\forall x \pm x, x \cdot x > 0$, maka dapat dibuktikan bahwa
    $x^{2} + 1 > 0$, untuk setiap $ x \in \mathbb{R}$.
-3. $\forall x : x^{2} < 4$, maka $x < 2$, kita mengetahui bahwa
-   $x^{2} = -2 < x < 2$. Sebenarnya yang menjadi masalah adalah $p$-nya, selama
-   $p$ dipenuhi maka q tidak menjadi masalah. Misalnya saja $x = -3$, maka
-   $x < 2$ bernilai benar, tetapi ketika disubtitusi ke persamaan $p$,
-   $x^{2} < 4 = 9 < 4$ menjadi bernilai salah.
+3. $\forall x : x^{2} < 4 \to x < 2$, diketahui bahwa $x^{2} = -2 < x < 2$.
+   Pernyataan ini akan salah jika premis benar tetapi konklusi salah.
+   Misalkan $x = 3$, maka $3^{2} < 4 \to 3 < 2$ adalah salah. Hal ini
+   menunjukkan bahwa $x^{2} < 4$ tidak selalu benar, tetapi jika kita
+   menggunakan $x^{2} < 4 \to x < 3$ maka sudah benar. Hal ini menunjukkan
+   bahwa $x^{2} < 4$ tidak selalu benar, tetapi jika kita menggunakan
+   $x^{2} < 4 \to x < 3$ maka sudah benar.
 
 Eksistensial sulit membuktikan salah, universal sulit membuktikan kebenarannya.
 
@@ -172,9 +174,9 @@ Kuantor yang bergabung menjadi menjadi suatu pernyataan. Contoh
 {{< sidenote 1 >}}Persamaan Umum Limit{{< /sidenote >}}:
 
 $$\lim_{x \to 0} f(x) = L \iff \forall \epsilon > 0, \exists \delta > 0,
-\ni: \forall x : 0 < x - a < \delta \Rightarrow | f(x) - L | < \epsilon$$
+\ni: \forall x : 0 < | x - a | < \delta \to | f(x) - L | < \epsilon$$
 
-Contoh lain: Teori grub, misalkan $(\mathbb{G}, +)$ sebuah grub, maka:
+Contoh lain: Teori grup, misalkan $(\mathbb{G}, +)$ sebuah grup, maka:
 - $\forall a, b, c \in \mathbb{G}$, berlaku $(a + b ) + c = a + (b + c )$;
 - $\exists e \in \mathbb{G}$, sehingga $e + a = a \forall a \in \mathbb{G}$;
 - $\forall a \in \mathbb{G}, \exists a^{-1} \in \mathbb{G}$, sehingga
@@ -246,7 +248,7 @@ p \land (\neg p \lor q) & = (p \land \neg p) \lor (p \land q) \\\\
 
 ### Modus Tollen
 
-Didasarkan pada tautologi $[\neg p \land (p \to q)] \to \neg p$.
+Didasarkan pada tautologi $[\neg q \land (p \to q)] \to \neg p$.
 
 $$
 \frac{p \to q \quad \neg q}{\neg p}
@@ -267,7 +269,7 @@ maka:
 
 ### Silogisme Hipotesis
 
-Didasarkan pada tautologi $[(p \to q) \land (q \to r)] \to (p \to e)$.
+Didasarkan pada tautologi $[(p \to q) \land (q \to r)] \to (p \to r)$.
 
 $$
 \frac{p \to q \quad \neg q \to r}{\neg p \to r}
