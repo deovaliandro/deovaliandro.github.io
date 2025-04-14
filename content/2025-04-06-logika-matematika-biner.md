@@ -198,7 +198,7 @@ Penyelesaiannya:
 
 Pernyataan ini salah karena hanya kondisi ketiga yang memenuhi.
 
-Contoh lain: $\exists m \forall n: n < m{2}, (m, n \in \mathbb{Z})$. Kita cukup
+Contoh lain: $\exists m \forall n: n < m^{2}, (m, n \in \mathbb{Z})$. Kita cukup
 membuktikan satu nilai, $\forall m \in \mathbb{Z}: m^{2} \geq 0 > -1$, misalnya
 $n = -1$, akibatnya $n = -1 < 0 \leq m^{2}, \forall m \in \mathbb{Z}$.
 
@@ -278,7 +278,7 @@ $$
 Pembuktian:
 1. $p \to q$ (premis),
 2. $q \to r$ (premis),
-3. asimsikan p,
+3. asumsikan p,
 4. dari (1) dan (3): $q$ (modus ponens),
 5. dari (2) dan (4): $r$ (modus ponens),
 6. karena dari asumsi $p$ diperoleh $r$, maka $p \to r$.
