@@ -1,7 +1,8 @@
-+++
-title       = "Pengantar Pemrograman dengan Java"
-date        = "2017-05-13"
-+++
+---
+title   : Pengantar Pemrograman dengan Java
+date    : 2017-05-13
+draft   : true
+---
 
 [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) adalah bahasa
 pemrograman level tinggi, robust (mempunyai Garbage Collector dan Exception
