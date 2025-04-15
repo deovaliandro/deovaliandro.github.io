@@ -3,9 +3,6 @@ title : Logika Matematika Biner
 date  : 2025-04-06
 ---
 
-Tulisan ini adalah catatan saya ketika mengikuti kelas **Logika dan Himpunan**
-di [Gradient Academy](https://gradient.academy/).
-
 Logika matematika memuat aturan yang disepakati untuk konsistensi.
 
 ## Proposisi
