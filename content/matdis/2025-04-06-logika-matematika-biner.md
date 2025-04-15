@@ -1,7 +1,6 @@
 ---
-title: Logika Matematika Biner
-date: 2025-04-06
-draft: true
+title : Logika Matematika Biner
+date  : 2025-04-06
 ---
 
 Tulisan ini adalah catatan saya ketika mengikuti kelas **Logika dan Himpunan**
