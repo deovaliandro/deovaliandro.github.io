@@ -1,6 +1,6 @@
 ---
-title : Logika Matematika Biner
-date  : 2025-04-06
+title: Logika Matematika Biner
+date: 2025-04-06
 ---
 
 Logika matematika memuat aturan yang disepakati untuk konsistensi.
@@ -25,7 +25,7 @@ Proposisi sering menggunakan simbol $p$, $q$, $r$, $s$, dan seterusnya.
    $p$ dan $q$ keduanya benar.
 3. Disjungsi ($\lor$): Menyatakan "atau" $p \lor q$, benar jika paling tidak
    salah satu dari $p$ atau $q$ benar.
-4. Implikasi ($\to$): Menyatakan "jika $\cdots$ maka $\cdots$", $p \to q$ benar 
+4. Implikasi ($\to$): Menyatakan "jika $\cdots$ maka $\cdots$", $p \to q$ benar
    kecuali $p$ benar dan $q$ salah.
 5. Biimplikasi ($\Leftrightarrow$): Menyatakan "jika dan hanya jika",
    $p \Leftrightarrow q$ benar jika $p$ dan $q$ memiliki nilai kebenaran yang
@@ -36,27 +36,27 @@ Proposisi sering menggunakan simbol $p$, $q$, $r$, $s$, dan seterusnya.
 Misalkan $p$ dan $q$ adalah pernyataan, maka:
 
 | $p$ | $\neg p$ |
-|---|---|
-| T | F |
-| F | T |
+| --- | -------- |
+| T   | F        |
+| F   | T        |
 
 Kita bisa perluas menjadi:
 
 | $p$ | $q$ | $\neg p$ | $\neg q$ | $p \land q$ | $p \lor q$ |
-|---|---|---|---|---|---|
-| T | T | F | F | T | T |
-| T | F | F | T | F | T |
-| F | T | T | F | F | T |
-| F | F | T | T | F | F |
+| --- | --- | -------- | -------- | ----------- | ---------- |
+| T   | T   | F        | F        | T           | T          |
+| T   | F   | F        | T        | F           | T          |
+| F   | T   | T        | F        | F           | T          |
+| F   | F   | T        | T        | F           | F          |
 
 Kemudian bisa diperluas:
 
-|$\neg (p \land q)$|$\neg p \lor \neg q$|$\neg (p \lor q)$|$\neg p \land \neg q$|
-|---|---|---|---|
-| F | F | F | F |
-| T | T | F | F |
-| T | T | F | F |
-| T | T | T | T |
+| $\neg (p \land q)$ | $\neg p \lor \neg q$ | $\neg (p \lor q)$ | $\neg p \land \neg q$ |
+| ------------------ | -------------------- | ----------------- | --------------------- |
+| F                  | F                    | F                 | F                     |
+| T                  | T                    | F                 | F                     |
+| T                  | T                    | F                 | F                     |
+| T                  | T                    | T                 | T                     |
 
 Dapat kita lihat bahwa $\neg (p \land q) \equiv \neg p \lor \neg q$. Kenapa
 equivalen, karena nilai kebenarannya sama. $\neg (p \land q)$ artinya jika $p$
@@ -75,22 +75,22 @@ satunya. Contoh xor adalah ketika kita ditawari minum kopi atau teh, kita hanya
 bisa memilih salah satunya.
 
 | $p$ | $q$ | $p \oplus q$ |
-|---|---|---|
-| T | T | F |
-| T | F | T |
-| F | T | T |
-| F | F | F |
+| --- | --- | ------------ |
+| T   | T   | F            |
+| T   | F   | T            |
+| F   | T   | T            |
+| F   | F   | F            |
 
 ### Conditional Statement (Jika Maka)
 
 Menggunakan hipotesis $p$ maka terjadi konklusi $q$.
 
 | $p$ | $q$ | $p \to q$ |
-|---|---|---|
-| B | B | B |
-| B | S | S |
-| S | B | B |
-| S | S | B |
+| --- | --- | --------- |
+| B   | B   | B         |
+| B   | S   | S         |
+| S   | B   | B         |
+| S   | S   | B         |
 
 Misalnya kamu dijanjikan hadiah oleh ayahmu jika kamu naik kelas. Jika kamu naik
 kelas dan ayahmu memberi hadiah maka tentu saja, semuanya akan baik-baik saja.
@@ -102,10 +102,10 @@ Nilai $p \to q \equiv \neg p \lor q$, pembuktiannya:
 
 \\[
 \begin{aligned}
-p \to q        & \equiv \neg p \lor q  \\\\
-\neg (p \to q) & \equiv \neg (\neg p \lor q)  \\\\
-               & \equiv \neg (\neg p) \land \neg q  \\\\
-               & \equiv p \land \neg q
+p \to q & \equiv \neg p \lor q \\\\
+\neg (p \to q) & \equiv \neg (\neg p \lor q) \\\\
+& \equiv \neg (\neg p) \land \neg q \\\\
+& \equiv p \land \neg q
 \end{aligned}
 \\]
 
@@ -170,10 +170,13 @@ Eksistensial sulit membuktikan salah, universal sulit membuktikan kebenarannya.
 Kuantor yang bergabung menjadi menjadi suatu pernyataan. Contoh
 {{< sidenote 1 >}}Persamaan Umum Limit{{< /sidenote >}}:
 
-$$\lim_{x \to 0} f(x) = L \iff \forall \epsilon > 0, \exists \delta > 0,
-\ni: \forall x : 0 < | x - a | < \delta \to | f(x) - L | < \epsilon$$
+$$
+\lim_{x \to 0} f(x) = L \iff \forall \epsilon > 0, \exists \delta > 0,
+\ni: \forall x : 0 < | x - a | < \delta \to | f(x) - L | < \epsilon
+$$
 
 Contoh lain: Teori grup, misalkan $(\mathbb{G}, +)$ sebuah grup, maka:
+
 - $\forall a, b, c \in \mathbb{G}$, berlaku $(a + b ) + c = a + (b + c )$;
 - $\exists e \in \mathbb{G}$, sehingga $e + a = a \forall a \in \mathbb{G}$;
 - $\forall a \in \mathbb{G}, \exists a^{-1} \in \mathbb{G}$, sehingga
@@ -186,6 +189,7 @@ di belakang akan bergantung pada nilai untuk setiapnya.
 Contoh lain: $\forall m \exists n: n^{2} < m, (m, n \in \mathbb{Z})$. Hal ini
 menunjukkan bahwa nilai n bergantung dari m, atau n(m).
 Penyelesaiannya:
+
 1. Kasus pertama, $m < 0 \implies m \leq -1$, $n^{2} < m \iff m \leq 0 < n$,
    misal $n = -1$ tidak memenuhi.
 2. Kasus kedua, $m = 0$, tidak ada $\mathbb{Z}$ yang bisa memenuhi, sama dengan
@@ -204,6 +208,7 @@ $n = -1$, akibatnya $n = -1 < 0 \leq m^{2}, \forall m \in \mathbb{Z}$.
 Kuantor dinegasikan dengan proposisinya, misalnya $\forall$ dinegasikan
 $\exists$, $p$ dinegasikan $\neg p$. Semua dinegasikan ada, bukan tidak ada.
 Contoh:
+
 1. $\neg (\forall x: p(x)) \equiv \exists x \to \neg p(x)$.
 2. $\neg (\exists x: p(x)) \equiv \forall x \to \neg p(x)$.
 
@@ -239,7 +244,7 @@ maka:
 \\[
 \begin{aligned}
 p \land (\neg p \lor q) & = (p \land \neg p) \lor (p \land q) \\\\
-                        & = q
+& = q
 \end{aligned}
 \\]
 
@@ -259,8 +264,8 @@ maka:
 
 \\[
 \begin{aligned}
-\neg p \land (p \to q)  & = (\neg q \land \neg p) \lor (\neg q \land q) \\\\
-                        & = \neg p
+\neg p \land (p \to q) & = (\neg q \land \neg p) \lor (\neg q \land q) \\\\
+& = \neg p
 \end{aligned}
 \\]
 
@@ -273,6 +278,7 @@ $$
 $$
 
 Pembuktian:
+
 1. $p \to q$ (premis),
 2. $q \to r$ (premis),
 3. asumsikan p,
@@ -292,6 +298,7 @@ $$
 $$
 
 Pembuktian:
+
 1. $p \lor q$ (premis),
 2. $\neg p$ (premis),
 3. $q$.
@@ -308,6 +315,7 @@ $$
 $$
 
 Pembuktian:
+
 1. $p \land q$ (premis)
 2. $p$
 
@@ -320,6 +328,7 @@ $$
 $$
 
 Pembuktian:
+
 1. $p$ (premis)
 2. $p \lor q$ (penjumlahan)
 
@@ -335,6 +344,7 @@ $$
 $$
 
 Pembuktian:
+
 1. $p$ (premis)
 2. $q$ (premis)
 3. $p \land q$ (konjungsi)
