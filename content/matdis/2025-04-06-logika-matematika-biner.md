@@ -1,352 +1,110 @@
 ---
-title: Logika Matematika Biner
-date: 2025-04-06
+title: Teori Himpunan
+date: 2025-04-11
 ---
 
-Logika matematika memuat aturan yang disepakati untuk konsistensi.
+## Pendahuluan
 
-## Proposisi
+Himpunan adalah **koleksi** tak terurut dari objek-objek yang berbeda. Simbol $\varnothing$ menyatakan **himpunan kosong** (tidak memiliki anggota).
 
-Proposisi adalah pernyataan yang memiliki nilai kebenaran, entah benar atau
-salah. Pernyataan terbuka berarti pernyataan yang belum memiliki nilai kebenaran
-yang pasti, misalnya saja $2 + x = 6$. Nilai kebenaran menggunakan simbol **T**
-untuk nilai benar (true) dan **F** untuk nilai salah (false).
+**Notasi Keanggotaan**:
+- $a \in A$: "$a$ adalah anggota himpunan $A$"
+- $a \notin A$: "$a$ bukan anggota himpunan $A$"
 
-> ada jenis logika matematika yang tidak hanya menggunakan **T** dan **F** yaitu
-> logika fuzzy
+## Cara Penulisan Himpunan
 
-Proposisi sering menggunakan simbol $p$, $q$, $r$, $s$, dan seterusnya.
+1. **Enumerasi** (daftar anggota):  
+   - $R = \{1, 2, 3\}$  
+   - $K = \{\{\}\}$ (himpunan yang berisi himpunan kosong)  
+   - $L = \{1, 2, 3, \dots, 100\}$
 
-## Operasi Logika
+2. **Simbol Baku**:  
+   - $\mathbb{P} = \{2, 3, 5, 7, \dots\}$ (himpunan bilangan prima)  
+   - $\mathbb{N} = \{0, 1, 2, 3, \dots\}$ (bilangan asli)  
+   - $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots\}$ (bilangan bulat)  
+   - $\mathbb{Q} = \left\{\frac{a}{b} \mid a,b \in \mathbb{Z},\ b \neq 0\right\}$ (bilangan rasional)  
+   - $\mathbb{R} = (-\infty, \infty)$ (bilangan real)
 
-1. Negasi ($\neg$): Menyatakan bahwa proposisi tidak benar. Jika p adalah benar,
-   maka $\neg p$ adalah salah.
-2. Konjungsi ($\land$): Menyatakan "dan" $p \land q$, benar jika dan hanya jika
-   $p$ dan $q$ keduanya benar.
-3. Disjungsi ($\lor$): Menyatakan "atau" $p \lor q$, benar jika paling tidak
-   salah satu dari $p$ atau $q$ benar.
-4. Implikasi ($\to$): Menyatakan "jika $\cdots$ maka $\cdots$", $p \to q$ benar
-   kecuali $p$ benar dan $q$ salah.
-5. Biimplikasi ($\Leftrightarrow$): Menyatakan "jika dan hanya jika",
-   $p \Leftrightarrow q$ benar jika $p$ dan $q$ memiliki nilai kebenaran yang
-   sama.
+3. **Notasi Pembentuk Himpunan**:  
+   $$\{x \mid \varphi(x)\}$$  
+   Contoh:  
+   $$A = \{x \mid x \in \mathbb{N},\ x < 5\} = \{0, 1, 2, 3, 4\}$$
 
-## Tabel Logika
+4. **Diagram Venn** (representasi visual).
 
-Misalkan $p$ dan $q$ adalah pernyataan, maka:
+## Hubungan Antar Himpunan
 
-| $p$ | $\neg p$ |
-| --- | -------- |
-| T   | F        |
-| F   | T        |
+**Himpunan Bagian ($\subseteq$)**:  
+$B \subseteq A$ jika dan hanya jika $\forall b \in B,\ b \in A$.
 
-Kita bisa perluas menjadi:
+**Sifat**:
+1. **Refleksif**: $A \subseteq A$  
+   *Bukti*: Ambil sembarang $a \in A$, maka $a \in A$.
+2. **Antisimetri**:  
+   $A = B \iff (A \subseteq B) \land (B \subseteq A)$
 
-| $p$ | $q$ | $\neg p$ | $\neg q$ | $p \land q$ | $p \lor q$ |
-| --- | --- | -------- | -------- | ----------- | ---------- |
-| T   | T   | F        | F        | T           | T          |
-| T   | F   | F        | T        | F           | T          |
-| F   | T   | T        | F        | F           | T          |
-| F   | F   | T        | T        | F           | F          |
+**Contoh**:
+- $A = \{x \in \mathbb{R} \mid x^2 < 3\} = (-\sqrt{3}, \sqrt{3})$  
+- $B = \{x \in \mathbb{R} \mid x < 3\} = (-\infty, 3)$  
+Maka $A \subseteq B$ karena $\sqrt{3} \approx 1.732 < 3$.
 
-Kemudian bisa diperluas:
+## Operasi Himpunan
 
-| $\neg (p \land q)$ | $\neg p \lor \neg q$ | $\neg (p \lor q)$ | $\neg p \land \neg q$ |
-| ------------------ | -------------------- | ----------------- | --------------------- |
-| F                  | F                    | F                 | F                     |
-| T                  | T                    | F                 | F                     |
-| T                  | T                    | F                 | F                     |
-| T                  | T                    | T                 | T                     |
+### Gabungan (Union)
+$$A \cup B = \{x \in S \mid x \in A \lor x \in B\}$$
 
-Dapat kita lihat bahwa $\neg (p \land q) \equiv \neg p \lor \neg q$. Kenapa
-equivalen, karena nilai kebenarannya sama. $\neg (p \land q)$ artinya jika $p$
-salah atau $q$ salah, maka dia bernilai benar. Kapan $p \land q$ bernilai salah?
-Nilainya benar jika keduanya benar, tetapi jika salah satunya salah maka akan
-bernilai salah. Sehingga menjadi $\neg p \lor \neg q$.
+### Irisan (Intersection)
+$$A \cap B = \{x \in S \mid x \in A \land x \in B\}$$
 
-Tautologi adalah kondisi tabel kebenaran semuanya bernilai benar. Kontradiksi
-adalah kondisi tabel kebenaran semuanya bernilai salah.
+**Himpunan Saling Lepas**:  
+$A$ dan $B$ saling lepas jika $A \cap B = \varnothing$.
 
-### Exclusive Or
+### Sifat-Sifat Operasi
+1. **Inferensi**:  
+   $A \subseteq A \cup B$ dan $B \subseteq A \cup B$
+2. **Penyerapan**:  
+   $A \cap B \subseteq A$ dan $A \cap B \subseteq B$
+3. **Himpunan Kosong**:  
+   $\varnothing \subseteq A$ untuk sembarang $A$.  
+   *Bukti*: Implikasi $x \in \varnothing \implies x \in A$ selalu benar karena anteseden ($x \in \varnothing$) selalu salah.
 
-Inclusive or adalah atau yang biasa kita kenal, tetapi exclusive or atau xor
-adalah kondisi khusus or yang tidak keduanya. Xor hanya bisa memilih salah
-satunya. Contoh xor adalah ketika kita ditawari minum kopi atau teh, kita hanya
-bisa memilih salah satunya.
+## Produk Kartesius
 
-| $p$ | $q$ | $p \oplus q$ |
-| --- | --- | ------------ |
-| T   | T   | F            |
-| T   | F   | T            |
-| F   | T   | T            |
-| F   | F   | F            |
+**Definisi**:  
+$$A \times B = \{(a, b) \mid a \in A,\ b \in B\}$$
 
-### Conditional Statement (Jika Maka)
+**Contoh Visual**:  
+![Produk Kartesius](/images/produk-kartesius.svg)  
+*Diagram koordinat untuk $A = \{1, 2\},\ B = \{a, b\}$*
 
-Menggunakan hipotesis $p$ maka terjadi konklusi $q$.
+## Fungsi Injektif
 
-| $p$ | $q$ | $p \to q$ |
-| --- | --- | --------- |
-| B   | B   | B         |
-| B   | S   | S         |
-| S   | B   | B         |
-| S   | S   | B         |
+Fungsi $f: A \to B$ disebut **injektif** jika:  
+$$\forall x_1, x_2 \in A,\ f(x_1) = f(x_2) \implies x_1 = x_2$$
 
-Misalnya kamu dijanjikan hadiah oleh ayahmu jika kamu naik kelas. Jika kamu naik
-kelas dan ayahmu memberi hadiah maka tentu saja, semuanya akan baik-baik saja.
-Jika kamu tidak naik kelas dan ayahmu memberimu hadiah pun tidak masalah, atau
-jika kamu tidak naik kelas dan ayahmu tidak memberimu hadiah pun wajar, tetapi
-jika kamu naik kelas dan ayahmu ingkar janji maka tentu saja itu salah.
+**Contoh 1**: $f: \mathbb{R} \to \mathbb{R},\ f(x) = 2x + 1$
 
-Nilai $p \to q \equiv \neg p \lor q$, pembuktiannya:
-
-\\[
+*Bukti Aljabar*:  
+Misalkan $f(x_1) = f(x_2)$:  
+\[
 \begin{aligned}
-p \to q & \equiv \neg p \lor q \\\\
-\neg (p \to q) & \equiv \neg (\neg p \lor q) \\\\
-& \equiv \neg (\neg p) \land \neg q \\\\
-& \equiv p \land \neg q
+2x_1 + 1 &= 2x_2 + 1 \\
+2x_1 &= 2x_2 \\
+x_1 &= x_2
 \end{aligned}
-\\]
+\]
 
-## Hukum Aljabar Proposisi
+*Bukti Kalkulus*:  
+$f'(x) = 2 > 0$, sehingga $f$ monoton naik. Jika $x_1 \neq x_2$, maka $f(x_1) \neq f(x_2)$.
 
-1. Hukum identitas:
-   1. $p \lor F \iff p$
-   2. $p \land T \iff p$
-2. Hukum null/dominasi:
-   1. $p \land F \iff F$
-   2. $p \lor T \iff T$
-3. Hukum negasi:
-   1. $p \lor \neg p \iff T$
-   2. $p \land \neg p \iff F$
-4. Hukum idempoten:
-   1. $p \lor p \iff p$
-   2. $p \land p \iff p$
-5. Hukum involusi (negasi ganda): $\neg (\neg p) \iff p$
-6. Hukum komutatif:
-   1. $p \lor q \iff q \lor p$
-   2. $p \land q \iff q \land p$
-7. Hukum asosiatif:
-   1. $p \lor (q \lor r) \iff (p \lor q) \lor r$
-   2. $p \land (q \land r) \iff (p \land q) \land r$
-8. Hukum distributif:
-   1. $p \lor (q \land r) \iff (p \lor q) \land (p \lor r)$
-   2. $p \land (q \lor r) \iff (p \land q) \lor (p \land r)$
-9. Hukum De Morgan:
-   1. $\neg (p \land q) \iff \neg p \lor \neg q$
-   2. $\neg (p \lor q) \iff \neg p \land \neg q$
+**Contoh 2**: $f: \mathbb{R} \to \mathbb{R},\ f(x) = x^3$
 
-## Kuantor
-
-Suatu pernyataan $p$ yang bergantung pada suatu faktor $x$ kita tulis menjadi
-$p(x)$. Hal ini membuat kuantor muncul:
-
-1. kuantor eksistensial, yaitu terdapat atau ada dengan simbol $\exists$,
-2. kuantor universal, yaitu setiap atau semua dengan simbol $\forall$.
-
-Untuk kuantor eksistensial, pembuktiannya cukup membuktikan sat bukti sedangkan
-untuk kuantor universal, kita harus membuktikan semuanya.
-
-Contoh:
-
-1. $\exists x \in \mathbb{R}, x^{2}+1 > 0$, misalnya ambil $x = 1$, maka
-   $1^{2}+1 > 0$ sudah membuktikan terpenuhi dan cukup hanya 1 pembuktian saja.
-2. $\forall x \in \mathbb{R}, x^{2}+1 > 0$, kita tahu bahwa
-   $\forall x \pm x, x \cdot x > 0$, maka dapat dibuktikan bahwa
-   $x^{2} + 1 > 0$, untuk setiap $ x \in \mathbb{R}$.
-3. $\forall x : x^{2} < 4 \to x < 2$, diketahui bahwa $x^{2} = -2 < x < 2$.
-   Pernyataan ini akan salah jika premis benar tetapi konklusi salah.
-   Misalkan $x = 3$, maka $3^{2} < 4 \to 3 < 2$ adalah salah. Hal ini
-   menunjukkan bahwa $x^{2} < 4$ tidak selalu benar, tetapi jika kita
-   menggunakan $x^{2} < 4 \to x < 3$ maka sudah benar. Hal ini menunjukkan
-   bahwa $x^{2} < 4$ tidak selalu benar, tetapi jika kita menggunakan
-   $x^{2} < 4 \to x < 3$ maka sudah benar.
-
-Eksistensial sulit membuktikan salah, universal sulit membuktikan kebenarannya.
-
-### Nested Kuantor
-
-Kuantor yang bergabung menjadi menjadi suatu pernyataan. Contoh
-{{< sidenote 1 >}}Persamaan Umum Limit{{< /sidenote >}}:
-
-$$
-\lim_{x \to 0} f(x) = L \iff \forall \epsilon > 0, \exists \delta > 0,
-\ni: \forall x : 0 < | x - a | < \delta \to | f(x) - L | < \epsilon
-$$
-
-Contoh lain: Teori grup, misalkan $(\mathbb{G}, +)$ sebuah grup, maka:
-
-- $\forall a, b, c \in \mathbb{G}$, berlaku $(a + b ) + c = a + (b + c )$;
-- $\exists e \in \mathbb{G}$, sehingga $e + a = a \forall a \in \mathbb{G}$;
-- $\forall a \in \mathbb{G}, \exists a^{-1} \in \mathbb{G}$, sehingga
-  $a + a^{-1} = e$.
-
-Point ke-2 menunjukkan pertama terdapat maka dipastikan yang dibelakangnya akan
-memenuhi, sedangkan pada point ke-3 menunjukkan semua pertama, maka terdapat
-di belakang akan bergantung pada nilai untuk setiapnya.
-
-Contoh lain: $\forall m \exists n: n^{2} < m, (m, n \in \mathbb{Z})$. Hal ini
-menunjukkan bahwa nilai n bergantung dari m, atau n(m).
-Penyelesaiannya:
-
-1. Kasus pertama, $m < 0 \implies m \leq -1$, $n^{2} < m \iff m \leq 0 < n$,
-   misal $n = -1$ tidak memenuhi.
-2. Kasus kedua, $m = 0$, tidak ada $\mathbb{Z}$ yang bisa memenuhi, sama dengan
-   kasus pertama.
-3. Kasus ketiga, $m > 0 \implies m \geq 1$, $n^{2} < m \iff n < 1 \leq m$, misal
-   $n = 0$, maka akan memenuhi.
-
-Pernyataan ini salah karena hanya kondisi ketiga yang memenuhi.
-
-Contoh lain: $\exists m \forall n: n < m^{2}, (m, n \in \mathbb{Z})$. Kita cukup
-membuktikan satu nilai, $\forall m \in \mathbb{Z}: m^{2} \geq 0 > -1$, misalnya
-$n = -1$, akibatnya $n = -1 < 0 \leq m^{2}, \forall m \in \mathbb{Z}$.
-
-### Menegasikan Kuantor
-
-Kuantor dinegasikan dengan proposisinya, misalnya $\forall$ dinegasikan
-$\exists$, $p$ dinegasikan $\neg p$. Semua dinegasikan ada, bukan tidak ada.
-Contoh:
-
-1. $\neg (\forall x: p(x)) \equiv \exists x \to \neg p(x)$.
-2. $\neg (\exists x: p(x)) \equiv \forall x \to \neg p(x)$.
-
-Contoh lain: $\forall m, \exists n: n^{2} < m$, bernilai salah karena jika
-$m = -1$ maka tidak akan memenuhi. Jika pernyataan ini salah maka negasinya
-pastilah bernilai benar.
-
-Negasinya: $\exists m, \forall n: n^{2} \geq m$, kita cukup memilih $m = -1$,
-maka sudah memenuhi.
-
-Hal ini memberikan alternatif jika kesulitan untuk membuktikan pernyataan, maka
-cukup dinegasikan untuk mendapatkan pembuktian yang lebih mudah.
-
-## Inferensi
-
-Inferensi atau kesimpulan-kesimpulan yang bisa ditarik dari beberapa proposisi.
-
-### Modus Ponen
-
-Didasarkan pada tautologi $p \land (p \to q) \to q$. Jika $p$ dan $p \to q$
-bernilai benar maka $q$ bernilai benar.
-
-$$
-\frac{p \to q \quad p}{q}
-$$
-
-Pembuktian, jika:
-
-$$p \to q \equiv \neg p \lor q$$
-
-maka:
-
-\\[
+*Bukti*:  
+Misalkan $x_1^3 = x_2^3$:  
+\[
 \begin{aligned}
-p \land (\neg p \lor q) & = (p \land \neg p) \lor (p \land q) \\\\
-& = q
+0 &= x_1^3 - x_2^3 \\
+&= (x_1 - x_2)(x_1^2 + x_1x_2 + x_2^2)
 \end{aligned}
-\\]
-
-### Modus Tollen
-
-Didasarkan pada tautologi $[\neg q \land (p \to q)] \to \neg p$.
-
-$$
-\frac{p \to q \quad \neg q}{\neg p}
-$$
-
-Pembuktian, jika:
-
-$$\neg p \land (p \to q)] \to \neg p$$
-
-maka:
-
-\\[
-\begin{aligned}
-\neg p \land (p \to q) & = (\neg q \land \neg p) \lor (\neg q \land q) \\\\
-& = \neg p
-\end{aligned}
-\\]
-
-### Silogisme Hipotesis
-
-Didasarkan pada tautologi $[(p \to q) \land (q \to r)] \to (p \to r)$.
-
-$$
-\frac{p \to q \quad \neg q \to r}{\neg p \to r}
-$$
-
-Pembuktian:
-
-1. $p \to q$ (premis),
-2. $q \to r$ (premis),
-3. asumsikan p,
-4. dari (1) dan (3): $q$ (modus ponens),
-5. dari (2) dan (4): $r$ (modus ponens),
-6. karena dari asumsi $p$ diperoleh $r$, maka $p \to r$.
-
-Disini muncul anekdot $p$ jika saya lapar maka saya makan, $q$ jika saya makan
-maka saya kenyang, sehingga kesimpulannya jika saya lapar maka saya kenyang.
-
-### Silogisme Disjungtif
-
-Didasarkan pada tautologi $[(p \lor q) \land (\neg p)] \to q$.
-
-$$
-\frac{p \lor q \quad \neg p}{q}
-$$
-
-Pembuktian:
-
-1. $p \lor q$ (premis),
-2. $\neg p$ (premis),
-3. $q$.
-
-Jika diberikan disjungsi maka minimal sala satunya benar, tetapi jika $\neg p$,
-maka satu-satunya yang harus benar adalah $q$.
-
-### Simplifikasi
-
-Didasarkan pada tautologi $[(p \land q) \to p]$.
-
-$$
-\frac{p \land q}{p}
-$$
-
-Pembuktian:
-
-1. $p \land q$ (premis)
-2. $p$
-
-### Penjumlahan
-
-Didasarkan pada tautologi $p \to (p \lor q)$.
-
-$$
-\frac{p}{p \lor q}
-$$
-
-Pembuktian:
-
-1. $p$ (premis)
-2. $p \lor q$ (penjumlahan)
-
-Jika diketahui $p$ benar, maka apapun nilai $q$ pasti benar karena menggunakan
-atau.
-
-### Konjungsi
-
-Didasarkan pada tautologi $((p) \land (q)) \to (p \land q)$.
-
-$$
-\frac{p \quad q}{p \land q}
-$$
-
-Pembuktian:
-
-1. $p$ (premis)
-2. $q$ (premis)
-3. $p \land q$ (konjungsi)
-
-Jika diandaikan $p$ dan $q$ benar, maka pasti $p \land q$ benar.
+\]  
+Karena $x_1^2 + x_1x_2 + x_2^2 > 0$ untuk $x_1 \neq x_2$, maka $x_1 = x_2$.

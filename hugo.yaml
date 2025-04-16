@@ -32,6 +32,9 @@ markup:
       strikethrough: false
     renderer:
       unsafe: true
+    parser:
+      autoHeadingID: true
+      hardLineBreak: true
   highlight:
     anchorLineNos: false
     codeFences: true
