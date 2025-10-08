@@ -22,7 +22,7 @@ Himpunan adalah **koleksi** tak terurut dari objek-objek yang berbeda. Simbol $\
    - $\mathbb{P} = \{2, 3, 5, 7, \dots\}$ (himpunan bilangan prima)  
    - $\mathbb{N} = \{0, 1, 2, 3, \dots\}$ (bilangan asli)  
    - $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots\}$ (bilangan bulat)  
-   - $\mathbb{Q} = \left\{\frac{a}{b} \mid a,b \in \mathbb{Z},\ b \neq 0\right\}$ (bilangan rasional)  
+   - $\mathbb{Q} = \frac{a}{b} \mid a,b \in \mathbb{Z},\ b \neq 0$ (bilangan rasional)  
    - $\mathbb{R} = (-\infty, \infty)$ (bilangan real)
 
 3. **Notasi Pembentuk Himpunan**:  

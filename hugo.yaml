@@ -1,6 +1,6 @@
 baseURL: https://deo.my.id/
 theme: hugo-deo
-title: 🌻 Deo Valiandro. M
+title: Deo Valiandro. M
 languageCode: en-US
 disableKinds:
   - taxonomy
