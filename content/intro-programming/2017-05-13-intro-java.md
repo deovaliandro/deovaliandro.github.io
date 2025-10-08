@@ -5,7 +5,8 @@ date    : 2017-05-13
 
 [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) adalah bahasa
 pemrograman level tinggi, robust (mempunyai Garbage Collector dan Exception
-Handling), object-oriented dan secure/stable tetapi tidak pure object-oriented language karena masih mendukung primitive data types seperti `int`, `char`, dll.
+Handling), object-oriented dan secure/stable tetapi tidak pure object-oriented
+language karena masih mendukung primitive data types seperti `int`, `char`, dll.
 
 ## Struktur Dasar
 
@@ -142,9 +143,10 @@ Output di Java dapat menggunakan 2 cara (yang umum digunakan).
 
 #### System.out.print()
 
-Fungsi `print()` meskipun kita menuliskan kodenya dua baris namun hasil atau outputnya tidak menjadi dua baris,
-solusinya kita bisa menggunakan fungsi yang kedua yaitu `println()` dimana dengan fungsi tersebut dapat menambahkan
-baris baru pada outputnya.
+Fungsi `print()` meskipun kita menuliskan kodenya dua baris namun hasil atau
+outputnya tidak menjadi dua baris, solusinya kita bisa menggunakan fungsi yang
+kedua yaitu `println()` dimana dengan fungsi tersebut dapat menambahkan baris
+baru pada outputnya.
 
 ```java
 class Main{
@@ -187,8 +189,9 @@ Operator aritmatika yang dapat dilakukan adalah:
 | Division assignment       | /=  |
 | Modulus asignement        | %=  |
 
-Operator ini hanya bisa digunakan pada tipe data angka, tidak bisa digunakan pada data `boolean`, tetapi dapat digunakan
-pada tipe data `char`, karena `char` pada dasarnya adalah `int` di dalama Java.
+Operator ini hanya bisa digunakan pada tipe data angka, tidak bisa digunakan
+pada data `boolean`, tetapi dapat digunakan pada tipe data `char`, karena `char`
+pada dasarnya adalah `int` di dalama Java.
 
 Contoh:
 
@@ -216,8 +219,10 @@ Operator pembanding yan dapat dilakukan:
 
 Hasil operator ini adalah nilai boolean, bisa berupa true atau false.
 
-Integer, floating-point numbers, characters, dan Booleans bisa digunakan pada operator equal to dan not equal to, tetapi
-boolean tidak bisa digunakan pada operator lain (operator order) hanya integer, floating-point numbers dan characters.
+Integer, floating-point numbers, characters, dan Booleans bisa digunakan pada
+operator equal to dan not equal to, tetapi boolean tidak bisa digunakan pada
+operator lain (operator order) hanya integer, floating-point numbers dan
+characters.
 
 Contoh:
 
@@ -242,7 +247,8 @@ Operator logika yang bisa digunakan:
 |  XOR  |    ^ |
 |  NOT  |    ! |
 
-Digunakan logika digunakan pada tipe data boolean untuk menyelesaikan permasalahan yang membutuhkan nilai-nilai logika.
+Digunakan logika digunakan pada tipe data boolean untuk menyelesaikan
+permasalahan yang membutuhkan nilai-nilai logika.
 
 Contoh penggunaan:
 
@@ -259,14 +265,17 @@ if (a == true && b < 20) {
 
 ## Tipe Data
 
-Java merupakan bahasa pemrograman yang strongly typed (setiap data harus diberikan tipe data), maka kita tidak bisa
-mengabaikan tipe data. Kita harus tahu data seperti apa yang disimpan ke dalam variabel. Selain itu, Java juga
-bersifat statically typed, yang artinya setiap variabel harus dideklarasikan terlebih dahulu sebelum digunakan.
+Java merupakan bahasa pemrograman yang strongly typed (setiap data harus
+diberikan tipe data), maka kita tidak bisa mengabaikan tipe data. Kita harus
+tahu data seperti apa yang disimpan ke dalam variabel. Selain itu, Java juga
+bersifat statically typed, yang artinya setiap variabel harus dideklarasikan
+terlebih dahulu sebelum digunakan.
 
 ### Tipe Data Primitif
 
-Tipe data primitif adalah tipe data standar yang tidak diturunkan dari objek manapun. Tipe data primitif telah
-ditentukan dengan kata kuncinya masing-masing. Terdapat 8 (delapan) tipe data primitif yang Java dukung, antara lain:
+Tipe data primitif adalah tipe data standar yang tidak diturunkan dari objek
+manapun. Tipe data primitif telah ditentukan dengan kata kuncinya masing-masing.
+Terdapat 8 (delapan) tipe data primitif yang Java dukung, antara lain:
 
 #### Integer
 
@@ -351,12 +360,13 @@ Sehingga char dapat ditulis seperti ini:
 char c = 88;
 ```
 
-yang mana akan menghasilkan nilai `X`, 98 adalah nilai desimal dari X dalam sistem ASCII dan Unicode.
+yang mana akan menghasilkan nilai `X`, 98 adalah nilai desimal dari X dalam
+sistem ASCII dan Unicode.
 
 #### Boolean
 
-Boolean, tipe data yang bisa menampung dua nilai, yaitu `true` atau `false`. Tipe data ini akan banyak digunakan
-kemudian. Nilai default-nya `false`.
+Boolean, tipe data yang bisa menampung dua nilai, yaitu `true` atau `false`.
+Tipe data ini akan banyak digunakan kemudian. Nilai default-nya `false`.
 
 ```java
 boolean b = true;
@@ -364,14 +374,15 @@ boolean b = true;
 
 ### Tipe Data Reference
 
-Tipe data reference merupakan sebuah tipe data yang merujuk ke sebuah objek atau instance dari sebuah class. Salah satu
-tipe data yang termasuk ke dalam tipe data reference adalah `string`. Tipe data string menunjuk ke instance dari class
+Tipe data reference merupakan sebuah tipe data yang merujuk ke sebuah objek atau
+instance dari sebuah class. Salah satu tipe data yang termasuk ke dalam tipe
+data reference adalah `string`. Tipe data string menunjuk ke instance dari class
 `java.lang.String`.
 
 #### String
 
-String adalah tipe data yang menampung karakter. String bisa menampung lebih dari satu karakter, misalnya kata, kalimat
-atau paragraf.
+String adalah tipe data yang menampung karakter. String bisa menampung lebih
+dari satu karakter, misalnya kata, kalimat atau paragraf.
 
 ```java
 String name = "Deo";
@@ -382,7 +393,8 @@ disimpan di dalam tanda kutip dua (`" "`).
 
 ### Deklarasi variabel
 
-Sebuah data dapat disimpan ke dalam variabel. Format penulisannya sebagai berikut:
+Sebuah data dapat disimpan ke dalam variabel. Format penulisannya sebagai
+berikut:
 
 ```java
 type namaVariabel;
@@ -390,7 +402,8 @@ type namaVariabel;
 
 #### Deklarasi
 
-Deklarasi adalah pembuatan sebuah variabel, namun belum di isi dengan suatu nilai. Contoh:
+Deklarasi adalah pembuatan sebuah variabel, namun belum di isi dengan suatu
+nilai. Contoh:
 
 ```java
 int n;
@@ -400,8 +413,9 @@ char c;
 
 #### Inisiasi
 
-Inisiasi adalah pengisian sebuah variabel dengan data. Cara ini disarankan untuk dilakukan dibandingkan dengan hanya
-mendeklarasikan saja tipe variabel kosong. Misalnya:
+Inisiasi adalah pengisian sebuah variabel dengan data. Cara ini disarankan untuk
+dilakukan dibandingkan dengan hanya mendeklarasikan saja tipe variabel kosong.
+Misalnya:
 
 ```java
 n = 12;
@@ -418,7 +432,8 @@ boolean b = false;
 
 #### Inisiasi dinamis
 
-Dua atau lebih data dapat di isi secara bersamaan dalam satu baris dengan syarat tipe datanya sama. Contoh:
+Dua atau lebih data dapat di isi secara bersamaan dalam satu baris dengan syarat
+tipe datanya sama. Contoh:
 
 ```java
 int a = 12, b = 13, c = 14;
@@ -432,13 +447,16 @@ int x = y = z = 100;
 
 ### Mengubah tipe ke tipe data lain
 
-Suatu tipe data dapat di ubah ke tipe data lain, misalnya dari byte ke int. Syaratnya adalah:
+Suatu tipe data dapat di ubah ke tipe data lain, misalnya dari byte ke int.
+Syaratnya adalah:
 
-1. kedua tipe data kompatible, misalnya antara byte dengan int, int dengan float, tetapi char dan boolean tidak memiliki
-   kompatible.
-2. tipe data yang dituju memiliki ruang penyimpanan yang lebih besar, misalnya byte memiliki ruang penyimpanan $2^8$,
-   akan diubah ke int yang memiliki penyimpanan $2^{32}$. Tetapi jika dari tipe data int ke byte, maka jika nilai yang
-   akan diubah lebih besar dari $2^8$, maka akan menyebabkan nilai akhir adalah hasil modulo dari ukuran byte.
+1. kedua tipe data kompatible, misalnya antara byte dengan int, int dengan
+   float, tetapi char dan boolean tidak memiliki kompatible.
+2. tipe data yang dituju memiliki ruang penyimpanan yang lebih besar, misalnya
+   byte memiliki ruang penyimpanan $2^8$, akan diubah ke int yang memiliki
+   penyimpanan $2^{32}$. Tetapi jika dari tipe data int ke byte, maka jika nilai
+   yang akan diubah lebih besar dari $2^8$, maka akan menyebabkan nilai akhir
+   adalah hasil modulo dari ukuran byte.
 
 Cara mengubah tipe data dapat dicontohkan sebagai berikut:
 
@@ -451,7 +469,8 @@ Bagaimana jika int ke float, silahkan coba sendiri.
 
 #### Konversi otomatis
 
-Misalnya terdapat a, b, c yang merupakan byte, kemudian dilakukan operasi sebagai berikut:
+Misalnya terdapat a, b, c yang merupakan byte, kemudian dilakukan operasi
+sebagai berikut:
 
 ```java
 byte a = 40;
@@ -471,19 +490,23 @@ Aturan promosi ini adalah:
 
 ## Penyeleksian Kondisi
 
-Peyeleksian adalah pilihan atau opsi dengan suatu syarat tertentu. Jika syarat yang diberikan memenuhi, maka semua
-statement dalam blok kondisi tersebut akan dijalankan, namun jika tidak maka semua stetement dalam blok itu dilewati
-dan tidak dijalankan. Contohnya, jika nilai sama dengan atau lebih dari 90 maka mahasiswa tersebut mendapatkan nilai A,
-jika nilainya adalah dalam rentang 80-90 maka mahasiswa tersebut mendapatkan nilai B, dan seterusnya.
+Peyeleksian adalah pilihan atau opsi dengan suatu syarat tertentu. Jika syarat
+yang diberikan memenuhi, maka semua statement dalam blok kondisi tersebut akan
+dijalankan, namun jika tidak maka semua stetement dalam blok itu dilewati dan
+tidak dijalankan. Contohnya, jika nilai sama dengan atau lebih dari 90 maka
+mahasiswa tersebut mendapatkan nilai A, jika nilainya adalah dalam rentang 80-90
+maka mahasiswa tersebut mendapatkan nilai B, dan seterusnya.
 
-Disini dilakukan perulangan dengan mengecek nilai mahasiswa tersebut, jika memenuhi atau terdapat dalam rentang
-tertentu, maka mahasiswa tersebut akan mendapat nilai ini.
+Disini dilakukan perulangan dengan mengecek nilai mahasiswa tersebut, jika
+memenuhi atau terdapat dalam rentang tertentu, maka mahasiswa tersebut akan
+mendapat nilai ini.
 
 Dalam Java terdapat dua macam penyeksian kondisi yaitu `If-else` dan `Switch`.
 
 ### If-Else
 
-Bentuk if-else adalah bentuk jika-maka, jika memenuhi syarat ini, lakukan ini, jika tidak maka cek ke syarat berikutnya.
+Bentuk if-else adalah bentuk jika-maka, jika memenuhi syarat ini, lakukan ini,
+jika tidak maka cek ke syarat berikutnya.
 
 Bentuk umumnya adalah:
 
@@ -501,10 +524,12 @@ Aturannya:
 
 Berikut ini hal yang harus diketahui ketika menggunakan "If-else":
 
-1. If statement bisa tidak memiliki "else" statement, "else" statement harus terletak setelah semua "else If" statement
-   (jika ada).
-2. If statement bisa memiliki banyak "else if" statement dan semuanya harus terletak sebelum "else" statement.
-3. Ketika salah satu "else if" statement dijalankan, tidak ada "else if" lainnya yang akan dijalankan.
+1. If statement bisa tidak memiliki "else" statement, "else" statement harus
+   terletak setelah semua "else If" statement (jika ada).
+2. If statement bisa memiliki banyak "else if" statement dan semuanya harus
+   terletak sebelum "else" statement.
+3. Ketika salah satu "else if" statement dijalankan, tidak ada "else if" lainnya
+   yang akan dijalankan.
 
 Contoh:
 
@@ -524,10 +549,12 @@ if (nilai <= 50) {
 
 ### Switch
 
-Pada switch terdapat syarat yang digunakan untuk pengujian terhadap daftar nilai yang ada.
+Pada switch terdapat syarat yang digunakan untuk pengujian terhadap daftar nilai
+yang ada.
 
-Setiap nilai (daftar nilai) ini disebut case, dan syarat akan diperiksa untuk setiap case. Jika daftar case tidak ada
-yang memenuhi, maka akan otomatis ke `default`.
+Setiap nilai (daftar nilai) ini disebut case, dan syarat akan diperiksa untuk
+setiap case. Jika daftar case tidak ada yang memenuhi, maka akan otomatis ke
+`default`.
 
 Bentuk umumnya:
 
@@ -544,8 +571,9 @@ switch ( test_variable) {
 }
 ```
 
-Switch memerlukan `break` untuk menghentikan pengujian ketika pengujian itu sudah memenuhi persyaratan yang diberikan.
-`break` digunakan untuk menghentikan pencarian jika kondisi yang dicari sudah memenuhi.
+Switch memerlukan `break` untuk menghentikan pengujian ketika pengujian itu
+sudah memenuhi persyaratan yang diberikan. `break` digunakan untuk menghentikan
+pencarian jika kondisi yang dicari sudah memenuhi.
 
 Contoh penggunaan:
 
@@ -574,25 +602,32 @@ switch (a) {
 
 ## Perulangan
 
-Perulangan (Looping) adalah suatu blok kode yang akan terus berjalan selama syarat yang diberikan masih memenuhi.
+Perulangan (Looping) adalah suatu blok kode yang akan terus berjalan selama
+syarat yang diberikan masih memenuhi.
 
-Setiap perulangan memiliki empat bagian, yaitu `inisialisasi`, `body`, `iterasi`, dan `terminasi/kondisi`.
+Setiap perulangan memiliki empat bagian, yaitu `inisialisasi`, `body`,
+`iterasi`, dan `terminasi/kondisi`.
 
 1. Inisialisasi adalah statement yang menyatakan keadaan awal sebuah perulangan.
-2. Body atau badan program adalah blok statement yang akan dijalankan terus menerus selama perulangan berlangsung.
-3. Iterasi adalah statement atau bagian program yang nilainya terus berubah (ascending, descending atau cara lainnya)
-   untuk mencapai batas atau keadaan untuk berhenti.
-4. Terminasi atau kondisi adalah statement bernilai Boolean yang menyatakan batas atau keadaan untuk menghentikan
-   perulangan.
+2. Body atau badan program adalah blok statement yang akan dijalankan terus
+   menerus selama perulangan berlangsung.
+3. Iterasi adalah statement atau bagian program yang nilainya terus berubah
+   (ascending, descending atau cara lainnya) untuk mencapai batas atau keadaan
+   untuk berhenti.
+4. Terminasi atau kondisi adalah statement bernilai Boolean yang menyatakan
+   batas atau keadaan untuk menghentikan perulangan.
 
-Pada Java dikenal tiga macam bentuk perulangan, yaitu: `while`, `do-while`, dan `for`.
+Pada Java dikenal tiga macam bentuk perulangan, yaitu: `while`, `do-while`, dan
+`for`.
 
-Pada dasarnya semua perulangan dalam Java memiliki cara kerja yang sama yaitu selama kondisi masih bernilai true maka
-perulangan akan terus dilakukan hinggi kondisi bernilai false.
+Pada dasarnya semua perulangan dalam Java memiliki cara kerja yang sama yaitu
+selama kondisi masih bernilai true maka perulangan akan terus dilakukan hinggi
+kondisi bernilai false.
 
 ### For
 
-For adalah perulangan yang banyaknya perulangan diketahui atau banyaknya perulangan sudah jelas(tentu).
+For adalah perulangan yang banyaknya perulangan diketahui atau banyaknya
+perulangan sudah jelas(tentu).
 
 Bentuk umum:
 
@@ -614,7 +649,8 @@ for (int i=0; i<n; i++) {
 
 ### While
 
-While adalah perulangan yang banyaknya perulangan tidak menentu dan lebih sederhana dari pada perulangan for.
+While adalah perulangan yang banyaknya perulangan tidak menentu dan lebih
+sederhana dari pada perulangan for.
 
 Bentuk umum:
 
@@ -641,9 +677,11 @@ while (i<n) {
 
 ### Do-while
 
-Pada perulangan ini bagian body (semua dalam kurung kurawal setelah "do") dijalankan terlebih dahulu sebelum pengecekan
-kondisi. Sehingga walaupun kondisi dari awal bernilai false, bagian body tetap dijalankan sekali. Berbeda dengan
-perulangan while apabila kondisi diawal bernilai false maka bagian body tidak akan dijalankan.
+Pada perulangan ini bagian body (semua dalam kurung kurawal setelah "do")
+dijalankan terlebih dahulu sebelum pengecekan kondisi. Sehingga walaupun kondisi
+dari awal bernilai false, bagian body tetap dijalankan sekali. Berbeda dengan
+perulangan while apabila kondisi diawal bernilai false maka bagian body tidak
+akan dijalankan.
 
 Bentuk umum:
 
@@ -671,7 +709,8 @@ System.out.println(i);
 
 ### For-each
 
-For-each bukanlah keyword dari Java, melainkan cara yang lebih sederhana untuk membuat perulangan for.
+For-each bukanlah keyword dari Java, melainkan cara yang lebih sederhana untuk
+membuat perulangan for.
 
 Bentuk umum:
 
@@ -710,8 +749,9 @@ Namun for-each memiliki batasan:
 
 ## Jump Statement
 
-Jump statement adalah perintah untuk memindahkan alur program ke program yang lain. Java mengenal tiga buah perintah
-tersebut yaitu `break`, `continue` dan `return`.
+Jump statement adalah perintah untuk memindahkan alur program ke program yang
+lain. Java mengenal tiga buah perintah tersebut yaitu `break`, `continue` dan
+`return`.
 
 ### Break
 
@@ -737,8 +777,9 @@ while (i<n) {
 
 ### Continue
 
-Continue adalah perintah yang dapat digunakan untuk meloncati proses perulangan. Continue hanya akan meloncati proses
-perulangan satu kali proses perulangan masih tetap berjalan selama hasil lompatannya itu masih berlaku dalam perulangan
+Continue adalah perintah yang dapat digunakan untuk meloncati proses perulangan.
+Continue hanya akan meloncati proses perulangan satu kali proses perulangan
+masih tetap berjalan selama hasil lompatannya itu masih berlaku dalam perulangan
 tersebut.
 
 Contoh:
@@ -753,23 +794,27 @@ for (int i=0; i<10; i++) {
 }
 ```
 
-Program di atas akan menampilkan bilangan mulai dari 0 sampai 10, tetapi angka 5 tidak akan ditampilkan karena ketika
-nilai i = 5 maka perintah `continue` akan dijalankan.
+Program di atas akan menampilkan bilangan mulai dari 0 sampai 10, tetapi angka 5
+tidak akan ditampilkan karena ketika nilai i = 5 maka perintah `continue` akan
+dijalankan.
 
 ### Return
 
-Return adalah perintah dalam java yang digunakan di dalam method. Return akan mengembalikan suatu nilai dari sebuah
-method yang dipanggil.
+Return adalah perintah dalam java yang digunakan di dalam method. Return akan
+mengembalikan suatu nilai dari sebuah   method yang dipanggil.
 
 ## Array
 
-Array adalah kelompok data dengan tipe yang sama. Dalam Java, pada saat mendeklarasikan sebuah array panjang array harus
-ditentukan, dan tidak dapat diubah setelahnya (nilai fix). Setiap item dalam sebuah array disebut element, dan setiap
-element dapat diakses dengan indexnya. Index array selalu mulai dari 0 sampai n-1, dengan n adalah panjang array.
+Array adalah kelompok data dengan tipe yang sama. Dalam Java, pada saat
+mendeklarasikan sebuah array panjang array harus ditentukan, dan tidak dapat
+diubah setelahnya (nilai fix). Setiap item dalam sebuah array disebut element,
+dan setiap element dapat diakses dengan indexnya. Index array selalu mulai dari
+0 sampai n-1, dengan n adalah panjang array.
 
 ### Deklarasi Array
 
-Sebelum digunakan, Array harus dideklarasikan terlebih dahulu dengan menentukan tipe data dan panjangnya.
+Sebelum digunakan, Array harus dideklarasikan terlebih dahulu dengan menentukan
+tipe data dan panjangnya.
 
 Bentuk umum:
 
@@ -813,8 +858,8 @@ arr[3] = 33;
 
 ### Mengakses
 
-Untuk mengakses element tertentu pada array cukup dengan menyebutkan nama array disertai dengan kurung siku dan index
-element yang ingin diakses.
+Untuk mengakses element tertentu pada array cukup dengan menyebutkan nama array
+disertai dengan kurung siku dan index element yang ingin diakses.
 
 Bentuk umum:
 
@@ -841,8 +886,9 @@ dan kemudian diikuti oleh indeks berikutnya.
 
 ### Array multi-dimensi
 
-Array multidimensi dapat diilustrasikan sebagai array dalam array. Artinya setiap element pada array tersebut adalah
-sebuah array juga (Array dua dimensi). Hal ini juga berlaku untuk Array NxN dimensi.
+Array multidimensi dapat diilustrasikan sebagai array dalam array. Artinya
+setiap element pada array tersebut adalah sebuah array juga (Array dua dimensi).
+Hal ini juga berlaku untuk Array NxN dimensi.
 
 Contoh:
 
@@ -882,8 +928,9 @@ output:
 4
 ```
 
-nilainya bukan dihitung dari angka indeks terakhir melainkan jumlah indeknya, sehingga walaupun indeksnya dimulai dari
-angka `0` namun panjangnya tetap akan mengikuti jumlah indeksnya.
+nilainya bukan dihitung dari angka indeks terakhir melainkan jumlah indeknya,
+sehingga walaupun indeksnya dimulai dari angka `0` namun panjangnya tetap akan
+mengikuti jumlah indeksnya.
 
 Contoh lain:
 
@@ -910,7 +957,8 @@ output:
 
 ## Method
 
-Method adalah suatu fungsi. Method melaksanakan suatu tugas tertentu (menurut prinsip SOLID).
+Method adalah suatu fungsi. Method melaksanakan suatu tugas tertentu (menurut
+prinsip SOLID).
 
 Method pada Java memiliki bentuk umum seperti berikut ini:
 
@@ -936,12 +984,14 @@ public int multipication(int a, int b) {
 }
 ```
 
-`int` adalah tipe data yang akan dikembalikan oleh method tersebut, yaitu hasil perkalian a dengan b. `multipication`
-adalah nama method tersebut, `int a` dan `int b` adalah 2 jenis parameter yang diterima oleh method tersebut, parameter
+`int` adalah tipe data yang akan dikembalikan oleh method tersebut, yaitu hasil
+perkalian a dengan b. `multipication` adalah nama method tersebut, `int a` dan
+`int b` adalah 2 jenis parameter yang diterima oleh method tersebut, parameter
 ini akan berguna sebagai nilai yang akan diolah oleh method tersebut.
 
-Sedangkan untuk memanggil method tersebut, kita dapat memanggil dengan menggunakan namanya, misalnya kita akan memanggil
-method yang telah kita buat diatas:
+Sedangkan untuk memanggil method tersebut, kita dapat memanggil dengan
+menggunakan namanya, misalnya kita akan memanggil method yang telah kita buat
+diatas:
 
 ```java
 int hasil = multipication(12, 14);
@@ -986,11 +1036,13 @@ Note: tambahkan call-by-value vs call-by-reference
 
 ## File IO
 
-Input dan output pada file digunakan untuk mengolah file tersebut. Untuk membaca suatu file, kita menggunakan class
-`FileReader` dan untuk menulis pada suatu file, kita menggunakan class `FileWriter`.
+Input dan output pada file digunakan untuk mengolah file tersebut. Untuk membaca
+suatu file, kita menggunakan class `FileReader` dan untuk menulis pada suatu
+file, kita menggunakan class `FileWriter`.
 
-Contoh kasusnya, menyalin suatu isi file ke file lain. Disini kita akan menggunakan `FileReader` untuk membaca isi file
-tersebut, lalu kita akan menulis dengan menggunakan `FileWriter` kepada file lainnya.
+Contoh kasusnya, menyalin suatu isi file ke file lain. Disini kita akan
+menggunakan `FileReader` untuk membaca isi file tersebut, lalu kita akan menulis
+dengan menggunakan `FileWriter` kepada file lainnya.
 
 ```java
 import java.io.FileNotFoundException;
@@ -1035,7 +1087,8 @@ mendeklarasikan sebuah string:
 String str = "Hay";
 ```
 
-String adalah tipe data immutable; ketika objek `String` dibuat, maka kontennya tidak bisa diubah lagi.
+String adalah tipe data immutable; ketika objek `String` dibuat, maka kontennya
+tidak bisa diubah lagi.
 
 Untuk menggabungkan beberapa string, Java menggunakan `+`, misalnya:
 
@@ -1069,7 +1122,8 @@ if(str0.equal(str1)) {
 }
 ```
 
-`str1` menunjukkan bahwa `str1` adalah nilai yang dijadikan pembanding. `equals()` menghasilkan nilai `boolean`.
+`str1` menunjukkan bahwa `str1` adalah nilai yang dijadikan pembanding.
+`equals()` menghasilkan nilai `boolean`.
 
 #### length()
 

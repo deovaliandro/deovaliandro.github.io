@@ -35,11 +35,12 @@ $font-mono: "DM Mono", monospace;
 
 body {
   font-family: $font-primary;
-  font-size: clamp(1em, 1.6em, 2em);
+  font-size: clamp(1em, 1.2em, 1.4em);
   line-height: 1.6;
   color: #35302e;
   overflow-y: scroll;
   margin: 0 auto;
+  background-color: hsla(36, 38%, 98%, 1);
 
   @include responsive(992px) {
     max-width: 90%;
