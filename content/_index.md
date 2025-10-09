@@ -4,8 +4,6 @@ Blog ini adalah kumpulan catatan pribadi saya tentang hasil belajar selama masa
 kuliah dan setelahnya. Tulisan-tulisannya mungkin ada yang sudah _outdate_,
 namun akan saya perbaharui nanti.
 
-<hr>
-
 ## Matematika Diskrit
 
 Matematika diskrit berbicara mengenai objek diskrit. Sangat penting di dalam
@@ -14,8 +12,6 @@ diskrit.
 1. [Logika Matematika](matdis/2025-04-06-logika-matematika-biner)
 2. [Himpunan](matdis/2025-01-14-set)
 3. [Teori Himpunan](matdis/2025-04-11-teori-himpunan)
-
-<hr>
 
 ## Pemprograman dengan Java
 
@@ -27,7 +23,5 @@ Java yang digunakan sudah tidak relevan lagi, tetapi konsepnya masih tetap sama.
 2. [Java OOP](intro-programming/2019-04-28-java-oop), kelas lanjutan
    pemprograman yang disusun pada saat kami menjadi asisten lab RPL. Memuat
    mengenai konsep-konsep pada pemprograman berorientasi objek.
-
-<hr>
 
 ## Tulisan Lain
