@@ -95,16 +95,19 @@ x_1 &= x_2
 \]
 
 *Bukti Kalkulus*:  
-$f'(x) = 2 > 0$, sehingga $f$ monoton naik. Jika $x_1 \neq x_2$, maka $f(x_1) \neq f(x_2)$.
+$f'(x) = 2 > 0$, sehingga $f$ monoton naik. Jika $x_1 \neq x_2$, maka
+$f(x_1) \neq f(x_2)$.
 
 **Contoh 2**: $f: \mathbb{R} \to \mathbb{R},\ f(x) = x^3$
 
 *Bukti*:  
-Misalkan $x_1^3 = x_2^3$:  
-\[
+Misalkan $x_1^{3} = x_2^{3}$:
+
+$$
 \begin{aligned}
-0 &= x_1^3 - x_2^3 \\
-&= (x_1 - x_2)(x_1^2 + x_1x_2 + x_2^2)
+0  &= x_1^{3} - x_2^{3} \\\\
+   &= (x_1 - x_2)(x_1^{2} + x_1x_2 + x_2^{2})
 \end{aligned}
-\]  
-Karena $x_1^2 + x_1x_2 + x_2^2 > 0$ untuk $x_1 \neq x_2$, maka $x_1 = x_2$.
+$$
+
+Karena $x_1^{2} + x_1x_2 + x_2^{2} > 0$ untuk $x_1 \neq x_2$, maka $x_1 = x_2$.

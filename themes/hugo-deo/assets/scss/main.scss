@@ -7,10 +7,10 @@ $antique-white: #f8edd9;
 $dark-pastel-red: #cc4b24;
 $maximum-yellow: #f1be49;
 $emeraled-green: #317039;
-$border-color: #898EA4;
+$border-color: #e5e7eb;
 $table-bg: #f5f7ff;
 $font-primary: "Source Code Pro";
-$font-secondary: "Source Code Pro", sans-serif;
+$font-secondary: "Inter", sans-serif;
 $font-mono: "DM Mono", monospace;
 
 // Mixins
@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   text-align: justify;
-}
+} 
 
 a {
   color: #0078a0;
