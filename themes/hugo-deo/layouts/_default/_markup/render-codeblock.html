@@ -1,0 +1,13 @@
+{{ $lang := .Type | default "text" }}
+{{ $highlighted := transform.HighlightCodeBlock . }}
+
+<figure class="h-codeblock">
+    <figcaption class="h-codeblock__language h-codeblock__language--{{ $lang }}">
+        {{- with $lang -}}
+            {{ lower . }}
+        {{- end -}}
+    </figcaption>
+    <div class="h-codeblock__content">
+        {{ $highlighted.Wrapped }}
+    </div>
+</figure>

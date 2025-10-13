@@ -1,13 +1,12 @@
 /* Copyright (c) 2016 Deo Valiandro. M */
 @import "components/font";
 
-$h-color: hsla(33, 54%, 17%, 1);
-$p-color: hsla(36, 32%, 30%, 1);
+$h-color: #262626;
+$p-color: #606060;
 $a-color: hsla(206, 57%, 44%, 1);
 $border-color: hsla(37, 38%, 83%, 1);
 $table-bg: #f5f7ff;
-$font-primary: "Source Code Pro";
-$font-secondary: "Inter", sans-serif;
+$font: "IBM Plex Sans";
 $font-mono: "DM Mono", monospace;
 
 // special-color
@@ -50,14 +49,18 @@ $colors: (
   text-rendering: geometricPrecision;
 }
 
+:root {
+  font-size: 20px;
+}
+
 body {
-  font-family: $font-primary;
-  font-size: clamp(1em, 1.2em, 1.4em);
+  font-family: $font;
+  font-size: 1.125rem;
   line-height: 1.6;
-  color: $p-color;
+  // color: $p-color;
   overflow-y: scroll;
   margin: 0 auto;
-  background-color: hsla(30, 50%, 98%, 1);
+  background-color: #FAFAFA;
 
   @include responsive(992px) {
     max-width: 90%;
@@ -75,7 +78,7 @@ h1 {
 // Typography
 h1, h2, h3, h4, h5, h6 {
   color: $h-color;
-  font-family: $font-secondary;
+  font-family: $font;
   margin-bottom: 0;
   line-height: 1.25;
 }
@@ -147,7 +150,7 @@ ul {
 // Code & Preformatted Text
 pre, code {
   font-family: $font-mono;
-  font-size: 90%;
+  font-size: 0.9375rem;
   
   code {
     padding: 2px 5px;
@@ -242,7 +245,74 @@ hr {
   // margin: 1rem auto;
 }
 
+.h-codeblock {
+    margin: 1.5rem 0;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.h-codeblock__content .highlight {
+    margin: 0;
+    padding-top: 1.2rem; 
+}
+
+.h-codeblock__content .highlight pre {
+    margin: 0;
+}
+
+.h-codeblock__language {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-family: $font-mono;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    border-top-right-radius: 6px;
+    color: #ffffff; 
+    background-color: #555555;
+}
+
+@mixin lang-bg($bg-color, $text-color: #ffffff) {
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+/* -- Java (Merah/Oranye Khas Logo) */
+.h-codeblock__language--java {
+    @include lang-bg(#E82D2F);
+}
+
+/* -- Python (Biru Tua Logo) */
+.h-codeblock__language--python {
+    @include lang-bg(#306998);
+}
+
+/* -- SQL (Biru Laut) */
+.h-codeblock__language--sql {
+    @include lang-bg(#00758F);
+}
+
+/* -- Bash / Shell (Hijau Terminal) */
+.h-codeblock__language--bash,
+.h-codeblock__language--sh {
+    @include lang-bg(#4EAA25);
+}
+
+/* -- Rust (Kuning Karat Terang) */
+.h-codeblock__language--rust,
+.h-codeblock__language--rs {
+    /* Gunakan teks hitam karena latarnya terang */
+    @include lang-bg(#DEA584, #000000); 
+}
+
+/* -- Go (Biru Muda/Langit) */
+.h-codeblock__language--go {
+    @include lang-bg(#00ADD8);
+}
+
 // Code Highlighting
-@import 'code';
+@import "code";
 @import "components/sidenotes";
 // Tambahkan komponen SCSS lain di sini juga kalau ada

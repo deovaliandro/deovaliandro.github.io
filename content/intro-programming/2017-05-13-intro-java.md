@@ -453,9 +453,9 @@ Syaratnya adalah:
 1. kedua tipe data kompatible, misalnya antara byte dengan int, int dengan
    float, tetapi char dan boolean tidak memiliki kompatible.
 2. tipe data yang dituju memiliki ruang penyimpanan yang lebih besar, misalnya
-   byte memiliki ruang penyimpanan $2^8$, akan diubah ke int yang memiliki
+   byte memiliki ruang penyimpanan $2^{8}$, akan diubah ke int yang memiliki
    penyimpanan $2^{32}$. Tetapi jika dari tipe data int ke byte, maka jika nilai
-   yang akan diubah lebih besar dari $2^8$, maka akan menyebabkan nilai akhir
+   yang akan diubah lebih besar dari $2^{8}$, maka akan menyebabkan nilai akhir
    adalah hasil modulo dari ukuran byte.
 
 Cara mengubah tipe data dapat dicontohkan sebagai berikut:

@@ -36,7 +36,7 @@ Java yang digunakan sudah tidak relevan lagi, tetapi konsepnya masih tetap sama.
 
 ## Error Handling
 
-1. [Intro](error-handling/2025-10-13-intro)
+1. [Intro](error-handling/2021-09-16-intro)
 2. [Try-Catch](error-handling/2021-09-21-try-catch)
 3. [Try with Resource Management](error-handling/2021-09-22-try-with-reso)
 4. [Throw, Throws dan Finally](error-handling/2021-09-23-throw-throws-finally)
