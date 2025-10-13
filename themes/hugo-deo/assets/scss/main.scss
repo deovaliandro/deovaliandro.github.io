@@ -3,11 +3,32 @@
 
 $h-color: hsla(33, 54%, 17%, 1);
 $p-color: hsla(36, 32%, 30%, 1);
+$a-color: hsla(206, 57%, 44%, 1);
 $border-color: hsla(37, 38%, 83%, 1);
 $table-bg: #f5f7ff;
 $font-primary: "Source Code Pro";
 $font-secondary: "Inter", sans-serif;
 $font-mono: "DM Mono", monospace;
+
+// special-color
+$colors: (
+  "gray": hsla(34, 9.9%, 68.2%, .5),
+  "red": hsla(0, 58%, 53%, .5),
+  "orange": hsla(30, 66%, 52%, .5),
+  "yellow": hsla(42, 89%, 46%, .5),
+  "green": hsla(146, 37%, 49%, .5),
+  "cyan": hsla(178, 39%, 49%, .5),
+  "blue": hsla(206, 57%, 44%, .5),
+  "purple": hsla(249, 39%, 60%, .5),
+  "pink": hsla(351, 44%, 61%, .5)
+);
+
+// Generator Class
+@each $name, $color in $colors {
+  #{$name} {
+    border-bottom: 2px dashed $color !important;
+  }
+}
 
 // Mixins
 @mixin responsive($breakpoint) {
@@ -47,12 +68,15 @@ body {
   }
 }
 
+h1 {
+  text-align: center;
+}
+
 // Typography
 h1, h2, h3, h4, h5, h6 {
   color: $h-color;
   font-family: $font-secondary;
   margin-bottom: 0;
-  text-align: center;
   line-height: 1.25;
 }
 
@@ -61,7 +85,7 @@ p {
 } 
 
 a {
-  color: hsla(197, 39%, 56%, 1);
+  color: $a-color;
   text-decoration: none;
 }
 

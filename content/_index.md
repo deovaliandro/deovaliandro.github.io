@@ -24,4 +24,9 @@ Java yang digunakan sudah tidak relevan lagi, tetapi konsepnya masih tetap sama.
    pemprograman yang disusun pada saat kami menjadi asisten lab RPL. Memuat
    mengenai konsep-konsep pada pemprograman berorientasi objek.
 
+## Machine Learning
+
+1. [Intro](ml/2025-10-01-intro)
+2. [Math](ml/2025-10-08-fondasi-math)
+
 ## Tulisan Lain
