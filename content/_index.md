@@ -29,4 +29,19 @@ Java yang digunakan sudah tidak relevan lagi, tetapi konsepnya masih tetap sama.
 1. [Intro](ml/2025-10-01-intro)
 2. [Math](ml/2025-10-08-fondasi-math)
 
+## Sistem Basis Data
+
+1. [DDL](sistem-basis-data/2025-10-13-ddl)
+2. [DML](sistem-basis-data/2025-10-13-dml)
+
+## Error Handling
+
+1. [Intro](error-handling/2025-10-13-intro)
+2. [Try-Catch](error-handling/2021-09-21-try-catch)
+3. [Try with Resource Management](error-handling/2021-09-22-try-with-reso)
+4. [Throw, Throws dan Finally](error-handling/2021-09-23-throw-throws-finally)
+5. [Method Overriding dengan Exception Handling](error-handling/2021-09-26-method-overriding-with-exception-handling)
+6. [User Defined Exception](error-handling/2021-09-26-user-defined-exception)
+7. [Chained Exception](error-handling/2021-09-28-chained-exception)
+
 ## Tulisan Lain
