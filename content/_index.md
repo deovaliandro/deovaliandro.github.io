@@ -24,6 +24,14 @@ Java yang digunakan sudah tidak relevan lagi, tetapi konsepnya masih tetap sama.
    pemprograman yang disusun pada saat kami menjadi asisten lab RPL. Memuat
    mengenai konsep-konsep pada pemprograman berorientasi objek.
 
+## Pengantar Pemrograman dengan Python
+
+Saya pernah menulis rangkuman pengantar pemprograman dengan python, tapi sudah
+lama dan materinya sudah tidak update. Saya akan mencoba menulis kembali dengan
+menggunakan Python terbaru.
+
+1. [Aritmetika dan Variabel](intro-py/2025-10-14-aritmetik-dan-variabel)
+
 ## Machine Learning
 
 1. [Intro](ml/2025-10-01-intro)
