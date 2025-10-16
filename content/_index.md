@@ -31,6 +31,7 @@ lama dan materinya sudah tidak update. Saya akan mencoba menulis kembali dengan
 menggunakan Python terbaru.
 
 1. [Aritmetika dan Variabel](intro-py/2025-10-14-aritmetik-dan-variabel)
+2. [Fungsi](intro-py/2025-10-15-fungsi)
 
 ## Machine Learning
 
