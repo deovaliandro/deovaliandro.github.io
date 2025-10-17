@@ -6,8 +6,8 @@ $p-color: #606060;
 $a-color: hsla(206, 57%, 44%, 1);
 $border-color: hsla(37, 38%, 83%, 1);
 $table-bg: #f5f7ff;
-$font: "IBM Plex Sans";
-$font-mono: "DM Mono", monospace;
+$font: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;;
+$font-mono: 'DM Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
 
 // special-color
 $colors: (
@@ -54,10 +54,22 @@ $colors: (
 }
 
 body {
+
+  color: #333333;
+
   font-family: $font;
   font-size: 1.125rem;
   line-height: 1.6;
-  // color: $p-color;
+  
+  font-display: swap;
+  
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-smooth: always;
+
+
   overflow-y: scroll;
   margin: 0 auto;
   background-color: #FAFAFA;
