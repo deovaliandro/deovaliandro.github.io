@@ -4,7 +4,7 @@
 $h-color: #262626;
 $p-color: #606060;
 $a-color: hsla(206, 57%, 44%, 1);
-$border-color: hsla(37, 38%, 83%, 1);
+$border-color: rgb(63, 62, 60);
 $table-bg: #f5f7ff;
 $font: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;;
 $font-mono: 'DM Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
@@ -54,22 +54,10 @@ $colors: (
 }
 
 body {
-
   color: #333333;
-
   font-family: $font;
   font-size: 1.125rem;
   line-height: 1.6;
-  
-  font-display: swap;
-  
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  font-smooth: always;
-
-
   overflow-y: scroll;
   margin: 0 auto;
   background-color: #FAFAFA;
@@ -212,9 +200,10 @@ mark {
 
 // Layout Components
 header {
-  text-align: center;
+  text-align: left;
   padding-top: 1em;
-  font-family: $font-mono;
+  font-size: 1.2rem;
+  // font-family: $font-mono;
 }
 
 footer {
