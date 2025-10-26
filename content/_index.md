@@ -54,5 +54,3 @@ menggunakan Python terbaru.
 7. [Chained Exception](error-handling/2021-09-28-chained-exception)
 
 ## Tulisan Lain
-
-- [Contoh Visual](gist/2025-10-17-contoh-visual)

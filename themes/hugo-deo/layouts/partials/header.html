@@ -15,14 +15,17 @@
   {{ $scss := resources.Get "scss/main.scss" | toCSS (dict "targetPath" "css/main.css") | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $scss.Permalink }}" integrity="{{ $scss.Data.Integrity }}">
 
-  {{ $script := resources.Get "js/main.js" | minify | fingerprint }}
-  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+  <!-- {{ $script := resources.Get "js/main.js" | minify | fingerprint }}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script> -->
 </head>
 
 <body class="layout">
   <header>
-    <a href="{{ .Site.BaseURL }}">
-      {{- .Site.Title -}}
-    </a>
+    <div id="tit">
+      <img src="/images/favicon.ico">
+      <a href="{{ .Site.BaseURL }}">
+        {{- .Site.Title -}}
+      </a>
+    </div>
   </header>
   <hr>

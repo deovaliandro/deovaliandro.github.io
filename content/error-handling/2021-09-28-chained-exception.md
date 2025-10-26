@@ -14,8 +14,8 @@ mengetahui penyebabnya, ia hanya mengetahui bahwa error karena pembagian nol.
 
 Ada 2 constructor yang mendukung sistem exception berantai:
 
-1. Throwable(Throwable cause)
-2. Throwable(String str, Throwable cause)
+1. Throwable (Throwable cause)
+2. Throwable (String str, Throwable cause)
 
 Perbedaannya di nomor 2 memungkinkan kita menambahkan deskripsi tentang
 exception yang terjadi, dalam String.

@@ -6,10 +6,9 @@ $p-color: #606060;
 $a-color: hsla(206, 57%, 44%, 1);
 $border-color: rgb(63, 62, 60);
 $table-bg: #f5f7ff;
-$font: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;;
+$font: "Atkinson Hyperlegible", sans-serif;
 $font-mono: 'DM Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
 
-// special-color
 $colors: (
   "gray": hsla(34, 9.9%, 68.2%, .5),
   "red": hsla(0, 58%, 53%, .5),
@@ -82,10 +81,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
   line-height: 1.25;
 }
-
-p {
-  text-align: justify;
-} 
 
 a {
   color: $a-color;
@@ -207,17 +202,10 @@ header {
 }
 
 footer {
-  padding: 1em;
-  text-align: center;
+  padding-bottom: 2em;
+  padding-top: 1em;
+  text-align: right;
   font: 16px $font-mono;
-  
-  .footnote-ref {
-    border-bottom: 0.5em solid red;
-  }
-  
-  .footnotes > hr {
-    display: none;
-  }
 }
 
 .footnotes {
@@ -226,9 +214,27 @@ footer {
   }
 }
 
+#tit {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em 0;
+
+  img {
+    margin-right: 0.5em; 
+    width: 24px; 
+    height: 24px;
+    margin-inline: 0 0.3em;
+  }
+
+  a {
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
 // MathJax
 mjx-math {
-  font-size: 92% !important;
+  font-size: 90% !important;
 }
 
 mjx-container[display="true"] {
