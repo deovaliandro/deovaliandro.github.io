@@ -26,7 +26,7 @@ Set dapat ditulis dengan:
 4. diagram venn.
 
 Jika $A$, $B$ adalah dua buah himpunan, maka $B \subseteq A$ jika dan hanya jika
-$\forall b \in B$ maka $b \in A$.
+berlaku $\forall b \in B$ maka $b \in A$.
 
 Sifat:
 
@@ -109,7 +109,9 @@ Contoh $f: \mathbb{R} \to \mathbb{R}$, $f(x) = x^{3}$ adalah fungsi injektif.
 Bukti: misalkan $x_1, x_2 \in \mathbb{R}$ sedemikian sehingga
 $x_1^{3} = x_2^{3}$.
 
+$$
 \begin{aligned}
 0 &= x_1^{3} = x_2^{3} \\\\
-&= (x_1 - x_2)\left( \left(x_1 + \frac{1}{2}x_2\right)^{2} + \frac{3}{4}x_2^2 \right)
+  &= (x_1 - x_2)\left( \left(x_1 + \frac{1}{2} x_2 \right) ^ {2} + \frac{3}{4}x_2^{2} \right)
 \end{aligned}
+$$

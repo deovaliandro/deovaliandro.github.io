@@ -81,6 +81,14 @@ Secara umum, aturan penamaan variabel menurut
 2. hanya boleh karakter, angka dan underscore (`_`),
 3. tidak boleh berawalan angka.
 
+Untuk tipe data lain, dapat langsung dibuat, misalnya:
+
+```python
+n = 12
+b = True
+f = 12.3
+```
+
 ### Manipulasi variabel
 
 Isi variabel dapat berubah dengan cara kita overriding dari nilai sebelumnya.
