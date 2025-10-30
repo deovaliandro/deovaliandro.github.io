@@ -31,9 +31,9 @@ lama dan materinya sudah tidak update. Saya akan mencoba menulis kembali dengan
 menggunakan Python terbaru.
 
 1. [Konsep Dasar](intro-py/2025-10-01-konsep-dasar)
-2. [Aritmetika dan Variabel](intro-py/2025-10-14-aritmetik-dan-variabel)
-4. [Tipe Data](intro-py/2025-10-28-data-types)
-5. [Input dan Output](intro-py/2025-10-29-input-output)
+2. [Aritmetika dan Variabel](intro-py/2025-10-02-aritmetik-dan-variabel)
+4. [Tipe Data](intro-py/2025-10-03-data-types)
+5. [Input dan Output](intro-py/2025-10-04-input-output)
 6. [Fungsi](intro-py/2025-10-15-function)
 7. [Pengkondisian](intro-py/2025-10-28-conditions)
 8. [List](intro-py/2025-10-28-list)
