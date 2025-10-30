@@ -92,8 +92,9 @@ a {
 
 blockquote {
   font-style: italic;
-  border-left: 2px solid grey;
+  border-left: .2rem solid rgb(51, 51, 51);
   padding: 0 20px;
+  margin-left: 0;
 }
 
 em {

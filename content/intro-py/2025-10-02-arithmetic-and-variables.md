@@ -1,30 +1,7 @@
 +++
-title     = "Pembangkit Bilangan Prima"
+title     = "Aritmetika dan Variabel"
 date      = "2025-10-14"
 +++
-
-## Printing
-
-Salah satu hal yang biasa paling pertama ketika membuat program adalah membuat
-`Hello, World!`
-
-Misalnya kita membuat program dengan nama `helloworld.py` dengan isinya:
-
-```python
-print("Hello, World!")
-```
-
-Lalu dapat kita jalankan dengan menggunakan perintah:
-
-```bash
-py helloworld.py
-```
-
-akan menghasilkan
-
-```bash
-Hello, world!
-```
 
 ## Aritmetika
 
@@ -39,7 +16,7 @@ print(10 / 2)
 print(2 ** 2)
 ```
 
-kita juga bisa menggabungkan operasi aritmatika dengan menggunakan kurung `()`,
+kita juga bisa menggabungkan operasi aritmetika dengan menggunakan kurung `()`,
 misalnya:
 
 ```python

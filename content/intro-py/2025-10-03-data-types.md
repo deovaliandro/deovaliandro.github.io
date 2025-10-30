@@ -41,6 +41,8 @@ akan menghasilkan:
 <class 'float'>
 ```
 
+> Dengan membagi dua tipe data int maka akan menghasilkan tipe data float.
+
 ## Boolean
 
 Boolean adalah tipe data logika yang hanya mempunyai dua nilai, antara True atau
@@ -94,6 +96,32 @@ akan menghasilkan:
 ```bash
 John Doe
 <class 'str'>
+```
+
+Ada beberapa karakter yang tidak dapat langsung di ketik pada string, misalnya
+tanda <kbd>'</kbd> , untuk mengatasinya, digunakan tanda <kbd>\\</kbd>,
+contohnya:
+
+```python
+"Ini tanda petik \"."
+```
+
+contoh lain adalah tanda `\n` (_newline_) untuk membuat baris baru dan karakter
+<kbd>\\</kbd> (_backslash_) itu sendiri.
+
+Menggunakan karakter tiga petik (<kbd>"""</kbd>) pada string, akan membuat
+teks di print mengikuti penulisannya. Misalnya:
+
+```python
+print("""Halo,
+         nama saya Deo""")
+```
+
+menghasilkan:
+
+```bash
+Halo,
+nama saya Deo
 ```
 
 salah satu operasi pada string adalah `len()` untuk mengetahui panjang string
