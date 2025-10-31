@@ -1,4 +1,4 @@
-/* Copyright (c) 2016 Deo Valiandro. M */
+/* Copyright (c) 2016-now Deo Valiandro. M */
 @import "components/font";
 
 $h-color: #262626;
@@ -12,9 +12,9 @@ $font: 'Avenir LT Pro', sans-serif;
 $font-mono: 'DM Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
 
 $colors: (
+  "orange": lab(88.4871% 9.94918 28.8378),
   "gray": hsla(34, 9.9%, 68.2%, .5),
   "red": hsla(0, 58%, 53%, .5),
-  "orange": hsla(30, 66%, 52%, .5),
   "yellow": hsla(42, 89%, 46%, .5),
   "green": hsla(146, 37%, 49%, .5),
   "cyan": hsla(178, 39%, 49%, .5),
@@ -26,25 +26,24 @@ $colors: (
 // Generator Class
 @each $name, $color in $colors {
   #{$name} {
-    border-bottom: 2px dashed $color !important;
+    padding-inline: .25rem;
+    padding-bottom: .10rem;
+    background-color: $color;
   }
 }
 
-// Mixins
 @mixin responsive($breakpoint) {
   @media (max-width: $breakpoint) {
     @content;
   }
 }
 
-// Placeholders
 %table-styles {
   border: 1px solid $border-color;
   text-align: center;
   padding: 0.5rem;
 }
 
-// Base Styles
 * {
   box-sizing: border-box;
   text-rendering: geometricPrecision;
@@ -77,7 +76,6 @@ h1 {
   text-align: center;
 }
 
-// Typography
 h1, h2, h3, h4, h5, h6 {
   color: $h-color;
   font-family: $font;
@@ -108,14 +106,12 @@ em {
   text-align: center;
 }
 
-// Tables
 table {
   border-collapse: collapse;
   margin: 0 auto;
   width: 100%;
   margin-bottom: 1rem;
 
-  // Buat scroll horizontal untuk layar kecil
   @media (max-width: 768px) {
     display: block;
     overflow-x: auto;
@@ -136,7 +132,6 @@ table {
   }
 }
 
-// Lists
 ul {
   list-style-type: square;
 
@@ -208,8 +203,8 @@ header {
 footer {
   padding-bottom: 2em;
   padding-top: 1em;
-  text-align: right;
-  font: 16px $font-mono;
+  text-align: center;
+  font: 1rem $font-mono;
 }
 
 .footnotes {
