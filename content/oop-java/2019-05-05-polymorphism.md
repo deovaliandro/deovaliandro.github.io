@@ -1,0 +1,84 @@
+---
+title   : Polymorphism
+date    : 2019-05-05
+---
+
+Polimorfiesme (bahasa Inggris polymorphims) adalah kemampuan dari suatu objek
+untuk  merepresentasikan satu bentuk ke dalam banyak bentuk. Penggunaan paling
+umum dari polymorphism pada OOP terjadi ketika reference superclass digunakan
+untuk merujuk ke inheritance objek class.
+
+Hal ini memungkinkan perubahan perilaku program secara dinamis saat program
+berjalan, tanpa suatu modul tahu bahwa modul yang lain sudah berubah.
+
+Polymorphism menyederhanakan dan menghilangkan if-else, di saat-saat di mana
+penggunaannya menjadi tidak praktis lagi. Kode-kode yang tersebar di mana-mana
+dengan if-else yang selalu sama, akhirnya semuanya di masukkan ke dalam
+kelas-kelas masing-masing. Ditaruhlah interface di depan kelas-kelas itu,
+sehingga sekarang kode yang baru terasa lebih mudah dibaca[^1].
+
+Polymorphism terbagi menjadi dua, yaitu *compiled time polymorphism* dan
+*runtime polymorphism*.
+
+## Compiled time polymorphims/static polymorphims
+
+Polimorfiesme yang berjalan ketika kompilasi. Misalnya:
+
+1. Method overloading,
+2. Constructor overloading,
+
+Contoh:
+
+```java
+class Arithmetic {
+    public int add(int i, int j) {
+        return i + j;
+    }
+
+    public long add(int i, int j) {
+        return i + j;
+    }
+
+    public long add(int i, int j, int k) {
+        return i + j + k;
+    }
+}
+```
+
+## Runtime polymorphism
+
+Polimorfiesme yang berjalan ketika runtime. Menggunakan override yang dituliskan
+dalam bentuk keyword `@Override`. Misalnya:
+
+```java
+//Superclass
+public class Operasi {
+    void op(int i, int j){
+        System.out.println(i + j);
+    }
+}
+
+public class NewOperation extends Operasi {
+    @Override
+    void op(int i, int j){
+        System.out.println(i * j);
+    }
+}
+```
+
+## Overriding vs Overloading
+
+1. Overriding mengimplementasikan Runtime Polymorphism, Overloading 
+   mengimplementasikan Compile time polymorphism,
+2. Overriding terjadi antara superclass dan subclass, Overloading terjadi antara
+   metode di kelas yang sama.
+3. Overriding memiliki tanda yang sama yaitu nama dan argumen yang sama,
+   Overloading memiliki nama yang sama namun parameter berbeda.
+4. Overloading, method dipanggil ketika compile-time, Overriding, dipanggil
+   ketika runtime objek yang ditentukan.
+5. Jika Overriding breaks, akan berakibat fatar karena efeknya akan terlihat
+   pada saat runtime, namun jika Overloading breaks, akan muncul compile-time
+   error dan lebih mudah untuk memperbaikinya[^2]
+
+[^1]: <https://jekjektuanakal.my.id/posts/peta-jalan-pejuang-cpp/>
+[^2]: <https://www.journaldev.com/32182/overriding-vs-overloading-in-java>

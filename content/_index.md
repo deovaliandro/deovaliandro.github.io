@@ -47,9 +47,13 @@ Java yang digunakan sudah tidak relevan lagi, tetapi konsepnya masih tetap sama.
 Materi lab PBO yang kami pelajari di lab RPL. Mungkin perlu penyesuaian program
 tetapi untuk konsep OOP-nya akan tetap sama.
 
-[Java OOP](intro-programming/2019-04-28-java-oop), kelas lanjutan pemprograman
-yang disusun pada saat kami menjadi asisten lab RPL. Memuat mengenai
-konsep-konsep pada pemprograman berorientasi objek.
+1. [Class dan Object](oop-java/2019-04-28-class-object)
+2. [Constructor](oop-java/2019-04-29-constructor)
+3. [Encapsulation](oop-java/2019-05-01-encapsulation)
+4. [Setter dan Getter](oop-java/2019-05-02-setter-and-getter)
+5. [Abstract Class dan Interface](oop-java/2019-05-03-abstract-class-and-interface)
+6. [Inheritance](oop-java/2019-05-04-inheritance.md)
+7. [Polymorphism](oop-java/2019-05-05-polymorphism)
 
 ## Matematika Diskrit
 
