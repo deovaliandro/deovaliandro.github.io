@@ -17,7 +17,7 @@ Materi Python adalah materi Pengantar Pemrograman dalam versi Java yang kami
 dapatkan di kelas.
 
 1. [Konsep Dasar](intro-py/2025-10-01-konsep-dasar)
-2. [Aritmetika dan Variabel](intro-py/2025-10-02-aritmetik-dan-variabel)
+2. [Aritmetika dan Variabel](intro-py/2025-10-02-arithmetic-and-variables)
 4. [Tipe Data](intro-py/2025-10-03-data-types)
 5. [Input dan Output](intro-py/2025-10-04-input-output)
 6. [Fungsi](intro-py/2025-10-15-function)
