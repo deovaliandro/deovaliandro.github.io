@@ -26,6 +26,15 @@ print(10 / 2)
 print(2 ** 2)
 ```
 
+Membagi dengan angka 0 (nol) akan dianggap error dalam Python:
+
+```python
+>>> 11 / 0
+Traceback (most recent call last):
+   File "<stdin>", line 1, in <module>
+ZeroDivisionError: division by zero
+```
+
 kita juga bisa menggabungkan operasi aritmetika dengan menggunakan kurung `()`,
 misalnya:
 
@@ -44,6 +53,28 @@ print("hahaha")
 
 komentar tidak akan digunakan dalam program, tugasnya hanya sebagai penanda
 penjelasan dan kebutuhan dokumentasi.
+
+**Docstrings** (documentation strings) adalah tanda yang mirip komentar, tetapi
+digunakan untuk menjelaskan kode yang ada, dan dapat lebih dari 1 baris.
+Contohnya:
+
+```python
+def shout(word):
+    """
+    Print a word with an
+    exclamation mark following it.
+    """
+    print(word + "!")
+
+
+shout("spam")
+```
+
+Dan hasilnya:
+
+```bash
+spam!
+```
 
 ## Variabel
 
