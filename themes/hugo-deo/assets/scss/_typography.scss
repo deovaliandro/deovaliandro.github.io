@@ -1,0 +1,44 @@
+@use "variables" as *;
+
+h1 {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $heading-color;
+    font-family: $font-family-primary;
+    margin-bottom: 0;
+    line-height: 1.25;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: .2rem solid $text-color;
+    padding: 0 20px;
+    margin-left: 0;
+}
+
+em {
+    text-align: center;
+}
+
+.metadata {
+    color: #828282;
+    margin: $spacing-md 0;
+    font: $font-size-small $font-family-mono;
+    text-align: center;
+}
+
+ul {
+    list-style-type: square;
+    
+    &.blog-posts {
+        list-style-type: none;
+        padding: unset;
+    }
+}

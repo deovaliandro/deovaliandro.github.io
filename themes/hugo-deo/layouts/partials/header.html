@@ -12,8 +12,15 @@
   
   <title>{{ .Title | default .Site.Title }}</title>
   
-  {{ $scss := resources.Get "scss/main.scss" | toCSS (dict "targetPath" "css/main.css") | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $scss.Permalink }}" integrity="{{ $scss.Data.Integrity }}">
+  {{ $scss := resources.Get "scss/main.scss" }}
+{{ $options := (dict "transpiler" "dartsass" "targetPath" "css/main.css" "outputStyle" "compressed") }}
+
+{{/* Ganti resources.ToCSS dengan css.Sass */}}
+{{ $style := $scss | css.Sass $options | minify | fingerprint }}
+
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+
+  
 
   <!-- {{ $script := resources.Get "js/main.js" | minify | fingerprint }}
   <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script> -->
@@ -21,7 +28,7 @@
 
 <body class="layout">
   <header>
-    <div id="tit">
+    <div id="title">
       <img src="/images/favicon.ico">
       <a href="{{ .Site.BaseURL }}">
         {{- .Site.Title -}}

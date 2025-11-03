@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+header {
+    text-align: left;
+    padding-top: 1em;
+    font-size: $font-size-body;
+}
+
+footer {
+    padding-bottom: $spacing-xxl;
+    padding-top: 1em;
+    text-align: center;
+    font: 1rem $font-family-mono;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em 0;
+    
+    img {
+        margin-right: $spacing-md;
+        width: 24px;
+        height: 24px;
+        margin-inline: 0 .3em;
+    }
+    
+    a {
+        text-decoration: none;
+        white-space: nowrap;
+    }
+}
+
+.footnotes>hr {
+    display: none;
+}

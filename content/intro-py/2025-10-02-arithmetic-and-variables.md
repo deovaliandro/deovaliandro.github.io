@@ -5,6 +5,16 @@ date      = "2025-10-14"
 
 ## Aritmetika
 
+Python dapat berfungsi sebagai kalkulator sederhana, coba saja jalankan python
+di terminal[^1] dengan perintah `python` atau `python3`, lalu masukkan:
+
+```bash
+>>> 2 + 2
+4
+>>> 3 * 2 + 10
+15
+```
+
 Kita bisa juga bisa melakukan operasi aritmetika seperti penjumlahan,
 pengurangan, perkalian, pembagian, eksponensial. Misalnya:
 
@@ -107,3 +117,5 @@ a = 12
 b = 13
 c = a + b
 ```
+
+[^1]: Windows 11 sudah menggunakan "Terminal" juga 🙂‍↔️.

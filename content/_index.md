@@ -60,6 +60,7 @@ tetapi untuk konsep OOP-nya akan tetap sama.
 Matematika diskrit berbicara mengenai objek diskrit. Sangat penting di dalam
 dunia komputer, karena komputer adalah mesin yang bekerja dengan bilangan
 diskrit.
+
 1. [Logika Matematika](matdis/2025-04-06-logika-matematika-biner)
 2. [Himpunan](matdis/2025-01-14-set)
 3. [Teori Himpunan](matdis/2025-04-11-teori-himpunan)

@@ -1,0 +1,36 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+* {
+    box-sizing: border-box;
+    text-rendering: geometricPrecision;
+}
+
+:root {
+    font-size: $font-size-root;
+}
+
+body {
+    color: $text-color;
+    font-family: $font-family-primary;
+    font-size: $font-size-body;
+    line-height: 1.6;
+    overflow-y: scroll;
+    margin: 0 auto;
+    font-weight: 300;
+    background-color: $background-color;
+    
+    @include tablet {
+        max-width: 90%;
+    }
+    
+    @include desktop {
+        max-width: 50%;
+    }
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: $border-color;
+}

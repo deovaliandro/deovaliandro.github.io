@@ -1,0 +1,253 @@
+/* styles/gruvbox-light.css */
+.chroma {
+  background-color: #fbf1c7;
+  color: #3c3836;
+}
+
+/* Background */
+.chroma code {
+  background-color: #fbf1c7 !important;
+}
+
+/* Line numbers */
+.chroma .ln {
+  color: #928374;
+  margin-right: 1em;
+  padding-right: 0.5em;
+  border-right: 1px solid #d5c4a1;
+}
+
+/* Base tokens */
+.chroma .x {
+  color: #3c3836;
+}
+.chroma .err {
+  color: #cc241d;
+}
+
+/* Comments */
+.chroma .c {
+  color: #928374;
+  font-style: italic;
+}
+.chroma .c1 {
+  color: #928374;
+  font-style: italic;
+}
+.chroma .cm {
+  color: #928374;
+  font-style: italic;
+}
+.chroma .cp {
+  color: #427b58;
+}
+.chroma .cs {
+  color: #79740e;
+}
+
+/* Keywords */
+.chroma .k {
+  color: #9d0006;
+}
+.chroma .kc {
+  color: #9d0006;
+}
+.chroma .kd {
+  color: #9d0006;
+}
+.chroma .kn {
+  color: #9d0006;
+}
+.chroma .kp {
+  color: #9d0006;
+}
+.chroma .kr {
+  color: #9d0006;
+}
+.chroma .kt {
+  color: #b57614;
+}
+
+/* Functions */
+.chroma .nf {
+  color: #79740e;
+}
+.chroma .fm {
+  color: #79740e;
+}
+.chroma .nd {
+  color: #79740e;
+}
+.chroma .na {
+  color: #79740e;
+}
+.chroma .nb {
+  color: #076678;
+}
+.chroma .nc {
+  color: #b57614;
+}
+.chroma .no {
+  color: #076678;
+}
+
+/* Variables */
+.chroma .nv {
+  color: #076678;
+}
+.chroma .vc {
+  color: #076678;
+}
+.chroma .vg {
+  color: #076678;
+}
+.chroma .vi {
+  color: #076678;
+}
+
+/* Strings */
+.chroma .s {
+  color: #79740e;
+}
+.chroma .s1 {
+  color: #79740e;
+}
+.chroma .s2 {
+  color: #79740e;
+}
+.chroma .sb {
+  color: #79740e;
+}
+.chroma .sc {
+  color: #79740e;
+}
+.chroma .sd {
+  color: #928374;
+}
+.chroma .se {
+  color: #af3a03;
+}
+.chroma .sh {
+  color: #79740e;
+}
+.chroma .si {
+  color: #b57614;
+}
+.chroma .sx {
+  color: #79740e;
+}
+.chroma .sr {
+  color: #af3a03;
+}
+.chroma .ss {
+  color: #79740e;
+}
+
+/* Numbers */
+.chroma .m {
+  color: #8f3f71;
+}
+.chroma .mb {
+  color: #8f3f71;
+}
+.chroma .mf {
+  color: #8f3f71;
+}
+.chroma .mh {
+  color: #8f3f71;
+}
+.chroma .mi {
+  color: #8f3f71;
+}
+.chroma .il {
+  color: #8f3f71;
+}
+.chroma .mo {
+  color: #8f3f71;
+}
+
+/* Operators */
+.chroma .o {
+  color: #7c6f64;
+}
+.chroma .ow {
+  color: #9d0006;
+}
+
+/* Types and Classes */
+.chroma .dl {
+  color: #79740e;
+}
+.chroma .ni {
+  color: #689d6a;
+}
+.chroma .ne {
+  color: #af3a03;
+}
+.chroma .nn {
+  color: #b57614;
+}
+.chroma .nt {
+  color: #9d0006;
+}
+
+/* Generic */
+.chroma .ge {
+  font-style: italic;
+}
+.chroma .gh {
+}
+.chroma .gi {
+  color: #98971a;
+}
+.chroma .gd {
+  color: #cc241d;
+}
+.chroma .gp {
+  color: #af3a03;
+}
+.chroma .gs {
+}
+.chroma .gu {
+  text-decoration: underline;
+}
+
+/* Special for markup languages */
+.chroma .language-html .na {
+  color: #689d6a;
+}
+.chroma .language-html .s {
+  color: #79740e;
+}
+.chroma .language-css .k {
+  color: #9d0006;
+}
+.chroma .language-javascript .k {
+  color: #9d0006;
+}
+
+/* Line highlighting */
+.chroma .hl {
+  background-color: #ebdbb2;
+}
+.chroma .ln {
+  color: #928374;
+}
+
+/* Table styling for line numbers */
+.chroma .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: auto;
+  overflow: auto;
+  display: block;
+}
+
+.chroma .lntd {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
