@@ -7,7 +7,9 @@ Ada banyak jenis data yang didukung oleh Python. Jenis data penting untuk
 menghindari kesalahan dalam pengolahan data. Misalnya saja kita membagi dua
 string, maka tentu saja akan error. Beberapa tipe data sederhana antara lain:
 
-## Integer
+## Numerik
+
+### Integer
 
 Integer adalah tipe data angka (..., -2, -1, 0, 1, 2, ...). Contoh:
 
@@ -19,12 +21,12 @@ print(type(i))
 
 akan menghasilkan:
 
-```bash
+```txt
 12
 <class 'int'>
 ```
 
-## Float
+### Float
 
 Float adalah tipe data desimal. Contohnya:
 
@@ -36,50 +38,12 @@ print(type(pi))
 
 akan menghasilkan:
 
-```bash
+```txt
 3.141592653589793
 <class 'float'>
 ```
 
 > Dengan membagi dua tipe data int maka akan menghasilkan tipe data float.
-
-## Boolean
-
-Boolean adalah tipe data logika yang hanya mempunyai dua nilai, antara True atau
-False. Contohnya:
-
-```python
-is_even = True
-print(is_even)
-print(type(is_even))
-```
-
-akan menghasilkan:
-
-```bash
-True
-<class 'bool'>
-```
-
-Selain itu, boolean juga bisa terbentuk dari hasil operasi logika. Contoh:
-
-```python
-is_odd = not is_even
-n = (2 > 4)
-print(is_odd)
-print(n)
-print(type(is_odd))
-print(type(n))
-```
-
-akan menghasilkan:
-
-```bash
-False
-False
-<class 'bool'>
-<class 'bool'>
-```
 
 ## String
 
@@ -93,7 +57,7 @@ print(type(name))
 
 akan menghasilkan:
 
-```bash
+```txt
 John Doe
 <class 'str'>
 ```
@@ -119,7 +83,7 @@ print("""Halo,
 
 menghasilkan:
 
-```bash
+```txt
 Halo,
 nama saya Deo
 ```
@@ -134,6 +98,44 @@ print(len(name))
 
 akan menghasilkan:
 
-```bash
+```txt
 8
+```
+
+## Boolean
+
+Boolean adalah tipe data logika yang hanya mempunyai dua nilai, antara True atau
+False. Contohnya:
+
+```python
+is_even = True
+print(is_even)
+print(type(is_even))
+```
+
+akan menghasilkan:
+
+```txt
+True
+<class 'bool'>
+```
+
+Selain itu, boolean juga bisa terbentuk dari hasil operasi logika. Contoh:
+
+```python
+is_odd = not is_even
+n = (2 > 4)
+print(is_odd)
+print(n)
+print(type(is_odd))
+print(type(n))
+```
+
+akan menghasilkan:
+
+```txt
+False
+False
+<class 'bool'>
+<class 'bool'>
 ```

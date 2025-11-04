@@ -1,46 +1,7 @@
 +++
-title     = "Aritmetika dan Variabel"
+title     = "Variabel dan Input/Output"
 date      = "2025-10-14"
 +++
-
-## Aritmetika
-
-Python dapat berfungsi sebagai kalkulator sederhana, coba saja jalankan python
-di terminal[^1] dengan perintah `python` atau `python3`, lalu masukkan:
-
-```bash
->>> 2 + 2
-4
->>> 3 * 2 + 10
-15
-```
-
-Kita bisa juga bisa melakukan operasi aritmetika seperti penjumlahan,
-pengurangan, perkalian, pembagian, eksponensial. Misalnya:
-
-```python
-print(1 + 2)
-print(2 - 2)
-print(2 * 3)
-print(10 / 2)
-print(2 ** 2)
-```
-
-Membagi dengan angka 0 (nol) akan dianggap error dalam Python:
-
-```python
->>> 11 / 0
-Traceback (most recent call last):
-   File "<stdin>", line 1, in <module>
-ZeroDivisionError: division by zero
-```
-
-kita juga bisa menggabungkan operasi aritmetika dengan menggunakan kurung `()`,
-misalnya:
-
-```python
-print(((1 + 3) * (9 - 2) / 2) ** 2)
-```
 
 ## Variabel
 
@@ -100,7 +61,7 @@ print(local_var)
 
 akan menghasilkan:
 
-```bash
+```txt
 NameError: name 'local_var' is not defined
 ```
 
@@ -115,4 +76,34 @@ b = 13
 c = a + b
 ```
 
-[^1]: Windows 11 sudah menggunakan "Terminal" juga 🙂‍↔️.
+## Input dan Output
+
+Output pada Python menggunakan perintah `print()`. Contohnya:
+
+```python
+print(2)
+print("Halo dunia")
+```
+
+menghasilkan:
+
+```txt
+2
+Halo dunia
+```
+
+Input pada Python menggunakan perintah `input()`. Contohnya:
+
+```python
+n = input("Masukkan angka sembarangan: ")
+print(n)
+```
+
+menghasilkan:
+
+```txt
+Masukkan angka sembarangan: 2
+2
+```
+
+misalnya inputnya adalah angka 2, maka akan ditampilkan angka 2.

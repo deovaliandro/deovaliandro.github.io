@@ -11,13 +11,14 @@
 }
 
 body {
-    color: $text-color;
     font-family: $font-family-primary;
     font-size: $font-size-body;
     line-height: 1.6;
     overflow-y: scroll;
     margin: 0 auto;
     font-weight: 300;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    color: $text-color;
     background-color: $background-color;
     
     @include tablet {

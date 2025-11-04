@@ -1,4 +1,4 @@
-# 👋🏼 Hi..!!!
+# 👋🏼 Hi
 
 Blog ini adalah kumpulan catatan pribadi saya tentang hasil belajar selama masa
 kuliah dan setelahnya. Tulisan-tulisannya mungkin ada yang sudah _outdate_,
@@ -16,13 +16,13 @@ Hal ini kemudian saya membuat dua versi Pengantar Pemrograman (Python dan Java).
 Materi Python adalah materi Pengantar Pemrograman dalam versi Java yang kami
 dapatkan di kelas.
 
-1. [Konsep Dasar](intro-py/2025-10-01-konsep-dasar)
-2. [Aritmetika dan Variabel](intro-py/2025-10-02-arithmetic-and-variables)
-4. [Tipe Data](intro-py/2025-10-03-data-types)
-5. [Input dan Output](intro-py/2025-10-04-input-output)
-6. [Fungsi](intro-py/2025-10-15-function)
-7. [Pengkondisian](intro-py/2025-10-28-conditions)
-8. [List](intro-py/2025-10-28-list)
+1. [Hello, World!](intro-py/2025-10-01-hello-world)
+2. [Aritmetika dan Variabel](intro-py/2025-10-02-variable-and-io)
+3. [Tipe Data](intro-py/2025-10-03-data-types)
+4. [Input dan Output](intro-py/2025-10-04-input-output)
+5. [Fungsi](intro-py/2025-10-15-function)
+6. [Pengkondisian](intro-py/2025-10-28-conditions)
+7. [List](intro-py/2025-10-28-list)
 
 ## Pengantar Pemprograman dengan Java
 
