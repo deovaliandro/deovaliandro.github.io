@@ -8,6 +8,8 @@
 
 :root {
     font-size: $font-size-root;
+    font-size-adjust: ex-height 0.5;
+    font-display: block;
 }
 
 body {
@@ -29,6 +31,8 @@ body {
         max-width: 50%;
     }
 }
+
+p > code { line-height: 0px; }
 
 hr {
     border: none;

@@ -17,12 +17,17 @@ Materi Python adalah materi Pengantar Pemrograman dalam versi Java yang kami
 dapatkan di kelas.
 
 1. [Hello, World!](intro-py/2025-10-01-hello-world)
-2. [Aritmetika dan Variabel](intro-py/2025-10-02-variable-and-io)
+2. [Aritmetika dan IO](intro-py/2025-10-02-variable-and-io)
 3. [Tipe Data](intro-py/2025-10-03-data-types)
-4. [Input dan Output](intro-py/2025-10-04-input-output)
-5. [Fungsi](intro-py/2025-10-15-function)
-6. [Pengkondisian](intro-py/2025-10-28-conditions)
-7. [List](intro-py/2025-10-28-list)
+4. [Operasi Aritmetika](intro-py/2025-10-04-arithmetic)
+5. [Logika Boolean](intro-py/2025-10-05-logika-boolean)
+6. [Seleksi Kondisi](intro-py/2025-10-06-selection)
+7. [Iterasi](intro-py/2025-10-07-iteration)
+8. [Jump Statement](intro-py/2025-10-08-jump-statement)
+9. [Fungsi](intro-py/2025-10-09-function)
+10. [Modul dan Library](intro-py/2025-10-10-module-and-library)
+11. [Exception](intro-py/2025-10-11-exception)
+12. [File](intro-py/2025-10-12-file)
 
 ## Pengantar Pemprograman dengan Java
 

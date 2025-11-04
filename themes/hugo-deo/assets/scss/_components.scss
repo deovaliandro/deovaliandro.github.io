@@ -49,7 +49,7 @@ table {
 // Code blocks
 pre, code {
     font-family: $font-family-mono;
-    font-size: $font-size-code;
+    // font-size: $font-size-code;
 }
 
 .chroma {
@@ -63,11 +63,11 @@ pre, code {
     border-bottom-right-radius: 0;
 }
 
-.h-codeblock {
+.h-cb {
     margin: $spacing-xl 0;
     position: relative;
     
-    &__content {
+    &-ct {
         .highlight {
             margin: 0;
             padding-top: $spacing-xl;
@@ -78,7 +78,7 @@ pre, code {
         }
     }
     
-    &__language {
+    &-lang {
         display: inline-block;
         padding: .1rem .4rem;
         font-size: .6em;
