@@ -42,35 +42,10 @@ False
 False
 ```
 
-## Operator presedence
+## Operator presedence pada logika boolean
 
-Di dalam Python, urutan pengerjaan suatu proses mengikuti aturan PEMDAS:
-
-1. P - Parentheses
-2. E - Exponentiation  
-3. M - Multiplication
-4. D - Division
-5. A - Addition
-6. S - Subtraction
-
-atau jika lebih rinci:
-
-1. `()` (Parentheses)
-2. `**` (Exponentiation)
-3. `+x`, `-x`, `~x` (Unary)
-4. `*`, `/`, `//`, `%` (Multiplication/Division)
-5. `+`, `-` (Addition/Subtraction)
-6. `<<`, `>>` (Bitwise Shifts)
-7. `&` (Bitwise AND)
-8. `^` (Bitwise XOR)
-9. `|` (Bitwise OR)
-10. `==`, `!=`, `>`, `>=`, `<`, `<=`, is, is not, in, not in (Comparisons)
-11. `not` (Boolean NOT)
-12. `and` (Boolean AND)
-13. `or` (Boolean OR)
-14. `=` (Assignment)
-
-Contohnya:
+Seperti sudah dibahas sebelumnya, Python mengikuti aturan aturan PEMDAS. Hal ini
+juga berlaku pada logika boolean. Contohnya:
 
 ```python
 >>> False == False or True
