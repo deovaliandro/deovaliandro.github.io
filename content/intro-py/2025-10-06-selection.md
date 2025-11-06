@@ -3,25 +3,86 @@ title     = "Seleksi Kondisi"
 date      = "2025-10-06"
 +++
 
-Ini adalah Part 2 dari 3 bagian yang membahas mengenai struktur kontrol pada
+Ini adalah **Part 2** dari 3 bagian yang membahas mengenai struktur kontrol pada
 Python.
 
-## Statemen If dan If-Else
+Seleksi kondisi adalah pilihan atau opsi dengan suatu syarat tertentu. Jika
+syarat yang diberikan memenuhi, maka semua statement dalam blok kondisi tersebut
+akan dijalankan, namun jika tidak maka semua stetement dalam blok itu dilewati
+dan tidak dijalankan. Contohnya, jika nilai sama dengan atau lebih dari 90 maka
+mahasiswa tersebut mendapatkan nilai A, jika nilainya adalah dalam rentang 80-90
+maka mahasiswa tersebut mendapatkan nilai B, dan seterusnya.
 
-If digunakan untuk melakukan perintah ketika suatu kondisi bernilai benar.
-If bisa memiliki if lagi di dalamnya. Contohnya:
+Perbedaan seleksi kondisi dan iterasi adalah pada selesi kondisi, kode akan
+terseksekusi sekali saja. Sedangkan pada iterasi, selama kondisi masih memenuhi
+maka program akan terus dijalankan.
+
+Python memiliki beberapa seleksi kondisi:
+
+1. if
+2. if-else
+3. if-elif
+4. if-elif-else
+5. nested if
+6. ternary
+7. match
+
+## if
+
+if digunakan pada satu kondisi dan satu cabang yaitu hanya dijalankan ketika
+bernilai `True`. Contoh:
 
 ```python
-foo = 2
-if foo > 0:
- print(0)
+if n > 20:
+    print("n lebih besar dari 20")
 ```
 
-Hasilnya:
+## if-else
 
-```bash
-0
+if-else digunakan pada satu kondisi tetapi dua cabang, jika bernilai `True`
+dan jika bernilai `False`. Contoh:
+
+```python
+if n > 20:
+    print("n lebih besar dari 20")
+else:
+    print("n lebih kecil dari 20")
 ```
+
+else digunakan untuk sebagai alternatif jika kondisi if tidak terpenuhi.
+
+## if-elif
+
+multi if atau `else if` yang disingkat `elif` memiliki 2 kondisi dan jumlah
+cabang 2 + else (opsional). Contoh:
+
+```python
+if n > 20:
+    print("n lebih besar dari 20")
+elif n > 15:
+    print("n lebih besar dari 15")
+```
+
+## if-elif-else
+
+if-elif-else adalah gabungan. Jumlah cabangnya adalah n kondisi dengan cabang
+n+1. Contoh:
+
+```python
+if foo/2 == 2:
+    print(2)
+elif foo/2 == 4:
+    print(4)
+elif foo/2 == 6:
+    print(6)
+else:
+    print("Tidak ada")
+```
+
+## nested if
+
+nested if berarti if di dalam if, jumlah kondisinya tidak terbatas dan cabangnya
+kompleks. Contoh
 
 ```python
 if foo > 0:
@@ -32,82 +93,53 @@ if foo > 0:
    print(2)
 ```
 
-```bash
-0
-1
-2
-```
+## ternary
 
-else digunakan untuk sebagai alternatif jika kondisi if tidak terpenuhi, selain
-else, dapat juga digunakan multi if atau `else if` yang disingkat `elif` dalam
-Python. Contohnya:
+ternary adalah if-else yang ditulis dalam satu baris. Contoh:
 
 ```python
-foo = 12
-if foo/2 == 2:
- print(2)
-else:
-    print(4)
+umur = 20
+status = "Dewasa" if umur >= 18 else "Anak-anak"
 ```
 
-Hasilnya:
+## match
 
-```bash
-4
-```
+> Python tidak memiliki switch karena Zen of Python: "There should be one
+> --and preferably only one-- obvious way to do it", sehingga if-elif-else sudah
+> dianggap sebagai cara yang "obvious" untuk seleksi multi-cabang.
 
-Contoh lain yang menggunakan else if menggabungkan else:
+tetapi Python 3.10 memperkenalkan match dan case yang dapat digunakan untuk
+tujuan yang sama dengan switch tetapi lebih powerful karena berbasis pattern
+matching. Contoh:
 
 ```python
-foo = 12
-if foo/2 == 2:
- print(2)
-elif foo/2 == 4:
-    print(4)
-elif foo/2 == 6
- print(6)
-else:
-    print("Tidak ada")
+match status:
+    case 200:
+        return "OK"
+    case 404:
+        return "Not Found"
+    case 500:
+        return "Server Error"
+    case _:
+        return "Unknown status"
 ```
 
-Hasilnya:
-
-```bash
-6
-```
-
-## Operator while
-
-Operator while bekerja seperti operator if, namun pada operator if hanya bisa
-berjalan sekali, sedangkan pada operator while, bisa dijalankan terus menerus
-selama kondisi yang diberikan terpenuhi. Contohnya:
+contoh powerfull dari match adalah:
 
 ```python
-i = 1
-while i <=5:
-    print(i)
-    i = i + 1
+def process_data(data):
+    match data:
+        case []:
+            print("List kosong")
+        case [x]:
+            print(f"List dengan satu elemen: {x}")
+        case [x, y, *rest]:
+            print(f"List dengan minimal 2 elemen: {x}, {y}")
+        case {"name": name, "age": age}:
+            print(f"User: {name}, usia: {age}")
+        case _:
+            print("Format tidak dikenali")
 
-print("Finished!")
+process_data([1, 2, 3, 4]) # List dengan minimal 2 elemen
+process_data({"name": "Alice", "age": 25}) # User: Alice, usia: 25
 ```
-
-Hasilnya:
-
-```bash
-1
-2
-3
-4
-5
-Finished!
-```
-
-salah satu manfaat dari operator while adalah infinity loop,
-
-```python
-while 1==1:
-   print("In the loop")
-```
-
-> Program infinity loop dapat dihentikan dengan mengetikkan
-<kbd>CTRL</kbd> + <kbd>C</kbd> atau dengan menutup program

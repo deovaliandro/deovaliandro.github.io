@@ -3,29 +3,8 @@ title     = "Logika Boolean"
 date      = "2025-10-15"
 +++
 
-Ini adalah Part 1 dari 3 bagian yang membahas mengenai struktur kontrol pada
+Ini adalah **Part 1** dari 3 bagian yang membahas mengenai struktur kontrol pada
 Python.
-
-Boolean adalah tipe data yang memiliki dua nilai, yaitu `TRUE` dan `FALSE`.
-Boolean dapat dibuat dengan membandingkan variabel dengan menggunakan simbol:
-
-- `==` untuk sama dengan
-- `!=` untuk tidak sama dengan
-- `>` untuk lebih besar (untuk int dan float)
-- `<` untuk lebih kecil (untuk int dan float)
-- `>=` untuk lebih besar atau sama dengan (untuk int dan float)
-- `<=` untuk lebih kecil atau sama dengan (untuk int dan float)
-
-```python
->>> my_bool = True
-True
->>> 1 == 2
-False
->>> "foo" == "foo"
-True
-```
-
-## Logika Boolean
 
 Logika boolean yaitu `and`, `or` dan `not`.
 

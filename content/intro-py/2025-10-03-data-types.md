@@ -122,7 +122,17 @@ True
 <class 'bool'>
 ```
 
-Selain itu, boolean juga bisa terbentuk dari hasil operasi logika. Contoh:
+Selain itu, boolean juga bisa terbentuk dari hasil operasi logika yaitu
+membandingkan variabel dengan menggunakan simbol:
+
+- `==` untuk sama dengan
+- `!=` untuk tidak sama dengan
+- `>` untuk lebih besar (untuk int dan float)
+- `<` untuk lebih kecil (untuk int dan float)
+- `>=` untuk lebih besar atau sama dengan (untuk int dan float)
+- `<=` untuk lebih kecil atau sama dengan (untuk int dan float)
+
+Contoh:
 
 ```python
 is_odd = not is_even
