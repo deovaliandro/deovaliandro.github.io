@@ -8,7 +8,7 @@ iterasi dalam kondisi yang kita tentukan.
 
 ## break
 
-untuk menghentikan while tanpa mengikuti semua kemungkinan maka digunakan
+untuk menghentikan perlangan tanpa mengikuti semua kemungkinan maka digunakan
 `break`. Contohnya:
 
 ```python
@@ -43,7 +43,7 @@ Finished
 
 ## continue
 
-continue digunakan untuk melompati suatu while ketika terdapat kondisi
+continue digunakan untuk melompati suatu perulangan ketika terdapat kondisi
 tertentu. Contohnya:
 
 ```python
@@ -75,3 +75,12 @@ Finished
 
 > Menggunakan perintah continue di luar operasi perulangan seperti while akan
 > menyebabkan error
+
+## pass
+
+pass tidak akan tidak melakukan apa-apa, contohnya:
+
+```python
+for i in range(3):
+    pass  # Tidak melakukan apa-apa
+```
