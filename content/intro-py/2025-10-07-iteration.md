@@ -3,10 +3,16 @@ title     = "Iterasi"
 date      = "2025-10-06"
 +++
 
-Ini adalah Part 3 dari 3 bagian yang membahas mengenai struktur kontrol pada
+Ini adalah **Part 3** dari 3 bagian yang membahas mengenai struktur kontrol pada
 Python.
 
-Iterasi atau perulangan.
+Iterasi atau perulangan mirip dengan penyeleksi kondisi, perbedaan terdapat pada
+selama kondisinya masih memenuhi maka blok yang ada di dalam perulangannya akan
+terus dieksekusi.
+
+Pyton memiliki beberapa perintah iterasi:
+
+1. 
 
 ## While
 
