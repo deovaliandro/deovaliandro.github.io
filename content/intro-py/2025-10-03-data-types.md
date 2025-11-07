@@ -47,7 +47,43 @@ akan menghasilkan:
 
 ### Complex
 
-## String
+Complex adalah tipe data yang merepresentasikan bilangan kompleks yang terdiri
+dari bilangan real dan imajiner.
+
+Bilangan kompleks memiliki bentuk:
+
+$$a + bj$$
+
+dimana:
+
+- $a$ adalah suatu bilangan real,
+- $b$ adalah bilangan imajiner
+- $j$ adalah unit imajiner ($\sqrt{-1}$)
+
+Contoh:
+
+```python
+z = 3 + 4j
+print(z)    # (3+4j)
+```
+
+atau bisa menggunakan fungsi `complex()`:
+
+```python
+z = complex(3, 4)   # 3 + 4j
+```
+
+kita bisa mengaksesnya dengan:
+
+```python
+z = 3 + 4j
+
+print(z.real)    # 3.0   (bagian real)
+print(z.imag)    # 4.0   (bagian imajiner)
+print(type(z.real))  # <class 'float'> (selalu float)
+```
+
+### String
 
 String adalah tipe data yang menampung karakter. Contoh:
 
@@ -104,7 +140,7 @@ akan menghasilkan:
 8
 ```
 
-## Boolean
+### Boolean
 
 Boolean adalah tipe data logika yang hanya mempunyai dua nilai, antara True atau
 False. Contohnya:
@@ -152,9 +188,9 @@ False
 <class 'bool'>
 ```
 
-## Urutan/Sequence
+## Collection
 
-Sequence adalah tipe data yang terdiri dari kumpulan elemen yang tersusun secara
+Koleksi adalah tipe data yang terdiri dari kumpulan elemen yang tersusun secara
 berurutan dan dapat diakses melalui index.
 
 ### List
@@ -176,7 +212,7 @@ print(countrys[2])
 
 Hasilnya:
 
-```bash
+```txt
 Indonesia
 Malaysia
 Singapura
@@ -191,7 +227,7 @@ print(empty_list)
 
 Hasilnya:
 
-```bash
+```txt
 []
 ```
 
@@ -212,7 +248,7 @@ print(things[2][2])
 
 Hasilnya:
 
-```bash
+```txt
 0
 [1, 2, 3]
 3
@@ -231,7 +267,7 @@ print(str[6])
 
 Hasilnya:
 
-```bash
+```txt
 w
 ```
 
@@ -247,7 +283,7 @@ print(nums)
 
 Hasilnya:
 
-```bash
+```txt
 [7, 7, 5, 7, 7]
 ```
 
@@ -261,7 +297,7 @@ print(nums * 3)
 
 Hasilnya:
 
-```bash
+```txt
 [1, 2, 3, 4, 5, 6]
 [1, 2, 3, 1, 2, 3, 1, 2, 3]
 ```
@@ -277,7 +313,7 @@ print("Deo" in foo)
 
 Hasilnya:
 
-```bash
+```txt
 True
 False
 ```
@@ -293,7 +329,7 @@ print(not "Deo" in foo)
 
 Hasilnya:
 
-```bash
+```txt
 False
 True
 ```
@@ -308,7 +344,7 @@ print(len(nums))
 
 Hasilnya:
 
-```bash
+```txt
 5
 ```
 
@@ -324,7 +360,7 @@ print(letters.index('z'))
 
 Hasilnya:
 
-```bash
+```txt
 2
 0
 ValueError: 'z' is not in list
@@ -346,7 +382,7 @@ print(nums)
 
 Hasilnya:
 
-```bash
+```txt
 [1, 2, 3, 4]
 ```
 
@@ -366,7 +402,7 @@ print(words)
 
 Hasilnya:
 
-```bash
+```txt
 ['Python', 'is', 'fun']
 ```
 
@@ -383,9 +419,64 @@ print(num)
 
 hasilnya:
 
-```bash
+```txt
 [1, 2, 3]
 ```
+
+### Tuple
+
+Tuple mirip dengan list hanya saja sifatnya immutable, artinya ketika sudah
+dibuat, maka tidak akan bisa diubah lagi. Contoh:
+
+```python
+# Tuple kosong
+tuple_kosong = ()
+print(tuple_kosong)  # ()
+
+# Tuple dengan satu elemen (perlu koma)
+tuple_satu = (5,)
+print(tuple_satu)    # (5,)
+print(type(tuple_satu))  # <class 'tuple'>
+
+# Tuple multiple elemen
+tuple_angka = (1, 2, 3, 4, 5)
+tuple_campuran = (1, "hello", 3.14, True)
+print(tuple_campuran)  # (1, 'hello', 3.14, True)
+```
+
+cara lain adalah tanpa menggunakan kurung:
+
+```python
+# Otomatis menjadi tuple
+tuple_tanpa_kurung = 1, 2, 3, 4, 5
+print(tuple_tanpa_kurung)  # (1, 2, 3, 4, 5)
+print(type(tuple_tanpa_kurung))  # <class 'tuple'>
+
+# Multiple assignment sebenarnya tuple packing
+a, b, c = 1, 2, 3  # Right side adalah tuple (1, 2, 3)
+```
+
+atau dapat juga menggunakan `tuple()`, misalnya:
+
+```python
+tuple_dari_list = tuple([1, 2, 3, 4])
+```
+
+Operasi yang dapat dilakukan pada tuple antara lain:
+
+#### elemen
+
+mengecek elemen pada indeks ke-n:
+Misalnya:
+
+```python
+my_tuple = (10, 20, 30, 40, 50)
+print(my_tuple[0])
+```
+
+#### slicing
+
+memotong
 
 ### Range
 
@@ -400,7 +491,7 @@ print(numbers)
 
 Maka hasilnya sebagai berikut:
 
-```bash
+```txt
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
@@ -414,7 +505,7 @@ print(numbers)
 
 Hasilnya:
 
-```bash
+```txt
 [4, 5, 6,7, 8, 9]
 ```
 
@@ -432,7 +523,7 @@ print(numbers)
 
 Hasilnya:
 
-```bash
+```txt
 [5, 7, 9, 11, 13, 15, 17, 19]
 ```
 
