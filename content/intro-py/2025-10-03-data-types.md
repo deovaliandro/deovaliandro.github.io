@@ -527,6 +527,58 @@ Hasilnya:
 [5, 7, 9, 11, 13, 15, 17, 19]
 ```
 
-## Slicing
+## Tipe data spesial
 
---- Perlu ditambahkan
+### frozenset
+
+frozenset adalah set yang bersifat immutable, sehingga tidak bisa diubah setelah
+dibuat. Operasi yang dapat dilakukan pada frozenset adalah semua operasi yang
+bisa dilakukan pada set kecuali `add()` dan `remove()`.
+
+### enumerate
+
+fungsi enumerate menambah counter ke dalam data yang iterable dan hasilnya
+berupa objek enumerate. Contohnya:
+
+```python
+fruits = ['apple', 'banana', 'durian']
+enumerate(fruits, start=0)
+```
+
+kita bisa mengaksesnya dengan:
+
+```python
+for index, value in enumerate(fruits):
+    print(f"Index: {index}, Value: {value}")
+```
+
+### zip
+
+fungsi zip adalah fungsi bawaan python untuk menggabungkan beberapa data
+iterable menjadi satu iterable tuple. Contohnya:
+
+```python
+names = ['Alice', 'Bob', 'Charlie']
+ages = [25, 30, 35]
+
+zipped = zip(names, ages)
+print(list(zipped))     # [('Alice', 25), ('Bob', 30), ('Charlie', 35)]
+```
+
+## Konversi Data
+
+### Konversi eksplisit
+
+```python
+string_ke_int = int("123")           # 123
+int_ke_string = str(123)             # "123"
+float_ke_int = int(3.99)             # 3 (truncate)
+list_ke_tuple = tuple([1, 2, 3])     # (1, 2, 3)
+```
+
+#### Konversi implisit (type coercion)
+
+```python
+hasil = 10 + 3.14     # 13.14 (int → float)
+hasil = True + 5      # 6 (bool → int, True=1)
+```
