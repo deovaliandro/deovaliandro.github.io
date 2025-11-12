@@ -527,6 +527,69 @@ Hasilnya:
 [5, 7, 9, 11, 13, 15, 17, 19]
 ```
 
+## Binary
+
+Tipe data binary digunakan untuk data raw seperti pada file, jaringan dan binary
+protocol.
+
+### bytes
+
+Digunakan pada data biner yang tidak berubah karena sifatnya immutable. Contoh:
+
+```python
+data1 = bytes([65, 66, 67])  # ASCII: A, B, C
+print(data1)  # Output: b'ABC'
+```
+
+atau bisa juga:
+
+```python
+data = b'hello'
+print(data)  # Output: b'hello'
+print(type(data))  # Output: <class 'bytes'>
+```
+
+Karena sifatnya immutable, maka operasi yang bisa dilakukan hanya berupa akses
+elemen, iterasi, beberapa method seperti `upper()` atau `replace()` yang akan
+menghasilkan data baru.
+
+### bytesarray
+
+Digunakan pada data biner yang masih bisa  berubah karena sifatnya mutable.
+Contoh:
+
+```python
+data1 = bytearray([65, 66, 67])  # A, B, C
+print(data1)  # Output: bytearray(b'ABC')
+```
+
+atau bisa juga:
+
+```python
+data2 = bytearray('hello', 'utf-8')
+print(data2)  # Output: bytearray(b'hello')
+```
+
+Karena sifatnya mutable, maka bisa dilakukan operasi apa saja, misalnya
+modifikasi data, ubah elemen ke-n, tambah data, dll.
+
+### memoryview
+
+--- tambahkan
+
+## None
+
+Tipe data `None` yang mereprentasikan nilai kosong, mirip dengan `null` di
+bahasa pemrograman lain. Contoh:
+
+```python
+empty_var = None
+print(empty_var)  # Output: None
+print(type(empty_var))  # Output: <class 'NoneType'>
+```
+
+`None` juga adalah return value fungsi yang tidak memiliki return value.
+
 ## Tipe data spesial
 
 ### frozenset

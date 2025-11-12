@@ -1,0 +1,18 @@
+{{ $url := .Get "url" }}
+
+<div class="card">
+  {{ if .IsNamedParams }}
+  <div class="card-content">
+    {{ if $url }}
+    <h3 class="card-title">
+      <a href="{{ $url | safeURL }}">{{ .Get "title" }}</a>
+    </h3>
+    {{ end }}
+    <p class="card-text">{{ .Inner | markdownify }}</p>
+  </div>
+  {{ else }}
+  <div class="card-content">
+    {{ .Inner }}
+  </div>
+  {{ end }}
+</div>

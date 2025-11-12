@@ -4,61 +4,25 @@ Blog ini adalah kumpulan catatan pribadi saya tentang hasil belajar selama masa
 kuliah dan setelahnya. Tulisan-tulisannya mungkin ada yang sudah _outdate_,
 namun akan saya perbaharui nanti.
 
-## Pengantar Pemrograman dengan Python
+{{< card title="Python101" url="/intro-py/" >}}
+Pengantar Pemrograman dengan menggunakan Python. Python, bahasa pemrograman
+nomor 1 di [TIOBE](https://www.tiobe.com/tiobe-index/). Python banyak digunakan
+di berbagai tempat, utamanya di dunia machine learning.
+{{< /card >}}
 
-Pengantar Pemprograman yang kami dapatkan di kelas adalah Java, tetapi kemudian
-kami menyadari bahwa untuk programming-101 seharusnya kita menggunakan Python
-alih-alih menggunakan Java yang sangat OOP. Padahal seperti kita ketahui,
-programming-101 bertujuan untuk mengenalkan konsep fundamental seperti variabel,
-loop, function dan konsep dasar lainnya.
+{{< card title="Java101" url="/intro-java/" >}}
+Pengantar Pemrograman dengan menggunakan Java. Pengantar pemrograman ini adalah
+materi yang kami dapatkan ketika kuliah di Ilmu Komputer Unhas. Saya kemudian
+menyadari Java terlalu berat untuk digunakan sebagai pengantar pemrograman,
+dimana kita seharusnya fokus mengenalkan konsep-konsep program yang lebih mudah
+dipahami. Hal itu kemudian mendorong kami untuk membuat pengantar pemrograman
+yang berbasis bahasa pemrograman Python.
+{{< /card >}}
 
-Hal ini kemudian saya membuat dua versi Pengantar Pemrograman (Python dan Java).
-Materi Python adalah materi Pengantar Pemrograman dalam versi Java yang kami
-dapatkan di kelas.
-
-1. [Hello, World!](intro-py/2025-10-01-hello-world)
-2. [Aritmetika dan IO](intro-py/2025-10-02-variable-and-io)
-3. [Tipe Data](intro-py/2025-10-03-data-types)
-4. [Operasi Aritmetika](intro-py/2025-10-04-arithmetic)
-5. [Logika Boolean](intro-py/2025-10-05-logika-boolean)
-6. [Seleksi Kondisi](intro-py/2025-10-06-selection)
-7. [Iterasi](intro-py/2025-10-07-iteration)
-8. [Jump Statement](intro-py/2025-10-08-jump-statement)
-9. [Fungsi](intro-py/2025-10-09-function)
-10. [Modul dan Library](intro-py/2025-10-10-module-and-library)
-11. [Exception](intro-py/2025-10-11-exception)
-12. [File](intro-py/2025-10-12-file)
-
-## Pengantar Pemprograman dengan Java
-
-Materi pemprograman dengan Java yang saya pelajari di lab RPL. Mungkin versi
-Java yang digunakan sudah tidak relevan lagi, tetapi konsepnya masih tetap sama.
-
-1. [Intro](intro-programming/2017-05-13-intro)
-2. [IO](intro-programming/2017-05-14-io)
-3. [Operasi Dasar](intro-programming/2017-05-15-operasi-dasar)
-4. [Tipe Data](intro-programming/2017-05-16-tipe-data)
-5. [Variabel](intro-programming/2017-05-17-variabel)
-6. [Penyeleksian Kondisi](intro-programming/2017-05-18-penyeleksian-kondisi)
-7. [Perulangan](intro-programming/2017-05-19-perulangan)
-8. [Jump Operator](intro-programming/2017-05-20-jump)
-9. [Array](intro-programming/2017-05-21-array)
-10. [Method](intro-programming/2017-05-22-method)
-11. [File IO](intro-programming/2017-05-23-file-io)
-12. [String](intro-programming/2017-05-24-string)
-
-## Pemrograman Berorientasi Objek dengan Java
-
-Materi lab PBO yang kami pelajari di lab RPL. Mungkin perlu penyesuaian program
-tetapi untuk konsep OOP-nya akan tetap sama.
-
-1. [Class dan Object](oop-java/2019-04-28-class-object)
-2. [Constructor](oop-java/2019-04-29-constructor)
-3. [Encapsulation](oop-java/2019-05-01-encapsulation)
-4. [Setter dan Getter](oop-java/2019-05-02-setter-and-getter)
-5. [Abstract Class dan Interface](oop-java/2019-05-03-abstract-class-and-interface)
-6. [Inheritance](oop-java/2019-05-04-inheritance.md)
-7. [Polymorphism](oop-java/2019-05-05-polymorphism)
+{{< card title="OOP dengan Java" url="/oop-java/" >}}
+Pemrograman Berorientasi Objek dengan menggunakan Java. Versi yang lebih lama,
+perlu update.
+{{< /card >}}
 
 ## Matematika Diskrit
 
