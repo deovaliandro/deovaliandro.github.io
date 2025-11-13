@@ -19,9 +19,7 @@ body {
   font-family: avenir lt pro, serif;
   font-weight: 300;
   margin: 0 auto;
-  margin-right: auto;
   overflow-y: scroll;
-
   background-color: rgb(248 250 252);
 
   @media (max-width: 992px) {
@@ -31,7 +29,7 @@ body {
 
   @media (min-width: 992px) {
     font-size: 1.2rem;
-    max-width: 60ch;
+    max-width: 80ch;
   }
 }
 
@@ -112,9 +110,7 @@ ul {
 
 header {
   nav {
-    margin: 0 auto;
-
-    /* Flexbox untuk menyusun item */
+    margin-top: 1ch;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -279,72 +275,114 @@ mjx-container[display="true"] {
 
 .allert {
   .card-title {
-      background-color: rgb(255 255 255);
-      border-radius: 20px;
-      text-align: center;
-    }
+    background-color: rgb(255 255 255);
+    border-radius: 20px;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .primary {
-  a, p {
+  a,
+  p {
     color: #004085;
   }
   background-color: #cce5ff;
   border-color: #b8daff;
-}
 
+  .card-content .card-title {
+    border: 1px solid #b8daff;
+  }
+}
 .secondary {
-  a, p {
+  a,
+  p {
     color: #383d41;
   }
   background-color: #e2e3e5;
   border-color: #d6d8db;
+
+  .card-content .card-title {
+    border: 1px solid #d6d8db;
+  }
 }
 
 .info {
-  a, p {
+  a,
+  p {
     color: #0c5460;
   }
   background-color: #cce5ff;
   border-color: #b8daff;
+
+  .card-content .card-title {
+    border: 1px solid #b8daff;
+  }
 }
 
 .warning {
-  a, p {
+  a,
+  p {
     color: #856404;
   }
   background-color: #fff3cd;
   border-color: #ffeeba;
+
+  .card-content .card-title {
+    border: 1px solid #ffeeba;
+  }
 }
 
 .danger {
-  a, p {
+  a,
+  p {
     color: #721c24;
   }
   background-color: #f8d7da;
   border-color: #f5c6cb;
+
+  .card-content .card-title {
+    border: 1px solid #f5c6cb;
+  }
 }
 
 .success {
-  a, p {
+  a,
+  p {
     color: #155724;
   }
   background-color: #d4edda;
   border-color: #c3e6cb;
+
+  .card-content .card-title {
+    border: 1px solid #c3e6cb;
+  }
 }
 
 .light {
-  a, p {
+  a,
+  p {
     color: #818182;
   }
   background-color: #fefefe;
   border-color: #fdfdfe;
+
+  .card-content .card-title {
+    border: 1px solid #fdfdfe;
+  }
 }
 
 .dark {
-  a, p {
+  a,
+  p {
     color: #1b1e21;
   }
   background-color: #d6d8d9;
   border-color: #c6c8ca;
+
+  .card-content .card-title {
+    border: 1px solid #c6c8ca;
+  }
 }

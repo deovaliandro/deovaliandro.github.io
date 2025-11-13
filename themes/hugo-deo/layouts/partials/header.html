@@ -22,16 +22,14 @@
 <body>
   <header>
     <nav>
-        <a href="{{ .Site.BaseURL | relLangURL }}">
-          {{ .Site.Title }}
-        </a>
-        <ul class="nav-menu">
-          {{ range .Site.Menus.main }}
-          <li>
-            <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-          </li>
-          {{ end }}
-        </ul>
+      {{ .Site.Title }}
+      <ul class="nav-menu">
+        {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
     </nav>
   </header>
   <hr>

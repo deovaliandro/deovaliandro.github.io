@@ -5,9 +5,11 @@
   {{ if .IsNamedParams }}
   <div class="card-content">
     {{ if $url }}
-    <h3 class="card-title">
-      <a href="{{ $url | safeURL }}">{{ .Get "title" }}</a>
-    </h3>
+    <a href="{{ $url | safeURL }}">
+      <h3 class="card-title">
+        {{ .Get "title" }}
+      </h3>
+    </a>
     {{ end }}
     <p class="card-text">{{ .Inner | markdownify }}</p>
   </div>
