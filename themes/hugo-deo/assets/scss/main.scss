@@ -11,7 +11,7 @@ html {
   margin: 0;
   padding: 0;
   font-size-adjust: ex-height 0.53;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -111,12 +111,27 @@ ul {
 }
 
 header {
-  display: flex;
-  a,
-  a:hover {
-    text-decoration: none;
-    white-space: nowrap;
-    color: #282828;
+  nav {
+    margin: 0 auto;
+
+    /* Flexbox untuk menyusun item */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a,
+    a:hover {
+      text-decoration: none;
+      white-space: nowrap;
+      color: #282828;
+    }
+    .nav-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
   }
 }
 
@@ -248,16 +263,88 @@ mjx-container[display="true"] {
 }
 
 .card {
-  margin: 2ch 0;
   padding: 0 1ch;
   border-radius: 12px;
+  margin-bottom: 2ch;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: rgb(255 255 255);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-              0 2px 4px -2px rgba(0, 0, 0, 0.08);
+    0 2px 4px -2px rgba(0, 0, 0, 0.08);
 }
 
 .card-content {
   padding: 1ch;
+}
+
+.allert {
+  .card-title {
+      background-color: rgb(255 255 255);
+      border-radius: 20px;
+      text-align: center;
+    }
+}
+
+.primary {
+  a, p {
+    color: #004085;
+  }
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.secondary {
+  a, p {
+    color: #383d41;
+  }
+  background-color: #e2e3e5;
+  border-color: #d6d8db;
+}
+
+.info {
+  a, p {
+    color: #0c5460;
+  }
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.warning {
+  a, p {
+    color: #856404;
+  }
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.danger {
+  a, p {
+    color: #721c24;
+  }
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.success {
+  a, p {
+    color: #155724;
+  }
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.light {
+  a, p {
+    color: #818182;
+  }
+  background-color: #fefefe;
+  border-color: #fdfdfe;
+}
+
+.dark {
+  a, p {
+    color: #1b1e21;
+  }
+  background-color: #d6d8d9;
+  border-color: #c6c8ca;
 }

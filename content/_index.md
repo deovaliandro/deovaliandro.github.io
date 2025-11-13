@@ -4,22 +4,18 @@ Blog ini adalah kumpulan catatan pribadi saya tentang hasil belajar selama masa
 kuliah dan setelahnya. Tulisan-tulisannya mungkin ada yang sudah _outdate_,
 namun akan saya perbaharui nanti.
 
-{{< card title="Python101" url="/intro-py/" >}}
-Pengantar Pemrograman dengan menggunakan Python. Python, bahasa pemrograman
-nomor 1 di [TIOBE](https://www.tiobe.com/tiobe-index/). Python banyak digunakan
-di berbagai tempat, utamanya di dunia machine learning.
+{{< card title="Python101" url="/intro-py/" class="allert primary">}}
+Python, bahasa pemrograman nomor 1 di
+[TIOBE](https://www.tiobe.com/tiobe-index/). Python banyak digunakan di berbagai
+tempat, utamanya di dunia machine learning.
 {{< /card >}}
 
-{{< card title="Java101" url="/intro-java/" >}}
-Pengantar Pemrograman dengan menggunakan Java. Pengantar pemrograman ini adalah
-materi yang kami dapatkan ketika kuliah di Ilmu Komputer Unhas. Saya kemudian
-menyadari Java terlalu berat untuk digunakan sebagai pengantar pemrograman,
-dimana kita seharusnya fokus mengenalkan konsep-konsep program yang lebih mudah
-dipahami. Hal itu kemudian mendorong kami untuk membuat pengantar pemrograman
-yang berbasis bahasa pemrograman Python.
+{{< card title="Java101" url="/intro-java/" class="allert warning">}}
+Pengantar pemrograman ini adalah materi yang kami dapatkan ketika kuliah di
+Ilmu Komputer Unhas.
 {{< /card >}}
 
-{{< card title="OOP dengan Java" url="/oop-java/" >}}
+{{< card title="OOP" url="/oop-java/" class="allert danger">}}
 Pemrograman Berorientasi Objek dengan menggunakan Java. Versi yang lebih lama,
 perlu update.
 {{< /card >}}
@@ -53,5 +49,3 @@ diskrit.
 5. [Method Overriding dengan Exception Handling](error-handling/2021-09-26-method-overriding-with-exception-handling)
 6. [User Defined Exception](error-handling/2021-09-26-user-defined-exception)
 7. [Chained Exception](error-handling/2021-09-28-chained-exception)
-
-## Tulisan Lain

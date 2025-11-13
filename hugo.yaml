@@ -6,6 +6,20 @@ disableKinds:
   - taxonomy
   - RSS
   - term
+menu:
+  main:
+    - identifier: home
+      name: home
+      url: /
+      weight: 10
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 20
+    - identifier: blog
+      name: blog
+      url: /blog/
+      weight: 30
 enableRobotsTXT: true
 enableEmoji: true
 canonifyURLs: true

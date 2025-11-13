@@ -1,6 +1,7 @@
 {{ $url := .Get "url" }}
+{{ $class := .Get "class" }}
 
-<div class="card">
+<div class="card {{$class}}">
   {{ if .IsNamedParams }}
   <div class="card-content">
     {{ if $url }}
