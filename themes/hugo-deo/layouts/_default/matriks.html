@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Matriks N x N</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .input-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        #matrixSize {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-right: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .matrix-grid {
+            display: grid;
+            gap: 5px;
+            margin-top: 15px;
+        }
+        .matrix-grid input {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .result-section {
+            margin-top: 30px;
+            border-top: 2px solid #007bff;
+            padding-top: 20px;
+        }
+        .result-section h3 {
+            color: #007bff;
+        }
+        .matrix-output-grid {
+            display: grid;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .matrix-output-grid div {
+            padding: 8px;
+            text-align: center;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        #determinanResult {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #dc3545;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🔢 Kalkulator Determinan dan Invers Matriks $N \times N$</h2>
+        
+        <div class="input-section">
+            <label for="matrixSize">Pilih Ukuran Matriks $N \times N$ (Maks 5):</label>
+            <input type="number" id="matrixSize" min="2" max="5" value="3">
+            <button onclick="generateMatrixInput()">Buat Matriks</button>
+            
+            <div id="matrixInputContainer" class="matrix-grid">
+                </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button onclick="calculateMatrix()">Hitung Determinan & Invers</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Hasil Perhitungan:</h3>
+            
+            <div id="determinanDisplay">
+                <label>Determinan (det(A)):</label>
+                <div id="determinanResult">-</div>
+            </div>
+
+            <h3 style="margin-top: 20px;">Matriks Invers ($A^{-1}$):</h3>
+            <div id="inversMatrixContainer" class="matrix-output-grid">
+                <div style="grid-column: 1 / -1;">Matriks Invers ditampilkan di sini.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- JAVASCRIPT LOGIC ---
+
+        const matrixInputContainer = document.getElementById('matrixInputContainer');
+        const matrixSizeInput = document.getElementById('matrixSize');
+        const determinanResult = document.getElementById('determinanResult');
+        const inversMatrixContainer = document.getElementById('inversMatrixContainer');
+        let N = parseInt(matrixSizeInput.value); // Ukuran matriks saat ini
+
+        /**
+         * 1. Fungsi untuk membuat input matriks berdasarkan N
+         */
+        function generateMatrixInput() {
+            N = parseInt(matrixSizeInput.value);
+            if (isNaN(N) || N < 2 || N > 5) {
+                alert("Ukuran matriks harus antara 2 dan 5.");
+                return;
+            }
+
+            matrixInputContainer.innerHTML = '';
+            matrixInputContainer.style.gridTemplateColumns = `repeat(${N}, 1fr)`;
+
+            for (let i = 0; i < N; i++) {
+                for (let j = 0; j < N; j++) {
+                    const input = document.createElement('input');
+                    input.type = 'number';
+                    input.id = `m-${i}-${j}`;
+                    input.value = (i === j) ? '1' : '0'; // Default: Matriks Identitas
+                    matrixInputContainer.appendChild(input);
+                }
+            }
+        }
+
+        /**
+         * 2. Fungsi untuk membaca matriks dari input UI
+         */
+        function getMatrixFromInputs() {
+            const matrix = [];
+            for (let i = 0; i < N; i++) {
+                matrix[i] = [];
+                for (let j = 0; j < N; j++) {
+                    const input = document.getElementById(`m-${i}-${j}`);
+                    // Gunakan parseFloat karena nilai bisa berupa desimal
+                    const value = parseFloat(input.value); 
+                    if (isNaN(value)) {
+                        throw new Error("Semua elemen matriks harus berupa angka.");
+                    }
+                    matrix[i][j] = value;
+                }
+            }
+            return matrix;
+        }
+
+        /**
+         * 3. Fungsi untuk menghitung Determinan (menggunakan metode rekursif/ekspansi kofaktor)
+         * Catatan: Untuk matriks besar (N>3), ini lambat.
+         */
+        function calculateDeterminant(matrix) {
+            const size = matrix.length;
+            if (size === 1) return matrix[0][0];
+            if (size === 2) return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+
+            let det = 0;
+            for (let j = 0; j < size; j++) {
+                const minorMatrix = getMinor(matrix, 0, j);
+                const cofactor = matrix[0][j] * calculateDeterminant(minorMatrix);
+                // Tambahkan atau kurangi kofaktor berdasarkan posisi (0, j)
+                det += (j % 2 === 0 ? 1 : -1) * cofactor;
+            }
+            return det;
+        }
+        
+        // Fungsi pembantu untuk Determinan: mendapatkan minor matriks
+        function getMinor(matrix, row, col) {
+            return matrix.filter((_, i) => i !== row)
+                         .map(rowArr => rowArr.filter((_, j) => j !== col));
+        }
+
+        /**
+         * 4. Fungsi untuk menghitung Invers Matriks (menggunakan Eliminasi Gauss-Jordan)
+         */
+        function calculateInverse(A) {
+            const n = A.length;
+            const A_copy = A.map(row => [...row]); // Salin matriks A
+            const identity = []; // Buat matriks identitas I
+
+            // 1. Gabungkan A dengan I
+            for (let i = 0; i < n; i++) {
+                identity[i] = [];
+                for (let j = 0; j < n; j++) {
+                    identity[i][j] = (i === j) ? 1 : 0;
+                }
+                A_copy[i] = A_copy[i].concat(identity[i]); // A | I
+            }
+
+            // 2. Eliminasi Gauss-Jordan
+            for (let i = 0; i < n; i++) {
+                // Cari baris pivot
+                let pivot = i;
+                for (let row = i + 1; row < n; row++) {
+                    if (Math.abs(A_copy[row][i]) > Math.abs(A_copy[pivot][i])) {
+                        pivot = row;
+                    }
+                }
+                // Tukar baris
+                [A_copy[i], A_copy[pivot]] = [A_copy[pivot], A_copy[i]];
+
+                let divisor = A_copy[i][i];
+                if (Math.abs(divisor) < 1e-9) { // Matriks Singular (det=0)
+                    throw new Error("Matriks Singular, tidak memiliki invers.");
+                }
+
+                // Normalisasi baris pivot
+                for (let j = 0; j < 2 * n; j++) {
+                    A_copy[i][j] /= divisor;
+                }
+
+                // Eliminasi baris lain
+                for (let row = 0; row < n; row++) {
+                    if (row !== i) {
+                        let multiplier = A_copy[row][i];
+                        for (let j = 0; j < 2 * n; j++) {
+                            A_copy[row][j] -= multiplier * A_copy[i][j];
+                        }
+                    }
+                }
+            }
+
+            // 3. Ekstrak Matriks Invers (bagian kanan)
+            const inverse = A_copy.map(row => row.slice(n));
+            return inverse;
+        }
+
+        /**
+         * 5. Fungsi untuk menampilkan hasil matriks
+         */
+        function displayMatrix(matrix, container) {
+            const size = matrix.length;
+            container.innerHTML = '';
+            container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+            
+            matrix.forEach(row => {
+                row.forEach(val => {
+                    const div = document.createElement('div');
+                    // Tampilkan nilai dengan 4 angka di belakang koma (akurasi)
+                    div.textContent = val.toFixed(4); 
+                    container.appendChild(div);
+                });
+            });
+        }
+
+        /**
+         * 6. Fungsi Utama: Menghitung dan Menampilkan Hasil
+         */
+        function calculateMatrix() {
+            determinanResult.innerHTML = '';
+            inversMatrixContainer.innerHTML = `<div style="grid-column: 1 / -1;">Memproses...</div>`;
+
+            try {
+                const matrix = getMatrixFromInputs();
+                
+                // Hitung Determinan
+                const det = calculateDeterminant(matrix);
+                determinanResult.textContent = det.toFixed(4);
+
+                // Cek apakah matriks singular (det = 0)
+                if (Math.abs(det) < 1e-9) { 
+                    determinanResult.textContent += " (Matriks Singular)";
+                    inversMatrixContainer.innerHTML = `<div class="error" style="grid-column: 1 / -1;">❌ Matriks Singular. Invers tidak dapat dihitung.</div>`;
+                    return;
+                }
+                
+                // Hitung Invers
+                const inverseMatrix = calculateInverse(matrix);
+                
+                // Tampilkan Invers
+                displayMatrix(inverseMatrix, inversMatrixContainer);
+
+            } catch (error) {
+                determinanResult.textContent = 'ERROR';
+                inversMatrixContainer.innerHTML = `<div class="error" style="grid-column: 1 / -1;">❌ ${error.message}</div>`;
+            }
+        }
+
+        // Panggil saat halaman dimuat
+        generateMatrixInput();
+    </script>
+
+</body>
+</html>
