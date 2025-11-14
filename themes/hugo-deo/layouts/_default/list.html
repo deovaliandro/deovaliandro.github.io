@@ -4,7 +4,15 @@
 
 {{ if .Pages }}
 <ol class="page-list">
-    {{ range .Pages.ByDate.Reverse }}
+
+    {{ $pages := .RegularPages }}
+    {{ if eq .Section "blog" }}
+    {{ $pages = $pages.ByDate.Reverse }}
+    {{ else }}
+    {{ $pages = $pages.ByDate }}
+    {{ end }}
+
+    {{ range $pages }}
     <li class="page-item">
         <a href="{{ .RelPermalink }}" class="page-link">{{ .Title }}</a>
         <time datetime="{{ .Date.Format " 2006-01-02" }}" class="metadata">
@@ -16,5 +24,4 @@
 {{ else }}
 <p class="no-content">No posts yet</p>
 {{ end }}
-
 {{ end }}
