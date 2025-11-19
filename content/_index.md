@@ -4,14 +4,14 @@ Blog ini adalah kumpulan catatan pribadi saya tentang hasil belajar selama masa
 kuliah dan setelahnya. Tulisan-tulisannya mungkin ada yang sudah _outdate_,
 namun akan saya perbaharui nanti.
 
-1. [Python](/intro-py), bahasa pemrograman nomor 1 di [TIOBE](https://www.tiobe.com/tiobe-index/).
-   Python banyak digunakan di berbagai tempat, utamanya di dunia machine learning.
+1. [Python](/intro-py), bahasa pemrograman nomor 1 di
+   [TIOBE](https://www.tiobe.com/tiobe-index/).
 
-2. Pengantar pemrograman ini adalah materi yang kami dapatkan ketika kuliah di
-   Ilmu Komputer Unhas.
+2. [Pengantar pemrograman](/intro-java) ini adalah materi yang kami dapatkan
+   ketika kuliah di Ilmu Komputer Unhas.
 
-3. Pemrograman Berorientasi Objek dengan menggunakan Java. Versi yang lebih lama,
-   perlu update.
+3. [Pemrograman Berorientasi Objek](/oop-java) dengan menggunakan Java.
+   Versi yang lebih lama, perlu update.
 
 ## Matematika Diskrit
 
