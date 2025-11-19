@@ -1,46 +1,51 @@
+// ======================================
+// Imports
+// ======================================
 @use "flexoki";
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.cdnfonts.com/css/avenir-lt-pro");
 
-* {
-  box-sizing: border-box;
-}
 
+// ======================================
+// Variables
+// ======================================
+$font-main: "avenir lt pro", sans-serif;
+$font-mono: "Source Code Pro", monospace;
+
+$bg-color: #F9F7F2;
+$text-color: #333;
+$muted-color: #828282;
+$link-color: #205ea6;
+$link-hover: #16407a;
+
+
+// ======================================
+// Base / Layout
+// ======================================
 html {
   margin: 0;
   padding: 0;
-  font-size-adjust: ex-height 0.53;
   font-size: 18px;
-  line-height: 1.7;
 }
 
 body {
-  font-family: Fira Sans, serif;
-  font-size-adjust: ex-height 0.53;
+  line-height: 1.6;
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: $font-main;
+  font-size-adjust: 0.52;
+  font-weight: 300;
+  font-size: 1.125rem;
   margin: 0 auto;
   overflow-y: scroll;
-  background-color: rgb(248 250 252);
 
   @media (max-width: 992px) {
-    font-size: 1rem;
     max-width: 90%;
   }
 
   @media (min-width: 992px) {
-    font-size: 1.2rem;
-    max-width: 60ch;
+    max-width: 72ch;
   }
-}
-
-p > code {
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 0.2em;
-  display: inline-block;
-  font-size: .981rem;
-  line-height: 1.5;
-  min-width: 1em;
-  padding: 0.125em 0.2em;
-  text-align: center;
-  white-space: nowrap;
 }
 
 hr {
@@ -49,13 +54,27 @@ hr {
   background: #282828;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+  margin-inline: auto;
+  mix-blend-mode: multiply;
+}
+
+
+// ======================================
+// Typography
+// ======================================
+p > code {
+  font-size: .981rem;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
   margin: 0;
 }
 
@@ -63,19 +82,7 @@ h1 {
   text-align: center;
 }
 
-a {
-  color: #205ea6;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: #16407a;
-    text-decoration: underline;
-  }
-}
-
 blockquote {
-  font-style: italic;
   border-left: 0.2rem solid #90969c;
   padding: 0 20px;
   margin-left: 0;
@@ -86,9 +93,9 @@ em {
 }
 
 .metadata {
-  color: #828282;
+  color: $muted-color;
   margin: 0.5rem 0;
-  font: 0.7rem "Source Code Pro", monospace;
+  font: 0.7rem $font-mono;
   text-align: center;
 }
 
@@ -98,6 +105,26 @@ ul {
   &.blog-posts {
     list-style-type: none;
     padding: 0;
+  }
+}
+
+em, i, blockquote {
+  font-family: 'EB Garamond', serif;
+  font-size: .98rem;
+}
+
+
+// ======================================
+// Links & navigation
+// ======================================
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover;
+    text-decoration: underline;
   }
 }
 
@@ -114,6 +141,7 @@ header {
       white-space: nowrap;
       color: #282828;
     }
+
     .nav-menu {
       list-style: none;
       margin: 0;
@@ -130,6 +158,10 @@ footer {
   font: 1rem "Source Code Pro", monospace;
 }
 
+
+// ======================================
+// Tables
+// ======================================
 table {
   border-collapse: collapse;
   margin: 0 auto 1rem;
@@ -158,15 +190,30 @@ table {
   }
 }
 
+
+// ======================================
+// Code blocks and syntax highlight
+// ======================================
 pre,
 code {
-  font-family: "Source Code Pro", monospace;
+  font-family: $font-mono;
   font-weight: normal;
+}
+
+.chroma {
+  font-size: 1rem;
+  overflow-y: auto;
+  display: block;
+  padding: 1ch;
+  border-radius: 10px;
+  border: 1px solid #0000001a;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .h-cb {
   margin: 1.5em 0;
-  position: relative;
+  position: sticky;
 
   &-ct {
     .highlight {
@@ -194,13 +241,10 @@ code {
   }
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  margin-inline: auto;
-  mix-blend-mode: multiply;
-}
 
+// ======================================
+// UI primitives
+// ======================================
 kbd {
   background-color: rgba(200, 200, 200, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -228,8 +272,10 @@ mark {
   }
 }
 
+
+// Mathjax tweaks
 mjx-math {
-  font-size: 90% !important;
+  font-size: 95% !important;
 }
 
 mjx-container[display="true"] {
@@ -241,24 +287,17 @@ mjx-container[display="true"] {
   }
 }
 
-.chroma {
-  font-size: 1rem;
-  overflow-y: auto;
-  display: block;
-  padding: 1ch;
-  border-radius: 10px;
-  border: 1px solid #0000001a;
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
 
+// ======================================
+// Cards / Alerts / Variants
+// ======================================
 .card {
-  padding: 0 1ch;
+  padding: 1ch;
   border-radius: 12px;
   margin-bottom: 2ch;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: rgb(255 255 255);
+  background-color: rgb(248 250 252);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.08);
 }
@@ -273,6 +312,7 @@ mjx-container[display="true"] {
     border-radius: 20px;
     text-align: center;
   }
+
   a {
     text-decoration: none;
   }
@@ -283,6 +323,7 @@ mjx-container[display="true"] {
   p {
     color: #004085;
   }
+
   background-color: #cce5ff;
   border-color: #b8daff;
 
@@ -290,11 +331,13 @@ mjx-container[display="true"] {
     border: 1px solid #b8daff;
   }
 }
+
 .secondary {
   a,
   p {
     color: #383d41;
   }
+
   background-color: #e2e3e5;
   border-color: #d6d8db;
 
@@ -308,6 +351,7 @@ mjx-container[display="true"] {
   p {
     color: #0c5460;
   }
+
   background-color: #cce5ff;
   border-color: #b8daff;
 
@@ -321,6 +365,7 @@ mjx-container[display="true"] {
   p {
     color: #856404;
   }
+
   background-color: #fff3cd;
   border-color: #ffeeba;
 
@@ -334,6 +379,7 @@ mjx-container[display="true"] {
   p {
     color: #721c24;
   }
+
   background-color: #f8d7da;
   border-color: #f5c6cb;
 
@@ -347,6 +393,7 @@ mjx-container[display="true"] {
   p {
     color: #155724;
   }
+
   background-color: #d4edda;
   border-color: #c3e6cb;
 
@@ -360,6 +407,7 @@ mjx-container[display="true"] {
   p {
     color: #818182;
   }
+
   background-color: #fefefe;
   border-color: #fdfdfe;
 
@@ -373,6 +421,7 @@ mjx-container[display="true"] {
   p {
     color: #1b1e21;
   }
+
   background-color: #d6d8d9;
   border-color: #c6c8ca;
 

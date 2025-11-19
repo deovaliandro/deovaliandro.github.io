@@ -4,21 +4,14 @@ Blog ini adalah kumpulan catatan pribadi saya tentang hasil belajar selama masa
 kuliah dan setelahnya. Tulisan-tulisannya mungkin ada yang sudah _outdate_,
 namun akan saya perbaharui nanti.
 
-{{< card title="Python101" url="/intro-py/" class="allert primary">}}
-Python, bahasa pemrograman nomor 1 di
-[TIOBE](https://www.tiobe.com/tiobe-index/). Python banyak digunakan di berbagai
-tempat, utamanya di dunia machine learning.
-{{< /card >}}
+1. [Python](/intro-py), bahasa pemrograman nomor 1 di [TIOBE](https://www.tiobe.com/tiobe-index/).
+   Python banyak digunakan di berbagai tempat, utamanya di dunia machine learning.
 
-{{< card title="Java101" url="/intro-java/" class="allert warning">}}
-Pengantar pemrograman ini adalah materi yang kami dapatkan ketika kuliah di
-Ilmu Komputer Unhas.
-{{< /card >}}
+2. Pengantar pemrograman ini adalah materi yang kami dapatkan ketika kuliah di
+   Ilmu Komputer Unhas.
 
-{{< card title="OOP" url="/oop-java/" class="allert danger">}}
-Pemrograman Berorientasi Objek dengan menggunakan Java. Versi yang lebih lama,
-perlu update.
-{{< /card >}}
+3. Pemrograman Berorientasi Objek dengan menggunakan Java. Versi yang lebih lama,
+   perlu update.
 
 ## Matematika Diskrit
 
