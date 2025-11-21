@@ -1,242 +1,238 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembuat Nomor Surat Otomatis (Vanilla JS)</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            padding: 20px;
-        }
-        #app {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #0056b3;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box; 
-            font-size: 16px;
-        }
-        .result-container {
-            margin-top: 30px;
-            padding: 15px;
-            border: 2px dashed #0056b3;
-            border-radius: 8px;
-            background-color: #eaf6ff;
-            text-align: center;
-        }
-        #resultNumber {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #d9534f;
-            word-wrap: break-word; 
-        }
-        .info-box {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-left: 5px solid #5cb85c;
-            margin-top: 20px;
-        }
-        .info-box p {
-            margin: 5px 0;
-            font-size: 0.9em;
-        }
-        #organisasiForm, #panitiaForm {
-            border: 1px solid #eee;
-            padding: 20px 15px;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-        .toggle-switch {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #f0f0f0;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .toggle-switch button {
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .toggle-switch button.active {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
+{{- partial "header.html" . -}}
 
-<div id="app">
-    <h2>Pembuat Nomor Surat Otomatis</h2>
+<h2>Pembuat Nomor Surat Otomatis</h2>
 
-    <div class="toggle-switch">
-        <strong>Pilih Skema Penomoran:</strong>
-        <div>
-            <button id="btnOrganisasi" class="active">Skema Organisasi (AM)</button>
-            <button id="btnPanitia">Skema Panitia/Tim</button>
-        </div>
+<div class="toggle-switch">
+    <strong>Pilih Skema Penomoran:</strong>
+    <div>
+        <button id="btnOrganisasi" class="active">Skema Organisasi (AM)</button>
+        <button id="btnPanitia">Skema Panitia/Tim</button>
     </div>
-    
+</div>
+
+<div class="form-group">
+    <label for="nomorSurat">1. Nomor Urut Surat (3 Digit)</label>
+    <input type="number" id="nomorSurat" value="1" min="1" max="999" oninput="updateNomorSurat()">
+</div>
+
+<div id="organisasiForm">
+    <h3>Input Skema Organisasi</h3>
     <div class="form-group">
-        <label for="nomorSurat">1. Nomor Urut Surat (3 Digit)</label>
-        <input type="number" id="nomorSurat" value="1" min="1" max="999" oninput="updateNomorSurat()">
+        <label for="amKe">2. Nomor Pertemuan AM ke- (XII)</label>
+        <input type="number" id="amKe" value="12" min="1" max="12" oninput="updateNomorSurat()">
     </div>
-    
-    <div id="organisasiForm">
-        <h3>Input Skema Organisasi</h3>
-        <div class="form-group">
-            <label for="amKe">2. Nomor Pertemuan AM ke- (XII)</label>
-            <input type="number" id="amKe" value="12" min="1" max="12" oninput="updateNomorSurat()">
-        </div>
-        <div class="form-group">
-            <label for="indeksUtama">3. Indeks Utama (Contoh: VII)</label>
-            <select id="indeksUtama" onchange="populateIndeksSub(); updateNomorSurat();"></select>
-        </div>
-        <div class="form-group">
-            <label for="indeksSub">4. Indeks Sub (Contoh: 05)</label>
-            <select id="indeksSub" onchange="updateNomorSurat();"></select>
-        </div>
-        <div class="form-group">
-            <label for="lingkupOrganisasi">5. Kode Pengurus Organisasi (Contoh: PJ)</label>
-            <select id="lingkupOrganisasi" onchange="updateNomorSurat()">
-                <option value="PS">PS (Pengurus Sinode)</option>
-                <option value="PK">PK (Pengurus Klasis)</option>
-                <option value="PJ">PJ (Pengurus Jemaat)</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="singkatanNamaOrganisasi">6. Singkatan Nama Klasis/Jemaat (Contoh: JEL)</label>
-            <input type="text" id="singkatanNamaOrganisasi" value="JEL" oninput="this.value = this.value.toUpperCase(); updateNomorSurat()">
-        </div>
-    </div>
-
-    <div id="panitiaForm" style="display:none;">
-        <h3>Input Skema Panitia/Tim</h3>
-        <div class="form-group">
-            <label for="kodePanitia">2. Kode Panitia/Tim Kerja (PAN atau TK)</label>
-            <select id="kodePanitia" onchange="updateNomorSurat()">
-                <option value="PAN">PAN (Panitia)</option>
-                <option value="TK">TK (Tim Kerja)</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="singkatanKegiatan">3. Singkatan Kegiatan Panitia (Contoh: NATAL)</label>
-            <input type="text" id="singkatanKegiatan" value="NATAL" oninput="this.value = this.value.toUpperCase(); updateNomorSurat()">
-        </div>
-        <div class="form-group">
-            <label for="lingkupPanitia">4. Singkatan Nama Kepengurusan (Klasis/Jemaat) - (Contoh: KPLW)</label>
-            <input type="text" id="lingkupPanitia" value="KPLW" oninput="this.value = this.value.toUpperCase(); updateNomorSurat()">
-        </div>
-    </div>
-
     <div class="form-group">
-        <label id="labelBulan" for="bulan"> Bulan (2 Digit)</label>
-        <input type="number" id="bulan" min="1" max="12" oninput="updateNomorSurat()">
+        <label for="indeksUtama">3. Indeks Utama (Contoh: VII)</label>
+        <select id="indeksUtama" onchange="populateIndeksSub(); updateNomorSurat();"></select>
     </div>
-    
     <div class="form-group">
-        <label id="labelTahun" for="tahun"> Tahun</label>
-        <input type="number" id="tahun" min="2000" max="2100" oninput="updateNomorSurat()">
+        <label for="indeksSub">4. Indeks Sub (Contoh: 05)</label>
+        <select id="indeksSub" onchange="updateNomorSurat();"></select>
     </div>
+    <div class="form-group">
+        <label for="lingkupOrganisasi">5. Kode Pengurus Organisasi (Contoh: PJ)</label>
+        <select id="lingkupOrganisasi" onchange="updateNomorSurat()">
+            <option value="PS">PS (Pengurus Sinode)</option>
+            <option value="PK">PK (Pengurus Klasis)</option>
+            <option value="PJ">PJ (Pengurus Jemaat)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="singkatanNamaOrganisasi">6. Singkatan Nama Klasis/Jemaat (Contoh: JEL)</label>
+        <input type="text" id="singkatanNamaOrganisasi" value="JEL"
+            oninput="this.value = this.value.toUpperCase(); updateNomorSurat()">
+    </div>
+</div>
 
-    <div class="result-container">
-        <h3>✅ Nomor Surat yang Dihasilkan:</h3>
-        <p id="resultNumber">XII.001.I-01.PJ-PPGTM.JEL.11.2025</p>
+<div id="panitiaForm" style="display:none;">
+    <h3>Input Skema Panitia/Tim</h3>
+    <div class="form-group">
+        <label for="kodePanitia">2. Kode Panitia/Tim Kerja (PAN atau TK)</label>
+        <select id="kodePanitia" onchange="updateNomorSurat()">
+            <option value="PAN">PAN (Panitia)</option>
+            <option value="TK">TK (Tim Kerja)</option>
+        </select>
     </div>
+    <div class="form-group">
+        <label for="singkatanKegiatan">3. Singkatan Kegiatan Panitia (Contoh: NATAL)</label>
+        <input type="text" id="singkatanKegiatan" value="NATAL"
+            oninput="this.value = this.value.toUpperCase(); updateNomorSurat()">
+    </div>
+    <div class="form-group">
+        <label for="lingkupPanitia">4. Singkatan Nama Kepengurusan (Klasis/Jemaat) - (Contoh: KPLW)</label>
+        <input type="text" id="lingkupPanitia" value="KPLW"
+            oninput="this.value = this.value.toUpperCase(); updateNomorSurat()">
+    </div>
+</div>
 
-    <div class="info-box">
-        <div id="penjelasanFormat"></div>
-    </div>
+<div class="form-group">
+    <label id="labelBulan" for="bulan"> Bulan (2 Digit)</label>
+    <input type="number" id="bulan" min="1" max="12" oninput="updateNomorSurat()">
+</div>
+
+<div class="form-group">
+    <label id="labelTahun" for="tahun"> Tahun</label>
+    <input type="number" id="tahun" min="2000" max="2100" oninput="updateNomorSurat()">
+</div>
+
+<div class="result-container">
+    <h3>✅ Nomor Surat yang Dihasilkan:</h3>
+    <p id="resultNumber">XII.001.I-01.PJ-PPGTM.JEL.11.2025</p>
+</div>
+
+<div class="info-box">
+    <div id="penjelasanFormat"></div>
 </div>
 
 <script>
     // --- DATA INDEKS ---
     const dataIndex = {
         'I. HUBUNGAN DENGAN GEREJA & BADAN ORGANISASI DALAM & LUAR NEGERI': [
-            "1. ZCGK DI BELANDA", "2. DEPUTATEN BANTUAN DI BELANDA", "3. EMS DI JERMAN", "4. GEREJA-GEREJA DI LUAR NEGERI", 
-            "5. ORGANISASI/LEMBAGA LUAR NEGERI YANG BERGERAK DI BIDANG PELAYANAN GEREJA DAN DIAKONIA", 
-            "6. WORLD COMMUNION OF REFORMED CHURCHES (WARC)", "7. CHURCH WORLD SERVIS (CWS)", "8. WYCLIFF", 
-            "9. LANGHAM", "10. LEMBAGA PELAYANAN MAHASISWA INDONESIA", "11. INSTITUT LEIMENA", 
-            "12. LEMBAGA ALKITAB INDONESIA", "13. THE GIDEON", "14. DAN LAIN-LAIN"
+            "1. ZCGK DI BELANDA",
+            "2. DEPUTATEN BANTUAN DI BELANDA",
+            "3. EMS DI JERMAN",
+            "4. GEREJA-GEREJA DI LUAR NEGERI",
+            "5. ORGANISASI/LEMBAGA LUAR NEGERI YANG BERGERAK DI BIDANG PELAYANAN GEREJA DAN DIAKONIA",
+            "6. WORLD COMMUNION OF REFORMED CHURCHES (WARC)",
+            "7. CHURCH WORLD SERVIS (CWS)",
+            "8. WYCLIFF",
+            "9. LANGHAM",
+            "10. LEMBAGA PELAYANAN MAHASISWA INDONESIA",
+            "11. INSTITUT LEIMENA",
+            "12. LEMBAGA ALKITAB INDONESIA",
+            "13. THE GIDEON",
+            "14. DAN LAIN-LAIN"
         ],
         'II. HUBUNGAN DENGAN GEREJA DALAM NEGERI': [
-            "1. MPH – PGI", "2. MARTURIA PGI", "3. DIAKONIA PGI", "4. KOINONIA PGI", "5. MPPK", "6. BALITBANG PGI", 
-            "7. BIRO HUKUM PGI", "8. YAKOMA-PGI", "9. BIRO PEREMPUAN DAN ANAK", "10. BIRO PEMUDA", 
-            "11. DANA PENSIUN", "12. BPP – PGI", "13. PELKESI", "14. POUK", "15. YAMUGER", 
-            "16. MPH – PGIW SULSELBARA", "17. BIRO PEREMPUAN & ANAK PGIW", "18. BIRO PEMUDA PGIW", 
-            "19. BIRO HUKUM PGIW", "20. PGIW / SAG", "21. GEREJA ANGGOTA PGI", "22. GEREJA NON ANGGOTA PGI", 
-            "23. FKUB", "24. BAMAG", "25. DAN LAIN-LAIN"
+            "1. MPH - PGI",
+            "2. MARTURIA PGI",
+            "3. DIAKONIA PGI",
+            "4. KOINONIA PGI",
+            "5. MPPK",
+            "6. BALITBANG PGI",
+            "7. BIRO HUKUM PGI",
+            "8. YAKOMA-PGI",
+            "9. BIRO PEREMPUAN DAN ANAK",
+            "10. BIRO PEMUDA",
+            "11. DANA PENSIUN",
+            "12. BPP - PGI",
+            "13. PELKESI",
+            "14. POUK",
+            "15. YAMUGER",
+            "16. MPH - PGIW SULSELBARA",
+            "17. BIRO PEREMPUAN & ANAK PGIW",
+            "18. BIRO PEMUDA PGIW",
+            "19. BIRO HUKUM PGIW",
+            "20. PGIW / SAG",
+            "21. GEREJA ANGGOTA PGI",
+            "22. GEREJA NON ANGGOTA PGI",
+            "23. FKUB",
+            "24. BAMAG",
+            "25. DAN LAIN-LAIN"
         ],
         'III. HUBUNGAN DENGAN PEMERINTAH': [
-            "1. PRESIDEN R.I.", "2. WAKIL PRESEDEN RI", "3. KPK", "4. DPR/MPR/MA/MK/DPD", "5. KEMENTRIAN R.I", 
-            "6. SEKJEN/DIRJEN/IRJEN", "7. GUBERNUR", "8. SETDA/DINAS/KA. KANTOR PROPINSI", "9. BUPATI", 
-            "10. SETDA/DINAS/KA. KANTOR KABUPATEN", "11. KOMISI PEMILIHAN UMUM (KPU)", "12. PANWASLU", 
-            "13. CAMAT", "14. KA. DESA / LURAH", "15. KA. DUSUN", "16. BUMN/BUMD", "17. PARTAI POLITIK", 
+            "1. PRESIDEN R.I.",
+            "2. WAKIL PRESEDEN RI",
+            "3. KPK",
+            "4. DPR/MPR/MA/MK/DPD",
+            "5. KEMENTRIAN R.I",
+            "6. SEKJEN/DIRJEN/IRJEN",
+            "7. GUBERNUR",
+            "8. SETDA/DINAS/KA. KANTOR PROPINSI",
+            "9. BUPATI",
+            "10. SETDA/DINAS/KA. KANTOR KABUPATEN",
+            "11. KOMISI PEMILIHAN UMUM (KPU)",
+            "12. PANWASLU",
+            "13. CAMAT",
+            "14. KA. DESA / LURAH",
+            "15. KA. DUSUN",
+            "16. BUMN/BUMD",
+            "17. PARTAI POLITIK",
             "18. DAN LAIN-LAIN"
         ],
         'IV. HUBUNGAN DENGAN KEAMANAN': [
-            "1. PANGLIMA TNI", "2. KAPOLRI", "3. KASAD/KASAU/KASAL", "4. KODAM", "5. POLDA", "6. KOREM", 
-            "7. POLWIL", "8. KODIM", "9. POLRES", "10. KORAMIL", "11. POLSEK", "12. DAN LAIN-LAIN"
+            "1. PANGLIMA TNI",
+            "2. KAPOLRI",
+            "3. KASAD/KASAU/KASAL",
+            "4. KODAM",
+            "5. POLDA",
+            "6. KOREM",
+            "7. POLWIL",
+            "8. KODIM",
+            "9. POLRES",
+            "10. KORAMIL",
+            "11. POLSEK",
+            "12. DAN LAIN-LAIN"
         ],
         'V. HUBUNGAN DENGAN PENDIDIKAN': [
-            "1. PERGURUAN TINGGI NEGERI", "2. PERGURUAN TINGGI SWASTA", "3. SEKOLAH TINGGI THEOLOGIA", 
-            "4. SMA", "5. SMK", "6. SLTP", "7. SD", "8. PAUD", "9. ORGANISASI MAHASISWA / SISWA", 
-            "10. LEMBAGA YANG MENYELENGGARAKAN KURSUS", "11. DAN LAIN-LAIN"
+            "1. PERGURUAN TINGGI NEGERI",
+            "2. PERGURUAN TINGGI SWASTA",
+            "3. SEKOLAH TINGGI THEOLOGIA",
+            "4. SMA",
+            "5. SMK",
+            "6. SLTP",
+            "7. SD",
+            "8. PAUD",
+            "9. ORGANISASI MAHASISWA / SISWA",
+            "10. LEMBAGA YANG MENYELENGGARAKAN KURSUS",
+            "11. DAN LAIN-LAIN"
         ],
-        'VI. HUBUNGAN DENGAN LEMBAGA LINGKUP SINODE – GTM': [
-            "1. BPMS – GTM", "2. MPS GTM", "3. BPPS – GTM", "4. PPr-GTM", "5. PP-GTM", "6. PKB-GTM", 
-            "7. PAR-GTM", "8. BIRO HUKUM", "9. BIDANG-BIDANG", "10. YAYASAN GTM", "11. PANITIA/TIM", 
-            "12. PENERJEMAHAN ALKITAB BAHASA DAERAH", "13. DAN LAIN-LAIN"
+        'VI. HUBUNGAN DENGAN LEMBAGA LINGKUP SINODE - GTM': [
+            "1. BPMS - GTM",
+            "2. MPS GTM",
+            "3. BPPS - GTM",
+            "4. PPr-GTM",
+            "5. PP-GTM",
+            "6. PKB-GTM",
+            "7. PAR-GTM",
+            "8. BIRO HUKUM",
+            "9. BIDANG-BIDANG",
+            "10. YAYASAN GTM",
+            "11. PANITIA/TIM",
+            "12. PENERJEMAHAN ALKITAB BAHASA DAERAH",
+            "13. DAN LAIN-LAIN"
         ],
         'VII. HUBUNGAN DENGAN LEMBAGA LINGKUP KLASIS': [
-            "1. BPMK", "2. MPK", "3. BPPK", "4. PPr-GTM", "5. PP-GTM", "6. PKB GTM", "7. PAR GTM", 
-            "8. BIDANG-BIDANG", "9. REKOMENDASI/TUGAS/KETERANGAN", "10. PANITIA/TIM", "11. DAN LAIN-LAIN"
+            "1. BPMK",
+            "2. MPK",
+            "3. BPPK",
+            "4. PPr-GTM",
+            "5. PP-GTM",
+            "6. PKB GTM",
+            "7. PAR GTM",
+            "8. BIDANG-BIDANG",
+            "9. REKOMENDASI/TUGAS/KETERANGAN",
+            "10. PANITIA/TIM",
+            "11. DAN LAIN-LAIN"
         ],
         'VIII. HUBUNGAN DENGAN LEMBAGA LINGKUP JEMAAT': [
-            "1. BPPJ", "2. MPJ", "3. PPr GTM", "4. PPGTM", "5. PKB GTM", "6. PAR GTM", "7. PANITIA/TIM", 
-            "8. KETERANGAN/REKOMENDASI", "9. DAN LAIN-LAIN"
+            "1. BPPJ",
+            "2. MPJ",
+            "3. PPr GTM",
+            "4. PPGTM",
+            "5. PKB GTM",
+            "6. PAR GTM",
+            "7. PANITIA/TIM",
+            "8. KETERANGAN/REKOMENDASI",
+            "9. DAN LAIN-LAIN"
         ],
         'IX. HUBUNGAN DENGAN PELAYAN GEREJA': [
-            "1. PENDETA", "2. PENATUA", "3. DIAKEN", "4. TENAGA VICARIS/PKL/KKL", "5. GURU SEKOLAH MINGGU", 
-            "6. GURU REMAJA", "7. GURU KATEKISASI", "8. KELUARGA PENDETA", "9. PEGAWAI GEREJA/KOSTER", 
+            "1. PENDETA",
+            "2. PENATUA",
+            "3. DIAKEN",
+            "4. TENAGA VICARIS/PKL/KKL",
+            "5. GURU SEKOLAH MINGGU",
+            "6. GURU REMAJA",
+            "7. GURU KATEKISASI",
+            "8. KELUARGA PENDETA",
+            "9. PEGAWAI GEREJA/KOSTER",
             "10. DAN LAIN-LAIN"
         ]
     };
 
     const roman = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
-    
-    // --- HELPER FUNCTIONS ---
 
+    // --- HELPER FUNCTIONS ---
     function toRoman(num) {
         const val = parseInt(num);
         if (isNaN(val) || val < 1 || val > 12) return '';
@@ -248,7 +244,6 @@
     }
 
     // --- VIEW CONTROLLERS ---
-
     function setupInitialValues() {
         const today = new Date();
         document.getElementById('bulan').value = padNumber(today.getMonth() + 1, 2);
@@ -261,12 +256,12 @@
         const select = document.getElementById('indeksUtama');
         select.innerHTML = '';
         const keys = Object.keys(dataIndex);
-        
+
         keys.forEach(key => {
             const match = key.match(/^(\w+)/);
             const code = match ? match[1] : key;
             const description = key.split('. ')[1];
-            
+
             const option = document.createElement('option');
             option.value = code;
             option.textContent = `${code} - ${description}`;
@@ -283,12 +278,12 @@
 
         const selectedCode = selectUtama.value;
         const currentIndeksUtama = Object.keys(dataIndex).find(key => key.startsWith(selectedCode + '.'));
-        
+
         if (currentIndeksUtama && dataIndex[currentIndeksUtama]) {
             dataIndex[currentIndeksUtama].forEach(item => {
                 const [numStr, ...descParts] = item.split('.');
                 const num = numStr.trim().padStart(2, '0');
-                
+
                 const option = document.createElement('option');
                 option.value = num;
                 option.textContent = `${num} - ${descParts.join('.').trim()}`;
@@ -302,7 +297,7 @@
         const btnPanitia = document.getElementById('btnPanitia');
         const organisasiForm = document.getElementById('organisasiForm');
         const panitiaForm = document.getElementById('panitiaForm');
-        
+
         if (isPanitia) {
             btnPanitia.classList.add('active');
             btnOrganisasi.classList.remove('active');
@@ -322,7 +317,6 @@
     }
 
     // --- GENERATOR LOGIC ---
-
     function getNomorSuratOrganisasi() {
         const amKe = document.getElementById('amKe').value;
         const nomorSurat = padNumber(document.getElementById('nomorSurat').value);
@@ -358,7 +352,7 @@
 
         const formattedPanitia = `${kodePanitia}-${singkatanKegiatan}`;
         const formattedPengurus = `PPGTM-${lingkupPanitia}`;
-        
+
         return [
             nomorSurat,
             formattedPanitia,
@@ -367,10 +361,10 @@
             tahun
         ].filter(Boolean).join('.');
     }
-    
+
     function updatePenjelasan(isPanitia) {
         const explanationDiv = document.getElementById('penjelasanFormat');
-        
+
         if (isPanitia) {
             explanationDiv.innerHTML = `
                 <h4>ℹ️ Penjelasan Format Panitia/Tim:</h4>
@@ -385,10 +379,10 @@
             const formattedAmKe = toRoman(amKe);
             const formattedIndeks = `${document.getElementById('indeksUtama').value}-${document.getElementById('indeksSub').value}`;
             const formattedPengurus = `${document.getElementById('lingkupOrganisasi').value}-PPGTM`;
-            
+
             explanationDiv.innerHTML = `
                 <h4>ℹ️ Penjelasan Format Organisasi (AM):</h4>
-                <p><strong>${formattedAmKe}</strong>: Pertemuan AM ke-</p>
+                <p><strong>${formattedAmKe}</strong>: Pertemuan AM</p>
                 <p><strong>${padNumber(document.getElementById('nomorSurat').value)}</strong>: Nomor Urut Surat</p>
                 <p><strong>${formattedIndeks}</strong>: Indeks (Utama-Sub)</p>
                 <p><strong>${formattedPengurus}</strong>: Kode Pengurus (PS/PK/PJ) + PPGTM</p>
@@ -417,16 +411,15 @@
     document.addEventListener('DOMContentLoaded', () => {
         setupInitialValues();
         populateIndeksUtama();
-        
+
         // Setup Event Listeners untuk Toggle
         document.getElementById('btnOrganisasi').addEventListener('click', () => toggleMode(false));
         document.getElementById('btnPanitia').addEventListener('click', () => toggleMode(true));
 
         // Setup Event Listeners untuk input number/text/select (di HTML sudah pakai oninput/onchange)
         // Kita panggil updateNomorSurat() sekali di awal untuk inisiasi hasil
-        updateNomorSurat(); 
+        updateNomorSurat();
     });
 </script>
 
-</body>
-</html>
+{{- partial "footer.html" . -}}

@@ -2,9 +2,8 @@
 // Imports
 // ======================================
 @use "flexoki";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/avenir-lt-pro");
-
 
 // ======================================
 // Variables
@@ -18,13 +17,14 @@ $muted-color: #828282;
 $link-color: #205ea6;
 $link-hover: #16407a;
 
-
 // ======================================
 // Base / Layout
 // ======================================
 
-*, ::after, ::before {
-    box-sizing: inherit;
+*,
+::after,
+::before {
+  box-sizing: inherit;
 }
 
 html {
@@ -74,12 +74,11 @@ img {
   mix-blend-mode: multiply;
 }
 
-
 // ======================================
 // Typography
 // ======================================
 p > code {
-  font-size: .981rem;
+  font-size: 0.981rem;
 }
 
 h1,
@@ -98,14 +97,10 @@ h1 {
   border-bottom: 1px solid #282828;
 }
 
-h2, h3, h4, h5, h6 {
-  border-bottom: 1px dashed #282828;
-}
-
 blockquote {
   font-style: italic;
   border-left: 0.2rem solid #90969c;
-  padding: .5ch 2ch;
+  padding: 0.5ch 2ch;
   margin-left: 0;
 }
 
@@ -129,11 +124,12 @@ ul {
   }
 }
 
-em, i, blockquote {
-  font-family: 'EB Garamond', serif;
-  font-size: .98rem;
+em,
+i,
+blockquote {
+  font-family: "EB Garamond", serif;
+  font-size: 0.98rem;
 }
-
 
 // ======================================
 // Links & navigation
@@ -178,7 +174,6 @@ footer {
   font: 1rem "Source Code Pro", monospace;
 }
 
-
 // ======================================
 // Tables
 // ======================================
@@ -209,7 +204,6 @@ table {
     background-color: #f5f7ff;
   }
 }
-
 
 // ======================================
 // Code blocks and syntax highlight
@@ -249,12 +243,11 @@ code {
   &-lang {
     font-family: $font-mono;
     display: inline-block;
-    font-size: .6rem;
+    font-size: 0.6rem;
     font-weight: 400;
     position: absolute;
   }
 }
-
 
 // ======================================
 // UI primitives
@@ -286,7 +279,6 @@ mark {
   }
 }
 
-
 // Mathjax tweaks
 mjx-math {
   font-size: 95% !important;
@@ -300,7 +292,6 @@ mjx-container[display="true"] {
     overflow-y: hidden;
   }
 }
-
 
 // ======================================
 // Cards / Alerts / Variants
@@ -442,4 +433,97 @@ mjx-container[display="true"] {
   .card-content .card-title {
     border: 1px solid #c6c8ca;
   }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "avenir lt pro", sans-serif;
+}
+
+#organisasiForm,
+#panitiaForm {
+  padding: 15px;
+  margin-top: 15px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.toggle-switch button {
+  color: #818182;
+  background-color: #fefefe;
+  border-color: #fdfdfe;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.toggle-switch button.active {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.result-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed var(--link-color);
+  border-radius: 8px;
+  background-color: var(--info-bg);
+  text-align: center;
+}
+
+#resultNumber {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #dc3545;
+  word-wrap: break-word;
+  font-family: "Source Code Pro", monospace;
+}
+
+.info-box {
+  background-color: var(--success-bg);
+  border: 1px solid #c3e6cb;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  color: var(--success-color);
+}
+
+.info-box p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: var(--success-color);
+}
+
+.info-box strong {
+  color: #000;
 }
