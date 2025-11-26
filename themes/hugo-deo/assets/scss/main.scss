@@ -27,6 +27,14 @@ $link-hover: #16407a;
   box-sizing: inherit;
 }
 
+::selection {
+  text-decoration: underline wavy;
+  text-decoration-color: oklch(50.58% .2886 264.84);
+  text-underline-offset: 1px;
+  background-color: #0000;
+  text-decoration-thickness: from-font;
+}
+
 html {
   margin: 0;
   padding: 0;

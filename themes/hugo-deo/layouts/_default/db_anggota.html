@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Anggota SQLite (Vanilla JS)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        #app {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        /* File Input Area */
+        #fileLoader {
+            padding: 15px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #fileLoader.loaded {
+            border-color: #5cb85c;
+            background-color: #eaf6ff;
+        }
+        /* CRUD Section */
+        #crudSection {
+            display: none;
+        }
+        #dataInput {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        #dataInput label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #dataInput input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        #dataInput button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+        #btnSave { background-color: #007bff; }
+        #btnReset { background-color: #6c757d; }
+        /* Data Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        .action-buttons button {
+            padding: 5px 10px;
+            margin: 2px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            color: white;
+        }
+        .action-buttons .edit { background-color: #ffc107; color: #333;}
+        .action-buttons .delete { background-color: #dc3545; }
+        .action-buttons .download { background-color: #28a745; }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <h2>Manajemen Anggota SQLite (CRUD)</h2>
+    
+    <div id="fileLoader">
+        <p id="statusText">
+            ⬆️ Muat file SQLite (.sqlite / .db) Anda untuk memulai.
+        </p>
+        <input type="file" id="sqliteFile" accept=".sqlite, .db, .sqlite3" onchange="loadFile(event)">
+    </div>
+    
+    <div id="crudSection">
+        
+        <div id="dataInput">
+            <h3 id="formTitle">Tambah Anggota Baru</h3>
+            <input type="hidden" id="anggotaId">
+            
+            <label for="nama">Nama Anggota:</label>
+            <input type="text" id="nama" required>
+            
+            <label for="alamat">Alamat:</label>
+            <input type="text" id="alamat">
+            
+            <label for="jenisKelamin">Jenis Kelamin:</label>
+            <input type="text" id="jenisKelamin" placeholder="Laki-laki / Perempuan">
+            
+            <button id="btnSave" onclick="saveData()">Simpan</button>
+            <button id="btnReset" onclick="resetForm()">Batal/Reset</button>
+            <button class="action-buttons download" onclick="downloadDatabase()">📥 Unduh DB Terbaru</button>
+        </div>
+        
+        <h3>Daftar Anggota</h3>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>J/K</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+    let SQL; // Objek SQL dari sql.js
+    let db;  // Objek database SQLite
+    const TABLE_NAME = 'anggota';
+
+    // 1. Inisialisasi sql.js
+    async function initSqlJs() {
+        const sqlPromise = initSqlJs({
+            locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
+        });
+        SQL = await sqlPromise;
+        document.getElementById('statusText').textContent = '⬆️ Muat file SQLite (.sqlite / .db) Anda untuk memulai.';
+    }
+    initSqlJs();
+
+
+    // 2. Load File Database
+    function loadFile(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const data = new Uint8Array(e.target.result);
+                db = new SQL.Database(data);
+                
+                document.getElementById('fileLoader').classList.add('loaded');
+                document.getElementById('statusText').textContent = `✅ File "${file.name}" berhasil dimuat.`;
+                document.getElementById('crudSection').style.display = 'block';
+
+                // Pastikan tabel ada, jika tidak, buat
+                checkAndCreateSchema();
+                readData();
+
+            } catch (error) {
+                alert("Gagal memuat file database. Pastikan format file benar.");
+                console.error("Error loading DB:", error);
+            }
+        };
+        reader.readAsArrayBuffer(file);
+    }
+
+    // 3. Cek dan Buat Skema Tabel
+    function checkAndCreateSchema() {
+        try {
+            // Coba ambil data dari tabel, jika gagal (tabel tidak ada), buat
+            db.exec(`SELECT * FROM ${TABLE_NAME} LIMIT 1;`);
+        } catch (e) {
+            console.log(`Tabel ${TABLE_NAME} tidak ditemukan. Membuat skema baru...`);
+            db.exec(`
+                CREATE TABLE ${TABLE_NAME} (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nama TEXT,
+                    alamat TEXT,
+                    jenisKelamin TEXT
+                );
+            `);
+            // Tambahkan data dummy agar tabel tidak kosong
+            db.exec(`
+                INSERT INTO ${TABLE_NAME} (nama, alamat, jenisKelamin) VALUES 
+                ('Budi Santoso', 'Jl. Merdeka No. 10', 'Laki-laki'),
+                ('Siti Aisyah', 'Jl. Kenanga Blok C5', 'Perempuan');
+            `);
+        }
+    }
+
+    // 4. Read (Membaca Data dan Menampilkan ke Tabel)
+    function readData() {
+        if (!db) return;
+        
+        const tableBody = document.getElementById('tableBody');
+        tableBody.innerHTML = '';
+        
+        try {
+            const res = db.exec(`SELECT * FROM ${TABLE_NAME} ORDER BY id DESC;`);
+            
+            if (res.length > 0 && res[0].values) {
+                const rows = res[0].values;
+                
+                rows.forEach(row => {
+                    const [id, nama, alamat, jenisKelamin] = row;
+                    
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${id}</td>
+                        <td>${nama}</td>
+                        <td>${alamat}</td>
+                        <td>${jenisKelamin}</td>
+                        <td class="action-buttons">
+                            <button class="edit" onclick="editData(${id}, '${nama.replace(/'/g, "\\'")}', '${alamat.replace(/'/g, "\\'")}', '${jenisKelamin.replace(/'/g, "\\'")}')">Ubah</button>
+                            <button class="delete" onclick="deleteData(${id})">Hapus</button>
+                        </td>
+                    `;
+                    tableBody.appendChild(tr);
+                });
+            } else {
+                 tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Tidak ada data anggota.</td></tr>';
+            }
+        } catch (e) {
+            console.error("Gagal membaca data:", e);
+            tableBody.innerHTML = '<tr><td colspan="5" style="color:red; text-align:center;">Error saat memuat data.</td></tr>';
+        }
+    }
+
+    // 5. Create / Update (Menyimpan Data)
+    function saveData() {
+        if (!db) return;
+
+        const id = document.getElementById('anggotaId').value;
+        const nama = document.getElementById('nama').value.trim();
+        const alamat = document.getElementById('alamat').value.trim();
+        const jenisKelamin = document.getElementById('jenisKelamin').value.trim();
+
+        if (!nama) {
+            alert("Nama harus diisi.");
+            return;
+        }
+
+        try {
+            let sqlQuery;
+            let params;
+
+            if (id) {
+                // Update
+                sqlQuery = `UPDATE ${TABLE_NAME} SET nama=?, alamat=?, jenisKelamin=? WHERE id=?`;
+                params = [nama, alamat, jenisKelamin, parseInt(id)];
+            } else {
+                // Create
+                sqlQuery = `INSERT INTO ${TABLE_NAME} (nama, alamat, jenisKelamin) VALUES (?, ?, ?)`;
+                params = [nama, alamat, jenisKelamin];
+            }
+
+            db.run(sqlQuery, params);
+            
+            alert(`Data anggota berhasil di${id ? 'ubah' : 'tambah'}kan!`);
+            resetForm();
+            readData();
+
+        } catch (e) {
+            alert(`Gagal menyimpan data: ${e.message}`);
+            console.error("Error saving data:", e);
+        }
+    }
+
+    // 6. Delete (Menghapus Data)
+    function deleteData(id) {
+        if (!db) return;
+        if (!confirm(`Yakin ingin menghapus anggota dengan ID ${id}?`)) return;
+
+        try {
+            db.run(`DELETE FROM ${TABLE_NAME} WHERE id = ?`, [id]);
+            alert(`Anggota ID ${id} berhasil dihapus.`);
+            readData();
+            
+        } catch (e) {
+            alert(`Gagal menghapus data: ${e.message}`);
+            console.error("Error deleting data:", e);
+        }
+    }
+
+    // 7. Edit (Mengisi Form untuk Update)
+    function editData(id, nama, alamat, jenisKelamin) {
+        document.getElementById('anggotaId').value = id;
+        document.getElementById('nama').value = nama;
+        document.getElementById('alamat').value = alamat;
+        document.getElementById('jenisKelamin').value = jenisKelamin;
+        document.getElementById('formTitle').textContent = `Ubah Data Anggota (ID: ${id})`;
+        document.getElementById('btnSave').textContent = 'Ubah Data';
+
+        // Scroll ke form
+        document.getElementById('dataInput').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 8. Reset Form
+    function resetForm() {
+        document.getElementById('anggotaId').value = '';
+        document.getElementById('nama').value = '';
+        document.getElementById('alamat').value = '';
+        document.getElementById('jenisKelamin').value = '';
+        document.getElementById('formTitle').textContent = 'Tambah Anggota Baru';
+        document.getElementById('btnSave').textContent = 'Simpan';
+    }
+
+    // 9. Download Database
+    function downloadDatabase() {
+        if (!db) {
+            alert("Database belum dimuat.");
+            return;
+        }
+
+        try {
+            const data = db.export();
+            const buffer = new Uint8Array(data);
+            const blob = new Blob([buffer], { type: "application/x-sqlite3" });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `anggota_terbaru_${new Date().toISOString().slice(0, 10)}.db`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        } catch (e) {
+            alert("Gagal mengunduh database.");
+            console.error("Error downloading DB:", e);
+        }
+    }
+
+</script>
+
+</body>
+</html>
