@@ -1,7 +1,7 @@
 baseURL: https://deo.my.id/
 theme: hugo-deo
 title: Deo Valiandro. M
-languageCode: en-US
+Language.Locale: en-US
 disableKinds:
   - taxonomy
   - RSS

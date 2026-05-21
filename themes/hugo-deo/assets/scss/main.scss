@@ -1,537 +1,185 @@
-// ======================================
-// Imports
-// ======================================
+// Fonts & Variables
 @use "flexoki";
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
-@import url("https://fonts.cdnfonts.com/css/avenir-lt-pro");
 
-// ======================================
-// Variables
-// ======================================
-$font-main: "avenir lt pro", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+$font-main: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-mono: "Source Code Pro", monospace;
 
-$bg-color: #fff;
-$text-color: #333;
-$muted-color: #828282;
-$link-color: #205ea6;
+$bg: #fff;
+$text: #333;
+$muted: #828282;
+$link: #205ea6;
 $link-hover: #16407a;
 
-// ======================================
-// Base / Layout
-// ======================================
-
-*,
-::after,
-::before {
-  box-sizing: inherit;
-}
-
-::selection {
-  text-decoration: underline wavy;
-  text-decoration-color: oklch(50.58% .2886 264.84);
-  text-underline-offset: 1px;
-  background-color: #0000;
-  text-decoration-thickness: from-font;
-}
-
-html {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  box-sizing: border-box;
-  background: #eee;
-}
-
-.box-shadow {
-  border: 1px solid #888;
-  box-shadow: 2px 2px #ccc;
-}
-
 body {
-  line-height: 1.6;
   margin: 2rem auto;
   padding: 2rem;
-  text-rendering: optimizeLegibility;
-
-  background: $bg-color;
-  color: $text-color;
-  font-family: $font-main;
-  font-size-adjust: 0.52;
+  max-width: 80ch;
+  font: 400 16px $font-main;
+  line-height: 1.6;
+  color: $text;
   overflow-y: scroll;
 
   @media (max-width: 992px) {
     max-width: 90%;
   }
-
-  @media (min-width: 992px) {
-    max-width: 72ch;
-  }
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  background: #282828;
 }
 
 img {
   max-width: 100%;
   display: block;
-  margin-inline: auto;
-  mix-blend-mode: multiply;
+  margin: auto;
 }
 
-// ======================================
-// Typography
-// ======================================
-p > code {
-  font-size: 0.981rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 1rem;
-  margin: 0;
-}
-
-h1 {
-  text-align: center;
-  padding-top: 1rem;
-  border-bottom: 1px solid #282828;
-}
-
-blockquote {
-  font-style: italic;
-  border-left: 0.2rem solid #90969c;
-  padding: 0.5ch 2ch;
-  margin-left: 0;
-}
-
-em {
-  text-align: center;
-}
-
-.metadata {
-  color: $muted-color;
-  margin: 0.5rem 0;
-  font: 0.7rem $font-mono;
-  text-align: center;
-}
-
-ul {
-  list-style-type: square;
-
-  &.blog-posts {
-    list-style-type: none;
-    padding: 0;
-  }
-}
-
-em,
-i,
-blockquote {
-  font-family: "EB Garamond", serif;
-  font-size: 0.98rem;
-}
-
-// ======================================
-// Links & navigation
-// ======================================
 a {
-  color: $link-color;
+  color: $link;
   text-decoration: none;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: $link-hover;
     text-decoration: underline;
   }
 }
 
-header {
-  nav {
+// Typography
+h1 {
+  text-align: center;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 3px solid #90969c;
+  padding: .5rem 1rem;
+}
+
+.metadata {
+  font: .7rem $font-mono;
+  color: $muted;
+  text-align: center;
+}
+
+// Layout
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a,
+  a:hover {
+    text-decoration: none;
+    white-space: nowrap;
+    color: #282828;
+  }
+
+  .nav-menu {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    a,
-    a:hover {
-      text-decoration: none;
-      white-space: nowrap;
-      color: #282828;
-    }
-
-    .nav-menu {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 20px;
-    }
+    gap: 20px;
+    list-style: none;
   }
 }
 
 footer {
   text-align: center;
-  margin-bottom: 3ch;
-  font: 1rem "Source Code Pro", monospace;
+  font-family: $font-mono;
 }
 
-// ======================================
-// Tables
-// ======================================
+// Table
 table {
-  border-collapse: collapse;
-  margin: 0 auto 1rem;
   width: 100%;
-
-  @media (max-width: 768px) {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
+  border-collapse: collapse;
 
   td,
   th {
     border: 1px solid #e6edf3;
+    padding: .5rem;
     text-align: center;
-    padding: 0.5rem;
   }
 
   th {
-    background-color: #f5f7ff;
-    font-weight: 700;
+    background: #f5f7ff;
   }
 
   tr:nth-child(even) {
-    background-color: #f5f7ff;
+    background: #f5f7ff;
   }
 }
 
-// ======================================
-// Code blocks and syntax highlight
-// ======================================
+// Code
 pre,
 code {
   font-family: $font-mono;
-  font-weight: normal;
 }
 
 .chroma {
-  font-size: 1rem;
-  overflow-y: auto;
-  display: block;
-  padding: 1ch;
-  border-radius: 10px;
+  padding: 1rem;
   border: 1px solid #0000001a;
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 10px;
 }
 
-.h-cb {
-  margin: 1.5em 0;
-  position: sticky;
+@mixin variant($bg, $border, $text) {
+  background: $bg;
+  border-color: $border;
 
-  &-ct {
-    .highlight {
-      margin: 0;
-      padding-top: 1.5rem;
-
-      pre {
-        margin: 0;
-      }
-    }
-  }
-
-  &-lang {
-    font-family: $font-mono;
-    display: inline-block;
-    font-size: 0.6rem;
-    font-weight: 400;
-    position: absolute;
-  }
-}
-
-// ======================================
-// UI primitives
-// ======================================
-kbd {
-  background-color: rgba(200, 200, 200, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 0.2em;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.12),
-    inset 0 -2px rgba(0, 0, 0, 0.15);
-  display: inline-block;
-  line-height: 1.5;
-  margin: 0 0.15em;
-  min-width: 1em;
-  padding: 0.125em 0.5em;
-  text-align: center;
-  user-select: none;
-  white-space: nowrap;
-}
-
-mark {
-  padding: 1px 5px;
-  border-radius: 1ch;
-  border: 1px solid #f0d547;
-  background-color: #fff8d3;
-
-  a {
-    color: #0d47a1;
-  }
-}
-
-// Mathjax tweaks
-mjx-math {
-  font-size: 95% !important;
-}
-
-mjx-container[display="true"] {
-  @media (max-width: 992px) {
-    display: block;
-    max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-}
-
-// ======================================
-// Cards / Alerts / Variants
-// ======================================
-.card {
-  padding: 1ch;
-  border-radius: 12px;
-  margin-bottom: 2ch;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: rgb(248 250 252);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -2px rgba(0, 0, 0, 0.08);
-}
-
-.card-content {
-  padding: 1ch;
-}
-
-.allert {
-  .card-title {
-    background-color: rgb(255 255 255);
-    border-radius: 20px;
-    text-align: center;
-  }
-
-  a {
-    text-decoration: none;
+  a,
+  p {
+    color: $text;
   }
 }
 
 .primary {
-  a,
-  p {
-    color: #004085;
-  }
-
-  background-color: #cce5ff;
-  border-color: #b8daff;
-
-  .card-content .card-title {
-    border: 1px solid #b8daff;
-  }
+  @include variant(#cce5ff, #b8daff, #004085);
 }
 
 .secondary {
-  a,
-  p {
-    color: #383d41;
-  }
-
-  background-color: #e2e3e5;
-  border-color: #d6d8db;
-
-  .card-content .card-title {
-    border: 1px solid #d6d8db;
-  }
-}
-
-.info {
-  a,
-  p {
-    color: #0c5460;
-  }
-
-  background-color: #cce5ff;
-  border-color: #b8daff;
-
-  .card-content .card-title {
-    border: 1px solid #b8daff;
-  }
-}
-
-.warning {
-  a,
-  p {
-    color: #856404;
-  }
-
-  background-color: #fff3cd;
-  border-color: #ffeeba;
-
-  .card-content .card-title {
-    border: 1px solid #ffeeba;
-  }
-}
-
-.danger {
-  a,
-  p {
-    color: #721c24;
-  }
-
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-
-  .card-content .card-title {
-    border: 1px solid #f5c6cb;
-  }
+  @include variant(#e2e3e5, #d6d8db, #383d41);
 }
 
 .success {
-  a,
-  p {
-    color: #155724;
-  }
-
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-
-  .card-content .card-title {
-    border: 1px solid #c3e6cb;
-  }
+  @include variant(#d4edda, #c3e6cb, #155724);
 }
 
-.light {
-  a,
-  p {
-    color: #818182;
-  }
-
-  background-color: #fefefe;
-  border-color: #fdfdfe;
-
-  .card-content .card-title {
-    border: 1px solid #fdfdfe;
-  }
+.danger {
+  @include variant(#f8d7da, #f5c6cb, #721c24);
 }
 
-.dark {
-  a,
-  p {
-    color: #1b1e21;
-  }
-
-  background-color: #d6d8d9;
-  border-color: #c6c8ca;
-
-  .card-content .card-title {
-    border: 1px solid #c6c8ca;
-  }
+.warning {
+  @include variant(#fff3cd, #ffeeba, #856404);
 }
 
-.form-group {
-  margin-bottom: 1rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 700;
-}
-
-input[type="text"],
-input[type="number"],
+// Form
+input,
 select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box;
-  font-family: "avenir lt pro", sans-serif;
+  font-family: $font-main;
 }
 
-#organisasiForm,
-#panitiaForm {
-  padding: 15px;
-  margin-top: 15px;
-  background-color: #f7f7f7;
-  border-radius: 8px;
+// Utility (mini-tailwind 😄)
+.mt-1 {
+  margin-top: 4px;
 }
 
-.toggle-switch {
+.mt-2 {
+  margin-top: 8px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.p-4 {
+  padding: 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #eee;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.toggle-switch button {
-  color: #818182;
-  background-color: #fefefe;
-  border-color: #fdfdfe;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.toggle-switch button.active {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-}
-
-.result-container {
-  margin-top: 30px;
-  padding: 20px;
-  border: 2px dashed var(--link-color);
-  border-radius: 8px;
-  background-color: var(--info-bg);
-  text-align: center;
-}
-
-#resultNumber {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #dc3545;
-  word-wrap: break-word;
-  font-family: "Source Code Pro", monospace;
-}
-
-.info-box {
-  background-color: var(--success-bg);
-  border: 1px solid #c3e6cb;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 20px;
-  color: var(--success-color);
-}
-
-.info-box p {
-  margin: 5px 0;
-  font-size: 0.9em;
-  color: var(--success-color);
-}
-
-.info-box strong {
-  color: #000;
+  justify-content: center;
 }

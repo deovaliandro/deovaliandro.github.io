@@ -1,34 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ .Title | default .Site.Title }}" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="{{ .Title | default .Site.Title }}">
+    {{ with .Site.Params.favicon }}
+    <link rel="shortcut icon" href="{{ . | absURL }}" />
+    <meta property="og:image" content="{{ . | absURL }}" />
+    {{ end }}
 
-  {{ with .Site.Params.favicon }}
-  <link rel="shortcut icon" href="{{ . | absURL }}">
-  <meta property="og:image" content="{{ . | absURL }}">{{ end }}
+    <title>{{ .Title | default .Site.Title }}</title>
 
-  <title>{{ .Title | default .Site.Title }}</title>
+    {{ $scss := resources.Get "scss/main.scss" }} {{ $options := (dict
+    "transpiler" "dartsass" "targetPath" "css/main.css" "outputStyle"
+    "compressed") }} {{ $style := $scss | css.Sass $options | minify |
+    fingerprint }}
 
-  {{ $scss := resources.Get "scss/main.scss" }}
-  {{ $options := (dict "transpiler" "dartsass" "targetPath" "css/main.css" "outputStyle" "compressed") }}
-  {{ $style := $scss | css.Sass $options | minify | fingerprint }}
+    <link
+      rel="stylesheet"
+      href="{{ $style.Permalink }}"
+      integrity="{{ $style.Data.Integrity }}"
+    />
+  </head>
 
-  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-</head>
-
-<body class="box-shadow">
-  <header>
-    <nav>
-      <a href="/">{{ .Site.Title }}</a>
-      <ul class="nav-menu">
-        {{ range .Site.Menus.main }}
-        <li>
-          <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-        </li>
-        {{ end }}
-      </ul>
-    </nav>
-  </header>
+  <body>
+    <div class="card">
+      <header>
+        <nav>
+          <a href="/">{{ .Site.Title }}</a>
+          <ul class="nav-menu">
+            {{ range .Site.Menus.main }}
+            <li>
+              <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+          </ul>
+        </nav>
+      </header>

@@ -1,0 +1,30 @@
+baseURL = "https://deo.my.id/"
+theme = "hugo-bearneo"
+title = "Deo Valiandro. M"
+languageCode = "en-US"
+
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "RSS"]
+
+[permalinks]
+blog = "/p/:slug"
+
+[params]
+description = "A Hugo theme."
+favicon = "img/favicon.png"
+
+[params.author]
+name = "Deo"
+email = "deo@duck.com"
+
+[markup]
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+codeFences = true
+tabWidth = 4

@@ -25,11 +25,11 @@ winget search Python.Python
 ```
 
 hasilnya akan memunculkan semua versi Python yang tersedia di katalog winget.
-Pilih salah satunya, misalnya `Python.3.13`. Selanjutnya bisa kita install salah
-satunya dengan perintah:
+Pilih salah satunya, misalnya `Python.3.14.5`. Selanjutnya bisa kita install
+salah satunya dengan perintah:
 
 ```powershell
-winget install -e --id Python.Python.3.13 --scope machine
+winget install -e --id Python.Python.3.14 --scope machine
 ```
 
 Atau bisa juga dengan menggunakan scoop:
