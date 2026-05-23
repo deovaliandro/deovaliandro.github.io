@@ -80,5 +80,7 @@ endLevel = 3
 unsafe = true
 
 [markup.highlight]
+noClasses = false
 codeFences = true
 tabWidth = 4
+lineNos = false
