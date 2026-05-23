@@ -3,3 +3,4 @@ resources
 /.quarto/
 **/*.quarto_ipynb
 /.vscode/
+.hugo_build.lock
