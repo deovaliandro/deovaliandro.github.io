@@ -1,5 +1,5 @@
 ---
-title: Teori Himpunan
+title: Logika Matematika Biner
 date: 2025-04-11
 ---
 
@@ -8,6 +8,7 @@ date: 2025-04-11
 Himpunan adalah **koleksi** tak terurut dari objek-objek yang berbeda. Simbol $\varnothing$ menyatakan **himpunan kosong** (tidak memiliki anggota).
 
 **Notasi Keanggotaan**:
+
 - $a \in A$: "$a$ adalah anggota himpunan $A$"
 - $a \notin A$: "$a$ bukan anggota himpunan $A$"
 
@@ -38,12 +39,14 @@ Himpunan adalah **koleksi** tak terurut dari objek-objek yang berbeda. Simbol $\
 $B \subseteq A$ jika dan hanya jika $\forall b \in B,\ b \in A$.
 
 **Sifat**:
+
 1. **Refleksif**: $A \subseteq A$  
    *Bukti*: Ambil sembarang $a \in A$, maka $a \in A$.
 2. **Antisimetri**:  
    $A = B \iff (A \subseteq B) \land (B \subseteq A)$
 
 **Contoh**:
+
 - $A = \{x \in \mathbb{R} \mid x^2 < 3\} = (-\sqrt{3}, \sqrt{3})$  
 - $B = \{x \in \mathbb{R} \mid x < 3\} = (-\infty, 3)$  
 Maka $A \subseteq B$ karena $\sqrt{3} \approx 1.732 < 3$.
@@ -51,15 +54,18 @@ Maka $A \subseteq B$ karena $\sqrt{3} \approx 1.732 < 3$.
 ## Operasi Himpunan
 
 ### Gabungan (Union)
+
 $$A \cup B = \{x \in S \mid x \in A \lor x \in B\}$$
 
 ### Irisan (Intersection)
+
 $$A \cap B = \{x \in S \mid x \in A \land x \in B\}$$
 
 **Himpunan Saling Lepas**:  
 $A$ dan $B$ saling lepas jika $A \cap B = \varnothing$.
 
 ### Sifat-Sifat Operasi
+
 1. **Inferensi**:  
    $A \subseteq A \cup B$ dan $B \subseteq A \cup B$
 2. **Penyerapan**:  
