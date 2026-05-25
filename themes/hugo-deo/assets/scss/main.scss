@@ -5,6 +5,7 @@
 
 $font-main: "Iosevka Charon", sans-serif;
 $font-mono: "Google Sans Code", monospace;
+$mobile: 768px;
 
 $bg: #fff;
 $text: #333;
@@ -59,23 +60,76 @@ blockquote {
   text-align: center;
 }
 
-// Layout
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  a,
-  a:hover {
-    text-decoration: none;
-    white-space: nowrap;
-    color: #282828;
-  }
-
-  .nav-menu {
+// Nav
+header {
+  nav {
     display: flex;
-    gap: 20px;
-    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      white-space: nowrap;
+      color: #282828;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .nav-menu,
+    .mobile-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .desktop-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      summary {
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      a {
+        display: block;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      .desktop-menu {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+        margin-left: auto; // dorong ke kanan
+        text-align: right;
+
+        ul {
+          text-align: left;
+          margin-top: 12px;
+        }
+      }
+    }
   }
 }
 

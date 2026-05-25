@@ -29,12 +29,30 @@
       <header>
         <nav>
           <a href="/">{{ .Site.Title }}</a>
-          <ul class="nav-menu">
+
+          <!-- Desktop Menu -->
+          <ul class="nav-menu desktop-menu">
             {{ range .Site.Menus.main }}
             <li>
               <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
             </li>
             {{ end }}
           </ul>
+
+          <!-- Mobile Menu -->
+          <details class="mobile-menu">
+            <summary>Menu</summary>
+
+            <ul>
+              {{ range .Site.Menus.main }}
+              <li>
+                <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+              </li>
+              {{ end }}
+            </ul>
+          </details>
         </nav>
       </header>
+    </div>
+  </body>
+</html>
