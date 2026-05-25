@@ -1,6 +1,4 @@
 public
 resources
-/.quarto/
-**/*.quarto_ipynb
-/.vscode/
+.vscode
 .hugo_build.lock
