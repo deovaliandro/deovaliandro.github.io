@@ -1,0 +1,32 @@
+@use "./variables" as *;
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0 auto;
+  background: $bg;
+  color: $text;
+  max-width: $container;
+  font: 400 $font-size $font-main;
+  line-height: $line-height;
+  overflow-y: scroll;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover;
+    text-decoration: underline;
+  }
+}

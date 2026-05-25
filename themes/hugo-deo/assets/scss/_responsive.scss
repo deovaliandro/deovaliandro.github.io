@@ -1,0 +1,19 @@
+@use "./variables" as *;
+
+@media (max-width: $mobile) {
+  body {
+    width: 100%;
+  }
+
+  header {
+    .navbar {
+      .desktop-menu {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+    }
+  }
+}

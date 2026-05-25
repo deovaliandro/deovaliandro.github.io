@@ -84,3 +84,11 @@ noClasses = false
 codeFences = true
 tabWidth = 4
 lineNos = false
+
+[minify]
+disableCSS = false
+disableHTML = false
+disableJS = false
+disableJSON = false
+disableSVG = false
+disableXML = false

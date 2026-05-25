@@ -1,6 +1,69 @@
-{{- partial "header.html" . -}}
-<main>
-  {{ block "main" . }}
-  {{ end }}
-</main>
-{{- partial "footer.html" . -}}
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{ $description := cond .Description .Description (.Summary | plainify) }}
+  <meta name="description" content="{{ $description }}">
+  <link rel="icon" type="image/x-icon" href="{{ "images/favicon.ico" |
+  relURL }}">
+  <link rel="apple-touch-icon" href="{{ "images/favicon.ico" | relURL }}">
+  <meta property="og:image" content="{{ "images/favicon.ico" | absURL }}">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}
+  website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:description" content="{{ $description }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:description" content="{{ $description }}">
+  <meta name="twitter:image" content="{{ "images/favicon.ico" | absURL }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <title>{{ .Title | default .Site.Title }}</title>
+
+  {{ $options := dict
+    "targetPath" "css/main.css"
+    "outputStyle" "compressed"
+    "transpiler" "dartsass"
+  }}
+
+  {{ $style := resources.Get "scss/main.scss" | toCSS $options | fingerprint }}
+
+  <link
+    rel="stylesheet"
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
+  >
+</head>
+
+<body>
+  {{ partial "header.html" . }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+</body>
+{{ if .Params.math }}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      renderActions: {
+        addMenu: []
+      }
+    },
+    chtml: {
+      scale: 1,
+      matchFontHeight: true,
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+{{ end }}
+</html>

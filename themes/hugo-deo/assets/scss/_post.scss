@@ -1,0 +1,39 @@
+@use "./variables" as *;
+
+.post {
+  .post-header {
+    h1 {
+      text-align: center;
+    }
+
+    .metadata {
+      color: $muted;
+      font: 0.7rem $font-mono;
+      text-align: center;
+    }
+  }
+
+  .post-content {
+    font-size: 1.05rem;
+
+    p {
+      margin-block: 1.2rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    pre,
+    code {
+      font-family: $font-mono;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 1rem;
+      border-radius: $radius;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "./variables";
+
+.post-header h1 {
+  text-align: center;
+}
+
+.metadata {
+  color: variables.$muted;
+  font: 0.7rem variables.$font-mono;
+  text-align: center;
+}
+
+ol,
+ul {
+  padding-left: 1.5rem;
+}

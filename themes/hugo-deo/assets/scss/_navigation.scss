@@ -1,0 +1,59 @@
+@use "./variables" as *;
+
+header {
+  margin-top: 1.5rem;
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    a {
+      color: $text;
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      a {
+        opacity: 0.7;
+
+        &:hover,
+        &.active {
+          opacity: 1;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+
+      summary {
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+        padding: 0;
+        list-style: none;
+      }
+    }
+  }
+}

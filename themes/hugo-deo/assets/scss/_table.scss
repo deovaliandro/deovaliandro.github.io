@@ -1,0 +1,21 @@
+@use "./variables" as *;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td,
+  th {
+    padding: 0.5rem;
+    border: 1px solid $border;
+    text-align: center;
+  }
+
+  th {
+    background: #f5f7ff;
+  }
+
+  tr:nth-child(even) {
+    background: #f5f7ff;
+  }
+}
