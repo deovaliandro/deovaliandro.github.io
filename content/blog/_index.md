@@ -1,5 +1,5 @@
 ---
-title: "🔖🦋 Tulisan"
+title: "Tulisan"
 draft: false
 ---
 

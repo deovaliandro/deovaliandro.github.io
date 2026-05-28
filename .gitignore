@@ -2,3 +2,10 @@ public
 resources
 .vscode
 .hugo_build.lock
+.venv
+.quarto
+/.quarto/
+**/*.quarto_ipynb
+_quarto.yaml
+uv.lock
+pyproject.toml

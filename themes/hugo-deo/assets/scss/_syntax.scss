@@ -7,9 +7,27 @@ code {
   font-size: 0.95rem;
 }
 
+p,
+h1,
+h2,
+h3 {
+  code {
+    border: 1px solid red;
+  }
+}
+
+h1,
+h2,
+h3 {
+  code {
+    font-size: 1em;
+  }
+}
+
 pre {
   padding: 1rem;
   border-radius: variables.$radius;
+  border: 1px solid #c2c3c5;
 }
 
 /* Generated using: hugo gen chromastyles --style=github */
