@@ -5,6 +5,7 @@ code {
   overflow-x: auto;
   font-family: variables.$font-mono;
   font-size: 0.95rem;
+  -webkit-font-smoothing: antialiased;
 }
 
 p,

@@ -1,7 +1,8 @@
-+++
-title     = "Fungsi dalam Kriptografi"
-date      = "2019-10-02"
-+++
+---
+title: "Fungsi dalam Kriptografi"
+date: "2019-10-02"
+math: true
+---
 
 Fungsi adalah sebuah relasi khusus pada dua himpunan.
 

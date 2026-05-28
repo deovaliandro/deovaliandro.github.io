@@ -1,7 +1,8 @@
-+++
-title   = "Aritmatika Polinom di dalam Medan Galois $GF(2^n)$"
-date    = "2022-02-12"
-+++
+---
+title: "Aritmatika Polinom di dalam Medan Galois $GF(2^n)$"
+date: "2022-02-12"
+math: true
+---
 
 
 Galois Field (GF) yang banyak digunakan dalam kriptografi adalah $GF(2^n)$ karena setiap baris text direpresentasikan

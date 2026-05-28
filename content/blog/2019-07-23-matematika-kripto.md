@@ -1,6 +1,7 @@
 +++
 title     = "Landasan Matematika Kriptografi"
 date      = "2020-07-23"
+math      = true
 +++
 
 ## Set dan Fungsi
@@ -48,7 +49,7 @@ $$ \sim \subseteq \mathbb{Z}^2 $$ dengan aturan $$ (a, b) \in \sim \Leftrightarr
 
 Karena $5 \sim 17$ dan $17 \sim -3$, maka $5 \sim -3$ (transitif), $17 \sim 5 $ dan $ -3 \sim 17$ (sifat simetri).
 
-**Teorema** Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$ 
+**Teorema** Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$
 adalah sebuah relasi ekuivalen pada $A$, maka terdapat bilangan asli $n$ dan sub-subhimpunan $A_1, A_2, A_3, \cdots,A_n$ yang memenuhi sifat:
 
 1. Sifat saling lepas, $\forall i, j \in \{ 1, 2, \cdots, n \}: A_i \cap A_j = \emptyset$,
@@ -76,7 +77,7 @@ Misalnya $(\mathbb{Z}, +)$, $(\mathbb{R}, +)$, $(\mathbb{Z}_2, \oplus)$,
 $(\mathbb{Z}_3, \oplus)$, $(\mathbb{Z}_n, \oplus)$, $(\mathbb{Z}_p, \oplus)$,
 $(\mathbb{Z}_p^\ast, \otimes)$.
 
-Grup dikatakan __grup abelian__ jika memenuhi sifat komutatif, $\exists a, b \in G, a \ast b = b \ast a$.
+Grup dikatakan **grup abelian** jika memenuhi sifat komutatif, $\exists a, b \in G, a \ast b = b \ast a$.
 
 Misalnya $(\mathbb{G}, +)$, $(\mathbb{Z}\_2, \oplus)$, $(\mathbb{Z}_3, \oplus)$.
 
@@ -88,12 +89,12 @@ Ring $(R, +, \times)$ merupakan himpunan $R$, dengan operasi biner $ + $ dan $\t
 2. $\exists a, b, c \in R, a \times (b \times c) = (a \times b) \times c,$,
 3. $\exists e = 1, 1 \ne 0$ untuk $(R, \times) \ni 1 \times a = a, \times 1 = a \forall a \in R$,
 4. operasi $\times$ distributif pada penjumlahan:
-  1. $a \times (b + c) = (a \times b ) + (a \times c)$,
-  2. $(b + c) \times a = (b \times a ) + (c \times a)$.
+5. $a \times (b + c) = (a \times b ) + (a \times c)$,
+6. $(b + c) \times a = (b \times a ) + (c \times a)$.
 
 Contohnya $(\mathbb{Z}, +, \times)$.
 
-Ring dikatakan __commutative ring__ jika $\exists a, b \in R, a \times b = b \times a$.
+Ring dikatakan **commutative ring** jika $\exists a, b \in R, a \times b = b \times a$.
 
 ### Field
 
@@ -101,8 +102,8 @@ Field F adalah sebuah commutative ring dimana $\forall a \ne 0 \in F, \exists a^
 
 Misalnya $(\mathbb{Q}, \times, +)$, $(\mathbb{R}, \times, +)$.
 
-Field dikatakan __finite field__ jika himpunannya terhingga (orde n, dinotasikan $F_n$). Sebaliknya, elemen tidak
-terbatas adalah __infinity field__.
+Field dikatakan **finite field** jika himpunannya terhingga (orde n, dinotasikan $F_n$). Sebaliknya, elemen tidak
+terbatas adalah **infinity field**.
 
 Jumlah elemen dalam finite field disebut orde, jika orde $n$, dinotasikan $F_n$. Misalnya $F_2$ memiliki elemen $0, 1$.
 Finite field digunakan dalam kriptografi, karena berada dalam himpunan berhingga.
@@ -121,7 +122,7 @@ Dinotasikan dengan: $$GF(p^{2})$$
 Bila $n=1$, maka $GF(p) = F_{p}$ dan elemennya $Z_{p} = \{0, 1, 2, ... , p-1\}$,
 operasi penjumlahan dan perkalian dilakukan dalam $\bmod \space p$.
 
-2. $GF(p^{n})$
+1. $GF(p^{n})$
 
 Operasi penjumlahan dan perkalian dilakukan dalam polinom derajat $n$ (bentuk
 $f(x)$).

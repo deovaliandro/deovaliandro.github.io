@@ -1,8 +1,10 @@
 @use "./variables" as *;
 
 html {
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  letter-spacing: -0.01em;
 }
 
 body {
@@ -13,6 +15,16 @@ body {
   font: 400 $font-size $font-main;
   line-height: $line-height;
   overflow-y: scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 img {
