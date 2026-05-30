@@ -18,53 +18,11 @@ name = "blog"
 url = "/blog/"
 weight = 20
 
-[[menu.main]]
-identifier = "python"
-name = "python"
-url = "/intro-py/"
-weight = 30
-
-[[menu.main]]
-identifier = "java"
-name = "java"
-url = "/intro-java/"
-weight = 40
-
-[[menu.main]]
-identifier = "oop"
-name = "oop"
-url = "/oop-java/"
-weight = 50
-
-[[menu.main]]
-identifier = "error-handling"
-name = "error-handling"
-url = "/error-handling/"
-weight = 60
-
-[[menu.main]]
-identifier = "matdis"
-name = "matdis"
-url = "/matdis/"
-weight = 70
-
-[[menu.main]]
-identifier = "ml"
-name = "ml"
-url = "/ml/"
-weight = 80
-
-[[menu.main]]
-identifier = "simbad"
-name = "simbad"
-url = "/sistem-basis-data/"
-weight = 90
-
 [permalinks]
 blog = "/p/:slug"
 
 [params]
-description = "A Hugo theme."
+description = "My Personal Blog"
 favicon = "img/favicon.png"
 
 [params.author]

@@ -1,12 +1,11 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 header {
   margin-top: 1.5rem;
 
   .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-between;
     flex-wrap: wrap;
     gap: 1rem;
 

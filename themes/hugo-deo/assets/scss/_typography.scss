@@ -1,13 +1,12 @@
-@use "./variables";
+@use "./variables" as *;
+@use "./mixins" as *;
 
 .post-header h1 {
-  text-align: center;
+  @include centered-text;
 }
 
 .metadata {
-  color: variables.$muted;
-  font: 0.7rem variables.$font-mono;
-  text-align: center;
+  @include muted-text;
 }
 
 ol,
@@ -22,5 +21,5 @@ blockquote {
 }
 
 h1 {
-  text-align: center;
+  @include centered-text;
 }

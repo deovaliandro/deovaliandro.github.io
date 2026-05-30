@@ -1,35 +1,36 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 .post {
+  width: 100%;
+}
 
-  .post-header {
-    h1 {
-      text-align: center;
-    }
-
-    .metadata {
-      display: block;
-      color: $muted;
-      font: 0.7rem $font-mono;
-      text-align: center;
-    }
+.post-header {
+  h1 {
+    @include centered-text;
   }
 
-  .post-content {
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+  .metadata {
+    display: block;
+    @include muted-text;
+    @include centered-text;
+  }
+}
 
-    pre,
-    code {
-      font-family: $font-mono;
-    }
+.post-content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-    pre {
-      overflow-x: auto;
-      padding: 1rem;
-      border-radius: $radius;
-    }
+  pre,
+  code {
+    @include code-style;
+  }
+
+  pre {
+    overflow-x: auto;
+    padding: 1rem;
+    @include rounded;
   }
 }

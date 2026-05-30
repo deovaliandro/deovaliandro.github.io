@@ -1,0 +1,64 @@
+@use "./variables" as vars;
+
+// Typography mixins
+@mixin code-style {
+  font-family: vars.$font-mono;
+  overflow-x: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin heading-style {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+@mixin muted-text {
+  color: vars.$muted;
+  font-size: 0.7rem;
+  font-family: vars.$font-mono;
+}
+
+// Spacing mixins
+@mixin centered-text {
+  text-align: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Border & radius utilities
+@mixin bordered($color: vars.$border) {
+  border: 1px solid $color;
+}
+
+@mixin rounded {
+  border-radius: vars.$radius;
+}
+
+// Link utilities
+@mixin link-style {
+  color: vars.$link;
+  text-decoration: none;
+
+  &:hover {
+    color: vars.$link-hover;
+    text-decoration: underline;
+  }
+}
+
+// Syntax highlighting utility
+@mixin chroma-color-class($name, $color) {
+  .chroma .#{$name} {
+    color: $color;
+  }
+}
+
+@mixin chroma-bg-class($name, $color, $bg-color) {
+  .chroma .#{$name} {
+    color: $color;
+    background-color: $bg-color;
+  }
+}

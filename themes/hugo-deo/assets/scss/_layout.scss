@@ -1,4 +1,16 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
 main {
   margin-inline: auto;
   margin-block: 2rem;
+  width: 100%;
+  max-width: $container;
+  padding: 0 1rem;
+  position: relative;
+
+  @media (max-width: 1023px) {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
 }

@@ -1,8 +1,18 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
-@media (max-width: $mobile) {
+// ===========================
+// MOBILE & TABLET (< 1400px)
+// ===========================
+
+@media (max-width: 1399px) {
   body {
     width: 100%;
+  }
+
+  main {
+    max-width: 100%;
+    margin-inline: 0;
   }
 
   header {
@@ -15,5 +25,45 @@
         display: block;
       }
     }
+  }
+
+  .toc-sidebar {
+    display: none !important;
+  }
+}
+
+// ===========================
+// TABLET (768px - 1399px)
+// ===========================
+
+@media (min-width: 768px) and (max-width: 1399px) {
+  header {
+    .navbar {
+      gap: 1.5rem;
+    }
+  }
+}
+
+// ===========================
+// DESKTOP (1400px+)
+// ===========================
+
+@media (min-width: 1400px) {
+  main {
+    max-width: $container;
+  }
+
+  .toc-sidebar {
+    display: block;
+  }
+}
+
+// ===========================
+// LARGE DESKTOP (≥ 1600px)
+// ===========================
+
+@media (min-width: 1600px) {
+  main {
+    max-width: $container;
   }
 }

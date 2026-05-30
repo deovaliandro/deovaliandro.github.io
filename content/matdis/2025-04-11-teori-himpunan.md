@@ -1,6 +1,7 @@
 ---
 title: Teori Himpunan
 date: 2025-04-11
+math: true
 ---
 
 ## Pendahuluan

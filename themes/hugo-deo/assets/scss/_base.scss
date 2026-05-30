@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -23,8 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  @include heading-style;
 }
 
 img {
@@ -34,11 +34,5 @@ img {
 }
 
 a {
-  color: $link;
-  text-decoration: none;
-
-  &:hover {
-    color: $link-hover;
-    text-decoration: underline;
-  }
+  @include link-style;
 }

@@ -13,3 +13,15 @@ ini akan bermanfaat di masa mendatang, saat sudah lupa cara menyelesaikan
 masalah trivia ini.
 
 (copy dari <https://sp.vlsm.org/>)
+
+---
+
+## Catatan Kuliah
+
+- [Intro Python](/intro-py/)
+- [Intro Java](/intro-java/)
+- [OOP](/oop-java/)
+- [Error Handling](/error-handling/)
+- [Basis Data](/sistem-basis-data/)
+- [ML](/ml/)
+- [Matdis](/matdis/)

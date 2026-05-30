@@ -1,8 +1,9 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 footer {
   margin-block: 2rem 3rem;
-  text-align: center;
+  @include centered-text;
   font-family: $font-mono;
   font-size: 0.95rem;
 
