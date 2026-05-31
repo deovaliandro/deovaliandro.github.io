@@ -1,0 +1,21 @@
+---
+title: "Analisis Data dengan R"
+date: 2024-01-15
+slug: "analisis-data-r"
+draft: false
+---
+
+## Pendahuluan
+
+Ini adalah contoh post dengan kode R yang bisa dieksekusi.
+
+```{r}
+#| echo: true
+#| fig-cap: "Distribusi data acak"
+
+set.seed(42)
+data <- rnorm(1000)
+hist(data, main = "Histogram", col = "steelblue")
+```
+
+Hasil di atas di-render otomatis oleh Quarto.

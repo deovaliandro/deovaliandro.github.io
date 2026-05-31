@@ -1,0 +1,8 @@
+project:
+  type: default
+  output-dir: ../content/blog   # output langsung ke folder Hugo
+
+format:
+  hugo-md:
+    output-ext: md
+    wrap: none
