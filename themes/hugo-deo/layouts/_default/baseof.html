@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.Language.Locale }}">
+<html lang="{{ site.Language.Locale }}" class="[scrollbar-gutter:stable]">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,24 +22,36 @@
 
   <title>{{ .Title | default .Site.Title }}</title>
 
-  {{ $options := dict
-    "targetPath" "css/main.css"
-    "outputStyle" "compressed"
-    "transpiler" "dartsass"
-  }}
+  {{ with resources.Get "css/main.css" }}
+  {{ with . | css.TailwindCSS }}
+    {{ if hugo.IsProduction }}
+      {{ with . | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ end }}
+      {{ else }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ end }}
+    {{ end }}
+  {{ end }}
 
-  {{ $style := resources.Get "scss/main.scss" | toCSS $options | fingerprint }}
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    rel="stylesheet"
-    href="{{ $style.RelPermalink }}"
-    integrity="{{ $style.Data.Integrity }}"
-  >
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet">
 </head>
 
-<body>
+<body class="min-h-screen antialiased font-sans">
   {{ partial "header.html" . }}
-  <main>
+  <main class="mx-auto
+    max-w-4xl
+    rounded-xl
+    border
+    border-slate-200
+    bg-white
+    px-8
+    py-8
+    shadow-sm">
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}

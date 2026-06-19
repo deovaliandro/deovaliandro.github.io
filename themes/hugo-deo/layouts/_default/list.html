@@ -1,10 +1,17 @@
 {{ define "main" }}
 
-{{ .Content }}
+<div class="mb-12">
+  <div class="prose prose-slate max-w-none">
+    {{ .Content }}
+  </div>
+</div>
 
 {{ if .Pages }}
-<ol class="page-list">
+
+<ol class="space-y-4">
+
   {{ $pages := .RegularPages }}
+
   {{ if eq .Section "blog" }}
     {{ $pages = $pages.ByDate.Reverse }}
   {{ else }}
@@ -12,18 +19,59 @@
   {{ end }}
 
   {{ range $pages }}
-  <li class="page-item">
-    <a href="{{ .RelPermalink }}" class="page-link">{{ .Title }}</a>
-    <time datetime="{{ .Date.Format "2006-01-02" }}" class="metadata">
+
+<li>
+  <a
+    href="{{ .RelPermalink }}"
+    class="
+      flex
+      flex-col
+      gap-1
+      rounded-xl
+      border
+      border-slate-200
+      bg-white
+      p-4
+      transition
+      hover:border-slate-300
+      hover:shadow-sm
+      md:flex-row
+      md:items-center
+      md:justify-between
+    "
+  >
+
+    <span
+      class="
+        font-medium
+        text-slate-900
+        transition-colors
+        group-hover:text-blue-600
+      "
+    >
+      {{ .Title }}
+    </span>
+
+    <time
+      datetime="{{ .Date.Format "2006-01-02" }}"
+      class="text-sm text-slate-500"
+    >
       {{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}
     </time>
-  </li>
+
+  </a>
+</li>
+
   {{ end }}
 
 </ol>
+
 {{ else }}
-<p class="no-content">
-  No posts yet
+
+<p class="text-slate-500">
+  No posts yet.
 </p>
+
 {{ end }}
+
 {{ end }}

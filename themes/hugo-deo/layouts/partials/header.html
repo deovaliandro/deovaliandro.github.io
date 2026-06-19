@@ -1,16 +1,31 @@
-<header>
-  <nav class="navbar" aria-label="Main navigation">
-
-    <a href="/">
-      {{ .Site.Title }}
+<header class="py-4">
+  <nav
+    class="mx-auto max-w-4xl flex items-center justify-between rounded-xl border border-slate-300 bg-white px-6 py-4 shadow-sm"
+    aria-label="Main navigation"
+  >
+    <!-- Logo -->
+    <a
+      href="/"
+      class="flex items-center gap-3 text-2xl font-medium text-slate-900"
+    >
+      <span>{{ .Site.Title }}</span>
     </a>
 
-    <ul class="nav-menu desktop-menu">
+    <!-- Desktop Menu -->
+    <ul class="hidden items-center gap-8 md:flex">
       {{ range .Site.Menus.main }}
       <li>
         <a
           href="{{ .URL | relLangURL }}"
-          class="{{ if eq $.RelPermalink (.URL | relLangURL) }}active{{ end }}"
+          class="
+            text-lg
+            text-slate-900
+            transition-colors
+            hover:text-slate-600
+            {{ if eq $.RelPermalink (.URL | relLangURL) }}
+            font-semibold
+            {{ end }}
+          "
         >
           {{ .Name }}
         </a>
@@ -18,22 +33,21 @@
       {{ end }}
     </ul>
 
-    <details class="mobile-menu">
-      <summary>Menu</summary>
+    <!-- Mobile -->
+    <details class="md:hidden">
+      <summary class="cursor-pointer rounded-lg px-3 py-2 hover:bg-slate-200">
+        Menu
+      </summary>
 
-      <ul>
+      <ul
+        class="absolute right-4 mt-2 min-w-48 rounded-xl border border-slate-200 bg-white p-4 shadow-lg"
+      >
         {{ range .Site.Menus.main }}
         <li>
-          <a
-            href="{{ .URL | relLangURL }}"
-            class="{{ if eq $.RelPermalink (.URL | relLangURL) }}active{{ end }}"
-          >
-            {{ .Name }}
-          </a>
+          <a href="{{ .URL | relLangURL }}" class="block py-2"> {{ .Name }} </a>
         </li>
         {{ end }}
       </ul>
     </details>
-
   </nav>
 </header>

@@ -1,20 +1,42 @@
 {{ define "main" }}
 
-<article class="post">
-  <header class="post-header">
-    <h1>{{ .Title }}</h1>
+<article class="mx-auto max-w-4xl">
+
+  <header class="mb-10 border-b border-slate-300 pb-6">
+
+    <h1 class="mb-3 text-4xl font-bold tracking-tight text-slate-900">
+      {{ .Title }}
+    </h1>
 
     <time
       datetime="{{ .Date.Format "2006-01-02" }}"
-      class="metadata"
+      class="text-sm text-slate-500"
     >
       {{ .Date.Format "02 Jan 2006" }}
     </time>
+
   </header>
 
-  <section class="post-content">
+  <section
+    class="
+      prose
+      prose-slate
+      prose-headings:font-semibold
+      prose-headings:text-slate-900
+      prose-a:text-blue-600
+      prose-a:no-underline
+      hover:prose-a:underline
+      prose-code:text-pink-600
+      prose-pre:rounded-xl
+      prose-pre:border
+      prose-pre:border-slate-200
+      prose-img:rounded-xl
+      max-w-none
+    "
+  >
     {{ .Content }}
   </section>
+
 </article>
 
 {{ end }}
