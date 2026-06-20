@@ -10,3 +10,5 @@ _quarto.yaml
 uv.lock
 pyproject.toml
 quarto
+.codex
+.agents
