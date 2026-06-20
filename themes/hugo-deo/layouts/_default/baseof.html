@@ -1,63 +1,61 @@
 <!doctype html>
 <html lang="{{ site.Language.Locale }}" class="[scrollbar-gutter:stable]">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  {{ $description := cond .Description .Description (.Summary | plainify) }}
-  <meta name="description" content="{{ $description }}">
-  <link rel="icon" type="image/x-icon" href="{{ "images/favicon.ico" |
-  relURL }}">
-  <link rel="apple-touch-icon" href="{{ "images/favicon.ico" | relURL }}">
-  <meta property="og:image" content="{{ "images/favicon.ico" | absURL }}">
-  <meta property="og:title" content="{{ .Title }}">
-  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ $description := cond .Description .Description (.Summary | plainify) }}
+    <meta name="description" content="{{ $description }}">
+    <link rel="icon" type="image/x-icon" href="{{ "images/favicon.ico" |
+      relURL }}">
+    <link rel="apple-touch-icon" href="{{ "images/favicon.ico" | relURL }}">
+    <meta property="og:image" content="{{ "images/favicon.ico" | absURL }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}
   website{{ end }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:description" content="{{ $description }}">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ .Title }}">
-  <meta name="twitter:description" content="{{ $description }}">
-  <meta name="twitter:image" content="{{ "images/favicon.ico" | absURL }}">
-  <link rel="canonical" href="{{ .Permalink }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ "images/favicon.ico" | absURL }}">
+    <link rel="canonical" href="{{ .Permalink }}">
 
-  <title>{{ .Title | default .Site.Title }}</title>
+    <title>{{ .Title | default .Site.Title }}</title>
 
-  {{ with resources.Get "css/main.css" }}
-  {{ with . | css.TailwindCSS }}
+    {{ with resources.Get "css/main.css" }}
+    {{ with . | css.TailwindCSS }}
     {{ if hugo.IsProduction }}
-      {{ with . | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}">
-      {{ end }}
-      {{ else }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}">
-      {{ end }}
+    {{ with . | fingerprint }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{ end }}
-  {{ end }}
+    {{ else }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+    {{ end }}
+    {{ end }}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-    rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  </head>
 
-<body class="min-h-screen antialiased font-sans">
-  {{ partial "header.html" . }}
-  <main class="mx-auto
+  <body class="min-h-screen antialiased font-[Inter]">
+    {{ partial "header.html" . }}
+    <main class="mx-auto
     max-w-4xl
-    rounded-xl
+    rounded-sm
     border
     border-slate-200
     bg-white
     px-8
     py-8
     shadow-sm">
-    {{ block "main" . }}{{ end }}
-  </main>
-  {{ partial "footer.html" . }}
-</body>
-{{ if .Params.math }}
-<script>
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+  {{ if .Params.math }}
+  <script>
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -75,7 +73,8 @@
     }
   };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  <script async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-{{ end }}
+  {{ end }}
 </html>
