@@ -12,3 +12,4 @@ pyproject.toml
 quarto
 .codex
 .agents
+node_modules
