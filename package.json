@@ -2,12 +2,15 @@
   "name": "deovaliandro.github.io",
   "private": true,
   "scripts": {
-    "dev": "tailwindcss -i themes/hugo-deo/assets/css/main.css -o static/css/tailwind.css --watch",
-    "build": "tailwindcss -i themes/hugo-deo/assets/css/main.css -o static/css/tailwind.css --minify"
+      "tailwind:watch": "tailwindcss -i themes/hugo-deo/assets/css/main.css -o static/css/tailwind.css --watch",
+      "hugo:serve": "hugo serve",
+      "dev": "concurrently \"npm run tailwind:watch\" \"npm run hugo:serve\"",
+      "build": "tailwindcss -i themes/hugo-deo/assets/css/main.css -o static/css/tailwind.css --minify"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.1",
     "@tailwindcss/typography": "^0.5.20",
+    "concurrently": "^9.2.3",
     "tailwindcss": "^4.3.1"
   }
 }

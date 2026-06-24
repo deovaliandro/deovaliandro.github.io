@@ -1,92 +1,14 @@
 @import "tailwindcss";
-@source "hugo_stats.json";
-@import "./chroma.css";
 
 @theme {
-  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-mono: "Google Sans Code", monospace;
+  --font-sans: "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  --font-mono: "Google Sans Mono", "Fira Code", "Fira Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
-.home-content h1:first-child {
-  text-align: center;
-}
-
-.content-card-list,
-.home-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 1rem;
-}
-
-.content-card-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.home-content ul {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.home-content ul li {
-  margin: 0;
-  padding: 0;
-}
-
-.content-card,
-.home-content ul li a {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 1rem;
-  border: 1px solid rgb(226 232 240);
-  border-radius: 0.75rem;
-  background: white;
-  text-decoration: none;
-  color: rgb(15 23 42);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5rem;
-  transition:
-    border-color 150ms ease,
-    box-shadow 150ms ease,
-    color 150ms ease;
-}
-
-.content-card:hover,
-.home-content ul li a:hover {
-  border-color: rgb(203 213 225);
-  box-shadow:
-    0 1px 2px rgb(0 0 0 / 0.05);
-}
-
-.content-card-title {
-  color: rgb(15 23 42);
-  font-weight: 500;
-  transition: color 150ms ease;
-}
-
-.content-card:hover .content-card-title,
-.home-content ul li a:hover {
-  color: rgb(37 99 235);
-}
-
-@media (min-width: 768px) {
-  .home-content ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .content-card,
-  .home-content ul li a {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width: 1024px) {
-  .home-content ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
+@source "hugo_stats.json";
+@import "./chroma.css";

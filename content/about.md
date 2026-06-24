@@ -1,7 +1,6 @@
 ---
 title: "👨🏼‍💻🐸 about-me"
+date    : 2016-01-01
 ---
-
-## Hi 👋🏼
 
 it's me Deo. Katanya, Tuhan bersama orang-orang santai.

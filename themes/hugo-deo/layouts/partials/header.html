@@ -1,57 +1,66 @@
-<header class="py-4">
-  <nav
-    class="mx-auto max-w-4xl flex items-center justify-between rounded-sm border border-slate-300 bg-white px-6 py-4 shadow-sm text-lg"
-    aria-label="Main navigation">
-    <a
-      href="/"
-      class="flex items-center gap-3">
-      <span>{{ .Site.Title }}</span>
+<header class="pt-8">
+  <!-- Nama -->
+  <h1 class="text-2xl font-bold md:text-4xl">
+    <a href="{{ .Site.BaseURL }}" class="hover:none">
+      Deo Valiandro. M
+    </a>
+  </h1>
+
+  <!-- Deskripsi -->
+  <p class="mt-6 text-lg">
+    Computer Science
+  </p>
+
+  <!-- Email -->
+  <a
+    href="mailto:deo@duck.com"
+    class="text-lg text-purple-700 hover:underline font-mono">
+    deo@duck.com
+  </a>
+
+  <!-- Social Links -->
+  <div class="flex flex-wrap items-center gap-4 mt-8">
+    <a href="#" class="hover:text-black">
+      <i class="fab fa-github text-4xl"></i>
     </a>
 
-    <!-- Desktop Menu -->
-    <ul class="hidden items-center gap-8 md:flex">
+    <a href="#" class="hover:text-black">
+      <i class="fab fa-linkedin text-4xl"></i>
+    </a>
+
+    <a href="#" class="hover:text-black">
+      <i class="fa-solid fa-fingerprint text-4xl"></i>
+    </a>
+
+    <a href="#" class="hover:text-black">
+      <i class="fab fa-twitter text-4xl"></i>
+    </a>
+
+    <a href="#" class="hover:text-black">
+      <i class="fab fa-telegram text-4xl"></i>
+    </a>
+
+    <a href="#" class="thover:text-black">
+      <i class="fab fa-gitlab text-4xl"></i>
+    </a>
+
+    <a href="#" class="hover:text-black">
+      <i class="fa-solid fa-lock text-4xl"></i>
+    </a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="mt-8 font-mono text-lg">
+    <ul class="flex flex-wrap gap-4">
       {{ range .Site.Menus.main }}
       <li>
         <a
-          href="{{ .URL | relLangURL }}"
-          class="
-            text-slate-900
-            transition-colors
-            hover:text-slate-600
-            {{ if eq $.RelPermalink (.URL | relLangURL) }}
-            font-semibold
-            {{ end }}
-          ">
+          href="{{ .URL }}"
+          class="text-purple-700 hover:underline">
           {{ .Name }}
         </a>
       </li>
       {{ end }}
     </ul>
-
-    <!-- Mobile -->
-    <details class="md:hidden">
-      <summary class="cursor-pointer rounded-lg px-3 py-2 hover:bg-slate-200">
-        Menu
-      </summary>
-
-      <ul
-        class="
-          absolute
-          right-4
-          mt-2
-          min-w-48
-          rounded-sm
-          border
-          border-slate-200
-          bg-white
-          p-4
-          shadow-sm">
-        {{ range .Site.Menus.main }}
-        <li>
-          <a href="{{ .URL | relLangURL }}" class="block py-2"> {{ .Name }} </a>
-        </li>
-        {{ end }}
-      </ul>
-    </details>
   </nav>
 </header>

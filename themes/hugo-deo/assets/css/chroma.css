@@ -9,6 +9,8 @@
 .chroma {
   background-color: #f7f7f7;
   -webkit-text-size-adjust: none;
+  padding: 0.5em;
+  overflow-x: scroll;
 }
 
 /* Error */
