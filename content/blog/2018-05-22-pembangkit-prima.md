@@ -1,7 +1,8 @@
 +++
-title     = "Pembangkit Bilangan Prima"
-date      = "2018-05-22"
-math      = true
+title = "Pembangkit Bilangan Prima"
+date  = "2018-05-22"
+math  = true
+tags  = ['red','green']
 +++
 
 Metode untuk pengujian bilangan prima yang paling sederhana adalah brute force, yaitu membagi $n$ dengan
