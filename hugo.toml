@@ -10,22 +10,28 @@ theme = "hugo-deo"
 blog = "/p/:slug"
 
 [[menu.main]]
+identifier = "home"
+name = "home"
+url = "/"
+weight = 1
+
+[[menu.main]]
 identifier = "about"
 name = "about"
 url = "/about/"
-weight = 10
+weight = 2
 
 [[menu.main]]
 identifier = "blog"
 name = "blog"
 url = "/blog/"
-weight = 20
+weight = 3
 
 [[menu.main]]
 identifier = "tags"
 name = "tags"
 pageRef = "/tags/"
-weight = 30
+weight = 4
 
 [taxonomies]
 tag = "tags"
@@ -40,7 +46,7 @@ author = "Deo"
 email = "deo@duck.com"
 
 description = "My Personal Blog"
-favicon = "img/favicon.png"
+favicon = "images/favicon.ico"
 
 footer = "©️ 2026 - Deo. 🌱 with ❤️‍🔥 from 🌏"
 
